@@ -19,19 +19,19 @@
                         Servicios</h4>
                     <ul class="space-y-3">
                         <li><a href="{{ route('services.index') }}"
-                                class="text-800 hover:text-white transition-colors font-bold">Ver Todos los
+                                class="text-white/80 hover:text-white transition-colors font-bold">Ver Todos los
                                 Servicios</a></li>
                         <li><a href="{{ route('services.outsourcing') }}"
-                                class="text-800 hover:text-white transition-colors">Outsourcing
+                                class="text-white/80 hover:text-white transition-colors">Outsourcing
                                 Contable</a></li>
                         <li><a href="{{ route('services.audit') }}"
-                                class="text-800 hover:text-white transition-colors">Auditoría
+                                class="text-white/80 hover:text-white transition-colors">Auditoría
                                 Financiera</a></li>
                         <li><a href="{{ route('services.digital') }}"
-                                class="text-800 hover:text-white transition-colors">Transformación
+                                class="text-white/80 hover:text-white transition-colors">Transformación
                                 Digital</a></li>
                         <li><a href="{{ route('services.legal') }}"
-                                class="text-800 hover:text-white transition-colors">Constitución de
+                                class="text-white/80 hover:text-white transition-colors">Constitución de
                                 Empresas</a></li>
                     </ul>
                 </div>
