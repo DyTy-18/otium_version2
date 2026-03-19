@@ -1,4 +1,4 @@
-<footer class="bg-[#479BAA] text-white py-16">
+<footer class="bg-accent text-white py-16">
     <div class="container mx-auto px-6">
         <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12">
             <!-- Brand -->
@@ -42,7 +42,7 @@
                     <ul class="space-y-3">
                         <li><a href="{{ route('about') }}"
                                 class="text-white/80 hover:text-white transition-colors">Nosotros</a></li>
-                        <li><a href="#blog" class="text-white/80 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="text-white/80 hover:text-white transition-colors">Blog</a></li>
                         <li><a href="#" class="text-white/80 hover:text-white transition-colors">Carreras</a></li>
                         <li><a href="{{ route('contact') }}"
                                 class="text-white/80 hover:text-white transition-colors">Contacto</a>
@@ -84,7 +84,7 @@
         </div>
 
         <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60 text-sm">
-            <p>&copy; 2024 OTIUM Consultores. Todos los derechos reservados.</p>
+            <p>&copy; {{ date('Y') }} OTIUM Consultores. Todos los derechos reservados.</p>
         </div>
     </div>
 </footer>

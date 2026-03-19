@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/myvlad/Desktop/frelance/otium2 -maxdepth 2 -type f -name \"*.json\" -o -name \"*.js\" -o -name \"*.ts\" -o -name \"Makefile\" | grep -E \"\\\\.\\(json|js|ts\\)$|Makefile\" | head -20)",
+      "Bash(git -C /c/Users/myvlad/Desktop/frelance/otium2 log --oneline | head -10)"
+    ]
+  }
+}

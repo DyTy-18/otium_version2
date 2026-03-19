@@ -17,7 +17,7 @@
             <a href="{{ route('home') }}" class="hover:text-primary transition-colors">Inicio</a>
             <a href="{{ route('services.index') }}" class="hover:text-primary transition-colors">Servicios</a>
             <a href="{{ route('about') }}" class="hover:text-primary transition-colors">Nosotros</a>
-            <a href="{{ url('/#blog') }}" class="hover:text-primary transition-colors">Blog</a>
+            <a href="{{ route('blog.index') }}" class="hover:text-primary transition-colors">Blog</a>
         </nav>
 
         <!-- Desktop CTA -->
@@ -54,7 +54,7 @@
             class="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">Servicios</a>
         <a href="{{ route('about') }}" @click="mobileMenuOpen = false"
             class="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">Nosotros</a>
-        <a href="{{ url('/#blog') }}" @click="mobileMenuOpen = false"
+        <a href="{{ route('blog.index') }}" @click="mobileMenuOpen = false"
             class="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">Blog</a>
 
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false"

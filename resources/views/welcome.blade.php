@@ -181,7 +181,7 @@
                 <div class="space-y-8">
                     <div class="flex gap-4 items-start" data-aos="fade-right">
                         <div
-                            class="w-12 h-12 rounded-full bg-[#479BAA]/10 flex items-center justify-center flex-shrink-0 text-[#479BAA]">
+                            class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -196,7 +196,7 @@
 
                     <div class="flex gap-4 items-start" data-aos="fade-right" data-aos-delay="100">
                         <div
-                            class="w-12 h-12 rounded-full bg-[#479BAA]/10 flex items-center justify-center flex-shrink-0 text-[#479BAA]">
+                            class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -211,7 +211,7 @@
 
                     <div class="flex gap-4 items-start" data-aos="fade-right" data-aos-delay="200">
                         <div
-                            class="w-12 h-12 rounded-full bg-[#479BAA]/10 flex items-center justify-center flex-shrink-0 text-[#479BAA]">
+                            class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
@@ -227,7 +227,7 @@
 
                     <div class="flex gap-4 items-start" data-aos="fade-right" data-aos-delay="300">
                         <div
-                            class="w-12 h-12 rounded-full bg-[#479BAA]/10 flex items-center justify-center flex-shrink-0 text-[#479BAA]">
+                            class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v6m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
@@ -246,15 +246,19 @@
                 <div class="relative h-full min-h-[400px]" data-aos="fade-left">
                     <img src="/images/hero-corporate.png" alt="Why Choose Us"
                         class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-xl">
-                    <div class="absolute inset-0 bg-[#479BAA]/20 rounded-2xl mix-blend-multiply"></div>
+                    <div class="absolute inset-0 bg-accent/20 rounded-2xl mix-blend-multiply"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 5. INTERACTIVE SERVICES (Gradient Bg) -->
-    <section id="services" class="py-24 text-white overflow-hidden bg-gradient-to-br from-[#479BAA] to-[#2C6B74]"
+    <section id="services" class="py-24 text-white overflow-hidden relative" style="background: linear-gradient(135deg, #C48273 0%, #a05d4e 100%);"
         x-data="{ activeService: 'outsourcing' }">
+        <!-- Light glow top-left -->
+        <div class="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20" style="background: #FFE5DA;"></div>
+        <!-- Primary glow bottom-right -->
+        <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none opacity-20" style="background: #B3271A;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-down">
                 <span class="text-white/80 font-semibold tracking-wider uppercase text-sm">Nuestra Oferta</span>
@@ -277,11 +281,10 @@
                             x-transition:enter="transition ease-out duration-500"
                             x-transition:enter-start="opacity-0 scale-95"
                             x-transition:enter-end="opacity-100 scale-100" class="absolute inset-0">
-                            <!-- Using meeting.png as generic corporate for outsourcing -->
-                            <img src="/images/dashboard.png" alt="Outsourcing Contable"
-                                class="w-full h-full object-cover opacity-60">
+                            <img src="/images/meeting.png" alt="Outsourcing Contable"
+                                class="w-full h-full object-cover opacity-70">
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-[#2C6B74] via-transparent to-transparent opacity-90">
+                                class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent">
                             </div>
                             <div class="absolute bottom-8 left-8 right-8">
                                 <h3 class="text-3xl font-bold text-white mb-4">Outsourcing Contable y Financiero</h3>
@@ -303,7 +306,7 @@
                             <img src="/images/dashboard.png" alt="Transformación Digital"
                                 class="w-full h-full object-cover">
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-[#2C6B74] via-transparent to-transparent opacity-90">
+                                class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent">
                             </div>
                             <div class="absolute bottom-8 left-8 right-8">
                                 <h3 class="text-3xl font-bold text-white mb-4">Transformación Digital e Inteligencia de
@@ -322,18 +325,38 @@
                             x-transition:enter="transition ease-out duration-500"
                             x-transition:enter-start="opacity-0 scale-95"
                             x-transition:enter-end="opacity-100 scale-100" style="display: none;"
-                            class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-secondary opacity-20"></div>
-                            <!-- Generic pattern or simple representation -->
-                            <div class="text-center p-8 z-10">
-                                <svg class="w-24 h-24 text-white mx-auto mb-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                            class="absolute inset-0">
+                            <img src="/images/carousel_security.png" alt="Auditoría"
+                                class="w-full h-full object-cover opacity-70">
+                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8">
                                 <h3 class="text-3xl font-bold text-white mb-4">Auditoría y Consultoría</h3>
-                                <p class="text-white text-lg">Validación independiente y confianza para tus decisiones.
+                                <p class="text-white text-lg mb-4">Validación independiente y confianza para tus decisiones.
                                     Evaluamos riesgos y optimizamos controles.</p>
+                                <ul class="grid grid-cols-2 gap-2 text-white font-bold">
+                                    <li>✔ Evaluación de Riesgos</li>
+                                    <li>✔ Control Interno</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- View 4: Constitución de Empresas -->
+                        <div x-show="activeService === 'legal'"
+                            x-transition:enter="transition ease-out duration-500"
+                            x-transition:enter-start="opacity-0 scale-95"
+                            x-transition:enter-end="opacity-100 scale-100" style="display: none;"
+                            class="absolute inset-0">
+                            <img src="/images/carousel_strategy.png" alt="Constitución de Empresas"
+                                class="w-full h-full object-cover opacity-70">
+                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <h3 class="text-3xl font-bold text-white mb-4">Constitución de Empresas</h3>
+                                <p class="text-white text-lg mb-4">Acompañamos desde el inicio legal de tu empresa hasta su
+                                    estructura óptima. Rápido, seguro y sin burocracia.</p>
+                                <ul class="grid grid-cols-2 gap-2 text-white font-bold">
+                                    <li>✔ Registro Comercial</li>
+                                    <li>✔ Estructura Legal</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -392,10 +415,25 @@
                         <p class="text-white/70 text-sm">Validación independiente y fiscal.</p>
                     </button>
 
-                    <!-- Added extra button for more services link -->
+                    <button @click="activeService = 'legal'"
+                        :class="{ 'bg-white/20 border-white shadow-lg': activeService === 'legal', 'bg-white/5 border-white/10 hover:bg-white/10': activeService !== 'legal' }"
+                        class="p-6 rounded-xl border transition-all text-left group" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 :class="{ 'text-white': activeService === 'legal', 'text-white/80': activeService !== 'legal' }"
+                                class="font-bold text-lg transition-colors">Constitución de Empresas</h4>
+                            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <p class="text-white/70 text-sm">Registro legal y estructura empresarial.</p>
+                    </button>
+
                     <a href="{{ route('services.index') }}"
-                        class="block text-center text-white/80 hover:text-white font-semibold hover:underline mt-4"
-                        data-aos="fade-up" data-aos-delay="300">Ver Todos los Servicios →</a>
+                        class="block text-center text-white/80 hover:text-white font-semibold hover:underline mt-2"
+                        data-aos="fade-up" data-aos-delay="400">Ver Todos los Servicios →</a>
                 </div>
             </div>
         </div>
@@ -451,7 +489,7 @@
                     :style="'transform: translateX(-' + (activePage * 100) + '%)'">
 
                     <!-- Page 1 (Items 1-3) -->
-                    <div class="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-8 px-2">
+                    <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-8 px-2">
                         <!-- Testimonial 1 -->
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
@@ -461,7 +499,7 @@
                                 nuestros recursos.</p>
                             <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 font-bold">
+                                    class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     CM</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900">Carlos Mendoza</h4>
@@ -478,7 +516,7 @@
                                 través de una auditoría compleja sin problemas. Altamente recomendados.</p>
                             <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 font-bold">
+                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     AG</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900">Ana García</h4>
@@ -495,7 +533,7 @@
                                 auditores, son socios estratégicos. Su visión nos ayudó a expandirnos con seguridad.</p>
                             <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 font-bold">
+                                    class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     RD</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900">Roberto Díaz</h4>
@@ -506,7 +544,7 @@
                     </div>
 
                     <!-- Page 2 (Items 4-6) -->
-                    <div class="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-8 px-2">
+                    <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-8 px-2">
                         <!-- Testimonial 4 -->
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
@@ -515,7 +553,7 @@
                                 ahora tomamos decisiones basadas en datos reales y no en suposiciones.</p>
                             <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 font-bold">
+                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     MG</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900">María González</h4>
@@ -532,7 +570,7 @@
                                 operaciones fue impecable. Un equipo técnico de primer nivel.</p>
                             <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 font-bold">
+                                    class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     JT</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900">Javier Torrez</h4>
@@ -549,7 +587,7 @@
                                 reestructurar costos y mejorar nuestra rentabilidad un 15% el primer año.</p>
                             <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 font-bold">
+                                    class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     LF</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900">Lucía Fernández</h4>
@@ -572,6 +610,7 @@
     </section>
 
     <!-- 9. Blog / Insights -->
+    @php $latestPosts = \App\Models\Post::published()->with('category')->latest('published_at')->take(3)->get(); @endphp
     <section id="blog" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -580,65 +619,60 @@
                     <p class="text-gray-600">Mantente informado con nuestras últimas publicaciones sobre finanzas,
                         impuestos y tecnología.</p>
                 </div>
-                <a href="#" class="hidden md:block text-primary font-semibold hover:underline">Ver todas las
-                    publicaciones &rarr;</a>
+                <a href="{{ route('blog.index') }}" class="hidden md:block text-primary font-semibold hover:underline">
+                    Ver todas las publicaciones &rarr;
+                </a>
             </div>
 
+            @if($latestPosts->isNotEmpty())
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Post 1 -->
-                <article
-                    class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow hover:-translate-y-2 duration-300"
-                    data-aos="fade-up">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-400">Imagen Post 1</div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
-                            <span class="text-primary font-bold">Tecnología</span>
-                            <span>•</span>
-                            <span>Nov 28, 2024</span>
+                @foreach($latestPosts as $i => $post)
+                <article class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 duration-300 cursor-pointer"
+                         data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                    <a href="{{ route('blog.show', $post->slug) }}" class="block">
+                        @if($post->image)
+                            <div class="h-48 overflow-hidden">
+                                <img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        @else
+                            <div class="h-48 bg-linear-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-primary/30 group-hover:text-primary/50 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                        @endif
+                    </a>
+                    <a href="{{ route('blog.show', $post->slug) }}" class="block p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-3 group-hover:text-primary/70 transition-colors duration-300">
+                            @if($post->category)
+                                <span class="text-primary font-bold">{{ $post->category->name }}</span>
+                                <span>•</span>
+                            @endif
+                            <span>{{ $post->published_at->format('d M, Y') }}</span>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">La Importancia de la Contabilidad Digital</h3>
-                        <p class="text-gray-500 text-sm mb-4">Descubre cómo la digitalización está transformando la
-                            gestión financiera...</p>
-                        <a href="#" class="text-primary text-sm font-semibold hover:text-red-700">Leer más →</a>
-                    </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">{{ $post->title }}</h3>
+                        @if($post->excerpt)
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 group-hover:text-primary/60 transition-colors duration-300">{{ $post->excerpt }}</p>
+                        @endif
+                        <span class="text-primary text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+                            Leer más
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </a>
                 </article>
-
-                <!-- Post 2 -->
-                <article
-                    class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow hover:-translate-y-2 duration-300"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-400">Imagen Post 2</div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
-                            <span class="text-primary font-bold">Auditoría</span>
-                            <span>•</span>
-                            <span>Nov 25, 2024</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Auditoría Interna: La Clave para el Éxito</h3>
-                        <p class="text-gray-500 text-sm mb-4">Más allá del cumplimiento, la auditoría interna ofrece
-                            una visión profunda...</p>
-                        <a href="#" class="text-primary text-sm font-semibold hover:text-red-700">Leer más →</a>
-                    </div>
-                </article>
-
-                <!-- Post 3 -->
-                <article
-                    class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow hover:-translate-y-2 duration-300"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-400">Imagen Post 3</div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
-                            <span class="text-primary font-bold">Impuestos</span>
-                            <span>•</span>
-                            <span>Nov 20, 2024</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Estrategias Fiscales para PyMEs</h3>
-                        <p class="text-gray-500 text-sm mb-4">Consejos prácticos para optimizar la carga tributaria de
-                            tu empresa...</p>
-                        <a href="#" class="text-primary text-sm font-semibold hover:text-red-700">Leer más →</a>
-                    </div>
-                </article>
+                @endforeach
             </div>
+            @else
+            <div class="text-center py-12 bg-gray-50 rounded-2xl">
+                <p class="text-gray-400">Próximamente compartiremos nuestros primeros artículos.</p>
+                <a href="{{ route('blog.index') }}" class="mt-3 inline-block text-primary text-sm font-semibold hover:underline">
+                    Ir al blog →
+                </a>
+            </div>
+            @endif
         </div>
     </section>
 
