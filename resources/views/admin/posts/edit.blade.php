@@ -39,8 +39,53 @@
                               @input="$dispatch('post-excerpt-changed', $event.target.value)">{{ old('excerpt', $post->excerpt) }}</textarea>
                 </div>
 
+                {{-- Documento adjunto (si el post tiene documento) --}}
+                @if($post->document_path)
+                <div class="bg-white rounded-xl shadow-sm p-6" x-data="docReplace()">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-sm font-semibold text-gray-900">Documento adjunto</h3>
+                        <button type="button" @click="replacing = !replacing"
+                                class="text-xs text-primary hover:underline" x-text="replacing ? 'Cancelar' : 'Reemplazar documento'"></button>
+                    </div>
+
+                    {{-- Iframe con documento actual --}}
+                    <div x-show="!replacing">
+                        <div class="rounded-xl overflow-hidden border border-gray-200">
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border-b border-gray-200">
+                                <svg class="w-4 h-4 text-red-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8ZM18,20H6V4h7V9h5Z"/>
+                                </svg>
+                                <span class="text-xs text-gray-600 font-medium truncate">{{ basename($post->document_path) }}</span>
+                                <a href="{{ Storage::url($post->document_path) }}" target="_blank" rel="noopener"
+                                   class="ml-auto text-xs text-primary hover:underline shrink-0">Abrir ↗</a>
+                            </div>
+                            <iframe src="{{ Storage::url($post->document_path) }}#toolbar=0&navpanes=0"
+                                    class="w-full border-0 block" style="height: 60vh;"
+                                    title="Documento adjunto"></iframe>
+                        </div>
+                    </div>
+
+                    {{-- Zona de reemplazo --}}
+                    <div x-show="replacing" x-cloak>
+                        <label class="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-primary transition-colors"
+                               :class="newFile ? 'border-primary bg-primary/5' : ''">
+                            <input type="file" name="document" accept=".pdf,.txt" class="hidden"
+                                   @change="newFile = $event.target.files[0]?.name">
+                            <svg class="w-8 h-8 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                            </svg>
+                            <p class="text-sm text-gray-600" x-text="newFile || 'Seleccionar PDF o TXT'"></p>
+                            <p class="text-xs text-gray-400 mt-1">Máx. 50 MB</p>
+                        </label>
+                        <p class="text-xs text-amber-600 mt-2">El documento actual será reemplazado al guardar.</p>
+                    </div>
+                </div>
+                @endif
+
                 <div class="bg-white rounded-xl shadow-sm p-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-3">Contenido del artículo *</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Contenido del artículo
+                        @if(!$post->document_path) <span class="text-red-500">*</span> @endif
+                    </label>
                     <div id="quill-editor" class="min-h-96 border-0" style="font-size: 15px; line-height: 1.7;">
                         {!! old('content', $post->content) !!}
                     </div>
@@ -320,6 +365,10 @@
 
         function imagePreview(existing) {
             return { preview: existing || null };
+        }
+
+        function docReplace() {
+            return { replacing: false, newFile: null };
         }
 
         function seoPanel(opts = {}) {

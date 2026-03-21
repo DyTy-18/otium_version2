@@ -83,7 +83,66 @@
                     </p>
                 @endif
 
+                {{-- Documento embebido (si el post se creó desde un archivo) --}}
+                @if($post->document_path)
+                    <div class="mb-10">
+                        <div id="pdf-viewer"
+                             data-src="{{ Storage::url($post->document_path) }}"
+                             class="space-y-2">
+                            <p class="text-sm text-gray-400 text-center py-8">Cargando documento…</p>
+                        </div>
+                        <div class="mt-3 text-right">
+                            <a href="{{ Storage::url($post->document_path) }}" target="_blank" rel="noopener"
+                               class="text-xs text-gray-400 hover:text-primary transition-colors">
+                                Descargar documento ↓
+                            </a>
+                        </div>
+                    </div>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+                    <script>
+                        (function () {
+                            const container = document.getElementById('pdf-viewer');
+                            const url = container.dataset.src;
+                            pdfjsLib.GlobalWorkerOptions.workerSrc =
+                                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+                            pdfjsLib.getDocument(url).promise.then(function (pdf) {
+                                container.innerHTML = '';
+                                const renderPage = function (num) {
+                                    return pdf.getPage(num).then(function (page) {
+                                        const baseVp  = page.getViewport({ scale: 1 });
+                                        const scale   = container.clientWidth / baseVp.width;
+                                        const vp      = page.getViewport({ scale });
+
+                                        const canvas  = document.createElement('canvas');
+                                        canvas.width  = vp.width;
+                                        canvas.height = vp.height;
+                                        canvas.style.width  = '100%';
+                                        canvas.style.display = 'block';
+                                        canvas.style.borderRadius = '8px';
+                                        canvas.style.boxShadow = '0 1px 6px rgba(0,0,0,.12)';
+                                        container.appendChild(canvas);
+
+                                        return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+                                    });
+                                };
+
+                                let chain = Promise.resolve();
+                                for (let i = 1; i <= pdf.numPages; i++) {
+                                    (function (n) {
+                                        chain = chain.then(function () { return renderPage(n); });
+                                    })(i);
+                                }
+                            }).catch(function () {
+                                container.innerHTML = '<p class="text-sm text-red-500 text-center py-6">No se pudo cargar el documento.</p>';
+                            });
+                        })();
+                    </script>
+                @endif
+
                 {{-- Contenido del artículo (HTML de Quill) --}}
+                @if($post->content)
                 <div class="prose prose-lg max-w-none
                             prose-headings:text-gray-900 prose-headings:font-bold
                             prose-p:text-gray-700 prose-p:leading-relaxed
@@ -95,6 +154,7 @@
                             prose-ul:text-gray-700 prose-ol:text-gray-700">
                     {!! $post->content !!}
                 </div>
+                @endif
 
                 {{-- Tags --}}
                 @if($post->tags->isNotEmpty())
@@ -109,7 +169,8 @@
                     </div>
                 @endif
 
-                {{-- Autor --}}
+                {{-- Autor (solo si hay info real) --}}
+                @if($post->user_id || $post->guest_author)
                 <div class="mt-10 p-6 bg-gray-50 rounded-2xl">
                     <div class="flex items-start gap-5">
                         {{-- Avatar --}}
@@ -155,6 +216,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 {{-- Volver al blog --}}
                 <div class="mt-10">

@@ -54,7 +54,7 @@
                                         @endif
                                         <div class="min-w-0">
                                             <p class="text-sm font-medium text-gray-900 truncate max-w-xs">{{ $post->title }}</p>
-                                            <p class="text-xs text-gray-400">Por {{ $post->author->name }}</p>
+                                            <p class="text-xs text-gray-400">Por {{ $post->author_name }}</p>
                                         </div>
                                     </div>
                                 </td>
