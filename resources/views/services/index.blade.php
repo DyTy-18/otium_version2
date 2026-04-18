@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout
+    title="Nuestros Servicios"
+    description="Descubre todos los servicios de OTIUM Consultores: outsourcing contable, operaciones financieras, auditoría, transformación digital y constitución de empresas en Bolivia."
+>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 overflow-hidden text-white bg-secondary">
         <div class="absolute inset-0 bg-secondary">
@@ -25,129 +28,129 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Service 1: Outsourcing Contable -->
+                <!-- 1: Outsourcing Contable -->
                 <a href="{{ route('services.outsourcing') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up">
+                    data-aos="fade-up" data-aos-delay="0">
                     <div class="h-48 bg-teal-50 relative overflow-hidden">
-                        <!-- Icon or illustration placeholder -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center text-secondary opacity-80 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center text-accent opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                             </svg>
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                            Outsourcing Contable</h3>
-                        <p class="text-gray-600 mb-6">Gestión integral de su contabilidad, nóminas y cumplimiento
-                            tributario.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                            Más Información <span class="text-xl">→</span>
-                        </span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Outsourcing Contable</h3>
+                        <p class="text-gray-600 mb-6">Gestión integral de libros, obligaciones y cierres mensuales.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- Service 2: Operaciones Financieras -->
-                <a href="{{ route('services.financial') }}"
+                <!-- 2: Gestión Tributaria y Laboral -->
+                <a href="{{ route('services.gestion-tributaria') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-blue-50 relative overflow-hidden">
-                        <div
-                            class="absolute inset-0 flex items-center justify-center text-blue-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                    <div class="h-48 bg-red-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/>
                             </svg>
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                            Operaciones Financieras</h3>
-                        <p class="text-gray-600 mb-6">Optimización de tesorería, planeamiento financiero y evaluación de
-                            proyectos.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                            Más Información <span class="text-xl">→</span>
-                        </span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Gestión Tributaria y Laboral</h3>
+                        <p class="text-gray-600 mb-6">Declaraciones, planeación fiscal y defensa ante el SIN.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- Service 3: Auditoría -->
+                <!-- 3: Auditoría Financiera y Tributaria -->
                 <a href="{{ route('services.audit') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 bg-gray-50 relative overflow-hidden">
-                        <div
-                            class="absolute inset-0 flex items-center justify-center text-gray-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                             </svg>
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                            Auditoría</h3>
-                        <p class="text-gray-600 mb-6">Auditoría financiera, operativa y forense para garantizar
-                            transparencia y confianza.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                            Más Información <span class="text-xl">→</span>
-                        </span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Auditoría Financiera y Tributaria</h3>
+                        <p class="text-gray-600 mb-6">Validación independiente, fiscal y de aseguramiento.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- Service 4: Transformación Digital -->
-                <a href="{{ route('services.digital') }}"
+                <!-- 4: Reportes y Dashboards (Power BI) -->
+                <a href="{{ route('services.reportes-power-bi') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
                     data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 bg-purple-50 relative overflow-hidden">
-                        <div
-                            class="absolute inset-0 flex items-center justify-center text-purple-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center text-purple-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                             </svg>
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                            Transformación Digital</h3>
-                        <p class="text-gray-600 mb-6">Implementación de ERPs, automatización y modernización
-                            tecnológica.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                            Más Información <span class="text-xl">→</span>
-                        </span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Reportes y Dashboards (Power BI)</h3>
+                        <p class="text-gray-600 mb-6">Reportes gerenciales visuales para tomar decisiones.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- Service 5: Constitución de Empresas -->
-                <a href="{{ route('services.legal') }}"
+                <!-- 5: SharePoint Documental -->
+                <a href="{{ route('services.sharepoint-documental') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
                     data-aos="fade-up" data-aos-delay="400">
-                    <div class="h-48 bg-yellow-50 relative overflow-hidden">
-                        <div
-                            class="absolute inset-0 flex items-center justify-center text-yellow-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                    <div class="h-48 bg-blue-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-blue-500 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v6m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7a2 2 0 012-2h3l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7zm4 6h.01M10 13h4"/>
                             </svg>
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                            Constitución de Empresas</h3>
-                        <p class="text-gray-600 mb-6">Asesoría legal y fiscal para el inicio de nuevas operaciones
-                            comerciales.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                            Más Información <span class="text-xl">→</span>
-                        </span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">SharePoint Documental</h3>
+                        <p class="text-gray-600 mb-6">Control y trazabilidad de documentos en la nube.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                    </div>
+                </a>
+
+                <!-- 6: Outsourcing Laboral -->
+                <a href="{{ route('services.outsourcing-laboral') }}"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 bg-orange-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-orange-500 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Outsourcing Laboral</h3>
+                        <p class="text-gray-600 mb-6">Planilla, seguro social y contratos al día.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                    </div>
+                </a>
+
+                <!-- 7: Consultoría Empresarial -->
+                <a href="{{ route('services.consultoria') }}"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl md:col-span-2 lg:col-span-1"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 bg-green-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-green-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Consultoría Empresarial</h3>
+                        <p class="text-gray-600 mb-6">Acompañamiento estratégico y financiero.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
                     </div>
                 </a>
 

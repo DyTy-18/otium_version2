@@ -18,10 +18,17 @@ use App\Http\Controllers\Admin\ProfileController;
 Route::get('/', fn () => view('welcome'))->name('home');
 Route::get('/servicios', fn () => view('services.index'))->name('services.index');
 Route::get('/servicios/outsourcing-contable', fn () => view('services.outsourcing'))->name('services.outsourcing');
-Route::get('/servicios/operaciones-financieras', fn () => view('services.financial'))->name('services.financial');
-Route::get('/servicios/auditoria-integral', fn () => view('services.audit'))->name('services.audit');
-Route::get('/servicios/transformacion-digital', fn () => view('services.digital'))->name('services.digital');
-Route::get('/servicios/constitucion-empresas', fn () => view('services.legal'))->name('services.legal');
+Route::get('/servicios/gestion-tributaria', fn () => view('services.gestion-tributaria'))->name('services.gestion-tributaria');
+Route::get('/servicios/auditoria', fn () => view('services.audit'))->name('services.audit');
+Route::get('/servicios/reportes-power-bi', fn () => view('services.reportes-power-bi'))->name('services.reportes-power-bi');
+Route::get('/servicios/sharepoint-documental', fn () => view('services.sharepoint-documental'))->name('services.sharepoint-documental');
+Route::get('/servicios/outsourcing-laboral', fn () => view('services.outsourcing-laboral'))->name('services.outsourcing-laboral');
+Route::get('/servicios/consultoria', fn () => view('services.consultoria'))->name('services.consultoria');
+// Legacy redirects
+Route::redirect('/servicios/operaciones-financieras', '/servicios/consultoria', 301);
+Route::redirect('/servicios/auditoria-integral', '/servicios/auditoria', 301);
+Route::redirect('/servicios/transformacion-digital', '/servicios/reportes-power-bi', 301);
+Route::redirect('/servicios/constitucion-empresas', '/servicios/consultoria', 301);
 Route::get('/nosotros', fn () => view('about'))->name('about');
 
 // Contacto

@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout
+    title="Blog — Finanzas, Impuestos y Tecnología"
+    description="Artículos y guías de OTIUM Consultores sobre contabilidad, tributación, auditoría y transformación digital para empresas en Bolivia."
+>
     {{-- Hero --}}
     <section class="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden text-white">
         <div class="absolute inset-0">

@@ -1,16 +1,17 @@
-<x-layout>
+<x-layout
+    title="Auditoría Financiera y Tributaria Bolivia | Otium"
+    description="Auditoría financiera, tributaria y de aseguramiento para empresas en Bolivia. Dictamen independiente e informe de hallazgos. Santa Cruz y La Paz."
+>
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
-        <!-- Background Image -->
-        <div class="absolute inset-0">
-            <img src="/images/hero-corporate.png" alt="Auditoría Integral" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80"></div>
-        </div>
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl text-left">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                    Auditoría<span class="text-primary"> Integral</span>
+                    Auditoría que te da<span class="text-primary"> claridad, no solo cumplimiento</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed font-light" data-aos="fade-up"
                     data-aos-delay="100">
@@ -34,7 +35,7 @@
                     <div class="relative">
                         <div class="absolute inset-0 bg-teal-50 rounded-2xl transform translate-x-4 translate-y-4">
                         </div>
-                        <img src="/images/carousel_success.png" alt="Confianza y Transparencia"
+                        <img src="/images/otium/carousel/auditoria.png" alt="Confianza y Transparencia"
                             class="relative rounded-2xl shadow-xl w-full h-[400px] object-cover">
                     </div>
                 </div>
@@ -144,74 +145,51 @@
     <!-- Deliverables -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">Entregables</h2>
-
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué incluye nuestro servicio?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Item 1 -->
                 <div class="flex gap-4" data-aos="fade-right">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Informe de auditoría independiente</h4>
-                        <p class="text-gray-600">Documento detallado con el alcance, procedimientos, hallazgos y
-                            nuestra opinión profesional sobre la confiabilidad de la información.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Auditoría financiera (PCGA Bolivia)</h4>
+                        <p class="text-gray-600">Revisión de estados financieros bajo Principios de Contabilidad Generalmente Aceptados en Bolivia.</p>
                     </div>
                 </div>
-
-                <!-- Item 2 -->
                 <div class="flex gap-4" data-aos="fade-left">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Carta de recomendaciones</h4>
-                        <p class="text-gray-600">Lista de observaciones y recomendaciones prácticas priorizadas para
-                            que sepas exactamente en qué enfocarte.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Auditoría tributaria</h4>
+                        <p class="text-gray-600">Verificación del cumplimiento de obligaciones fiscales y exposición ante el SIN.</p>
                     </div>
                 </div>
-
-                <!-- Item 3 -->
                 <div class="flex gap-4" data-aos="fade-right">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Reunión de cierre y presentación</h4>
-                        <p class="text-gray-600">Sesión para presentar resultados, explicar hallazgos y responder
-                            preguntas para asegurar la comprensión.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Auditoría de aseguramiento</h4>
+                        <p class="text-gray-600">Revisión independiente de procesos, controles y operaciones para validar su confiabilidad.</p>
                     </div>
                 </div>
-
-                <!-- Item 4 -->
                 <div class="flex gap-4" data-aos="fade-left">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Seguimiento pactado</h4>
-                        <p class="text-gray-600">Opcionalmente, ofrecemos seguimiento posterior para verificar la
-                            implementación de las recomendaciones.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Dictamen independiente</h4>
+                        <p class="text-gray-600">Opinión profesional firmada por auditor independiente sobre la razonabilidad de la información.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-aos="fade-right">
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Informe de hallazgos y recomendaciones</h4>
+                        <p class="text-gray-600">Documento con observaciones priorizadas y acciones concretas de mejora para tu empresa.</p>
                     </div>
                 </div>
             </div>

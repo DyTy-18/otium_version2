@@ -1,11 +1,12 @@
-<x-layout>
+<x-layout
+    title="Operaciones Financieras"
+    description="Gestión integral de operaciones financieras para empresas en Bolivia. Análisis, planificación y control financiero con expertos de OTIUM Consultores."
+>
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
-        <!-- Background Image -->
-        <div class="absolute inset-0">
-            <img src="/images/dashboard.png" alt="Operaciones Financieras" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80"></div>
-        </div>
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl text-left">
@@ -34,7 +35,7 @@
                     <div class="relative">
                         <div class="absolute inset-0 bg-teal-50 rounded-2xl transform translate-x-4 translate-y-4">
                         </div>
-                        <img src="/images/meeting.png" alt="Estrategia Financiera"
+                        <img src="/images/otium/carousel/outsourcung_contable.png" alt="Estrategia Financiera"
                             class="relative rounded-2xl shadow-xl w-full h-[400px] object-cover">
                     </div>
                 </div>

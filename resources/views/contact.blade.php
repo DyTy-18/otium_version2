@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout
+    title="Diagnóstico Gratuito | Otium"
+    description="Contacta a OTIUM Consultores para una consulta inicial gratuita. Estamos en La Paz y Santa Cruz, Bolivia. Respondemos en menos de 24 horas."
+>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
         <!-- Background Image -->

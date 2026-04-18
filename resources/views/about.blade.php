@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout
+    title="Nosotros"
+    description="Conoce al equipo de OTIUM Consultores. Más de 15 años asesorando empresas bolivianas y extranjeras en contabilidad, finanzas, auditoría y transformación digital desde La Paz y Santa Cruz."
+>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
         <!-- Background Image -->

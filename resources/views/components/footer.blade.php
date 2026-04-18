@@ -18,21 +18,14 @@
                     <h4 class="text-lg font-bold mb-6 text-white border-b border-white/20 pb-2 inline-block md:block">
                         Servicios</h4>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('services.index') }}"
-                                class="text-white/80 hover:text-white transition-colors font-bold">Ver Todos los
-                                Servicios</a></li>
-                        <li><a href="{{ route('services.outsourcing') }}"
-                                class="text-white/80 hover:text-white transition-colors">Outsourcing
-                                Contable</a></li>
-                        <li><a href="{{ route('services.audit') }}"
-                                class="text-white/80 hover:text-white transition-colors">Auditoría
-                                Financiera</a></li>
-                        <li><a href="{{ route('services.digital') }}"
-                                class="text-white/80 hover:text-white transition-colors">Transformación
-                                Digital</a></li>
-                        <li><a href="{{ route('services.legal') }}"
-                                class="text-white/80 hover:text-white transition-colors">Constitución de
-                                Empresas</a></li>
+                        <li><a href="{{ route('services.index') }}" class="text-white/80 hover:text-white transition-colors font-bold">Ver Todos los Servicios</a></li>
+                        <li><a href="{{ route('services.outsourcing') }}" class="text-white/80 hover:text-white transition-colors">Outsourcing Contable</a></li>
+                        <li><a href="{{ route('services.gestion-tributaria') }}" class="text-white/80 hover:text-white transition-colors">Gestión Tributaria y Laboral</a></li>
+                        <li><a href="{{ route('services.audit') }}" class="text-white/80 hover:text-white transition-colors">Auditoría Financiera</a></li>
+                        <li><a href="{{ route('services.reportes-power-bi') }}" class="text-white/80 hover:text-white transition-colors">Reportes y Dashboards</a></li>
+                        <li><a href="{{ route('services.sharepoint-documental') }}" class="text-white/80 hover:text-white transition-colors">SharePoint Documental</a></li>
+                        <li><a href="{{ route('services.outsourcing-laboral') }}" class="text-white/80 hover:text-white transition-colors">Outsourcing Laboral</a></li>
+                        <li><a href="{{ route('services.consultoria') }}" class="text-white/80 hover:text-white transition-colors">Consultoría Empresarial</a></li>
                     </ul>
                 </div>
 
@@ -45,7 +38,7 @@
                         <li><a href="{{ route('blog.index') }}" class="text-white/80 hover:text-white transition-colors">Blog</a></li>
                         <li><a href="#" class="text-white/80 hover:text-white transition-colors">Carreras</a></li>
                         <li><a href="{{ route('contact') }}"
-                                class="text-white/80 hover:text-white transition-colors">Contacto</a>
+                                class="text-white/80 hover:text-white transition-colors">Diagnóstico Gratuito</a>
                         </li>
                     </ul>
                 </div>

@@ -23,7 +23,7 @@
         <!-- Desktop CTA -->
         <a href="{{ route('contact') }}"
             class="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-lg font-semibold shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-0.5">
-            Contacto
+            Diagnóstico Gratuito
         </a>
 
         <!-- Mobile Menu Button -->
@@ -59,7 +59,7 @@
 
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false"
             class="bg-primary text-white px-8 py-3 rounded-xl font-bold text-xl shadow-lg hover:bg-white hover:text-primary transition-all">
-            Contacto
+            Diagnóstico Gratuito
         </a>
     </div>
 </header>

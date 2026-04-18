@@ -1,17 +1,18 @@
-<x-layout>
+<x-layout
+    title="Outsourcing Contable Bolivia | Santa Cruz y La Paz | Otium"
+    description="Externalizá tu contabilidad con Otium. Libros, cierre mensual antes del día 10, estados financieros y dashboard gerencial. Santa Cruz y La Paz."
+>
     <!-- Hero Section -->
 
-    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
-        <!-- Background Image -->
-        <div class="absolute inset-0">
-            <img src="/images/dashboard.png" alt="Operaciones Financieras" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80"></div>
-        </div>
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl text-left">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                    Outsourcing<span class="text-primary"> Contable</span>
+                    Outsourcing Contable<span class="text-primary"> Digital para empresas en Bolivia</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed font-light" data-aos="fade-up"
                     data-aos-delay="100">
@@ -34,8 +35,8 @@
                     <div class="relative">
                         <div class="absolute inset-0 bg-teal-50 rounded-2xl transform translate-x-4 translate-y-4">
                         </div>
-                        <img src="/images/meeting.png" alt="Equipo Contable OTIUM"
-                            class="relative rounded-2xl shadow-xl w-full h-[400px] object-cover">
+                        <img src="/images/otium/carousel/outsourcung_contable.png" alt="Equipo Contable OTIUM"
+                            class="relative rounded-2xl shadow-xl w-full h-100 object-cover">
                     </div>
                 </div>
                 <div class="w-full md:w-1/2" data-aos="fade-left">
@@ -159,83 +160,58 @@
                 servicio?</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Item -->
                 <div class="flex gap-4" data-aos="fade-right">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Estados financieros periódicos</h4>
-                        <p class="text-gray-600">Balance general, estado de resultados y flujo de efectivo bajo normas
-                            locales/NIIF.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Registro y mantenimiento de libros contables</h4>
+                        <p class="text-gray-600">Llevamos tus libros diario, mayor y auxiliares al día bajo normas contables bolivianas.</p>
                     </div>
                 </div>
-
-                <!-- Item -->
                 <div class="flex gap-4" data-aos="fade-left">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Declaraciones tributarias</h4>
-                        <p class="text-gray-600">Presentación puntual de impuestos mensuales y anuales con sus
-                            comprobantes.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Cierre mensual antes del día 10</h4>
+                        <p class="text-gray-600">Entregamos el cierre contable del mes anterior antes del día 10, garantizado.</p>
                     </div>
                 </div>
-
-                <!-- Item -->
                 <div class="flex gap-4" data-aos="fade-right">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Planillas laborales</h4>
-                        <p class="text-gray-600">Cálculo de aportes sociales (AFPs, caja, etc) garantizando
-                            cumplimiento laboral.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Estados financieros: Balance General y Estado de Resultados</h4>
+                        <p class="text-gray-600">Reportes periódicos con la situación real de tu empresa, listos para directorio o bancos.</p>
                     </div>
                 </div>
-
-                <!-- Item -->
                 <div class="flex gap-4" data-aos="fade-left">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Reportes de gestión</h4>
-                        <p class="text-gray-600">Análisis de cuentas, gastos e indicadores clave para tu salud
-                            financiera.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Conciliaciones bancarias</h4>
+                        <p class="text-gray-600">Verificación mensual de movimientos entre libros y extractos bancarios.</p>
                     </div>
                 </div>
-
-                <!-- Item -->
                 <div class="flex gap-4" data-aos="fade-right">
-                    <div
-                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Asesoría continua</h4>
-                        <p class="text-gray-600">Respuestas y recomendaciones constantes para optimizar tus procesos.
-                        </p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Reportes mensuales para gerencia</h4>
+                        <p class="text-gray-600">Resumen ejecutivo con indicadores clave para que tomes decisiones con información clara.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-aos="fade-left">
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Acceso a documentos en SharePoint</h4>
+                        <p class="text-gray-600">Todos tus comprobantes y reportes organizados en la nube con acceso seguro desde cualquier dispositivo.</p>
                     </div>
                 </div>
             </div>
@@ -249,7 +225,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center relative">
                 <!-- Connecting Line (Desktop) -->
-                <div class="hidden md:block absolute top-8 left-1/10 right-1/10 h-1 bg-white/20 -z-0"></div>
+                <div class="hidden md:block absolute top-8 left-1/10 right-1/10 h-1 bg-white/20 z-0"></div>
 
                 <!-- Step 1 -->
                 <div class="relative z-10 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"

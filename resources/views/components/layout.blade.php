@@ -1,10 +1,60 @@
+@props([
+    'title'       => 'Otium | Outsourcing Contable Digital Bolivia · Santa Cruz · La Paz',
+    'description' => 'Firma boliviana especializada en outsourcing contable, auditoría integral y transformación digital para medianas y grandes empresas.',
+    'ogImage'     => '/images/hero-corporate.png',
+])
+@php
+    $pageTitle = ($title !== 'Otium | Outsourcing Contable Digital Bolivia · Santa Cruz · La Paz') ? $title . ' | Otium' : $title;
+    $canonical = url()->current();
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OTIUM Consultores</title>
+    <title>{{ $pageTitle }}</title>
+    <meta name="description" content="{{ $description }}">
+    <link rel="canonical" href="{{ $canonical }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="{{ $canonical }}">
+    <meta property="og:title"       content="{{ $pageTitle }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image"       content="{{ $ogImage }}">
+    <meta property="og:locale"      content="es_BO">
+    <meta property="og:site_name"   content="OTIUM Consultores">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="{{ $pageTitle }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image"       content="{{ $ogImage }}">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "AccountingService",
+        "name": "OTIUM Consultores",
+        "url": "{{ config('app.url') }}",
+        "logo": "{{ config('app.url') }}/images/logo-otium.webp",
+        "description": "{{ $description }}",
+        "telephone": "+591722505583",
+        "email": "contacto@otium.bo",
+        "address": [
+            {
+                "@@type": "PostalAddress",
+                "streetAddress": "Av. Ballivián Esq. C. 21",
+                "addressLocality": "La Paz",
+                "addressCountry": "BO"
+            }
+        ],
+        "areaServed": "BO",
+        "sameAs": []
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

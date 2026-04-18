@@ -1,14 +1,9 @@
-<x-layout>
-
-    @push('meta')
-        <meta name="description" content="{{ $post->meta_description ?? $post->excerpt }}">
-        <meta property="og:title" content="{{ $post->meta_title ?? $post->title }}">
-        <meta property="og:description" content="{{ $post->meta_description ?? $post->excerpt }}">
-        <meta property="og:type" content="article">
-        @if($post->image)
-            <meta property="og:image" content="{{ Storage::url($post->image) }}">
-        @endif
-    @endpush
+@php
+    $seoTitle    = $post->meta_title ?? $post->title;
+    $seoDesc     = $post->meta_description ?? $post->excerpt ?? 'Artículo de OTIUM Consultores sobre finanzas, tributación y tecnología empresarial.';
+    $seoImage    = $post->image ? Storage::url($post->image) : '/images/hero-corporate.png';
+@endphp
+<x-layout :title="$seoTitle" :description="$seoDesc" :ogImage="$seoImage">
 
     {{-- Hero del artículo --}}
     <section class="relative pt-32 pb-12 md:pt-44 md:pb-16 overflow-hidden">
