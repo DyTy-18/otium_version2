@@ -332,7 +332,17 @@
 
     <!-- 5. INTERACTIVE SERVICES (Gradient Bg) -->
     <section id="services" class="py-24 text-white overflow-hidden relative"
-        style="background: linear-gradient(135deg, #C48273 0%, #a05d4e 100%);" x-data="{ activeService: 'outsourcing' }">
+        style="background: linear-gradient(135deg, #C48273 0%, #a05d4e 100%);"
+        x-data="{
+            activeService: 'outsourcing',
+            services: ['outsourcing', 'digital', 'auditoria', 'legal'],
+            init() {
+                setInterval(() => {
+                    const idx = this.services.indexOf(this.activeService);
+                    this.activeService = this.services[(idx + 1) % this.services.length];
+                }, 5500);
+            }
+        }">
         <!-- Light glow top-left -->
         <div class="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20"
             style="background: #FFE5DA;"></div>
@@ -363,11 +373,11 @@
                                 class="w-full h-full object-cover opacity-70">
                             <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent">
                             </div>
-                            <div class="absolute bottom-8 left-8 right-8">
-                                <h3 class="text-3xl font-bold text-white mb-4">Outsourcing Contable y Financiero</h3>
-                                <p class="text-white text-lg mb-4">Tu departamento contable externo. Nos encargamos de
+                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
+                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Outsourcing Contable y Financiero</h3>
+                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Tu departamento contable externo. Nos encargamos de
                                     tus libros, obligaciones fiscales y reportes financieros con precisión absoluta.</p>
-                                <ul class="grid grid-cols-2 gap-2 text-white font-bold">
+                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
                                     <li>✔ Cierres Mensuales</li>
                                     <li>✔ Cumplimiento Legal</li>
                                 </ul>
@@ -384,12 +394,11 @@
                                 class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent">
                             </div>
-                            <div class="absolute bottom-8 left-8 right-8">
-                                <h3 class="text-3xl font-bold text-white mb-4">Transformación Digital e Inteligencia de
-                                    Negocios</h3>
-                                <p class="text-white text-lg mb-4">Digitaliza y automatiza tus procesos. Implementamos
+                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
+                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Transformación Digital e Inteligencia de Negocios</h3>
+                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Digitaliza y automatiza tus procesos. Implementamos
                                     Cloud Computing y dashboards en Power BI para decisiones estratégicas.</p>
-                                <ul class="grid grid-cols-2 gap-2 text-white font-bold">
+                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
                                     <li>✔ Power BI & Analytics</li>
                                     <li>✔ Automatización de Procesos</li>
                                 </ul>
@@ -405,12 +414,11 @@
                             <img src="/images/otium/carousel/auditoria.png" alt="Auditoría"
                                 class="w-full h-full object-cover opacity-70">
                             <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
-                            <div class="absolute bottom-8 left-8 right-8">
-                                <h3 class="text-3xl font-bold text-white mb-4">Auditoría y Consultoría</h3>
-                                <p class="text-white text-lg mb-4">Validación independiente y confianza para tus
-                                    decisiones.
-                                    Evaluamos riesgos y optimizamos controles.</p>
-                                <ul class="grid grid-cols-2 gap-2 text-white font-bold">
+                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
+                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Auditoría y Consultoría</h3>
+                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Validación independiente y confianza para tus
+                                    decisiones. Evaluamos riesgos y optimizamos controles.</p>
+                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
                                     <li>✔ Evaluación de Riesgos</li>
                                     <li>✔ Control Interno</li>
                                 </ul>
@@ -425,12 +433,11 @@
                             <img src="/images/otium/carousel/constitucion_de_empresas.png" alt="Constitución de Empresas"
                                 class="w-full h-full object-cover opacity-70">
                             <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
-                            <div class="absolute bottom-8 left-8 right-8">
-                                <h3 class="text-3xl font-bold text-white mb-4">Constitución de Empresas</h3>
-                                <p class="text-white text-lg mb-4">Acompañamos desde el inicio legal de tu empresa
-                                    hasta su
-                                    estructura óptima. Rápido, seguro y sin burocracia.</p>
-                                <ul class="grid grid-cols-2 gap-2 text-white font-bold">
+                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
+                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Constitución de Empresas</h3>
+                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Acompañamos desde el inicio legal de tu empresa
+                                    hasta su estructura óptima. Rápido, seguro y sin burocracia.</p>
+                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
                                     <li>✔ Registro Comercial</li>
                                     <li>✔ Estructura Legal</li>
                                 </ul>
@@ -781,75 +788,75 @@
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-4 md:p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
                     <div class="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-4 text-center md:text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">Importadoras y exportadoras</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Importadoras y exportadoras</span>
                     </div>
                 </div>
 
-                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-4 md:p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
                     <div class="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-4 text-center md:text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">Construcción y proyectos</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Construcción y proyectos</span>
                     </div>
                 </div>
 
-                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-4 md:p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
                     <div class="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-4 text-center md:text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">Alimentos y manufactura</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Alimentos y manufactura</span>
                     </div>
                 </div>
 
-                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-4 md:p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
                     <div class="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-4 text-center md:text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">Restaurantes y gastronomía</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Restaurantes y gastronomía</span>
                     </div>
                 </div>
 
-                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-4 md:p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
                     <div class="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-4 text-center md:text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">Servicios especializados</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Servicios especializados</span>
                     </div>
                 </div>
 
-                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div class="group relative bg-gray-50 border border-gray-100 rounded-2xl p-4 md:p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 overflow-hidden">
                     <div class="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-4 text-center md:text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">Comercio e industria</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Comercio e industria</span>
                     </div>
                 </div>
 
