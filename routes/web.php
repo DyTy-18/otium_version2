@@ -24,16 +24,17 @@ Route::get('/servicios/reportes-power-bi', fn () => view('services.reportes-powe
 Route::get('/servicios/sharepoint-documental', fn () => view('services.sharepoint-documental'))->name('services.sharepoint-documental');
 Route::get('/servicios/outsourcing-laboral', fn () => view('services.outsourcing-laboral'))->name('services.outsourcing-laboral');
 Route::get('/servicios/consultoria', fn () => view('services.consultoria'))->name('services.consultoria');
+Route::get('/servicios/revaluo-activos', fn () => view('services.revaluo-activos'))->name('services.revaluo-activos');
+Route::get('/servicios/constitucion-empresas', fn () => view('services.constitucion-empresas'))->name('services.constitucion-empresas');
 // Legacy redirects
 Route::redirect('/servicios/operaciones-financieras', '/servicios/consultoria', 301);
 Route::redirect('/servicios/auditoria-integral', '/servicios/auditoria', 301);
 Route::redirect('/servicios/transformacion-digital', '/servicios/reportes-power-bi', 301);
-Route::redirect('/servicios/constitucion-empresas', '/servicios/consultoria', 301);
 Route::get('/nosotros', fn () => view('about'))->name('about');
 
 // Contacto
-Route::get('/contactanos', fn () => view('contact'))->name('contact');
-Route::post('/contactanos', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/diagnostico-gratuito', fn () => view('contact'))->name('contact');
+Route::post('/diagnostico-gratuito', [ContactController::class, 'store'])->name('contact.store');
 
 // Blog público
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');

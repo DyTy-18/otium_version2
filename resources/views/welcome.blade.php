@@ -1,4 +1,4 @@
-<x-layout title="Outsourcing Contable, Auditoría y Transformación Digital en Bolivia"
+<x-layout title="Outsourcing Contable, Impuestos y Transformación Digital en Bolivia | Otium"
     description="OTIUM Consultores: expertos en outsourcing contable y financiero, auditoría integral, transformación digital y constitución de empresas en Bolivia. Más de 15 años de experiencia."
     ogImage="/images/otium/hero/hero.png">
     <!-- 2. Hero Section -->

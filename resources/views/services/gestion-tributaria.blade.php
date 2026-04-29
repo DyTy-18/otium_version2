@@ -1,31 +1,33 @@
 <x-layout
     title="Gestión Tributaria Bolivia | IVA, IT, IUE | Otium"
-    description="Declaraciones IVA, IT, IUE, planificación fiscal y defensa ante el SIN. Planilla y seguro social al día. Bolivia — Santa Cruz y La Paz."
+    description="Gestión tributaria con revisión, criterio técnico y soporte continuo para empresas en Bolivia. IVA, IT, IUE, RCV y más."
 >
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <!-- Decorative blobs -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl text-left">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                    Gestión Tributaria y Laboral<span class="text-primary"> — sin sorpresas ni multas</span>
+                    Gestión Tributaria
                 </h1>
-                <p class="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
-                    ¿Cuánto tiempo pierdes gestionando impuestos y cumpliendo obligaciones laborales?
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+                    Cumplimiento fiscal con revisión, criterio técnico y soporte continuo para empresas en Bolivia.
                 </p>
+                <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg" data-aos="fade-up" data-aos-delay="150">
+                    "Una gestión tributaria moderna no solo cumple: revisa, ordena, documenta y da visibilidad."
+                </blockquote>
                 <a href="{{ route('contact') }}"
                     class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    Solicitar Diagnóstico Gratuito
+                    Solicitar información
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Intro / Value Prop -->
+    <!-- Intro / Description -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -37,82 +39,92 @@
                     </div>
                 </div>
                 <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Gestión Tributaria y Laboral</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Cumplimiento fiscal sin sorpresas</h2>
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Gestión Tributaria</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Más que declarar: revisar, ordenar y documentar</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        Gestionamos todas tus obligaciones ante la autoridad tributaria y el Ministerio de Trabajo. Declaraciones en tiempo, planeación para reducir carga fiscal y acompañamiento en fiscalizaciones.
+                        En Otium gestionamos las obligaciones tributarias de tu empresa con orden, revisión y respaldo real. No se trata solo de presentar formularios: revisamos información clave antes de declarar, controlamos el RCV, identificamos operaciones bancarizables, documentamos observaciones y resolvemos consultas del día a día.
                     </p>
                     <p class="text-gray-600 text-lg leading-relaxed">
-                        En <strong class="text-secondary">OTIUM</strong> no solo cumplimos — te explicamos qué pagas y por qué, para que tomes decisiones con información clara y sin contingencias.
+                        Trabajamos con herramientas digitales, documentación en la nube y acompañamiento continuo para que tu empresa tenga una gestión fiscal más clara, menos improvisada y mejor sustentada. Podemos trabajar este servicio de forma independiente o integrado a tu outsourcing contable.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Grid -->
+    <!-- Para quién es -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">Por qué elegir nuestra Gestión Tributaria</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Para quién es este servicio?</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Empresas que operan en Bolivia — o que están evaluando hacerlo — y necesitan cumplir sus obligaciones fiscales con orden, criterio técnico y respaldo real.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cero multas por vencimiento</h3>
-                    <p class="text-gray-600">Presentamos todas tus declaraciones dentro del plazo. Nunca más sanciones por olvido.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas locales con gestión reactiva</h3>
+                    <p class="text-gray-600">Con gestión tributaria improvisada que necesitan más orden, control y respaldo documental.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Planeación fiscal estratégica</h3>
-                    <p class="text-gray-600">Estructuramos tus operaciones para minimizar la carga impositiva dentro del marco legal vigente.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Negocios en crecimiento</h3>
+                    <p class="text-gray-600">Que necesitan más control fiscal a medida que sus operaciones y obligaciones se vuelven más complejas.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Defensa ante fiscalizaciones</h3>
-                    <p class="text-gray-600">Te acompañamos en procesos de verificación y fiscalización con experiencia y respaldo técnico.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas de capital extranjero</h3>
+                    <p class="text-gray-600">Con operaciones en Bolivia que necesitan cumplimiento local con criterio técnico y trazabilidad.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gestión laboral completa</h3>
-                    <p class="text-gray-600">Contratos, aportes a AFP, Caja de Salud y cumplimiento del Ministerio de Trabajo.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Inversionistas formalizando empresa</h3>
+                    <p class="text-gray-600">Instalando o formalizando empresa en el país que necesitan cumplimiento desde el inicio.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Alertas y calendario fiscal</h3>
-                    <p class="text-gray-600">Te notificamos antes de cada vencimiento para que siempre estés un paso adelante.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gerentes que reportan al exterior</h3>
+                    <p class="text-gray-600">Que reportan a directorio o socios fuera de Bolivia y necesitan visibilidad y claridad en su gestión fiscal.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Asesoría proactiva</h3>
-                    <p class="text-gray-600">No esperamos a que haya un problema. Te avisamos de cambios normativos y oportunidades fiscales.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas con documentación en la nube</h3>
+                    <p class="text-gray-600">Con acceso remoto que buscan una gestión tributaria alineada a su forma de trabajar.</p>
                 </div>
+            </div>
+            <div class="bg-primary/10 border-l-4 border-primary rounded-xl p-6 max-w-4xl mx-auto" data-aos="fade-up">
+                <p class="text-gray-700 text-lg">
+                    <strong class="text-primary">El problema que comparten:</strong> Tienen operaciones reales en Bolivia pero su gestión tributaria no refleja eso — declaran tarde, sin revisión, sin respaldo suficiente y sin visibilidad para quien toma decisiones.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Deliverables -->
+    <!-- Qué incluye -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué incluye nuestro servicio?</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué incluye el servicio?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex gap-4" data-aos="fade-right">
                     <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Declaraciones mensuales: IVA, IT, RC-IVA</h4>
-                        <p class="text-gray-600">Presentamos todos tus tributos mensuales correctamente y dentro del plazo.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Revisión tributaria operativa antes de declarar</h4>
+                        <p class="text-gray-600">No solo presentamos — revisamos información clave antes de cada declaración.</p>
                     </div>
                 </div>
                 <div class="flex gap-4" data-aos="fade-left">
@@ -120,8 +132,8 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Declaración anual IUE</h4>
-                        <p class="text-gray-600">Preparación y presentación del Impuesto sobre las Utilidades de las Empresas.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Revisión del RCV (Libro de Compras y Ventas)</h4>
+                        <p class="text-gray-600">Control del RCV para identificar inconsistencias y asegurar la trazabilidad documental.</p>
                     </div>
                 </div>
                 <div class="flex gap-4" data-aos="fade-right">
@@ -129,8 +141,8 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Planificación fiscal</h4>
-                        <p class="text-gray-600">Estrategia tributaria anual para reducir la carga impositiva dentro del marco legal vigente.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Operaciones bancarizables y sustento documental</h4>
+                        <p class="text-gray-600">Identificación de operaciones bancarizables y verificación del respaldo documental correspondiente.</p>
                     </div>
                 </div>
                 <div class="flex gap-4" data-aos="fade-left">
@@ -138,8 +150,14 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Defensa ante fiscalizaciones del SIN</h4>
-                        <p class="text-gray-600">Acompañamiento y representación técnica en procesos de verificación y fiscalización.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Formularios según rubro</h4>
+                        <p class="text-gray-600">
+                            <span class="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-2 py-0.5 rounded mr-1">F-200 IVA</span>
+                            <span class="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-2 py-0.5 rounded mr-1">F-210 IVA Exportadores</span>
+                            <span class="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-2 py-0.5 rounded mr-1">F-400 IT</span>
+                            <span class="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-2 py-0.5 rounded">F-500 IUE</span>
+                            <span class="block mt-1 text-sm">y otras según rubro.</span>
+                        </p>
                     </div>
                 </div>
                 <div class="flex gap-4" data-aos="fade-right">
@@ -147,8 +165,8 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Gestión de planilla y seguro social</h4>
-                        <p class="text-gray-600">Cálculo y pago de AFP, Caja de Salud y aportes patronales al día.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Seguimiento de vencimientos y obligaciones formales</h4>
+                        <p class="text-gray-600">Control continuo del calendario fiscal y seguimiento de obligaciones formales.</p>
                     </div>
                 </div>
                 <div class="flex gap-4" data-aos="fade-left">
@@ -156,45 +174,122 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Contratos laborales y bajas</h4>
-                        <p class="text-gray-600">Redacción, registro y gestión de contratos de trabajo y liquidaciones de beneficios sociales.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Resolución de consultas tributarias operativas</h4>
+                        <p class="text-gray-600">Respuestas a consultas puntuales del día a día con criterio técnico.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-aos="fade-right">
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Reportes periódicos</h4>
+                        <p class="text-gray-600">Mensual, trimestral, semestral o anual según el alcance acordado con el cliente.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-aos="fade-left">
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-1">Documentación en la nube</h4>
+                        <p class="text-gray-600">Trabajo documentado y respaldado en la nube (SharePoint cuando corresponde), con trazabilidad real.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- Qué recibe el cliente -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué recibe tu empresa al final?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Declaraciones tributarias preparadas y/o revisadas</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Informe de observaciones: RCV, bancarización, sustento</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Reporte tributario periódico</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Alertas y seguimiento de vencimientos</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Respuestas a consultas tributarias operativas</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Registro documentado del trabajo en la nube</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Seguimiento de hallazgos y pendientes de regularización</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por qué Otium vs. contador tradicional -->
     <section class="py-20 bg-secondary text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Nuestro Proceso de Trabajo</h2>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center relative">
-                <div class="hidden md:block absolute top-8 left-1/10 right-1/10 h-1 bg-white/20 z-0"></div>
-                <div class="relative z-10 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg border-4 border-secondary">1</div>
-                    <h3 class="font-bold text-xl mb-2">Diagnóstico</h3>
-                    <p class="text-sm text-white/80">Revisión de situación fiscal y obligaciones actuales.</p>
-                </div>
-                <div class="relative z-10 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg border-4 border-secondary">2</div>
-                    <h3 class="font-bold text-xl mb-2">Planificación</h3>
-                    <p class="text-sm text-white/80">Definición de estrategia fiscal y calendario anual.</p>
-                </div>
-                <div class="relative z-10 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg border-4 border-secondary">3</div>
-                    <h3 class="font-bold text-xl mb-2">Gestión Mensual</h3>
-                    <p class="text-sm text-white/80">Preparación y presentación de declaraciones.</p>
-                </div>
-                <div class="relative z-10 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg border-4 border-secondary">4</div>
-                    <h3 class="font-bold text-xl mb-2">Revisión</h3>
-                    <p class="text-sm text-white/80">Informe mensual de cumplimiento y alertas.</p>
-                </div>
-                <div class="relative z-10 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg border-4 border-secondary">5</div>
-                    <h3 class="font-bold text-xl mb-2">Optimización</h3>
-                    <p class="text-sm text-white/80">Ajustes de estrategia según cambios normativos.</p>
-                </div>
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Por qué Otium vs. el contador tradicional</h2>
+            <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="text-left p-4 bg-white/10 rounded-tl-xl font-bold text-white/70 text-sm uppercase tracking-wider w-1/2">Contador tradicional</th>
+                            <th class="text-left p-4 bg-primary rounded-tr-xl font-bold text-white text-sm uppercase tracking-wider w-1/2">Otium</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10">
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 text-white/70 border-r border-white/10">Presenta el formulario y listo</td>
+                            <td class="p-4 text-white font-medium">Revisa información antes de declarar</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 text-white/70 border-r border-white/10">RCV sin revisión previa</td>
+                            <td class="p-4 text-white font-medium">Control de RCV, bancarización y sustento documental</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 text-white/70 border-r border-white/10">Gestión de un solo responsable</td>
+                            <td class="p-4 text-white font-medium">Equipo con criterio contable, tributario y tecnológico</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 text-white/70 border-r border-white/10">Archivos en carpetas o correos</td>
+                            <td class="p-4 text-white font-medium">Documentación en la nube con trazabilidad real</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 text-white/70 border-r border-white/10">Reactivo ante urgencias</td>
+                            <td class="p-4 text-white font-medium">Seguimiento continuo con alertas y reportes</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 rounded-bl-xl text-white/70 border-r border-white/10">Sin visibilidad para gerencia</td>
+                            <td class="p-4 rounded-br-xl text-white font-medium">Reportes claros para administración y gerencia</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -210,34 +305,34 @@
                         <span x-text="active === 1 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
                     </button>
                     <div x-show="active === 1" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Gestionamos todos los tributos aplicables: IVA, IT, IUE, RC-IVA, retenciones, y también aportes laborales a AFP y Caja de Salud.
+                        Gestionamos todos los tributos aplicables según el rubro: IVA (F-200, F-210), IT (F-400), IUE (F-500) y otros formularios según corresponda. También controlamos el RCV y el sustento documental asociado.
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Pueden ayudarme si ya tengo una deuda tributaria?</span>
+                        <span class="font-bold text-gray-900">¿Se puede contratar solo gestión tributaria sin outsourcing contable?</span>
                         <span x-text="active === 2 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
                     </button>
                     <div x-show="active === 2" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. Analizamos la situación, te asesoramos sobre las opciones disponibles y gestionamos el proceso de regularización o impugnación según corresponda.
+                        Sí. El servicio de gestión tributaria puede contratarse de forma independiente o integrado a un servicio de outsourcing contable. Adaptamos el alcance a la realidad y necesidades de cada empresa.
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cómo me avisan sobre los vencimientos?</span>
+                        <span class="font-bold text-gray-900">¿Pueden ayudarme si ya tengo una deuda tributaria?</span>
                         <span x-text="active === 3 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
                     </button>
                     <div x-show="active === 3" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Enviamos recordatorios por correo y WhatsApp con anticipación suficiente. Además, compartimos un calendario fiscal mensual personalizado para tu empresa.
+                        Sí. Analizamos la situación, te asesoramos sobre las opciones disponibles y gestionamos el proceso de regularización o impugnación según corresponda.
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Atienden a empresas de todos los sectores?</span>
+                        <span class="font-bold text-gray-900">¿Cómo me avisan sobre los vencimientos?</span>
                         <span x-text="active === 4 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
                     </button>
                     <div x-show="active === 4" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. Tenemos experiencia en comercio, servicios, manufactura, construcción y otros sectores. Adaptamos la gestión a las particularidades de cada industria.
+                        Enviamos alertas con anticipación suficiente y realizamos seguimiento continuo del calendario fiscal. Además, el cliente recibe reportes periódicos con el estado de sus obligaciones.
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
@@ -258,9 +353,9 @@
         <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">¿Listo para olvidarte del SIN?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">¿Tu gestión tributaria refleja tu empresa?</h2>
             <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctenos hoy para una consulta inicial gratuita con uno de nuestros expertos tributarios.
+                Contáctanos para una reunión inicial y revisamos juntos tu situación fiscal actual.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">Contáctenos Ahora</a>

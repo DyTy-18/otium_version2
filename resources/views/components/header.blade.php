@@ -21,10 +21,12 @@
         </nav>
 
         <!-- Desktop CTA -->
+        @unless(request()->routeIs('contact'))
         <a href="{{ route('contact') }}"
             class="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-lg font-semibold shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-0.5">
             Diagnóstico Gratuito
         </a>
+        @endunless
 
         <!-- Mobile Menu Button -->
         <button @click="mobileMenuOpen = !mobileMenuOpen"
@@ -57,9 +59,11 @@
         <a href="{{ route('blog.index') }}" @click="mobileMenuOpen = false"
             class="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">Blog</a>
 
+        @unless(request()->routeIs('contact'))
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false"
             class="bg-primary text-white px-8 py-3 rounded-xl font-bold text-xl shadow-lg hover:bg-white hover:text-primary transition-all">
             Diagnóstico Gratuito
         </a>
+        @endunless
     </div>
 </header>

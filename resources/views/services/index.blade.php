@@ -138,7 +138,7 @@
 
                 <!-- 7: Consultoría Empresarial -->
                 <a href="{{ route('services.consultoria') }}"
-                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl md:col-span-2 lg:col-span-1"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
                     data-aos="fade-up" data-aos-delay="600">
                     <div class="h-48 bg-green-50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-green-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
@@ -150,6 +150,42 @@
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Consultoría Empresarial</h3>
                         <p class="text-gray-600 mb-6">Acompañamiento estratégico y financiero.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                    </div>
+                </a>
+
+                <!-- 8: Revalúo Técnico y Gestión Digital de Activos Fijos -->
+                <a href="{{ route('services.revaluo-activos') }}"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="700">
+                    <div class="h-48 bg-amber-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-amber-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Revalúo y Gestión de Activos Fijos</h3>
+                        <p class="text-gray-600 mb-6">Inventario físico, etiquetado QR y base patrimonial digital.</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                    </div>
+                </a>
+
+                <!-- 9: Constitución y Formalización de Empresas -->
+                <a href="{{ route('services.constitucion-empresas') }}"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="800">
+                    <div class="h-48 bg-indigo-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-indigo-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Constitución de Empresas en Bolivia</h3>
+                        <p class="text-gray-600 mb-6">SEPREC, NIT, facturación electrónica y documentación desde el día uno.</p>
                         <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
                     </div>
                 </a>
