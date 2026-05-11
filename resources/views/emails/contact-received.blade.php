@@ -1,21 +1,19 @@
 <x-mail::message>
-# Nuevo mensaje de contacto
+# Nuevo diagnóstico gratuito
 
-Has recibido un nuevo mensaje desde el formulario de **OTIUM Consultores**.
+Has recibido una solicitud desde el formulario de **OTIUM Consultores**.
 
 | | |
 |---|---|
 | **Nombre** | {{ $contact->name }} |
+| **Empresa** | {{ $contact->empresa }} |
+| **Cargo** | {{ $contact->cargo }} |
+| **Ciudad** | {{ $contact->ciudad }} |
+| **WhatsApp** | {{ $contact->whatsapp }} |
 | **Correo** | {{ $contact->email }} |
-| **Teléfono** | {{ $contact->phone ?? '—' }} |
-| **Asunto** | {{ $contact->subject }} |
+| **Nº Empleados** | {{ $contact->empleados }} |
+| **Preocupación** | {{ $contact->preocupacion }} |
 | **Recibido** | {{ $contact->created_at->format('d/m/Y H:i') }} |
-
----
-
-**Mensaje:**
-
-{{ $contact->message }}
 
 ---
 
@@ -23,10 +21,10 @@ Has recibido un nuevo mensaje desde el formulario de **OTIUM Consultores**.
 Ver en el panel admin
 </x-mail::button>
 
-@if($contact->phone)
+@if($contact->whatsapp)
 @php
-    $waPhone = preg_replace('/\D/', '', $contact->phone);
-    $waText  = urlencode("Hola {$contact->name}, soy del equipo de OTIUM Consultores. Me comunico con usted en respuesta a su mensaje sobre: {$contact->subject}");
+    $waPhone = preg_replace('/\D/', '', $contact->whatsapp);
+    $waText  = urlencode("Hola {$contact->name}, soy del equipo de OTIUM Consultores. Me comunico con usted en respuesta a su solicitud de diagnóstico.");
 @endphp
 
 <x-mail::button :url="'https://wa.me/' . $waPhone . '?text=' . $waText">

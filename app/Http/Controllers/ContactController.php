@@ -13,11 +13,14 @@ class ContactController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'name'    => ['required', 'string', 'max:100'],
-            'email'   => ['required', 'email', 'max:255'],
-            'phone'   => ['nullable', 'string', 'max:30'],
-            'subject' => ['required', 'string', 'max:200'],
-            'message' => ['required', 'string', 'max:5000'],
+            'name'         => ['required', 'string', 'max:100'],
+            'empresa'      => ['required', 'string', 'max:150'],
+            'cargo'        => ['required', 'string', 'max:100'],
+            'ciudad'       => ['required', 'string', 'max:100'],
+            'whatsapp'     => ['required', 'string', 'max:30'],
+            'email'        => ['required', 'email', 'max:255'],
+            'empleados'    => ['required', 'string', 'max:20'],
+            'preocupacion' => ['required', 'string', 'max:100'],
         ]);
 
         $contact = Contact::create($validated);

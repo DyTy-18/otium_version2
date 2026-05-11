@@ -11,17 +11,20 @@
         </div>
 
         <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            {{-- Cabecera del mensaje --}}
+            {{-- Cabecera --}}
             <div class="px-8 py-6 border-b border-gray-100">
                 <div class="flex items-start justify-between gap-4">
                     <div>
-                        <h2 class="text-xl font-semibold text-gray-900 mb-1">{{ $contact->subject }}</h2>
+                        <h2 class="text-xl font-semibold text-gray-900 mb-1">
+                            {{ $contact->empresa ?? $contact->subject ?? 'Sin asunto' }}
+                        </h2>
                         <div class="flex items-center gap-4 text-sm text-gray-500 flex-wrap">
                             <span class="flex items-center gap-1.5">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                                 </svg>
                                 <strong class="text-gray-700">{{ $contact->name }}</strong>
+                                @if($contact->cargo) <span class="text-gray-400">· {{ $contact->cargo }}</span> @endif
                             </span>
                             <span class="flex items-center gap-1.5">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,12 +32,12 @@
                                 </svg>
                                 <a href="mailto:{{ $contact->email }}" class="text-primary hover:underline">{{ $contact->email }}</a>
                             </span>
-                            @if($contact->phone)
+                            @if($contact->whatsapp ?? $contact->phone)
                             <span class="flex items-center gap-1.5">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                                 </svg>
-                                {{ $contact->phone }}
+                                {{ $contact->whatsapp ?? $contact->phone }}
                             </span>
                             @endif
                             <span class="flex items-center gap-1.5">
@@ -54,11 +57,21 @@
                 </div>
             </div>
 
-            {{-- Cuerpo del mensaje --}}
-            <div class="px-8 py-6">
-                <div class="bg-gray-50 rounded-lg p-6">
-                    <p class="text-gray-700 whitespace-pre-wrap leading-relaxed">{{ $contact->message }}</p>
-                </div>
+            {{-- Datos del diagnóstico --}}
+            <div class="px-8 py-6 border-b border-gray-100">
+                @if($contact->empresa)
+                    <dl class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                        <div><dt class="text-gray-400 text-xs uppercase tracking-wider mb-0.5">Empresa</dt><dd class="font-medium text-gray-800">{{ $contact->empresa }}</dd></div>
+                        <div><dt class="text-gray-400 text-xs uppercase tracking-wider mb-0.5">Cargo</dt><dd class="font-medium text-gray-800">{{ $contact->cargo ?? '—' }}</dd></div>
+                        <div><dt class="text-gray-400 text-xs uppercase tracking-wider mb-0.5">Ciudad</dt><dd class="font-medium text-gray-800">{{ $contact->ciudad ?? '—' }}</dd></div>
+                        <div><dt class="text-gray-400 text-xs uppercase tracking-wider mb-0.5">Nº empleados</dt><dd class="font-medium text-gray-800">{{ $contact->empleados ?? '—' }}</dd></div>
+                        <div><dt class="text-gray-400 text-xs uppercase tracking-wider mb-0.5">Preocupación</dt><dd class="font-medium text-gray-800">{{ $contact->preocupacion ?? '—' }}</dd></div>
+                    </dl>
+                @elseif($contact->message)
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <p class="text-gray-700 whitespace-pre-wrap leading-relaxed">{{ $contact->message }}</p>
+                    </div>
+                @endif
             </div>
 
             {{-- Acciones --}}
@@ -80,10 +93,10 @@
                         Responder por email
                     </a>
 
-                    @if($contact->phone)
+                    @if($contact->whatsapp ?? $contact->phone)
                     @php
-                        $waPhone = preg_replace('/\D/', '', $contact->phone);
-                        $waText  = urlencode("Hola {$contact->name}, soy del equipo de OTIUM Consultores. Me comunico con usted en respuesta a su mensaje sobre: {$contact->subject}");
+                        $waPhone = preg_replace('/\D/', '', $contact->whatsapp ?? $contact->phone);
+                        $waText  = urlencode("Hola {$contact->name}, soy del equipo de OTIUM Consultores. Me comunico con usted en respuesta a su solicitud.");
                     @endphp
                     <a href="https://wa.me/{{ $waPhone }}?text={{ $waText }}"
                        target="_blank" rel="noopener"

@@ -330,197 +330,126 @@
         </div>
     </section>
 
-    <!-- 5. INTERACTIVE SERVICES (Gradient Bg) -->
+    <!-- 5. SERVICES CAROUSEL (3 per page) -->
     <section id="services" class="py-24 text-white overflow-hidden relative"
         style="background: linear-gradient(135deg, #C48273 0%, #a05d4e 100%);"
         x-data="{
-            activeService: 'outsourcing',
-            services: ['outsourcing', 'digital', 'auditoria', 'legal'],
+            page: 0,
+            pages: {{ ceil(8 / 3) }},
+            timer: null,
             init() {
-                setInterval(() => {
-                    const idx = this.services.indexOf(this.activeService);
-                    this.activeService = this.services[(idx + 1) % this.services.length];
-                }, 5500);
+                this.timer = setInterval(() => {
+                    this.page = (this.page + 1) % this.pages;
+                }, 6000);
+            },
+            go(p) {
+                this.page = p;
+                clearInterval(this.timer);
+                this.timer = setInterval(() => { this.page = (this.page + 1) % this.pages; }, 6000);
             }
         }">
-        <!-- Light glow top-left -->
-        <div class="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20"
-            style="background: #FFE5DA;"></div>
-        <!-- Primary glow bottom-right -->
-        <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none opacity-20"
-            style="background: #B3271A;"></div>
+
+        <!-- Glows -->
+        <div class="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20" style="background:#FFE5DA;"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none opacity-20" style="background:#B3271A;"></div>
+
         <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-down">
-                <span class="text-sm font-semibold uppercase tracking-wider text-white/70">Nuestra Oferta</span>
+
+            <!-- Header -->
+            <div class="text-center mb-20" data-aos="fade-down">
+                <span class="text-sm font-semibold uppercase tracking-wider text-white/60">Nuestra Oferta</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Nuestros Servicios</h2>
-                <p class="text-lg text-white/80 mt-3 max-w-2xl mx-auto mb-6">Soluciones integrales diseñadas para cada etapa de tu negocio.</p>
-
+                <p class="text-lg text-white/75 mt-3 max-w-2xl mx-auto" style="
+    margin-bottom: 35px;">Soluciones integrales diseñadas para cada etapa de tu negocio.</p>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-12">
-                <!-- Main Content Display (Left/Top) -->
-                <div class="w-full lg:w-2/3" data-aos="fade-right">
-                    <!-- Added zoom-in animation -->
-                    <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black/20 backdrop-blur-sm"
-                        data-aos="zoom-in">
+            <!-- Carousel track -->
+            <div class="relative overflow-hidden">
+                <div class="flex transition-transform duration-700 ease-in-out"
+                     :style="'transform: translateX(-' + (page * 100) + '%)'">
 
-                        <!-- View 1: Outsourcing/Contable -->
-                        <div x-show="activeService === 'outsourcing'"
-                            x-transition:enter="transition ease-out duration-500"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100" class="absolute inset-0">
-                            <img src="/images/otium/carousel/outsourcung_contable.png" alt="Outsourcing Contable"
-                                class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent">
-                            </div>
-                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
-                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Outsourcing Contable y Financiero</h3>
-                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Tu departamento contable externo. Nos encargamos de
-                                    tus libros, obligaciones fiscales y reportes financieros con precisión absoluta.</p>
-                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
-                                    <li>✔ Cierres Mensuales</li>
-                                    <li>✔ Cumplimiento Legal</li>
-                                </ul>
-                            </div>
-                        </div>
+                    @php
+                    $services = [
+                        ['route' => 'services.outsourcing',         'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => 'Outsourcing Contable',      'desc' => 'Cierres mensuales, libros y obligaciones fiscales a tiempo.'],
+                        ['route' => 'services.gestion-tributaria',  'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => 'Gestión Tributaria',        'desc' => 'IVA, IT, IUE y declaraciones ante el SIN sin sorpresas.'],
+                        ['route' => 'services.audit',               'img' => '/images/otium/carousel/auditoria.png',              'title' => 'Auditoría Financiera',      'desc' => 'Validación independiente, riesgos y control interno.'],
+                        ['route' => 'services.outsourcing-laboral', 'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => 'Outsourcing Laboral',       'desc' => 'Planillas, AFP y relaciones con el Ministerio de Trabajo.'],
+                        ['route' => 'services.reportes-power-bi',   'img' => '/images/otium/carousel/transformacion_digital.png', 'title' => 'Reportes Power BI',         'desc' => 'Dashboards gerenciales con datos financieros en tiempo real.'],
+                        ['route' => 'services.sharepoint-documental','img'=> '/images/otium/carousel/transformacion_digital.png', 'title' => 'SharePoint Documental',     'desc' => 'Documentos organizados y accesibles con Microsoft 365.'],
+                        ['route' => 'services.consultoria',         'img' => '/images/otium/carousel/auditoria.png',              'title' => 'Consultoría Empresarial',   'desc' => 'Diagnóstico financiero y acompañamiento estratégico.'],
+                        ['route' => 'services.constitucion-empresas','img'=> '/images/otium/carousel/constitucion_de_empresas.png','title'=> 'Constitución de Empresas',  'desc' => 'Registro legal y estructura óptima para tu empresa.'],
+                    ];
+                    $pages = array_chunk($services, 3);
+                    @endphp
 
-                        <!-- View 2: Transformación Digital -->
-                        <div x-show="activeService === 'digital'"
-                            x-transition:enter="transition ease-out duration-500"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100" style="display: none;"
-                            class="absolute inset-0">
-                            <img src="/images/otium/carousel/transformacion_digital.png" alt="Transformación Digital"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent">
-                            </div>
-                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
-                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Transformación Digital e Inteligencia de Negocios</h3>
-                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Digitaliza y automatiza tus procesos. Implementamos
-                                    Cloud Computing y dashboards en Power BI para decisiones estratégicas.</p>
-                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
-                                    <li>✔ Power BI & Analytics</li>
-                                    <li>✔ Automatización de Procesos</li>
-                                </ul>
-                            </div>
-                        </div>
+                    @foreach ($pages as $pageServices)
+                    <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                        <!-- View 3: Auditoría -->
-                        <div x-show="activeService === 'auditoria'"
-                            x-transition:enter="transition ease-out duration-500"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100" style="display: none;"
-                            class="absolute inset-0">
-                            <img src="/images/otium/carousel/auditoria.png" alt="Auditoría"
-                                class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
-                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Auditoría y Consultoría</h3>
-                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Validación independiente y confianza para tus
-                                    decisiones. Evaluamos riesgos y optimizamos controles.</p>
-                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
-                                    <li>✔ Evaluación de Riesgos</li>
-                                    <li>✔ Control Interno</li>
-                                </ul>
+                        @foreach ($pageServices as $svc)
+                        <a href="{{ route($svc['route']) }}"
+                            class="group rounded-2xl overflow-hidden shadow-xl flex flex-col bg-white/10 hover:bg-white/18 border border-white/10 hover:border-white/25 transition-all duration-300 hover:-translate-y-1">
+                            <!-- Foto -->
+                            <div class="relative h-52 overflow-hidden shrink-0">
+                                <img src="{{ $svc['img'] }}" alt="{{ $svc['title'] }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             </div>
-                        </div>
+                            <!-- Texto -->
+                            <div class="flex flex-col flex-1 p-5 gap-3">
+                                <h3 class="font-bold text-white text-lg leading-snug">{{ $svc['title'] }}</h3>
+                                <p class="text-white/70 text-sm leading-relaxed flex-1">{{ $svc['desc'] }}</p>
+                                <span class="inline-flex items-center gap-1 text-white/60 text-sm font-semibold group-hover:text-white group-hover:gap-2 transition-all duration-200">
+                                    Ver servicio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                        @endforeach
 
-                        <!-- View 4: Constitución de Empresas -->
-                        <div x-show="activeService === 'legal'" x-transition:enter="transition ease-out duration-500"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100" style="display: none;"
-                            class="absolute inset-0">
-                            <img src="/images/otium/carousel/constitucion_de_empresas.png" alt="Constitución de Empresas"
-                                class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8">
-                                <h3 class="text-base md:text-3xl font-bold text-white mb-1 md:mb-4">Constitución de Empresas</h3>
-                                <p class="text-white text-xs md:text-lg mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Acompañamos desde el inicio legal de tu empresa
-                                    hasta su estructura óptima. Rápido, seguro y sin burocracia.</p>
-                                <ul class="hidden md:grid grid-cols-2 gap-2 text-white font-bold">
-                                    <li>✔ Registro Comercial</li>
-                                    <li>✔ Estructura Legal</li>
-                                </ul>
+                        {{-- Tarjeta CTA en la última página si quedan menos de 3 servicios --}}
+                        @if (count($pageServices) < 3 && $loop->last)
+                        <a href="{{ route('services.index') }}"
+                            class="group rounded-2xl border-2 border-dashed border-white/25 hover:border-white/50 bg-white/5 hover:bg-white/10 flex flex-col items-center justify-center text-center p-8 transition-all duration-300 hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-full bg-white/15 group-hover:bg-white/25 flex items-center justify-center mb-4 transition-colors">
+                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                                </svg>
                             </div>
-                        </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Ver todos</h3>
+                            <p class="text-white/60 text-sm mb-5">Explora el catálogo completo de servicios.</p>
+                            <span class="px-5 py-2 border border-white/40 rounded-full text-white text-sm font-medium group-hover:bg-white group-hover:text-secondary transition-all duration-300">
+                                Ver catálogo →
+                            </span>
+                        </a>
+                        @endif
+
                     </div>
-                </div>
+                    @endforeach
 
-                <!-- Navigation (Right/Bottom) -->
-                <div class="w-full lg:w-1/3 flex flex-col justify-center space-y-4" data-aos="fade-left">
-                    <button @click="activeService = 'outsourcing'"
-                        :class="{ 'bg-white/20 border-white shadow-lg': activeService === 'outsourcing', 'bg-white/5 border-white/10 hover:bg-white/10': activeService !== 'outsourcing' }"
-                        class="p-6 rounded-xl border transition-all text-left group" data-aos="fade-up"
-                        data-aos-delay="0">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 :class="{ 'text-white': activeService === 'outsourcing', 'text-white/80': activeService !== 'outsourcing' }"
-                                class="font-bold text-lg transition-colors">Outsourcing Contable</h4>
-                            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="text-white/70 text-sm">Gestión integral de libros y obligaciones.</p>
-                    </button>
-
-                    <button @click="activeService = 'digital'"
-                        :class="{ 'bg-white/20 border-white shadow-lg': activeService === 'digital', 'bg-white/5 border-white/10 hover:bg-white/10': activeService !== 'digital' }"
-                        class="p-6 rounded-xl border transition-all text-left group" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 :class="{ 'text-white': activeService === 'digital', 'text-white/80': activeService !== 'digital' }"
-                                class="font-bold text-lg transition-colors">Transformación Digital</h4>
-                            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="text-white/70 text-sm">Power BI, Cloud y Automatización.</p>
-                    </button>
-
-                    <button @click="activeService = 'auditoria'"
-                        :class="{ 'bg-white/20 border-white shadow-lg': activeService === 'auditoria', 'bg-white/5 border-white/10 hover:bg-white/10': activeService !== 'auditoria' }"
-                        class="p-6 rounded-xl border transition-all text-left group" data-aos="fade-up"
-                        data-aos-delay="200">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 :class="{ 'text-white': activeService === 'auditoria', 'text-white/80': activeService !== 'auditoria' }"
-                                class="font-bold text-lg transition-colors">Auditoría</h4>
-                            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="text-white/70 text-sm">Validación independiente y fiscal.</p>
-                    </button>
-
-                    <button @click="activeService = 'legal'"
-                        :class="{ 'bg-white/20 border-white shadow-lg': activeService === 'legal', 'bg-white/5 border-white/10 hover:bg-white/10': activeService !== 'legal' }"
-                        class="p-6 rounded-xl border transition-all text-left group" data-aos="fade-up"
-                        data-aos-delay="300">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 :class="{ 'text-white': activeService === 'legal', 'text-white/80': activeService !== 'legal' }"
-                                class="font-bold text-lg transition-colors">Constitución de Empresas</h4>
-                            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="text-white/70 text-sm">Registro legal y estructura empresarial.</p>
-                    </button>
-
-                    <a href="{{ route('services.index') }}"
-                        class="block text-center text-white/80 hover:text-white font-semibold hover:underline mt-2"
-                        data-aos="fade-up" data-aos-delay="400">Ver Todos los Servicios →</a>
                 </div>
             </div>
+
+            <!-- Controls -->
+            <div class="flex items-center justify-center mt-10 gap-6">
+                <!-- Prev -->
+                <button @click="go((page - 1 + pages) % pages)"
+                    class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/70 hover:text-white hover:border-white hover:bg-white/10 transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <!-- Dots -->
+                <div class="flex gap-3">
+                    <template x-for="i in pages" :key="i">
+                        <button @click="go(i - 1)"
+                            :class="page === i - 1 ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/60'"
+                            class="w-2.5 h-2.5 rounded-full transition-all duration-300"></button>
+                    </template>
+                </div>
+                <!-- Next -->
+                <button @click="go((page + 1) % pages)"
+                    class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/70 hover:text-white hover:border-white hover:bg-white/10 transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
         </div>
     </section>
 

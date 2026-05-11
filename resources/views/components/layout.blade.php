@@ -4,7 +4,7 @@
     'ogImage'     => '/images/hero-corporate.png',
 ])
 @php
-    $pageTitle = ($title !== 'Otium | Outsourcing Contable Digital Bolivia · Santa Cruz · La Paz') ? $title . ' | Otium' : $title;
+    $pageTitle = str_ends_with(trim($title), '| Otium') ? $title : $title . ' | Otium';
     $canonical = url()->current();
 @endphp
 <!DOCTYPE html>
@@ -41,13 +41,19 @@
         "url": "{{ config('app.url') }}",
         "logo": "{{ config('app.url') }}/images/logo-otium.webp",
         "description": "{{ $description }}",
-        "telephone": "+591722505583",
-        "email": "contacto@otium.bo",
+        "telephone": ["+59172505583", "+59122792824"],
+        "email": "info@otium.com.bo",
         "address": [
             {
                 "@@type": "PostalAddress",
-                "streetAddress": "Av. Ballivián Esq. C. 21",
+                "streetAddress": "San Miguel, Calle Ferrecio Nro. 1154 A, Bloque C 14, Edif. Munditoys Piso 4",
                 "addressLocality": "La Paz",
+                "addressCountry": "BO"
+            },
+            {
+                "@@type": "PostalAddress",
+                "streetAddress": "Equipetrol, Calle Los Lirios Nro. 100, Av. San Martín",
+                "addressLocality": "Santa Cruz",
                 "addressCountry": "BO"
             }
         ],

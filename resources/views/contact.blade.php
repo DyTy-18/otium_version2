@@ -42,59 +42,92 @@
 
                         <form method="POST" action="{{ route('contact.store') }}" class="space-y-6">
                             @csrf
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                            {{-- Row 1: Nombre + Empresa --}}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="name" class="block text-gray-700 font-medium mb-2">Nombre Completo</label>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
                                     <input id="name" type="text" name="name" value="{{ old('name') }}"
                                         @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('name'), 'border-gray-300' => !$errors->has('name')])
                                         placeholder="Juan Pérez">
-                                    @error('name')
-                                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                                    @enderror
+                                    @error('name')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
+                                    <label for="empresa" class="block text-gray-700 font-medium mb-2">Empresa</label>
+                                    <input id="empresa" type="text" name="empresa" value="{{ old('empresa') }}"
+                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('empresa'), 'border-gray-300' => !$errors->has('empresa')])
+                                        placeholder="Mi Empresa S.R.L.">
+                                    @error('empresa')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                                </div>
+                            </div>
+
+                            {{-- Row 2: Cargo + Ciudad --}}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="cargo" class="block text-gray-700 font-medium mb-2">Cargo</label>
+                                    <input id="cargo" type="text" name="cargo" value="{{ old('cargo') }}"
+                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('cargo'), 'border-gray-300' => !$errors->has('cargo')])
+                                        placeholder="Gerente General">
+                                    @error('cargo')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                                </div>
+                                <div>
+                                    <label for="ciudad" class="block text-gray-700 font-medium mb-2">Ciudad</label>
+                                    <input id="ciudad" type="text" name="ciudad" value="{{ old('ciudad') }}"
+                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('ciudad'), 'border-gray-300' => !$errors->has('ciudad')])
+                                        placeholder="La Paz">
+                                    @error('ciudad')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                                </div>
+                            </div>
+
+                            {{-- Row 3: WhatsApp + Email --}}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="whatsapp" class="block text-gray-700 font-medium mb-2">WhatsApp</label>
+                                    <input id="whatsapp" type="tel" name="whatsapp" value="{{ old('whatsapp') }}"
+                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('whatsapp'), 'border-gray-300' => !$errors->has('whatsapp')])
+                                        placeholder="+591 7XXXXXXX">
+                                    @error('whatsapp')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
                                     <input id="email" type="email" name="email" value="{{ old('email') }}"
                                         @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('email'), 'border-gray-300' => !$errors->has('email')])
                                         placeholder="juan@empresa.com">
-                                    @error('email')
-                                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                                    @enderror
+                                    @error('email')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                                </div>
+                            </div>
+
+                            {{-- Row 4: Empleados + Preocupación --}}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="empleados" class="block text-gray-700 font-medium mb-2">Nº de empleados</label>
+                                    <select id="empleados" name="empleados"
+                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white', 'border-red-400 bg-red-50' => $errors->has('empleados'), 'border-gray-300' => !$errors->has('empleados')])>
+                                        <option value="" disabled {{ old('empleados') ? '' : 'selected' }}>Seleccionar…</option>
+                                        <option value="1-10"   {{ old('empleados') === '1-10'   ? 'selected' : '' }}>1 – 10</option>
+                                        <option value="11-30"  {{ old('empleados') === '11-30'  ? 'selected' : '' }}>11 – 30</option>
+                                        <option value="31-100" {{ old('empleados') === '31-100' ? 'selected' : '' }}>31 – 100</option>
+                                        <option value="+100"   {{ old('empleados') === '+100'   ? 'selected' : '' }}>+100</option>
+                                    </select>
+                                    @error('empleados')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                                 </div>
                                 <div>
-                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono <span class="text-gray-400 font-normal text-sm">(opcional)</span></label>
-                                    <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
-                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('phone'), 'border-gray-300' => !$errors->has('phone')])
-                                        placeholder="+591 7XXXXXXX">
-                                    @error('phone')
-                                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                                    @enderror
+                                    <label for="preocupacion" class="block text-gray-700 font-medium mb-2">Principal preocupación</label>
+                                    <select id="preocupacion" name="preocupacion"
+                                        @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white', 'border-red-400 bg-red-50' => $errors->has('preocupacion'), 'border-gray-300' => !$errors->has('preocupacion')])>
+                                        <option value="" disabled {{ old('preocupacion') ? '' : 'selected' }}>Seleccionar…</option>
+                                        <option value="Impuestos"    {{ old('preocupacion') === 'Impuestos'    ? 'selected' : '' }}>Impuestos</option>
+                                        <option value="Contabilidad" {{ old('preocupacion') === 'Contabilidad' ? 'selected' : '' }}>Contabilidad</option>
+                                        <option value="Reportes"     {{ old('preocupacion') === 'Reportes'     ? 'selected' : '' }}>Reportes</option>
+                                        <option value="Otro"         {{ old('preocupacion') === 'Otro'         ? 'selected' : '' }}>Otro</option>
+                                    </select>
+                                    @error('preocupacion')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                                 </div>
-                            </div>
-
-                            <div>
-                                <label for="subject" class="block text-gray-700 font-medium mb-2">Asunto</label>
-                                <input id="subject" type="text" name="subject" value="{{ old('subject') }}"
-                                    @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('subject'), 'border-gray-300' => !$errors->has('subject')])
-                                    placeholder="Consulta sobre servicios...">
-                                @error('subject')
-                                    <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
-                                <textarea id="message" name="message" rows="5"
-                                    @class(['w-full px-4 py-3 rounded-lg border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all', 'border-red-400 bg-red-50' => $errors->has('message'), 'border-gray-300' => !$errors->has('message')])
-                                    placeholder="¿En qué podemos ayudarte?">{{ old('message') }}</textarea>
-                                @error('message')
-                                    <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                                @enderror
                             </div>
 
                             <button type="submit"
                                 class="w-full bg-primary text-white font-bold py-4 rounded-lg shadow-lg hover:bg-red-700 transition-colors transform hover:-translate-y-1">
-                                Enviar Mensaje
+                                Solicitar diagnóstico gratuito
                             </button>
                         </form>
                     </div>
@@ -187,8 +220,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-lg text-gray-900 mb-2">📍 Santa Cruz</h3>
-                                <p class="text-gray-600 mb-3">Equipetrol, Calle Los Lirios Nro. 1000<br>Av. San Martin
-                                </p>
+                                <p class="text-gray-600 mb-3">Equipetrol, Calle Los Lirios Nro. 100<br>Av. San Martín</p>
                                 <div class="space-y-1">
                                     <p class="text-gray-600 flex items-center gap-2"><span
                                             class="text-primary text-sm">Tel:</span> +591 70654104</p>
