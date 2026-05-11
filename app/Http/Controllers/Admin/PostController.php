@@ -44,7 +44,7 @@ class PostController extends Controller
             'content'          => [$hasDocument ? 'nullable' : 'required', 'string'],
             'category_id'      => ['nullable', 'exists:categories,id'],
             'status'           => ['required', 'in:draft,published'],
-            'image'            => ['nullable', 'image', 'max:2048'],
+            'image'            => ['nullable', 'image', 'max:10240'],
             'document'         => ['nullable', 'file', 'mimes:pdf,txt', 'max:51200'],
             'meta_title'       => ['nullable', 'string', 'max:70'],
             'meta_description' => ['nullable', 'string', 'max:160'],
@@ -67,12 +67,31 @@ class PostController extends Controller
             $validated['published_at'] = now();
         }
 
-        if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('posts', 'public');
-        }
+        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
 
-        if ($hasDocument) {
-            $validated['document_path'] = $request->file('document')->store('posts/documents', 'public');
+        \Log::info('POST store — archivos recibidos', [
+            'has_image'    => $request->hasFile('image'),
+            'has_document' => $request->hasFile('document'),
+            'image_error'  => $request->file('image')?->getError(),
+            'doc_error'    => $request->file('document')?->getError(),
+            'disk'         => $disk,
+            'post_max'     => ini_get('post_max_size'),
+            'upload_max'   => ini_get('upload_max_filesize'),
+        ]);
+
+        try {
+            if ($request->hasFile('image')) {
+                $validated['image'] = $request->file('image')->store('posts', $disk);
+                \Log::info('Imagen guardada', ['path' => $validated['image']]);
+            }
+
+            if ($hasDocument) {
+                $validated['document_path'] = $request->file('document')->store('posts/documents', $disk);
+                \Log::info('Documento guardado', ['path' => $validated['document_path']]);
+            }
+        } catch (\Throwable $e) {
+            \Log::error('Error al guardar archivo', ['message' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            throw $e;
         }
 
         $post = Post::create($validated);
@@ -102,7 +121,7 @@ class PostController extends Controller
             'content'          => [($hasDocument || $post->document_path) ? 'nullable' : 'required', 'string'],
             'category_id'      => ['nullable', 'exists:categories,id'],
             'status'           => ['required', 'in:draft,published'],
-            'image'            => ['nullable', 'image', 'max:2048'],
+            'image'            => ['nullable', 'image', 'max:10240'],
             'document'         => ['nullable', 'file', 'mimes:pdf,txt', 'max:51200'],
             'meta_title'       => ['nullable', 'string', 'max:70'],
             'meta_description' => ['nullable', 'string', 'max:160'],
@@ -123,14 +142,34 @@ class PostController extends Controller
             $validated['published_at'] = now();
         }
 
-        if ($request->hasFile('image')) {
-            if ($post->image) Storage::disk('public')->delete($post->image);
-            $validated['image'] = $request->file('image')->store('posts', 'public');
-        }
+        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
 
-        if ($hasDocument) {
-            if ($post->document_path) Storage::disk('public')->delete($post->document_path);
-            $validated['document_path'] = $request->file('document')->store('posts/documents', 'public');
+        \Log::info('POST update — archivos recibidos', [
+            'post_id'      => $post->id,
+            'has_image'    => $request->hasFile('image'),
+            'has_document' => $request->hasFile('document'),
+            'image_error'  => $request->file('image')?->getError(),
+            'doc_error'    => $request->file('document')?->getError(),
+            'disk'         => $disk,
+            'post_max'     => ini_get('post_max_size'),
+            'upload_max'   => ini_get('upload_max_filesize'),
+        ]);
+
+        try {
+            if ($request->hasFile('image')) {
+                if ($post->image) Storage::disk($disk)->delete($post->image);
+                $validated['image'] = $request->file('image')->store('posts', $disk);
+                \Log::info('Imagen guardada', ['path' => $validated['image']]);
+            }
+
+            if ($hasDocument) {
+                if ($post->document_path) Storage::disk($disk)->delete($post->document_path);
+                $validated['document_path'] = $request->file('document')->store('posts/documents', $disk);
+                \Log::info('Documento guardado', ['path' => $validated['document_path']]);
+            }
+        } catch (\Throwable $e) {
+            \Log::error('Error al guardar archivo', ['message' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            throw $e;
         }
 
         $post->update($validated);
@@ -184,12 +223,14 @@ class PostController extends Controller
 
     public function destroy(Post $post): RedirectResponse
     {
+        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
+
         if ($post->image) {
-            Storage::disk('public')->delete($post->image);
+            Storage::disk($disk)->delete($post->image);
         }
 
         if ($post->document_path) {
-            Storage::disk('public')->delete($post->document_path);
+            Storage::disk($disk)->delete($post->document_path);
         }
 
         $post->tags()->detach();

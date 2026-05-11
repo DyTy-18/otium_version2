@@ -47,6 +47,17 @@ return [
             'report' => false,
         ],
 
+        // Usado en hostings sin soporte de symlinks (Hostinger shared)
+        // Activar con FILESYSTEM_PUBLIC_DISK=public_direct en .env
+        'public_direct' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => rtrim(env('APP_URL'), '/').'/uploads',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

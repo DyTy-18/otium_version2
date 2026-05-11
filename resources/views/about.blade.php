@@ -1,307 +1,334 @@
 <x-layout
-    title="Nosotros"
-    description="Conoce al equipo de OTIUM Consultores. Más de 15 años asesorando empresas bolivianas y extranjeras en contabilidad, finanzas, auditoría y transformación digital desde La Paz y Santa Cruz."
+    title="Sobre Otium"
+    description="Contabilidad, impuestos y consultoría con criterio profesional. Outsourcing contable, gestión tributaria, auditoría y consultoría empresarial con enfoque digital."
 >
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
-        <!-- Background Image -->
         <div class="absolute inset-0">
-            <img src="/images/hero-corporate.png" alt="Sobre Nosotros" class="w-full h-full object-cover">
+            <img src="/images/hero-corporate.png" alt="Sobre Otium" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                Sobre<span class="text-primary"> Nosotros</span>
+                Sobre <span class="text-primary">Otium</span>
             </h1>
-            <p class="text-xl md:text-2xl text-white/90 mb-8 font-light" data-aos="fade-up" data-aos-delay="100">
-                Equipo OTIUM
+            <p class="text-xl md:text-2xl text-white/90 mb-4 font-light" data-aos="fade-up" data-aos-delay="100">
+                Contabilidad, impuestos y consultoría con criterio profesional
             </p>
-            <p class="text-lg text-white/80 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Nos dedicamos al asesoramiento contable, financiero y tributario, a través de herramientas y técnicas
-                digitales.
+            <p class="text-lg text-white/80 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+                Outsourcing contable, gestión tributaria, auditoría y consultoría empresarial con enfoque digital.
             </p>
+            <p class="text-base text-white/70 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="300">
+                Otium acompaña a empresas que buscan ordenar su gestión contable, tributaria y documental, entender mejor sus números y tomar decisiones con mayor respaldo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="{{ route('contact') }}"
+                    class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+                    Solicitar diagnóstico gratuito
+                </a>
+                <a href="{{ route('services.index') }}"
+                    class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/30 hover:bg-white/20 transition-colors">
+                    Ver servicios
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Purpose & Vision -->
+    <!-- Nuestra historia -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Purpose -->
-                <div data-aos="fade-right">
-                    <div class="bg-blue-50 rounded-2xl p-10 h-full relative overflow-hidden group">
-                        <div
-                            class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 transition-transform group-hover:scale-110">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Nuestra historia</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center" data-aos="fade-up" data-aos-delay="100">
+                    Una forma distinta de acompañar la gestión empresarial
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-5 text-gray-600 leading-relaxed" data-aos="fade-right">
+                        <p>
+                            Otium nace en 2011 con la idea de ofrecer una experiencia diferente en servicios contables, tributarios y de auditoría: más cercana, más ordenada, más moderna y apoyada en tecnología.
+                        </p>
+                        <p>
+                            Desde sus primeros años, la firma acompañó a empresas en contabilidad mensual, auditoría y asesoramiento tributario. Con el tiempo, evolucionó hacia un modelo de outsourcing contable digital, incorporando herramientas como Microsoft 365, SharePoint, reportes de gestión y procesos documentales más trazables.
+                        </p>
+                        <p>
+                            Hoy, Otium trabaja desde Santa Cruz y La Paz con empresas locales y extranjeras que operan en Bolivia, combinando conocimiento normativo, criterio profesional y herramientas digitales para acompañar mejor la toma de decisiones.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">
+                            Participación institucional: IECnet — host de reunión LATAM 2016.
+                        </p>
+                    </div>
+                    <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square flex items-center justify-center" data-aos="fade-left">
+                        <div class="text-center text-gray-400 p-10">
+                            <div class="text-6xl mb-4">🏢</div>
+                            <p class="text-sm">Fotografía institucional</p>
+                            <p class="text-xs">Oficina o equipo Otium</p>
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6 relative z-10">Propósito Fundamental</h2>
-                        <p class="text-gray-600 text-lg leading-relaxed relative z-10">
-                            Iniciamos todos los días nuestro trabajo con el propósito y ganas de darte el mejor
-                            asesoramiento. Queremos que toda decisión que tomes en tu empresa sea antes evaluada por
-                            nosotros y así dar la mejor solución a tus problemas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lo que nos mueve -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Lo que nos mueve</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up" data-aos-delay="100">
+                Propósito y mirada
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Propósito -->
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-2xl p-10 h-full shadow-sm border border-gray-100 relative overflow-hidden group">
+                        <div class="text-2xl mb-4">◎</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 relative z-10">Nuestro propósito</h3>
+                        <p class="text-gray-600 leading-relaxed relative z-10">
+                            Ayudamos a ordenar la gestión contable, tributaria y documental de las empresas mediante criterio profesional y herramientas digitales.
                         </p>
                     </div>
                 </div>
-
-                <!-- Vision -->
+                <!-- Mirada -->
                 <div data-aos="fade-left">
-                    <div class="bg-teal-50 rounded-2xl p-10 h-full relative overflow-hidden group">
-                        <div
-                            class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-teal-100 rounded-full opacity-50 transition-transform group-hover:scale-110">
-                        </div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6 relative z-10">Futuro Visualizado</h2>
-                        <div class="space-y-4 relative z-10">
-                            <p class="text-gray-600 text-lg leading-relaxed">
-                                Te diremos primero como no nos vemos. No nos vemos como la firma más grande, ni la que
-                                más clientes tiene o la que genera mayor rentabilidad.
-                            </p>
-                            <p class="text-gray-900 font-bold text-xl italic border-l-4 border-primary pl-4">
-                                "Nos vemos como una firma que entrega VALOR."
-                            </p>
-                            <p class="text-gray-600 text-lg leading-relaxed">
-                                En un futuro Otium será sinónimo de innovación, excelente servicio y un lugar donde la
-                                gente quiera ser parte de la familia de Otium por su filosofía de trabajo.
-                            </p>
-                        </div>
+                    <div class="bg-white rounded-2xl p-10 h-full shadow-sm border border-gray-100 relative overflow-hidden group">
+                        <div class="text-2xl mb-4">→</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 relative z-10">Nuestra mirada al futuro</h3>
+                        <p class="text-gray-600 leading-relaxed relative z-10">
+                            Buscamos acompañar a empresas que quieren ordenar su gestión, entender mejor sus números y tomar decisiones con mayor respaldo.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values -->
+    <!-- Metodología -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Metodología</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                Nuestra forma de trabajo
+            </h2>
+            <p class="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+                Trabajamos con procesos ordenados, herramientas digitales y criterio profesional para que cada cliente tenga información clara, trazable y útil.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                @php
+                    $steps = [
+                        ['01', 'Diagnóstico y alcance', 'Revisamos la situación inicial del cliente para definir el alcance del servicio, los procesos a acompañar y los entregables esperados.'],
+                        ['02', 'Orden documental', 'Organizamos la documentación en repositorios digitales — en herramientas como SharePoint o Microsoft 365, según el alcance del servicio — para que todo sea trazable y accesible.'],
+                        ['03', 'Seguimiento periódico', 'Cada cliente tiene un equipo asignado y reuniones de seguimiento para revisar avances, resolver consultas y anticipar situaciones.'],
+                        ['04', 'Reportes y alertas', 'Entregamos reportes según el alcance del servicio: estados financieros, situación tributaria, alertas de vencimientos o dashboards de gestión.'],
+                        ['05', 'Supervisión profesional', 'Los socios o responsables de cada área supervisan el trabajo de manera continua. Los procesos están estandarizados pero son adaptables a cada cliente.'],
+                        ['06', 'Herramientas digitales', 'Usamos tecnología para mejorar el orden, la eficiencia y la trazabilidad. Cada herramienta se selecciona según las necesidades del cliente, no como solución única para todos.'],
+                    ];
+                @endphp
+                @foreach ($steps as $i => $step)
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                        <div class="text-3xl font-bold text-primary/20 mb-3">{{ $step[0] }}</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">{{ $step[1] }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">{{ $step[2] }}</p>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="mt-10 max-w-5xl mx-auto bg-blue-50 rounded-xl p-6 flex gap-4 items-start" data-aos="fade-up">
+                <span class="text-xl shrink-0">ℹ</span>
+                <p class="text-sm text-gray-600">
+                    <strong>Uso de inteligencia artificial:</strong> Incorporamos herramientas de IA como apoyo interno en procesos de revisión, organización y análisis. No reemplaza el criterio profesional del equipo — lo apoya.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Servicios</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">
+                Áreas en las que acompañamos a nuestros clientes
+            </h2>
+            <p class="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+                Acompañamos a empresas en distintas etapas de su gestión contable, tributaria, laboral y empresarial.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @php
+                    $services = [
+                        ['📊', 'Outsourcing Contable Digital', 'Gestión contable mensual con organización documental, seguimiento y herramientas digitales según el alcance del servicio.', 'services.outsourcing'],
+                        ['🧾', 'Gestión Tributaria', 'Asesoramiento y control tributario para apoyar el cumplimiento, reducir riesgos y mejorar la lectura fiscal de la empresa.', 'services.gestion-tributaria'],
+                        ['👥', 'Outsourcing Laboral', 'Acompañamiento en procesos laborales, planillas y obligaciones vinculadas al personal, según las necesidades del cliente.', 'services.outsourcing-laboral'],
+                        ['🔍', 'Auditoría', 'Revisión independiente de información financiera y procesos, con criterio técnico y enfoque en riesgos relevantes.', 'services.audit'],
+                        ['📈', 'Consultoría Empresarial', 'Apoyo en análisis, control de gestión, due diligence, reportes financieros y lectura de información para tomar mejores decisiones.', 'services.consultoria'],
+                        ['🏗', 'Constitución y Formalización', 'Acompañamiento en etapas de constitución, formalización y ordenamiento inicial de empresas que operan en Bolivia.', 'services.constitucion-empresas'],
+                    ];
+                @endphp
+                @foreach ($services as $i => $service)
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 group" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                        <div class="text-4xl mb-4">{{ $service[0] }}</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">{{ $service[1] }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ $service[2] }}</p>
+                        <a href="{{ route($service[3]) }}"
+                            class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all">
+                            Ver servicio <span>→</span>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectores -->
     <section class="py-20 bg-secondary text-white relative overflow-hidden">
-        <!-- Background Decoration -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-            <div
-                class="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-blob">
-            </div>
-            <div
-                class="absolute bottom-10 right-10 w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000">
-            </div>
+            <div class="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute bottom-10 right-10 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Nuestros Valores</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <!-- Value 1 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="0">
-                    <h3 class="font-bold text-lg">Accountability</h3>
-                </div>
-                <!-- Value 2 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="100">
-                    <h3 class="font-bold text-lg">Responsabilidad en Equipo</h3>
-                </div>
-                <!-- Value 3 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="200">
-                    <h3 class="font-bold text-lg">Transparencia</h3>
-                </div>
-                <!-- Value 4 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="300">
-                    <h3 class="font-bold text-lg">Horarios Flexibles</h3>
-                </div>
-                <!-- Value 5 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="400">
-                    <h3 class="font-bold text-lg">Flexibilidad de Ambiente</h3>
-                </div>
-                <!-- Value 6 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="500">
-                    <h3 class="font-bold text-lg">Formación Constante</h3>
-                </div>
-                <!-- Value 7 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="600">
-                    <h3 class="font-bold text-lg">Alegría</h3>
-                </div>
-                <!-- Value 8 -->
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
-                    data-aos="zoom-in" data-aos-delay="700">
-                    <h3 class="font-bold text-lg">Amistad</h3>
-                </div>
+            <p class="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Sectores</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6" data-aos="fade-up" data-aos-delay="100">
+                Experiencia en distintos sectores
+            </h2>
+            <p class="text-lg text-center text-white/80 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+                Trabajamos con empresas locales y extranjeras en Bolivia, combinando conocimiento normativo, criterio profesional y herramientas digitales.
+            </p>
+
+            @php
+                $sectors = [
+                    ['label' => 'Comercio', 'highlight' => false],
+                    ['label' => 'Servicios profesionales', 'highlight' => false],
+                    ['label' => 'Industria', 'highlight' => false],
+                    ['label' => 'Gastronomía y alimentos', 'highlight' => false],
+                    ['label' => 'Importación y distribución', 'highlight' => false],
+                    ['label' => 'Construcción e inmobiliario', 'highlight' => false],
+                    ['label' => 'Tecnología', 'highlight' => false],
+                    ['label' => 'Empresas extranjeras en Bolivia', 'highlight' => true],
+                    ['label' => 'Exportadores', 'highlight' => false],
+                    ['label' => 'Asociaciones y fundaciones', 'highlight' => false],
+                    ['label' => 'Restaurantes y franquicias', 'highlight' => false],
+                ];
+            @endphp
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach ($sectors as $i => $sector)
+                    <div class="{{ $sector['highlight'] ? 'bg-primary border-primary/50' : 'bg-white/10 border-white/10 hover:bg-white/20' }} backdrop-blur-sm rounded-xl px-6 py-5 border transition-colors flex items-center gap-4"
+                        data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 100 }}">
+                        <span class="text-white text-xl font-bold leading-none">•</span>
+                        <span class="text-white font-medium">{{ $sector['label'] }}</span>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- What we do (Areas) -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4" data-aos="fade-up">¿Qué podemos
-                hacer para vos?</h2>
-            <p class="text-xl text-center text-gray-600 mb-16" data-aos="fade-up" data-aos-delay="100">Nuestras áreas de
-                trabajo especializadas.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Contabilidad Digital -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-t-4 border-blue-500"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                            <span
-                                class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 7h6m0 3.666V19a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2h12a2 2 0 012 2v8.666m-6.89 4.908c-.21.14-.463.163-.64.048a.94.94 0 01-.18-.18c-.326-.432-.61-1.006-.21-1.424.195-.205.515-.31.815-.224a.75.75 0 01.38.224.96.96 0 01.127.427c-.01.32-.23 1.096-.292 1.129z">
-                                    </path>
-                                </svg>
-                            </span>
-                            Contabilidad Digital
-                        </h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Outsourcing Contable
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Payroll (planillas)
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Cierre de EEFF
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Revaluo Técnico
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Contabilidad NIIF
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Outsourcing Administrativo
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Impuestos -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-t-4 border-teal-500"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                            <span
-                                class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                    </path>
-                                </svg>
-                            </span>
-                            Impuestos
-                        </h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Outsourcing Declaraciones
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Planificación Tributaria
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Emprendimiento
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Transacciones Especiales
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Elaboración ITC
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Calculo IUE
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Minería de Datos
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Auditoría -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-t-4 border-red-500"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                            <span
-                                class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-primary">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                            </span>
-                            Auditoría
-                        </h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Auditoría Financiera
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Auditoría Operativa
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Auditoria Especial
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Auditoría Técnica
-                            </li>
-                            <li class="flex items-start gap-2 text-gray-600">
-                                <span class="text-primary mt-1">•</span> Outsourcing Auditoria Interna
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership / Team -->
+    <!-- Valores -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Nuestro
-                Liderazgo</h2>
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Valores</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                Valores de Otium
+            </h2>
+            <p class="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+                Creemos en una forma de trabajo profesional, cercana y ordenada, donde la tecnología acompaña al criterio humano.
+            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            @php
+                $values = [
+                    ['Compromiso con el resultado', 'Nos hacemos cargo del trabajo asumido y cuidamos que cada entrega tenga sentido para el cliente.'],
+                    ['Transparencia', 'Trabajamos con comunicación clara, criterios visibles y respaldo documental.'],
+                    ['Criterio profesional', 'No nos limitamos a procesar información: analizamos, revisamos y advertimos riesgos relevantes.'],
+                    ['Orden y trazabilidad', 'Buscamos que la información, los documentos y los procesos puedan seguirse con claridad.'],
+                    ['Tecnología con criterio humano', 'Usamos herramientas digitales para mejorar el orden y la eficiencia, sin reemplazar el juicio profesional.'],
+                    ['Aprendizaje continuo', 'Actualizamos nuestra forma de trabajar para responder mejor a los cambios normativos, tecnológicos y empresariales.'],
+                ];
+            @endphp
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($values as $i => $value)
+                    <div class="p-8 rounded-xl bg-gray-50 border border-gray-100" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">{{ $value[0] }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">{{ $value[1] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Equipo</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                Liderazgo con criterio profesional y mirada digital
+            </h2>
+            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+                En Otium, el liderazgo combina experiencia tributaria, contable y financiera con una forma de trabajo orientada al orden, la trazabilidad y la toma de decisiones. Desde Santa Cruz y La Paz, acompañamos a empresas que buscan gestionar sus obligaciones con mayor claridad.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 <!-- Zaulo -->
-                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start" data-aos="fade-right">
-                    <div
-                        class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gray-200 flex-shrink-0 overflow-hidden shadow-lg border-4 border-white">
-                        <!-- Placeholder or Generic Avatar since no specific image exists -->
-                        <div
-                            class="w-full h-full bg-gray-300 flex items-center justify-center text-4xl text-gray-500 font-bold">
+                <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 flex flex-col gap-6" data-aos="fade-right">
+                    <div class="flex items-center gap-6">
+                        <div class="w-20 h-20 rounded-full bg-gray-200 shrink-0 flex items-center justify-center text-2xl font-bold text-gray-500 shadow-md border-4 border-white">
                             ZV
                         </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Zaulo Vásquez</h3>
+                            <p class="text-primary font-medium text-sm">Manager | Impuestos, Consultoría y Datos</p>
+                        </div>
                     </div>
-                    <div class="text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-gray-900">Zaulo Vasquez</h3>
-                        <p class="text-primary font-medium mb-4">Consultor Empresarial en Analítica de Datos</p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Soy socio en Otium, firma boliviana de outsourcing contable, impuestos y auditoría con
-                            enfoque data-driven. Integro R, Python, Power BI, Power Query y SharePoint para convertir
-                            datos operativos en decisiones de gerencia.
-                        </p>
-                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Zaulo acompaña a empresas en temas contables y tributarios, combinando experiencia en distintos modelos de negocio con consultoría empresarial, análisis de datos y herramientas digitales. Su trabajo parte del cumplimiento y la revisión de riesgos, pero se extiende hacia control de gestión, automatización y toma de decisiones con mayor respaldo.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
                 </div>
 
                 <!-- Brian -->
-                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start" data-aos="fade-left">
-                    <div
-                        class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gray-200 flex-shrink-0 overflow-hidden shadow-lg border-4 border-white">
-                        <!-- Placeholder or Generic Avatar -->
-                        <div
-                            class="w-full h-full bg-gray-300 flex items-center justify-center text-4xl text-gray-500 font-bold">
+                <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 flex flex-col gap-6" data-aos="fade-left">
+                    <div class="flex items-center gap-6">
+                        <div class="w-20 h-20 rounded-full bg-gray-200 shrink-0 flex items-center justify-center text-2xl font-bold text-gray-500 shadow-md border-4 border-white">
                             BJ
                         </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Brian Jauregui</h3>
+                            <p class="text-primary font-medium text-sm">Manager | Impuestos, Auditoría y Finanzas</p>
+                        </div>
                     </div>
-                    <div class="text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-gray-900">Brian Jauregui</h3>
-                        <p class="text-primary font-medium mb-4">Asesor tributario y financiero</p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Soy emprendedor y me gustan distintas ramas de la administración de empresas. Por mi
-                            especialidad y experiencia me dedico a asesorar a negocios en el entendimiento de sus
-                            obligaciones tributarias y sus finanzas. Según mis conocidos, poseo un excelente sentido del
-                            humor. Me gustan los comics, el rock y los deportes.
-                        </p>
-                    </div>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Brian acompaña a empresas en gestión tributaria, auditoría y finanzas, con experiencia en contingencias tributarias, auditorías financieras y proyectos especiales bajo NIIF. Desde la oficina de Otium en La Paz, trabaja con clientes empresariales que necesitan cumplimiento, criterio técnico y una lectura clara de sus riesgos financieros y fiscales.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-24 bg-secondary relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">
+                ¿Querés conocer cómo Otium puede acompañar a tu empresa?
+            </h2>
+            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Podemos revisar tu situación actual y orientarte sobre el alcance de servicio que mejor se ajuste a tus necesidades contables, tributarias o empresariales.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="{{ route('contact') }}"
+                    class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">
+                    Solicitar diagnóstico gratuito
+                </a>
+                <a href="{{ route('services.index') }}"
+                    class="px-10 py-4 bg-white/10 text-white rounded-lg font-bold border border-white/20 hover:bg-white/20 transition-all duration-300">
+                    Ver servicios
+                </a>
             </div>
         </div>
     </section>
