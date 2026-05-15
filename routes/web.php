@@ -13,6 +13,16 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProfileController;
 
 // ─────────────────────────────────────────
+// Selector de idioma
+// ─────────────────────────────────────────
+Route::get('/lang/{locale}', function (string $locale) {
+    if (in_array($locale, ['es', 'en', 'pt'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back()->withFragment(request()->query('section', ''));
+})->name('lang.switch');
+
+// ─────────────────────────────────────────
 // Rutas públicas
 // ─────────────────────────────────────────
 Route::get('/', fn () => view('welcome'))->name('home');
@@ -31,6 +41,7 @@ Route::redirect('/servicios/operaciones-financieras', '/servicios/consultoria', 
 Route::redirect('/servicios/auditoria-integral', '/servicios/auditoria', 301);
 Route::redirect('/servicios/transformacion-digital', '/servicios/reportes-power-bi', 301);
 Route::get('/nosotros', fn () => view('about'))->name('about');
+Route::get('/doing-business', fn () => view('doing-business'))->name('doing-business');
 
 // Contacto
 Route::get('/diagnostico-gratuito', fn () => view('contact'))->name('contact');

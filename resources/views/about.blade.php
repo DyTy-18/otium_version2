@@ -11,25 +11,25 @@
 
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                Sobre <span class="text-primary">Otium</span>
+                {{ __('Sobre') }} <span class="text-primary">Otium</span>
             </h1>
             <p class="text-xl md:text-2xl text-white/90 mb-4 font-light" data-aos="fade-up" data-aos-delay="100">
-                Contabilidad, impuestos y consultoría con criterio profesional
+                {{ __('Contabilidad, impuestos y consultoría con criterio profesional') }}
             </p>
             <p class="text-lg text-white/80 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
-                Outsourcing contable, gestión tributaria, auditoría y consultoría empresarial con enfoque digital.
+                {{ __('Outsourcing contable, gestión tributaria, auditoría y consultoría empresarial con enfoque digital.') }}
             </p>
             <p class="text-base text-white/70 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="300">
-                Otium acompaña a empresas que buscan ordenar su gestión contable, tributaria y documental, entender mejor sus números y tomar decisiones con mayor respaldo.
+                {{ __('Otium acompaña a empresas que buscan ordenar su gestión contable, tributaria y documental, entender mejor sus números y tomar decisiones con mayor respaldo.') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
                 <a href="{{ route('contact') }}"
                     class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
-                    Solicitar diagnóstico gratuito
+                    {{ __('Solicitar diagnóstico gratuito') }}
                 </a>
                 <a href="{{ route('services.index') }}"
                     class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/30 hover:bg-white/20 transition-colors">
-                    Ver servicios
+                    {{ __('Ver servicios') }}
                 </a>
             </div>
         </div>
@@ -39,7 +39,7 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
-                <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Nuestra historia</p>
+                <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Nuestra historia') }}</p>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center" data-aos="fade-up" data-aos-delay="100">
                     Una forma distinta de acompañar la gestión empresarial
                 </h2>
@@ -73,7 +73,7 @@
     <!-- Lo que nos mueve -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Lo que nos mueve</p>
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Lo que nos mueve') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up" data-aos-delay="100">
                 Propósito y mirada
             </h2>
@@ -105,7 +105,7 @@
     <!-- Metodología -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Metodología</p>
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Metodología') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
                 Nuestra forma de trabajo
             </h2>
@@ -145,23 +145,23 @@
     <!-- Servicios -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Servicios</p>
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Servicios') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">
-                Áreas en las que acompañamos a nuestros clientes
+                {{ __('Áreas en las que acompañamos a nuestros clientes') }}
             </h2>
             <p class="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
-                Acompañamos a empresas en distintas etapas de su gestión contable, tributaria, laboral y empresarial.
+                {{ __('Acompañamos a empresas en distintas etapas de su gestión contable, tributaria, laboral y empresarial.') }}
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @php
                     $services = [
-                        ['📊', 'Outsourcing Contable Digital', 'Gestión contable mensual con organización documental, seguimiento y herramientas digitales según el alcance del servicio.', 'services.outsourcing'],
-                        ['🧾', 'Gestión Tributaria', 'Asesoramiento y control tributario para apoyar el cumplimiento, reducir riesgos y mejorar la lectura fiscal de la empresa.', 'services.gestion-tributaria'],
-                        ['👥', 'Outsourcing Laboral', 'Acompañamiento en procesos laborales, planillas y obligaciones vinculadas al personal, según las necesidades del cliente.', 'services.outsourcing-laboral'],
-                        ['🔍', 'Auditoría', 'Revisión independiente de información financiera y procesos, con criterio técnico y enfoque en riesgos relevantes.', 'services.audit'],
-                        ['📈', 'Consultoría Empresarial', 'Apoyo en análisis, control de gestión, due diligence, reportes financieros y lectura de información para tomar mejores decisiones.', 'services.consultoria'],
-                        ['🏗', 'Constitución y Formalización', 'Acompañamiento en etapas de constitución, formalización y ordenamiento inicial de empresas que operan en Bolivia.', 'services.constitucion-empresas'],
+                        ['📊', __('Outsourcing Contable Digital'), __('Gestión contable mensual con organización documental, seguimiento y herramientas digitales según el alcance del servicio.'), 'services.outsourcing'],
+                        ['🧾', __('Gestión Tributaria'), __('Asesoramiento y control tributario para apoyar el cumplimiento, reducir riesgos y mejorar la lectura fiscal de la empresa.'), 'services.gestion-tributaria'],
+                        ['👥', __('Outsourcing Laboral'), __('Acompañamiento en procesos laborales, planillas y obligaciones vinculadas al personal, según las necesidades del cliente.'), 'services.outsourcing-laboral'],
+                        ['🔍', __('Auditoría'), __('Revisión independiente de información financiera y procesos, con criterio técnico y enfoque en riesgos relevantes.'), 'services.audit'],
+                        ['📈', __('Consultoría Empresarial'), __('Apoyo en análisis, control de gestión, due diligence, reportes financieros y lectura de información para tomar mejores decisiones.'), 'services.consultoria'],
+                        ['🏗', __('Constitución y Formalización'), __('Acompañamiento en etapas de constitución, formalización y ordenamiento inicial de empresas que operan en Bolivia.'), 'services.constitucion-empresas'],
                     ];
                 @endphp
                 @foreach ($services as $i => $service)
@@ -171,7 +171,7 @@
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ $service[2] }}</p>
                         <a href="{{ route($service[3]) }}"
                             class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all">
-                            Ver servicio <span>→</span>
+                            {{ __('Ver servicio') }} <span>→</span>
                         </a>
                     </div>
                 @endforeach
@@ -187,7 +187,7 @@
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <p class="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Sectores</p>
+            <p class="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Sectores') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6" data-aos="fade-up" data-aos-delay="100">
                 Experiencia en distintos sectores
             </h2>
@@ -225,9 +225,9 @@
     <!-- Valores -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Valores</p>
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Valores') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
-                Valores de Otium
+                {{ __('Valores de Otium') }}
             </h2>
             <p class="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
                 Creemos en una forma de trabajo profesional, cercana y ordenada, donde la tecnología acompaña al criterio humano.
@@ -235,12 +235,12 @@
 
             @php
                 $values = [
-                    ['Compromiso con el resultado', 'Nos hacemos cargo del trabajo asumido y cuidamos que cada entrega tenga sentido para el cliente.'],
-                    ['Transparencia', 'Trabajamos con comunicación clara, criterios visibles y respaldo documental.'],
-                    ['Criterio profesional', 'No nos limitamos a procesar información: analizamos, revisamos y advertimos riesgos relevantes.'],
-                    ['Orden y trazabilidad', 'Buscamos que la información, los documentos y los procesos puedan seguirse con claridad.'],
-                    ['Tecnología con criterio humano', 'Usamos herramientas digitales para mejorar el orden y la eficiencia, sin reemplazar el juicio profesional.'],
-                    ['Aprendizaje continuo', 'Actualizamos nuestra forma de trabajar para responder mejor a los cambios normativos, tecnológicos y empresariales.'],
+                    [__('Compromiso con el resultado'), __('Nos hacemos cargo del trabajo asumido y cuidamos que cada entrega tenga sentido para el cliente.')],
+                    [__('Transparencia'), __('Trabajamos con comunicación clara, criterios visibles y respaldo documental.')],
+                    [__('Criterio profesional'), __('No nos limitamos a procesar información: analizamos, revisamos y advertimos riesgos relevantes.')],
+                    [__('Orden y trazabilidad'), __('Buscamos que la información, los documentos y los procesos puedan seguirse con claridad.')],
+                    [__('Tecnología con criterio humano'), __('Usamos herramientas digitales para mejorar el orden y la eficiencia, sin reemplazar el juicio profesional.')],
+                    [__('Aprendizaje continuo'), __('Actualizamos nuestra forma de trabajar para responder mejor a los cambios normativos, tecnológicos y empresariales.')],
                 ];
             @endphp
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -257,9 +257,9 @@
     <!-- Equipo -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">Equipo</p>
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Equipo') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
-                Liderazgo con criterio profesional y mirada digital
+                {{ __('Liderazgo con criterio profesional y mirada digital') }}
             </h2>
             <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
                 En Otium, el liderazgo combina experiencia tributaria, contable y financiera con una forma de trabajo orientada al orden, la trazabilidad y la toma de decisiones. Desde Santa Cruz y La Paz, acompañamos a empresas que buscan gestionar sus obligaciones con mayor claridad.
@@ -315,19 +315,19 @@
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">
-                ¿Querés conocer cómo Otium puede acompañar a tu empresa?
+                {{ __('¿Querés conocer cómo Otium puede acompañar a tu empresa?') }}
             </h2>
             <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Podemos revisar tu situación actual y orientarte sobre el alcance de servicio que mejor se ajuste a tus necesidades contables, tributarias o empresariales.
+                {{ __('Podemos revisar tu situación actual y orientarte sobre el alcance de servicio que mejor se ajuste a tus necesidades contables, tributarias o empresariales.') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="{{ route('contact') }}"
                     class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">
-                    Solicitar diagnóstico gratuito
+                    {{ __('Solicitar diagnóstico gratuito') }}
                 </a>
                 <a href="{{ route('services.index') }}"
                     class="px-10 py-4 bg-white/10 text-white rounded-lg font-bold border border-white/20 hover:bg-white/20 transition-all duration-300">
-                    Ver servicios
+                    {{ __('Ver servicios') }}
                 </a>
             </div>
         </div>

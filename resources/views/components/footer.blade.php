@@ -8,8 +8,7 @@
                     <img src="/images/logo-otium-white.png" alt="OTIUM" class="h-12 mx-auto lg:mx-0">
                 </div>
                 <p class="text-white/80 leading-relaxed max-w-sm mx-auto lg:mx-0 text-sm">
-                    Expertos en outsourcing contable, auditoría y transformación digital.
-                    Impulsando el crecimiento de empresas en Bolivia y el mundo.
+                    {{ __('Expertos en outsourcing contable, auditoría y transformación digital. Impulsando el crecimiento de empresas en Bolivia y el mundo.') }}
                 </p>
             </div>
 
@@ -17,30 +16,30 @@
             <div class="w-full lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-8">
 
                 <div>
-                    <h4 class="text-sm font-bold mb-4 text-white uppercase tracking-wider">Servicios</h4>
+                    <h4 class="text-sm font-bold mb-4 text-white uppercase tracking-wider">{{ __('Servicios') }}</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('services.index') }}" class="text-white/80 hover:text-white transition-colors font-semibold">Ver Todos</a></li>
-                        <li><a href="{{ route('services.outsourcing') }}" class="text-white/80 hover:text-white transition-colors">Outsourcing Contable</a></li>
-                        <li><a href="{{ route('services.gestion-tributaria') }}" class="text-white/80 hover:text-white transition-colors">Gestión Tributaria</a></li>
-                        <li><a href="{{ route('services.audit') }}" class="text-white/80 hover:text-white transition-colors">Auditoría Financiera</a></li>
+                        <li><a href="{{ route('services.index') }}" class="text-white/80 hover:text-white transition-colors font-semibold">{{ __('Ver Todos') }}</a></li>
+                        <li><a href="{{ route('services.outsourcing') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Outsourcing Contable') }}</a></li>
+                        <li><a href="{{ route('services.gestion-tributaria') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Gestión Tributaria') }}</a></li>
+                        <li><a href="{{ route('services.audit') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Auditoría Financiera') }}</a></li>
                         <li><a href="{{ route('services.reportes-power-bi') }}" class="text-white/80 hover:text-white transition-colors">Power BI</a></li>
                         <li><a href="{{ route('services.sharepoint-documental') }}" class="text-white/80 hover:text-white transition-colors">SharePoint</a></li>
-                        <li><a href="{{ route('services.outsourcing-laboral') }}" class="text-white/80 hover:text-white transition-colors">Outsourcing Laboral</a></li>
-                        <li><a href="{{ route('services.consultoria') }}" class="text-white/80 hover:text-white transition-colors">Consultoría</a></li>
+                        <li><a href="{{ route('services.outsourcing-laboral') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Outsourcing Laboral') }}</a></li>
+                        <li><a href="{{ route('services.consultoria') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Consultoría Empresarial') }}</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-sm font-bold mb-4 text-white uppercase tracking-wider">Compañía</h4>
+                    <h4 class="text-sm font-bold mb-4 text-white uppercase tracking-wider">{{ __('Compañía') }}</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('about') }}" class="text-white/80 hover:text-white transition-colors">Nosotros</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="text-white/80 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-white/80 hover:text-white transition-colors">Diagnóstico Gratuito</a></li>
+                        <li><a href="{{ route('about') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Nosotros') }}</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Blog') }}</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-white/80 hover:text-white transition-colors">{{ __('Diagnóstico Gratuito') }}</a></li>
                     </ul>
                 </div>
 
                 <div class="col-span-2 md:col-span-1">
-                    <h4 class="text-sm font-bold mb-4 text-white uppercase tracking-wider">Contacto</h4>
+                    <h4 class="text-sm font-bold mb-4 text-white uppercase tracking-wider">{{ __('Contacto') }}</h4>
                     <ul class="space-y-3 text-sm text-white/80">
                         <!-- Email -->
                         <li class="flex items-center gap-2">
@@ -101,7 +100,7 @@
         </div>
 
         <div class="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/50 text-xs">
-            <p>&copy; {{ date('Y') }} OTIUM Consultores. Todos los derechos reservados.</p>
+            <p>&copy; {{ date('Y') }} OTIUM Consultores. {{ __('Todos los derechos reservados.') }}</p>
             <div class="flex items-center gap-4">
                 <a href="https://www.linkedin.com/company/otiumbo/" target="_blank" rel="noopener" aria-label="LinkedIn"
                     class="hover:text-white transition-colors">

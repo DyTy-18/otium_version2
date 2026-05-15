@@ -10,10 +10,10 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl text-left">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                    Revalúo Técnico y Gestión Digital de Activos Fijos
+                    {{ __('Revalúo Técnico y Gestión Digital de Activos Fijos') }}
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
-                    Inventario físico, etiquetado QR, análisis contable y base patrimonial digital.
+                    {{ __('Inventario físico, etiquetado QR, análisis contable y base patrimonial digital.') }}
                 </p>
                 <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg" data-aos="fade-up" data-aos-delay="150">
                     "Más que inventario: control patrimonial con respaldo técnico, etiquetado QR y base digital — para que la empresa sepa exactamente qué tiene, dónde está y cuánto vale."
@@ -21,7 +21,7 @@
                 <a href="{{ route('contact') }}"
                     class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    Solicitar información
+                    {{ __('Solicitar información') }}
                 </a>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="w-full md:w-1/2" data-aos="fade-left">
                     <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Revalúo y Gestión de Activos Fijos</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Una base patrimonial confiable, documentada y digital</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Una base patrimonial confiable, documentada y digital') }}</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
                         En Otium ordenamos, identificamos, valorizamos y digitalizamos la gestión de los activos fijos de tu empresa. Realizamos el inventario físico, etiquetamos cada bien con código QR, revisamos la documentación de respaldo y comparamos con los registros contables.
                     </p>
@@ -56,7 +56,7 @@
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Para quién es este servicio?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
                 <p class="text-gray-600 text-lg max-w-3xl mx-auto">
                     Empresas que tienen activos físicos relevantes pero no cuentan con una base patrimonial actualizada, documentada y verificable.
                 </p>
@@ -66,42 +66,42 @@
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas extranjeras con activos en Bolivia</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas extranjeras con activos en Bolivia') }}</h3>
                     <p class="text-gray-600">Que reportan valor de activos a casa matriz y necesitan una base patrimonial verificada y documentada.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas buscando financiamiento bancario</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas buscando financiamiento bancario') }}</h3>
                     <p class="text-gray-600">Que necesitan sustento patrimonial real y verificable para presentar ante bancos o inversionistas.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Negocios en venta, reorganización o con nuevos socios</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Negocios en venta, reorganización o con nuevos socios') }}</h3>
                     <p class="text-gray-600">Que necesitan saber con precisión el valor real de sus activos antes de una transacción relevante.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Industriales, agroindustriales y constructoras</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Industriales, agroindustriales y constructoras') }}</h3>
                     <p class="text-gray-600">Con maquinaria, vehículos e infraestructura que necesitan control patrimonial formal y actualizado.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Clínicas, restaurantes y cadenas gastronómicas</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Clínicas, restaurantes y cadenas gastronómicas') }}</h3>
                     <p class="text-gray-600">Con equipamiento distribuido en distintas sedes que necesitan una base patrimonial centralizada y trazable.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas que crecieron sin control formal</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas que crecieron sin control formal') }}</h3>
                     <p class="text-gray-600">Que fueron incorporando bienes sin registrarlos correctamente y ahora necesitan ordenar su patrimonio.</p>
                 </div>
             </div>
@@ -116,7 +116,7 @@
     <!-- Qué incluye -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué incluye el servicio?</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué incluye el servicio?') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex gap-4" data-aos="fade-right">
                     <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
@@ -218,7 +218,7 @@
     <!-- Qué recibe el cliente -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué recibe tu empresa al final?</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
                     <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
@@ -275,7 +275,7 @@
     <!-- Por qué Otium vs. inventario tradicional -->
     <section class="py-20 bg-secondary text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Por qué Otium vs. el inventario tradicional</h2>
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. el inventario tradicional') }}</h2>
             <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
                 <table class="w-full border-collapse">
                     <thead>
@@ -318,7 +318,7 @@
     <!-- FAQ Section -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Preguntas Frecuentes</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
             <div class="space-y-4" x-data="{ active: null }">
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
@@ -374,12 +374,12 @@
         <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">¿Sabés exactamente qué tiene tu empresa y cuánto vale?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Sabés exactamente qué tiene tu empresa y cuánto vale?') }}</h2>
             <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Contáctanos y ordenamos juntos tu base patrimonial — con inventario físico, etiquetado QR y respaldo documental real.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">Contáctenos Ahora</a>
+                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
             </div>
         </div>
     </section>

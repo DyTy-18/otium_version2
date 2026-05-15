@@ -55,7 +55,7 @@
                     <span>•</span>
                     <span>{{ $post->published_at->format('d \d\e F, Y') }}</span>
                     <span>•</span>
-                    <span>{{ $post->reading_time }} min de lectura</span>
+                    <span>{{ $post->reading_time }} {{ __('min de lectura') }}</span>
                 </div>
             </div>
         @if($post->image)
@@ -84,12 +84,12 @@
                         <div id="pdf-viewer"
                              data-src="{{ Storage::url($post->document_path) }}"
                              class="space-y-2">
-                            <p class="text-sm text-gray-400 text-center py-8">Cargando documento…</p>
+                            <p class="text-sm text-gray-400 text-center py-8">{{ __('Cargando documento…') }}</p>
                         </div>
                         <div class="mt-3 text-right">
                             <a href="{{ Storage::url($post->document_path) }}" target="_blank" rel="noopener"
                                class="text-xs text-gray-400 hover:text-primary transition-colors">
-                                Descargar documento ↓
+                                {{ __('Descargar documento ↓') }}
                             </a>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                 {{-- Tags --}}
                 @if($post->tags->isNotEmpty())
                     <div class="flex items-center gap-2 flex-wrap mt-12 pt-8 border-t border-gray-100">
-                        <span class="text-sm text-gray-500 font-medium">Etiquetas:</span>
+                        <span class="text-sm text-gray-500 font-medium">{{ __('Etiquetas:') }}</span>
                         @foreach($post->tags as $tag)
                             <a href="{{ route('blog.index', ['tag' => $tag->slug]) }}"
                                class="px-3 py-1 bg-gray-100 hover:bg-primary hover:text-white text-gray-600 text-sm rounded-full transition-colors">
@@ -220,7 +220,7 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
-                        Volver al blog
+                        {{ __('Volver al blog') }}
                     </a>
                 </div>
             </div>
@@ -231,7 +231,7 @@
     @if($related->isNotEmpty())
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Artículos relacionados</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">{{ __('Artículos relacionados') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach($related as $relPost)
                     <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300">

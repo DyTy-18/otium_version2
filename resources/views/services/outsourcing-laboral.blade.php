@@ -10,10 +10,10 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl text-left">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                    Administración Laboral
+                    {{ __('Administración Laboral') }}
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
-                    Planillas, entidades laborales, contratos y respaldo digital mensual para empresas en Bolivia.
+                    {{ __('Planillas, entidades laborales, contratos y respaldo digital mensual para empresas en Bolivia.') }}
                 </p>
                 <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg" data-aos="fade-up" data-aos-delay="150">
                     "Tu gestión laboral mensual, ordenada, respaldada y lista para cumplir — sin depender de una sola persona ni de un archivo que nadie más sabe dónde está."
@@ -21,7 +21,7 @@
                 <a href="{{ route('contact') }}"
                     class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    Solicitar información
+                    {{ __('Solicitar información') }}
                 </a>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="w-full md:w-1/2" data-aos="fade-left">
                     <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Administración Laboral</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Gestión laboral mensual con proceso, respaldo y trazabilidad</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Gestión laboral mensual con proceso, respaldo y trazabilidad') }}</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
                         En Otium gestionamos la administración laboral mensual de tu empresa: planillas, declaraciones ante el Ministerio de Trabajo, Caja de Salud y Gestora, altas, bajas, contratos, finiquitos y documentación del personal.
                     </p>
@@ -56,7 +56,7 @@
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Para quién es este servicio?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
                 <p class="text-gray-600 text-lg max-w-3xl mx-auto">
                     Empresas que operan en Bolivia con trabajadores dependientes y necesitan gestionar sus obligaciones laborales de forma recurrente, ordenada y respaldada.
                 </p>
@@ -66,42 +66,42 @@
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas extranjeras con operaciones en Bolivia</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas extranjeras con operaciones en Bolivia') }}</h3>
                     <p class="text-gray-600">Que necesitan cumplir la normativa laboral local sin tener un área de RRHH interna establecida.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Negocios de 6 a 30 trabajadores</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Negocios de 6 a 30 trabajadores') }}</h3>
                     <p class="text-gray-600">Sin área de RRHH interna que necesitan un equipo externo para gestionar planillas y obligaciones con todas las entidades.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gastronómicas, constructoras e importadoras</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Gastronómicas, constructoras e importadoras') }}</h3>
                     <p class="text-gray-600">Con alta rotación de personal que necesitan procesos claros para altas, bajas, contratos y finiquitos sin improvisaciones.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Startups que necesitan estructura laboral</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Startups que necesitan estructura laboral') }}</h3>
                     <p class="text-gray-600">Sin armar un departamento propio — estructura laboral desde el inicio sin costo fijo de personal interno.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas con administración interna</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas con administración interna') }}</h3>
                     <p class="text-gray-600">Que necesitan soporte operativo externo para los trámites mensuales ante entidades laborales.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gerentes que quieren delegar con control</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Gerentes que quieren delegar con control') }}</h3>
                     <p class="text-gray-600">Que necesitan delegar los trámites mensuales sin perder visibilidad ni control sobre el estado laboral de su empresa.</p>
                 </div>
             </div>
@@ -116,7 +116,7 @@
     <!-- Qué incluye -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué incluye el servicio?</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué incluye el servicio?') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex gap-4" data-aos="fade-right">
                     <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
@@ -224,7 +224,7 @@
     <!-- Qué recibe el cliente -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">¿Qué recibe tu empresa al final?</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
                     <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
@@ -281,7 +281,7 @@
     <!-- Por qué Otium vs. gestión interna informal -->
     <section class="py-20 bg-secondary text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Por qué Otium vs. la gestión interna informal</h2>
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. la gestión interna informal') }}</h2>
             <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
                 <table class="w-full border-collapse">
                     <thead>
@@ -324,7 +324,7 @@
     <!-- FAQ Section -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Preguntas Frecuentes</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
             <div class="space-y-4" x-data="{ active: null }">
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
@@ -380,12 +380,12 @@
         <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">¿Tu gestión laboral depende de una sola persona?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Tu gestión laboral depende de una sola persona?') }}</h2>
             <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Contáctanos y organizamos juntos tu administración laboral mensual — con proceso, respaldo y visibilidad real.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">Contáctenos Ahora</a>
+                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
             </div>
         </div>
     </section>

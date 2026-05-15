@@ -15,10 +15,10 @@
 
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-                Nuestros Servicios
+                {{ __('Nuestros Servicios') }}
             </h1>
             <p class="text-xl text-white/90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Soluciones integrales diseñadas para impulsar el crecimiento y la estabilidad de su empresa.
+                {{ __('Soluciones integrales diseñadas para impulsar el crecimiento y la estabilidad de su empresa.') }}
             </p>
         </div>
     </section>
@@ -28,28 +28,10 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- 1: Outsourcing Contable -->
-                <a href="{{ route('services.outsourcing') }}"
-                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-48 bg-teal-50 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-accent opacity-80 group-hover:scale-110 transition-transform duration-500">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Outsourcing Contable</h3>
-                        <p class="text-gray-600 mb-6">Gestión integral de libros, obligaciones y cierres mensuales.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
-                    </div>
-                </a>
-
-                <!-- 2: Gestión Tributaria y Laboral -->
+                <!-- 01: Gestión Tributaria -->
                 <a href="{{ route('services.gestion-tributaria') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="100">
+                    data-aos="fade-up" data-aos-delay="0">
                     <div class="h-48 bg-red-50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,13 +40,31 @@
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Gestión Tributaria y Laboral</h3>
-                        <p class="text-gray-600 mb-6">Declaraciones, planeación fiscal y defensa ante el SIN.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Gestión Tributaria') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Cumplimiento fiscal con revisión previa, control de RCV y soporte técnico continuo.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- 3: Auditoría Financiera y Tributaria -->
+                <!-- 02: Outsourcing Contable Digital -->
+                <a href="{{ route('services.outsourcing') }}"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-teal-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-accent opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Outsourcing Contable Digital') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Equipo contable externo con gestión tributaria incluida y documentación en SharePoint.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
+                    </div>
+                </a>
+
+                <!-- 03: Auditoría y Revisión Financiera -->
                 <a href="{{ route('services.audit') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
                     data-aos="fade-up" data-aos-delay="200">
@@ -76,52 +76,16 @@
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Auditoría Financiera y Tributaria</h3>
-                        <p class="text-gray-600 mb-6">Validación independiente, fiscal y de aseguramiento.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Auditoría y Revisión Financiera') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Dictamen formal ante el CAUB. Revisión técnica e independiente para decisiones con respaldo.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- 4: Reportes y Dashboards (Power BI) -->
-                <a href="{{ route('services.reportes-power-bi') }}"
-                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-purple-50 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-purple-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Reportes y Dashboards (Power BI)</h3>
-                        <p class="text-gray-600 mb-6">Reportes gerenciales visuales para tomar decisiones.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
-                    </div>
-                </a>
-
-                <!-- 5: SharePoint Documental -->
-                <a href="{{ route('services.sharepoint-documental') }}"
-                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <div class="h-48 bg-blue-50 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-blue-500 opacity-80 group-hover:scale-110 transition-transform duration-500">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7a2 2 0 012-2h3l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7zm4 6h.01M10 13h4"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">SharePoint Documental</h3>
-                        <p class="text-gray-600 mb-6">Control y trazabilidad de documentos en la nube.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
-                    </div>
-                </a>
-
-                <!-- 6: Outsourcing Laboral -->
+                <!-- 04: Administración Laboral -->
                 <a href="{{ route('services.outsourcing-laboral') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="500">
+                    data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 bg-orange-50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-orange-500 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,16 +94,16 @@
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Outsourcing Laboral</h3>
-                        <p class="text-gray-600 mb-6">Planilla, seguro social y contratos al día.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Administración Laboral') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Planillas, trámites laborales y respaldo digital mensual para empresas en Bolivia.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- 7: Consultoría Empresarial -->
+                <!-- 05: Consultoría Empresarial -->
                 <a href="{{ route('services.consultoria') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="600">
+                    data-aos="fade-up" data-aos-delay="400">
                     <div class="h-48 bg-green-50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-green-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,16 +112,34 @@
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Consultoría Empresarial</h3>
-                        <p class="text-gray-600 mb-6">Acompañamiento estratégico y financiero.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Consultoría Empresarial') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Diagnóstico financiero, modelos de decisión y acompañamiento gerencial.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- 8: Revalúo Técnico y Gestión Digital de Activos Fijos -->
+                <!-- 06: Gestión Documental en SharePoint -->
+                <a href="{{ route('services.sharepoint-documental') }}"
+                    class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 bg-blue-50 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-blue-500 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7a2 2 0 012-2h3l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7zm4 6h.01M10 13h4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Gestión Documental en SharePoint') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Sistema documental con criterio empresarial dentro de Microsoft 365.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
+                    </div>
+                </a>
+
+                <!-- 07: Revalúo y Gestión de Activos Fijos -->
                 <a href="{{ route('services.revaluo-activos') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="700">
+                    data-aos="fade-up" data-aos-delay="600">
                     <div class="h-48 bg-amber-50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-amber-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,16 +148,16 @@
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Revalúo y Gestión de Activos Fijos</h3>
-                        <p class="text-gray-600 mb-6">Inventario físico, etiquetado QR y base patrimonial digital.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Revalúo y Gestión de Activos Fijos') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('Inventario físico, etiquetado QR, revalúo técnico y base patrimonial digital.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
-                <!-- 9: Constitución y Formalización de Empresas -->
+                <!-- 08: Constitución de Empresas en Bolivia -->
                 <a href="{{ route('services.constitucion-empresas') }}"
                     class="group block bg-white border border-gray-100 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl"
-                    data-aos="fade-up" data-aos-delay="800">
+                    data-aos="fade-up" data-aos-delay="700">
                     <div class="h-48 bg-indigo-50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-indigo-600 opacity-80 group-hover:scale-110 transition-transform duration-500">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -184,9 +166,9 @@
                         </div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Constitución de Empresas en Bolivia</h3>
-                        <p class="text-gray-600 mb-6">SEPREC, NIT, facturación electrónica y documentación desde el día uno.</p>
-                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Más Información <span class="text-xl">→</span></span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{{ __('Constitución de Empresas en Bolivia') }}</h3>
+                        <p class="text-gray-600 mb-6">{{ __('SEPREC · NIT · Facturación electrónica · Documentación desde el primer día.') }}</p>
+                        <span class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">{{ __('Ver one pager') }} <span class="text-xl">→</span></span>
                     </div>
                 </a>
 
@@ -197,10 +179,8 @@
     <!-- Process Section -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-4" data-aos="fade-up">Nuestro Proceso de
-                Trabajo</h2>
-            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up">Un enfoque estructurado
-                para garantizar resultados excepcionales en cada proyecto.</p>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-4" data-aos="fade-up">{{ __('Nuestro Proceso de Trabajo') }}</h2>
+            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up">{{ __('Un enfoque estructurado para garantizar resultados excepcionales en cada proyecto.') }}</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
@@ -208,9 +188,8 @@
                     <div
                         class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">
                         1</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Análisis Inicial</h3>
-                    <p class="text-gray-600 leading-relaxed">Evaluamos su situación actual, identificamos necesidades y
-                        definimos el alcance del proyecto con precisión.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Análisis Inicial') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Evaluamos su situación actual, identificamos necesidades y definimos el alcance del proyecto con precisión.') }}</p>
                 </div>
 
                 <!-- Step 2 -->
@@ -218,9 +197,8 @@
                     <div
                         class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">
                         2</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Estrategia y Ejecución</h3>
-                    <p class="text-gray-600 leading-relaxed">Diseñamos soluciones a medida e implementamos las mejores
-                        prácticas con nuestro equipo de expertos.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Estrategia y Ejecución') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Diseñamos soluciones a medida e implementamos las mejores prácticas con nuestro equipo de expertos.') }}</p>
                 </div>
 
                 <!-- Step 3 -->
@@ -228,9 +206,8 @@
                     <div
                         class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-xl">
                         3</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Resultados y Seguimiento</h3>
-                    <p class="text-gray-600 leading-relaxed">Entregamos informes detallados y realizamos seguimiento
-                        continuo para asegurar el éxito a largo plazo.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Resultados y Seguimiento') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Entregamos informes detallados y realizamos seguimiento continuo para asegurar el éxito a largo plazo.') }}</p>
                 </div>
             </div>
         </div>
@@ -239,7 +216,7 @@
     <!-- FAQ Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Preguntas Frecuentes</h2>
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
 
             <div class="space-y-4" x-data="{ active: null }">
                 <!-- Q1 -->
@@ -292,15 +269,14 @@
         </div>
 
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">¿Listo para asegurar su
-                futuro financiero?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Listo para asegurar su futuro financiero?') }}</h2>
             <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctenos hoy para una consulta inicial gratuita con uno de nuestros expertos.
+                {{ __('Contáctenos hoy para una consulta inicial gratuita con uno de nuestros expertos.') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="{{ route('contact') }}"
                     class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">
-                    Contáctenos Ahora
+                    {{ __('Contáctenos Ahora') }}
                 </a>
             </div>
         </div>

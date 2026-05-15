@@ -16,19 +16,19 @@
                 <!-- Text Column (60%) -->
                 <div class="w-full md:w-3/5 mb-12 md:mb-0 pr-0 md:pr-12" data-aos="fade-up" data-aos-duration="800">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                        Transformamos la gestión <span class="text-primary">Financiera y Digital</span> de tu empresa
+                        {{ __('Transformamos la gestión') }} <span class="text-primary">{{ __('Financiera y Digital') }}</span> {{ __('de tu empresa') }}
                     </h1>
                     <p class="text-lg text-gray-600 mb-8 max-w-xl">
-                        Gestionamos tu contabilidad, impuestos y nómina. Y te entregamos un dashboard mensual que tu gerencia entiende — con Microsoft 365, SharePoint y Power BI.
+                        {{ __('Gestionamos tu contabilidad, impuestos y nómina. Y te entregamos un dashboard mensual que tu gerencia entiende — con Microsoft 365, SharePoint y Power BI.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="{{ route('contact') }}"
                             class="px-8 py-3 bg-primary text-white rounded-lg font-semibold shadow-lg hover:bg-red-700 hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
-                            Agenda tu diagnóstico gratuito
+                            {{ __('Agenda tu diagnóstico gratuito') }}
                         </a>
                         <a href="{{ route('services.index') }}"
                             class="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-red-50 transition-colors text-center">
-                            Ver cómo trabajamos
+                            {{ __('Ver cómo trabajamos') }}
                         </a>
                     </div>
                 </div>
@@ -54,19 +54,19 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-red-800">
                 <div class="flex flex-col items-center justify-center" data-aos="fade-up">
                     <span class="flex items-center min-h-12 text-4xl font-bold mb-2">8+</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">Sectores Atendidos</span>
+                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Sectores Atendidos') }}</span>
                 </div>
                 <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="100">
                     <span class="flex items-center min-h-12 text-4xl font-bold mb-2">15+</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">Años de Experiencia</span>
+                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Años de Experiencia') }}</span>
                 </div>
                 <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="200">
                     <span class="flex items-center min-h-12 text-2xl font-bold mb-2 leading-tight">Santa Cruz<br>La Paz</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">Bolivia</span>
+                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Bolivia') }}</span>
                 </div>
                 <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="300">
                     <span class="flex items-center min-h-12 text-base font-bold mb-2 leading-snug">Microsoft 365<br>SharePoint · Power BI</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">Tecnología Partner</span>
+                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Tecnología Partner') }}</span>
                 </div>
             </div>
         </div>
@@ -76,9 +76,9 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-sm font-semibold uppercase tracking-wider text-primary">Cómo trabajamos</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Nuestro Enfoque</h2>
-                <p class="text-lg text-gray-600">Garantizamos resultados mediante procesos rigurosos y tecnología avanzada.</p>
+                <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Cómo trabajamos') }}</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">{{ __('Nuestro Enfoque') }}</h2>
+                <p class="text-lg text-gray-600">{{ __('Garantizamos resultados mediante procesos rigurosos y tecnología avanzada.') }}</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -91,9 +91,8 @@
                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cierres contables a tiempo</h3>
-                    <p class="text-gray-600 leading-relaxed">Garantizamos cierres mensuales puntuales para tu
-                        tranquilidad financiera.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Cierres contables a tiempo') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Garantizamos cierres mensuales puntuales para tu tranquilidad financiera.') }}</p>
                 </div>
 
                 <!-- Item 2 -->
@@ -105,9 +104,8 @@
                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cumplimiento tributario</h3>
-                    <p class="text-gray-600 leading-relaxed">Gestión fiscal rigurosa sin sorpresas ni contingencias para
-                        tu empresa.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Cumplimiento tributario') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Gestión fiscal rigurosa sin sorpresas ni contingencias para tu empresa.') }}</p>
                 </div>
 
                 <!-- Item 3 -->
@@ -120,9 +118,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Dashboards en Power BI</h3>
-                    <p class="text-gray-600 leading-relaxed">Visualización de datos ejecutivos para decisiones
-                        informadas al instante.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Dashboards en Power BI') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Visualización de datos ejecutivos para decisiones informadas al instante.') }}</p>
                 </div>
 
                 <!-- Item 4 -->
@@ -135,9 +132,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Integración de Sistemas</h3>
-                    <p class="text-gray-600 leading-relaxed">Conectamos SAP/Odoo con Microsoft 365, SharePoint y Power
-                        BI.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Integración de Sistemas') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Conectamos SAP/Odoo con Microsoft 365, SharePoint y Power BI.') }}</p>
                 </div>
 
                 <!-- Item 5 -->
@@ -150,8 +146,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trazabilidad Documental</h3>
-                    <p class="text-gray-600 leading-relaxed">Tus documentos en SharePoint. Acceso desde donde estés, sin papeles ni correos perdidos.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Trazabilidad Documental') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Tus documentos en SharePoint. Acceso desde donde estés, sin papeles ni correos perdidos.') }}</p>
                 </div>
 
                 <!-- Item 6 -->
@@ -164,8 +160,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Acompañamiento Estratégico</h3>
-                    <p class="text-gray-600 leading-relaxed">No solo cumplimos con el SIN. Te ayudamos a entender tus números y tomar mejores decisiones.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Acompañamiento Estratégico') }}</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ __('No solo cumplimos con el SIN. Te ayudamos a entender tus números y tomar mejores decisiones.') }}</p>
                 </div>
             </div>
         </div>
@@ -175,9 +171,9 @@
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12" data-aos="fade-down">
-                <span class="text-sm font-semibold uppercase tracking-wider text-primary">Nuestras ventajas</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">Por Qué Elegirnos</h2>
-                <p class="text-lg text-gray-600">Un equipo que opera contigo, no para ti.</p>
+                <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Nuestras ventajas') }}</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">{{ __('Por Qué Elegirnos') }}</h2>
+                <p class="text-lg text-gray-600">{{ __('Un equipo que opera contigo, no para ti.') }}</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -191,8 +187,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Metodologías Modernas</h3>
-                            <p class="text-gray-600">Procesos diseñados para empresa mediana boliviana: cierres mensuales antes del día 10, reportes listos para gerencia, cumplimiento tributario sin sorpresas.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">{{ __('Metodologías Modernas') }}</h3>
+                            <p class="text-gray-600">{{ __('Procesos diseñados para empresa mediana boliviana: cierres mensuales antes del día 10, reportes listos para gerencia, cumplimiento tributario sin sorpresas.') }}</p>
                         </div>
                     </div>
 
@@ -204,8 +200,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Integraciones Avanzadas</h3>
-                            <p class="text-gray-600">Conectamos tu sistema actual (SAP, Odoo, Excel) con Microsoft 365 y Power BI para que toda tu información financiera esté en un solo lugar.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">{{ __('Integraciones Avanzadas') }}</h3>
+                            <p class="text-gray-600">{{ __('Conectamos tu sistema actual (SAP, Odoo, Excel) con Microsoft 365 y Power BI para que toda tu información financiera esté en un solo lugar.') }}</p>
                         </div>
                     </div>
 
@@ -217,8 +213,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Acompañamiento Estratégico</h3>
-                            <p class="text-gray-600">Tenés un equipo dedicado: tu contador, tu tributarista y tu analista — no un tercero que aparece solo el 15 de cada mes.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">{{ __('Acompañamiento Estratégico') }}</h3>
+                            <p class="text-gray-600">{{ __('Tenés un equipo dedicado: tu contador, tu tributarista y tu analista — no un tercero que aparece solo el 15 de cada mes.') }}</p>
                         </div>
                     </div>
 
@@ -230,8 +226,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trabajo en la Nube</h3>
-                            <p class="text-gray-600">Tus documentos, reportes y comunicaciones en la nube. Accedés a tu información contable desde donde estés, en tiempo real.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">{{ __('Trabajo en la Nube') }}</h3>
+                            <p class="text-gray-600">{{ __('Tus documentos, reportes y comunicaciones en la nube. Accedés a tu información contable desde donde estés, en tiempo real.') }}</p>
                         </div>
                     </div>
                 </div>
@@ -250,9 +246,9 @@
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12" data-aos="fade-up">
-                <span class="text-sm font-semibold uppercase tracking-wider text-primary">Tecnología</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">Trabajamos con la tecnología que ya conocés</h2>
-                <p class="text-lg text-gray-600">O te ayudamos a adoptarla.</p>
+                <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Tecnología') }}</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">{{ __('Trabajamos con la tecnología que ya conocés') }}</h2>
+                <p class="text-lg text-gray-600">{{ __('O te ayudamos a adoptarla.') }}</p>
             </div>
 
             <!-- Logos -->
@@ -324,8 +320,8 @@
 
             <!-- Descripción -->
             <p class="text-center text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Integramos tus sistemas actuales con el ecosistema Microsoft para que tengas tus datos financieros
-                <strong class="text-gray-900">organizados, trazables y disponibles en tiempo real.</strong>
+                {{ __('Integramos tus sistemas actuales con el ecosistema Microsoft para que tengas tus datos financieros') }}
+                <strong class="text-gray-900">{{ __('organizados, trazables y disponibles en tiempo real.') }}</strong>
             </p>
         </div>
     </section>
@@ -357,10 +353,9 @@
 
             <!-- Header -->
             <div class="text-center mb-20" data-aos="fade-down">
-                <span class="text-sm font-semibold uppercase tracking-wider text-white/60">Nuestra Oferta</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Nuestros Servicios</h2>
-                <p class="text-lg text-white/75 mt-3 max-w-2xl mx-auto" style="
-    margin-bottom: 35px;">Soluciones integrales diseñadas para cada etapa de tu negocio.</p>
+                <span class="text-sm font-semibold uppercase tracking-wider text-white/60">{{ __('Nuestra Oferta') }}</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">{{ __('Nuestros Servicios') }}</h2>
+                <p class="text-lg text-white/75 mt-3 max-w-2xl mx-auto" style="margin-bottom: 35px;">{{ __('Soluciones integrales diseñadas para cada etapa de tu negocio.') }}</p>
             </div>
 
             <!-- Carousel track -->
@@ -370,14 +365,14 @@
 
                     @php
                     $services = [
-                        ['route' => 'services.outsourcing',         'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => 'Outsourcing Contable',      'desc' => 'Cierres mensuales, libros y obligaciones fiscales a tiempo.'],
-                        ['route' => 'services.gestion-tributaria',  'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => 'Gestión Tributaria',        'desc' => 'IVA, IT, IUE y declaraciones ante el SIN sin sorpresas.'],
-                        ['route' => 'services.audit',               'img' => '/images/otium/carousel/auditoria.png',              'title' => 'Auditoría Financiera',      'desc' => 'Validación independiente, riesgos y control interno.'],
-                        ['route' => 'services.outsourcing-laboral', 'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => 'Outsourcing Laboral',       'desc' => 'Planillas, AFP y relaciones con el Ministerio de Trabajo.'],
-                        ['route' => 'services.reportes-power-bi',   'img' => '/images/otium/carousel/transformacion_digital.png', 'title' => 'Reportes Power BI',         'desc' => 'Dashboards gerenciales con datos financieros en tiempo real.'],
-                        ['route' => 'services.sharepoint-documental','img'=> '/images/otium/carousel/transformacion_digital.png', 'title' => 'SharePoint Documental',     'desc' => 'Documentos organizados y accesibles con Microsoft 365.'],
-                        ['route' => 'services.consultoria',         'img' => '/images/otium/carousel/auditoria.png',              'title' => 'Consultoría Empresarial',   'desc' => 'Diagnóstico financiero y acompañamiento estratégico.'],
-                        ['route' => 'services.constitucion-empresas','img'=> '/images/otium/carousel/constitucion_de_empresas.png','title'=> 'Constitución de Empresas',  'desc' => 'Registro legal y estructura óptima para tu empresa.'],
+                        ['route' => 'services.outsourcing',          'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => __('Outsourcing Contable'),      'desc' => __('Cierres mensuales, libros y obligaciones fiscales a tiempo.')],
+                        ['route' => 'services.gestion-tributaria',   'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => __('Gestión Tributaria'),         'desc' => __('IVA, IT, IUE y declaraciones ante el SIN sin sorpresas.')],
+                        ['route' => 'services.audit',                'img' => '/images/otium/carousel/auditoria.png',              'title' => __('Auditoría Financiera'),       'desc' => __('Validación independiente, riesgos y control interno.')],
+                        ['route' => 'services.outsourcing-laboral',  'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => __('Outsourcing Laboral'),        'desc' => __('Planillas, AFP y relaciones con el Ministerio de Trabajo.')],
+                        ['route' => 'services.reportes-power-bi',    'img' => '/images/otium/carousel/transformacion_digital.png', 'title' => __('Reportes Power BI'),          'desc' => __('Dashboards gerenciales con datos financieros en tiempo real.')],
+                        ['route' => 'services.sharepoint-documental','img' => '/images/otium/carousel/transformacion_digital.png', 'title' => __('SharePoint Documental'),      'desc' => __('Documentos organizados y accesibles con Microsoft 365.')],
+                        ['route' => 'services.consultoria',          'img' => '/images/otium/carousel/auditoria.png',              'title' => __('Consultoría Empresarial'),    'desc' => __('Diagnóstico financiero y acompañamiento estratégico.')],
+                        ['route' => 'services.constitucion-empresas','img' => '/images/otium/carousel/constitucion_de_empresas.png','title'=> __('Constitución de Empresas'),  'desc' => __('Registro legal y estructura óptima para tu empresa.')],
                     ];
                     $pages = array_chunk($services, 3);
                     @endphp
@@ -398,7 +393,7 @@
                                 <h3 class="font-bold text-white text-lg leading-snug">{{ $svc['title'] }}</h3>
                                 <p class="text-white/70 text-sm leading-relaxed flex-1">{{ $svc['desc'] }}</p>
                                 <span class="inline-flex items-center gap-1 text-white/60 text-sm font-semibold group-hover:text-white group-hover:gap-2 transition-all duration-200">
-                                    Ver servicio
+                                    {{ __('Ver servicio') }}
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                 </span>
                             </div>
@@ -414,10 +409,10 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
                                 </svg>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Ver todos</h3>
-                            <p class="text-white/60 text-sm mb-5">Explora el catálogo completo de servicios.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">{{ __('Ver todos') }}</h3>
+                            <p class="text-white/60 text-sm mb-5">{{ __('Explora el catálogo completo de servicios.') }}</p>
                             <span class="px-5 py-2 border border-white/40 rounded-full text-white text-sm font-medium group-hover:bg-white group-hover:text-secondary transition-all duration-300">
-                                Ver catálogo →
+                                {{ __('Ver catálogo →') }}
                             </span>
                         </a>
                         @endif
@@ -453,7 +448,7 @@
         </div>
     </section>
 
-    <!-- 7. Quiénes Somos (UPDATED SECTION) -->
+    <!-- 7. Quiénes Somos -->
     <section id="about" class="py-20 bg-white overflow-hidden">
         <div class="container mx-auto px-6 space-y-24">
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -469,22 +464,17 @@
                 </div>
 
                 <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-sm font-semibold uppercase tracking-wider text-primary">La firma</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Quiénes Somos</h2>
+                    <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('La firma') }}</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">{{ __('Quiénes Somos') }}</h2>
                     <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                        Somos una firma de consultoría con oficinas en <strong>La Paz y Santa Cruz</strong>. Guiamos a
-                        empresas y emprendedores desde su constitución hasta la optimización completa de sus operaciones
-                        financieras, tributarias y digitales.
+                        {{ __('Somos una firma de consultoría con oficinas en') }} <strong>{{ __('La Paz y Santa Cruz') }}</strong>{{ __('. Guiamos a empresas y emprendedores desde su constitución hasta la optimización completa de sus operaciones financieras, tributarias y digitales.') }}
                     </p>
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        Ayudamos a organizaciones bolivianas y extranjeras a ordenar sus finanzas, mejorar la eficiencia
-                        operativa y escalar mediante tecnología.
+                        {{ __('Ayudamos a organizaciones bolivianas y extranjeras a ordenar sus finanzas, mejorar la eficiencia operativa y escalar mediante tecnología.') }}
                     </p>
                     <div class="flex gap-4">
-                        <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700">📍 Oficina
-                            La Paz</span>
-                        <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700">📍 Oficina
-                            Santa Cruz</span>
+                        <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700">{{ __('📍 Oficina La Paz') }}</span>
+                        <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700">{{ __('📍 Oficina Santa Cruz') }}</span>
                     </div>
                 </div>
             </div>
@@ -495,9 +485,9 @@
     <section class="py-20 bg-gray-50" x-data="{ activePage: 0 }">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-sm font-semibold uppercase tracking-wider text-primary">Testimonios</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">Lo que dicen nuestros clientes</h2>
-                <p class="text-lg text-gray-600">La confianza de nuestros clientes es nuestro mayor activo.</p>
+                <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Testimonios') }}</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">{{ __('Lo que dicen nuestros clientes') }}</h2>
+                <p class="text-lg text-gray-600">{{ __('La confianza de nuestros clientes es nuestro mayor activo.') }}</p>
             </div>
 
             <!-- Carousel Window -->
@@ -512,16 +502,14 @@
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
                             <div class="text-6xl text-primary opacity-20 absolute top-4 left-4 font-serif">"</div>
-                            <p class="text-gray-600 italic mb-6 relative z-10">OTIUM transformó nuestra gestión
-                                financiera. Su atención al detalle y consejos estratégicos nos ayudaron a optimizar
-                                nuestros recursos.</p>
+                            <p class="text-gray-600 italic mb-6 relative z-10">Valoro mucho el acompañamiento de Otium en temas laborales. Nos han apoyado con seriedad, criterio y claridad en situaciones importantes, dándonos mayor tranquilidad al momento de tomar decisiones.</p>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    CM</div>
+                                    JCM</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Carlos Mendoza</h4>
-                                    <p class="text-xs text-gray-500">CEO, TechSolutions</p>
+                                    <h4 class="font-bold text-gray-900">Juan Carlos Medina</h4>
+                                    <p class="text-xs text-gray-500">Gerente General, Casa del Camba</p>
                                 </div>
                             </div>
                         </div>
@@ -530,15 +518,14 @@
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
                             <div class="text-6xl text-primary opacity-20 absolute top-4 left-4 font-serif">"</div>
-                            <p class="text-gray-600 italic mb-6 relative z-10">Profesionalismo puro. Nos guiaron a
-                                través de una auditoría compleja sin problemas. Altamente recomendados.</p>
+                            <p class="text-gray-600 italic mb-6 relative z-10">Otium nos ha acompañado en temas tributarios y contables en el transcurso de la expansión de la marca. Su apoyo me ha dado información valiosa para tomar decisiones.</p>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    AG</div>
+                                    BF</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Ana García</h4>
-                                    <p class="text-xs text-gray-500">Directora Financiera, Grupo Alfa</p>
+                                    <h4 class="font-bold text-gray-900">Bianca Foianini</h4>
+                                    <p class="text-xs text-gray-500">CEO/Founder, La Fábrica de Biancaflor</p>
                                 </div>
                             </div>
                         </div>
@@ -547,15 +534,14 @@
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
                             <div class="text-6xl text-primary opacity-20 absolute top-4 left-4 font-serif">"</div>
-                            <p class="text-gray-600 italic mb-6 relative z-10">El equipo de OTIUM no solo son
-                                auditores, son socios estratégicos. Su visión nos ayudó a expandirnos con seguridad.</p>
+                            <p class="text-gray-600 italic mb-6 relative z-10">En Intesprog valoramos el acompañamiento de Otium en temas contables y tributarios. Durante más de 7 años, su apoyo nos ha permitido trabajar con mayor criterio y tranquilidad.</p>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    RD</div>
+                                    DA</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Roberto Díaz</h4>
-                                    <p class="text-xs text-gray-500">Fundador, Inversiones RD</p>
+                                    <h4 class="font-bold text-gray-900">Dalcy Aguilar</h4>
+                                    <p class="text-xs text-gray-500">Gerente General, Intesprog SRL</p>
                                 </div>
                             </div>
                         </div>
@@ -567,15 +553,14 @@
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
                             <div class="text-6xl text-primary opacity-20 absolute top-4 left-4 font-serif">"</div>
-                            <p class="text-gray-600 italic mb-6 relative z-10">Gracias a sus dashboards en Power BI,
-                                ahora tomamos decisiones basadas en datos reales y no en suposiciones.</p>
+                            <p class="text-gray-600 italic mb-6 relative z-10">En iTeam SRL valoramos el trabajo de Otium en temas contables y tributarios, porque nos ha ayudado a manejar estos procesos con más orden, claridad y confianza a lo largo de 8 años.</p>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    MG</div>
+                                    ME</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">María González</h4>
-                                    <p class="text-xs text-gray-500">Gerente General, Importadora Sur</p>
+                                    <h4 class="font-bold text-gray-900">Marcelo Espinoza</h4>
+                                    <p class="text-xs text-gray-500">Gerente General, iTeam SRL</p>
                                 </div>
                             </div>
                         </div>
@@ -584,15 +569,14 @@
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
                             <div class="text-6xl text-primary opacity-20 absolute top-4 left-4 font-serif">"</div>
-                            <p class="text-gray-600 italic mb-6 relative z-10">La integración de Odoo con nuestras
-                                operaciones fue impecable. Un equipo técnico de primer nivel.</p>
+                            <p class="text-gray-600 italic mb-6 relative z-10">I have been working with Otium since the very beginning of my business journey, and honestly, it has been one of the best professional experiences I've had. Their team is always professional, supportive, and whenever I need help, they are always there for me.</p>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    JT</div>
+                                    KS</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Javier Torrez</h4>
-                                    <p class="text-xs text-gray-500">CTO, DataBolivia</p>
+                                    <h4 class="font-bold text-gray-900">Karan Sharma</h4>
+                                    <p class="text-xs text-gray-500">Propietario, Sabor de la India</p>
                                 </div>
                             </div>
                         </div>
@@ -601,15 +585,14 @@
                         <div
                             class="bg-white p-8 rounded-xl shadow-lg relative hover:-translate-y-2 transition-transform duration-300">
                             <div class="text-6xl text-primary opacity-20 absolute top-4 left-4 font-serif">"</div>
-                            <p class="text-gray-600 italic mb-6 relative z-10">Su asesoría tributaria nos permitió
-                                reestructurar costos y mejorar nuestra rentabilidad un 15% el primer año.</p>
+                            <p class="text-gray-600 italic mb-6 relative z-10">Otium was a member of IECnet — they performed their activities in a very professional and good standing way during their time with us.</p>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    LF</div>
+                                    SC</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Lucía Fernández</h4>
-                                    <p class="text-xs text-gray-500">VP Operaciones, Logística Global</p>
+                                    <h4 class="font-bold text-gray-900">Stefano Ciccioriccio</h4>
+                                    <p class="text-xs text-gray-500">Partner, Ciccioriccio e Associati</p>
                                 </div>
                             </div>
                         </div>
@@ -633,13 +616,13 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
-                    <span class="text-sm font-semibold uppercase tracking-wider text-primary">Blog</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-2">Últimos Insights</h2>
-                    <p class="text-lg text-gray-600">Mantente informado con nuestras últimas publicaciones sobre finanzas, impuestos y tecnología.</p>
+                    <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Blog') }}</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-2">{{ __('Últimos Insights') }}</h2>
+                    <p class="text-lg text-gray-600">{{ __('Mantente informado con nuestras últimas publicaciones sobre finanzas, impuestos y tecnología.') }}</p>
                 </div>
                 <a href="{{ route('blog.index') }}"
                     class="hidden md:block text-primary font-semibold hover:underline">
-                    Ver todas las publicaciones &rarr;
+                    {{ __('Ver todas las publicaciones →') }}
                 </a>
             </div>
 
@@ -685,7 +668,7 @@
                                 @endif
                                 <span
                                     class="text-primary text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                                    Leer más
+                                    {{ __('Leer más') }}
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7" />
@@ -697,10 +680,10 @@
                 </div>
             @else
                 <div class="text-center py-12 bg-gray-50 rounded-2xl">
-                    <p class="text-gray-400">Próximamente compartiremos nuestros primeros artículos.</p>
+                    <p class="text-gray-400">{{ __('Próximamente compartiremos nuestros primeros artículos.') }}</p>
                     <a href="{{ route('blog.index') }}"
                         class="mt-3 inline-block text-primary text-sm font-semibold hover:underline">
-                        Ir al blog →
+                        {{ __('Ir al blog →') }}
                     </a>
                 </div>
             @endif
@@ -711,8 +694,8 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12" data-aos="fade-up">
-                <span class="text-sm font-semibold uppercase tracking-wider text-primary">Experiencia sectorial</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Sectores en los que trabajamos</h2>
+                <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Experiencia sectorial') }}</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{{ __('Sectores en los que trabajamos') }}</h2>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="100">
@@ -725,7 +708,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Importadoras y exportadoras</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">{{ __('Importadoras y exportadoras') }}</span>
                     </div>
                 </div>
 
@@ -737,7 +720,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Construcción y proyectos</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">{{ __('Construcción y proyectos') }}</span>
                     </div>
                 </div>
 
@@ -749,7 +732,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Alimentos y manufactura</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">{{ __('Alimentos y manufactura') }}</span>
                     </div>
                 </div>
 
@@ -761,7 +744,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Restaurantes y gastronomía</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">{{ __('Restaurantes y gastronomía') }}</span>
                     </div>
                 </div>
 
@@ -773,7 +756,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Servicios especializados</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">{{ __('Servicios especializados') }}</span>
                     </div>
                 </div>
 
@@ -785,7 +768,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                             </svg>
                         </div>
-                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">Comercio e industria</span>
+                        <span class="font-semibold text-sm md:text-base text-gray-700 group-hover:text-gray-900 transition-colors">{{ __('Comercio e industria') }}</span>
                     </div>
                 </div>
 
@@ -794,6 +777,67 @@
             <p class="text-center text-gray-400 font-medium mt-10 tracking-widest uppercase text-sm" data-aos="fade-up" data-aos-delay="200">
                 Santa Cruz · La Paz · Bolivia
             </p>
+        </div>
+    </section>
+
+    <!-- Doing Business in Bolivia -->
+    <section class="py-20 bg-accent/10 border-y border-accent/20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Icon + Text -->
+                <div class="flex-1" data-aos="fade-right">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold uppercase tracking-wider text-accent">{{ __('Empresas Extranjeras') }}</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ __('Doing Business in Bolivia') }}</h2>
+                    <p class="text-lg text-gray-600 mb-6 max-w-xl">
+                        {{ __('¿Tu empresa quiere operar en Bolivia? Te acompañamos en cada paso: constitución legal, NIT, cumplimiento tributario y gestión contable — desde el primer día y en tu idioma.') }}
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-gray-700">{{ __('Constitución de sucursal o sociedad nueva en Bolivia') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-gray-700">{{ __('Gestión de apostillas, poderes y documentación internacional') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-gray-700">{{ __('Contabilidad, impuestos y nómina bajo normativa boliviana') }}</span>
+                        </li>
+                    </ul>
+                    <a href="{{ route('doing-business') }}"
+                        class="inline-flex items-center gap-2 px-8 py-3 bg-accent text-white rounded-lg font-semibold shadow-lg hover:bg-teal-600 transition-all transform hover:-translate-y-1">
+                        {{ __('Ver guía completa') }}
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <!-- Stats / Highlights -->
+                <div class="flex-1 grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="100">
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl font-bold text-accent mb-1">25%</div>
+                        <div class="text-sm text-gray-600">{{ __('Tasa IUE corporativa') }}</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl font-bold text-accent mb-1">~20</div>
+                        <div class="text-sm text-gray-600">{{ __('Días hábiles para constituir') }}</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl font-bold text-accent mb-1">3</div>
+                        <div class="text-sm text-gray-600">{{ __('Idiomas de atención') }}</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl font-bold text-accent mb-1">15+</div>
+                        <div class="text-sm text-gray-600">{{ __('Años con clientes internacionales') }}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -806,15 +850,14 @@
         </div>
 
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">¿Listo para asegurar su
-                futuro financiero?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Listo para asegurar su futuro financiero?') }}</h2>
             <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctenos hoy para una consulta inicial gratuita con uno de nuestros expertos.
+                {{ __('Contáctenos hoy para una consulta inicial gratuita con uno de nuestros expertos.') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="{{ route('contact') }}"
                     class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">
-                    Contáctenos Ahora
+                    {{ __('Contáctenos Ahora') }}
                 </a>
             </div>
         </div>
