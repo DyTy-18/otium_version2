@@ -4,7 +4,7 @@
     'ogImage'     => '/images/hero-corporate.png',
 ])
 @php
-    $pageTitle = str_ends_with(trim($title), '| Otium') ? $title : $title . ' | Otium';
+    $pageTitle = str_contains($title, 'Otium') ? $title : $title . ' | Otium';
     $canonical = url()->current();
 @endphp
 <!DOCTYPE html>

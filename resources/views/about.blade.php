@@ -277,10 +277,14 @@
                             <p class="text-primary font-medium text-sm">Manager | Impuestos, Consultoría y Datos</p>
                         </div>
                     </div>
+                    <p class="inline-flex items-center gap-1.5 text-xs text-gray-400 font-medium">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        La Paz, Bolivia
+                    </p>
                     <p class="text-gray-600 leading-relaxed text-sm">
                         Zaulo acompaña a empresas en temas contables y tributarios, combinando experiencia en distintos modelos de negocio con consultoría empresarial, análisis de datos y herramientas digitales. Su trabajo parte del cumplimiento y la revisión de riesgos, pero se extiende hacia control de gestión, automatización y toma de decisiones con mayor respaldo.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
+                    <a href="https://www.linkedin.com/in/zaulo-vasquez/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
@@ -297,10 +301,14 @@
                             <p class="text-primary font-medium text-sm">Manager | Impuestos, Auditoría y Finanzas</p>
                         </div>
                     </div>
+                    <p class="inline-flex items-center gap-1.5 text-xs text-gray-400 font-medium">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Santa Cruz, Bolivia
+                    </p>
                     <p class="text-gray-600 leading-relaxed text-sm">
                         Brian acompaña a empresas en gestión tributaria, auditoría y finanzas, con experiencia en contingencias tributarias, auditorías financieras y proyectos especiales bajo NIIF. Desde la oficina de Otium en La Paz, trabaja con clientes empresariales que necesitan cumplimiento, criterio técnico y una lectura clara de sus riesgos financieros y fiscales.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
+                    <a href="https://www.linkedin.com/in/brian-jauregui-oc/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
