@@ -16,6 +16,7 @@
     <title>{{ $pageTitle }}</title>
     <meta name="description" content="{{ $description }}">
     <link rel="canonical" href="{{ $canonical }}">
+    <link rel="icon" href="/images/logo-otium.webp" type="image/webp">
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website">
