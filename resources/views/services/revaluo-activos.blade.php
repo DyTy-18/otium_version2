@@ -4,25 +4,48 @@
 >
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-150 h-150 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-3xl text-left">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                    {{ __('Revalúo Técnico y Gestión Digital de Activos Fijos') }}
-                </h1>
-                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
-                    {{ __('Inventario físico, etiquetado QR, análisis contable y base patrimonial digital.') }}
-                </p>
-                <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg" data-aos="fade-up" data-aos-delay="150">
-                    "Más que inventario: control patrimonial con respaldo técnico, etiquetado QR y base digital — para que la empresa sepa exactamente qué tiene, dónde está y cuánto vale."
-                </blockquote>
-                <a href="{{ route('contact') }}"
-                    class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    {{ __('Solicitar información') }}
-                </a>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+
+                <!-- Texto -->
+                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
+                    <span class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Revalúo de activos</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        {{ __('Revalúo Técnico y Gestión Digital de Activos Fijos') }}
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light">
+                        {{ __('Inventario físico, etiquetado QR, análisis contable y base patrimonial digital.') }}
+                    </p>
+                    <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg">
+                        "Más que inventario: control patrimonial con respaldo técnico, etiquetado QR y base digital — para que la empresa sepa exactamente qué tiene, dónde está y cuánto vale."
+                    </blockquote>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{{ route('contact') }}"
+                            class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
+                            {{ __('Solicitar información') }}
+                        </a>
+                        <a href="/pdfs/OTIUM_Base_comercial_comunicacional_Revaluo_Activos_Fijos.pdf" download
+                            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
+                            {{ __('Descargar brochure') }}
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagen flotante -->
+                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="900">
+                    <div class="relative w-full max-w-sm md:max-w-md">
+                        <div class="absolute inset-0 bg-primary/40 rounded-2xl translate-x-4 translate-y-4"></div>
+                        <div class="absolute -top-3 -left-3 w-16 h-16 border-4 border-white/30 rounded-xl"></div>
+                        <img src="/images/otium/carousel/auditoria.png"
+                            alt="Revalúo Técnico Activos Fijos Otium"
+                            class="relative z-10 rounded-2xl shadow-2xl w-full h-72 md:h-80 object-cover object-center animate-float">
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
