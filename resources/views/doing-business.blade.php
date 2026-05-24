@@ -109,6 +109,15 @@
         </div>
     </section>
 
+    <!-- Intro Otium -->
+    <section class="py-12 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-6 max-w-3xl text-center" data-aos="fade-up">
+            <p class="text-lg text-gray-600 leading-relaxed">
+                {{ __('Acompañamos a empresas extranjeras desde el primer trámite hasta el primer balance — constitución, cumplimiento tributario, nómina local y estructura contable en un solo equipo. Operamos en Santa Cruz y La Paz, y trabajamos en español, inglés e italiano.') }}
+            </p>
+        </div>
+    </section>
+
     <!-- Servicios incluidos -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">

@@ -84,7 +84,7 @@
     <x-footer />
 
     <!-- WhatsApp Floating Button -->
-    @php $wa = env('WHATSAPP_NUMBER', '59172505583'); @endphp
+    @php $wa = env('WHATSAPP_NUMBER', '59170654104'); @endphp
     <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
         {{-- Tooltip --}}
         <span class="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap pointer-events-none">

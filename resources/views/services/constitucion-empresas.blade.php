@@ -280,7 +280,7 @@
                     <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                     </div>
-                    <p class="text-gray-700 font-medium">Plazo referencial: ~20 días hábiles</p>
+                    <p class="text-gray-700 font-medium">Plazo referencial: 20 días hábiles</p>
                 </div>
             </div>
         </div>
