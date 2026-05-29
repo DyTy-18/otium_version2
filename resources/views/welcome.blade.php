@@ -825,7 +825,7 @@
                         <div class="text-sm text-gray-600">{{ __('Tasa IUE corporativa') }}</div>
                     </div>
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-                        <div class="text-3xl font-bold text-accent mb-1">~20</div>
+                        <div class="text-3xl font-bold text-accent mb-1">20</div>
                         <div class="text-sm text-gray-600">{{ __('Días hábiles para constituir') }}</div>
                     </div>
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">

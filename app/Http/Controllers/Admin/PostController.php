@@ -44,6 +44,7 @@ class PostController extends Controller
             'content'          => [$hasDocument ? 'nullable' : 'required', 'string'],
             'category_id'      => ['nullable', 'exists:categories,id'],
             'status'           => ['required', 'in:draft,published'],
+            'popup_enabled'    => ['nullable', 'boolean'],
             'image'            => ['nullable', 'image', 'max:10240'],
             'document'         => ['nullable', 'file', 'mimes:pdf,txt', 'max:51200'],
             'meta_title'       => ['nullable', 'string', 'max:70'],
@@ -53,6 +54,7 @@ class PostController extends Controller
             'guest_author'     => ['nullable', 'string', 'max:150'],
         ]);
 
+        $validated['popup_enabled'] = $request->boolean('popup_enabled');
         $validated['slug'] = $this->uniqueSlug($request->title);
 
         if ($request->author_type === 'user') {
@@ -121,6 +123,7 @@ class PostController extends Controller
             'content'          => [($hasDocument || $post->document_path) ? 'nullable' : 'required', 'string'],
             'category_id'      => ['nullable', 'exists:categories,id'],
             'status'           => ['required', 'in:draft,published'],
+            'popup_enabled'    => ['nullable', 'boolean'],
             'image'            => ['nullable', 'image', 'max:10240'],
             'document'         => ['nullable', 'file', 'mimes:pdf,txt', 'max:51200'],
             'meta_title'       => ['nullable', 'string', 'max:70'],
@@ -129,6 +132,8 @@ class PostController extends Controller
             'user_id'          => ['nullable', 'exists:users,id'],
             'guest_author'     => ['nullable', 'string', 'max:150'],
         ]);
+
+        $validated['popup_enabled'] = $request->boolean('popup_enabled');
 
         if ($request->author_type === 'user') {
             $validated['user_id']      = $request->user_id ?: null;

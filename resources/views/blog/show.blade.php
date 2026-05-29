@@ -227,6 +227,92 @@
         </div>
     </section>
 
+    {{-- Popup de entrada --}}
+    @if($post->popup_enabled)
+    <div x-data="{
+            open: false,
+            init() {
+                const key = 'popup_seen_{{ $post->id }}';
+                if (!sessionStorage.getItem(key)) {
+                    setTimeout(() => { this.open = true; }, 800);
+                }
+            },
+            close() {
+                this.open = false;
+                sessionStorage.setItem('popup_seen_{{ $post->id }}', '1');
+            }
+         }"
+         x-show="open"
+         x-cloak
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @keydown.escape.window="close()"
+         @click.self="close()"
+         class="fixed inset-0 z-50 flex items-center justify-center p-4"
+         style="background: rgba(20,12,8,0.6);"
+         role="dialog" aria-modal="true" aria-labelledby="popup-title">
+
+        <div class="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95 translate-y-2"
+             x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+             x-transition:leave-end="opacity-0 scale-95 translate-y-2"
+             @click.stop>
+
+            {{-- Header --}}
+            <div class="flex items-center justify-between px-8 py-5 bg-[#f9f6f4] border-b border-[#ede5e0]">
+                <img src="{{ asset('images/logo-otium.webp') }}" alt="Otium" class="h-9 w-auto">
+                <button type="button" @click="close()"
+                        class="text-[#5a4a43] w-7 h-7 rounded-full bg-black/5 hover:bg-black/12 text-xs flex items-center justify-center transition-colors leading-none"
+                        aria-label="Cerrar popup">
+                    ✕
+                </button>
+            </div>
+
+            {{-- Cuerpo --}}
+            <div class="px-8 py-7 border-l-4 border-[#c8927a]">
+                <span class="inline-block bg-[#fde8df] text-[#8c3a1e] text-xs font-medium px-3 py-1 rounded-full mb-3 uppercase tracking-wide">
+                    @if($post->category) {{ $post->category->name }}
+                    @elseif($post->document_path) Documento
+                    @else Nuevo artículo
+                    @endif
+                </span>
+
+                <h2 id="popup-title" class="text-xl font-semibold text-[#1a0d09] mb-3 leading-snug">
+                    {{ $post->title }}
+                </h2>
+
+                @if($post->excerpt)
+                    <p class="text-sm text-[#5a4a43] leading-relaxed mb-5">{{ $post->excerpt }}</p>
+                @endif
+
+                <div class="flex gap-3 flex-wrap">
+                    @if($post->document_path)
+                        <a href="{{ Storage::url($post->document_path) }}"
+                           target="_blank" rel="noopener" download
+                           class="flex-1 min-w-36 inline-flex items-center justify-center gap-2 bg-[#c8927a] hover:bg-[#b87a60] text-white text-sm font-medium py-3 px-5 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            Descargar guía
+                        </a>
+                    @endif
+                    <button type="button" @click="close()"
+                            class="flex-1 min-w-28 border-2 border-[#7dc8c0] text-[#7dc8c0] hover:bg-[#e1f5f3] text-sm font-medium py-3 px-5 rounded-lg transition-colors">
+                        Ver blog →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
     {{-- Posts relacionados --}}
     @if($related->isNotEmpty())
     <section class="py-16 bg-gray-50">

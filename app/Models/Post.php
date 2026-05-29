@@ -11,14 +11,15 @@ class Post extends Model
 {
     protected $fillable = [
         'title', 'slug', 'excerpt', 'content', 'image', 'document_path',
-        'category_id', 'user_id', 'guest_author', 'status', 'published_at',
+        'category_id', 'user_id', 'guest_author', 'status', 'popup_enabled', 'published_at',
         'meta_title', 'meta_description',
     ];
 
     protected function casts(): array
     {
         return [
-            'published_at' => 'datetime',
+            'published_at'  => 'datetime',
+            'popup_enabled' => 'boolean',
         ];
     }
 

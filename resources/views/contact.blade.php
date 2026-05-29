@@ -138,7 +138,7 @@
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">{{ __('Información de Contacto') }}</h2>
 
                     <!-- WhatsApp CTA -->
-                    @php $wa = env('WHATSAPP_NUMBER', '59172505583'); @endphp
+                    @php $wa = env('WHATSAPP_NUMBER', '59170654104'); @endphp
                     <a href="https://wa.me/{{ $wa }}?text=Hola%2C%20me%20comunico%20desde%20el%20sitio%20web%20de%20OTIUM%20Consultores.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
                         target="_blank" rel="noopener"
                         class="flex items-center gap-4 p-5 rounded-2xl text-white font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all mb-10"

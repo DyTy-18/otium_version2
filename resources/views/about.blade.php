@@ -38,34 +38,39 @@
     <!-- Nuestra historia -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Nuestra historia') }}</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center" data-aos="fade-up" data-aos-delay="100">
-                    Una forma distinta de acompañar la gestión empresarial
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-5 text-gray-600 leading-relaxed" data-aos="fade-right">
-                        <p>
-                            Otium nace en 2011 con la idea de ofrecer una experiencia diferente en servicios contables, tributarios y de auditoría: más cercana, más ordenada, más moderna y apoyada en tecnología.
-                        </p>
-                        <p>
-                            Desde sus primeros años, la firma acompañó a empresas en contabilidad mensual, auditoría y asesoramiento tributario. Con el tiempo, evolucionó hacia un modelo de outsourcing contable digital, incorporando herramientas como Microsoft 365, SharePoint, reportes de gestión y procesos documentales más trazables.
-                        </p>
-                        <p>
-                            Hoy, Otium trabaja desde Santa Cruz y La Paz con empresas locales y extranjeras que operan en Bolivia, combinando conocimiento normativo, criterio profesional y herramientas digitales para acompañar mejor la toma de decisiones.
-                        </p>
-                        <p class="text-sm text-gray-500 italic">
-                            Participación institucional: IECnet — host de reunión LATAM 2016.
-                        </p>
-                    </div>
-                    <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square flex items-center justify-center" data-aos="fade-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+                <div class="space-y-5" data-aos="fade-right">
+                    <p class="text-sm font-semibold text-primary uppercase tracking-widest">{{ __('Nuestra historia') }}</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        Una forma distinta de acompañar la gestión empresarial
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Otium nace en 2011 con la idea de ofrecer una experiencia diferente en servicios contables, tributarios y de auditoría: más cercana, más ordenada, más moderna y apoyada en tecnología.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Desde sus primeros años, la firma acompañó a empresas en contabilidad mensual, auditoría y asesoramiento tributario. Con el tiempo, evolucionó hacia un modelo de outsourcing contable digital, incorporando herramientas como Microsoft 365, SharePoint, reportes de gestión y procesos documentales más trazables.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Hoy, Otium trabaja desde Santa Cruz y La Paz con empresas locales y extranjeras que operan en Bolivia, combinando conocimiento normativo, criterio profesional y herramientas digitales para acompañar mejor la toma de decisiones.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-5" data-aos="fade-left">
+                    <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-video flex items-center justify-center">
                         <div class="text-center text-gray-400 p-10">
                             <div class="text-6xl mb-4">🏢</div>
                             <p class="text-sm">Fotografía institucional</p>
                             <p class="text-xs">Oficina o equipo Otium</p>
                         </div>
                     </div>
+                    <div class="border-l-4 border-secondary bg-gray-50 rounded-r-xl px-5 py-4">
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <strong class="text-secondary font-semibold">Participación institucional:</strong> IECnet — host de reunión LATAM 2016.
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -78,22 +83,20 @@
                 Propósito y mirada
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Propósito -->
                 <div data-aos="fade-right">
-                    <div class="bg-white rounded-2xl p-10 h-full shadow-sm border border-gray-100 relative overflow-hidden group">
+                    <div class="bg-white rounded-2xl p-10 h-full shadow-sm border border-gray-100 relative overflow-hidden">
                         <div class="text-2xl mb-4">◎</div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4 relative z-10">Nuestro propósito</h3>
-                        <p class="text-gray-600 leading-relaxed relative z-10">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Nuestro propósito</h3>
+                        <p class="text-gray-600 leading-relaxed">
                             Ayudamos a ordenar la gestión contable, tributaria y documental de las empresas mediante criterio profesional y herramientas digitales.
                         </p>
                     </div>
                 </div>
-                <!-- Mirada -->
                 <div data-aos="fade-left">
-                    <div class="bg-white rounded-2xl p-10 h-full shadow-sm border border-gray-100 relative overflow-hidden group">
+                    <div class="bg-white rounded-2xl p-10 h-full shadow-sm border border-gray-100 relative overflow-hidden">
                         <div class="text-2xl mb-4">→</div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4 relative z-10">Nuestra mirada al futuro</h3>
-                        <p class="text-gray-600 leading-relaxed relative z-10">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Nuestra mirada al futuro</h3>
+                        <p class="text-gray-600 leading-relaxed">
                             Buscamos acompañar a empresas que quieren ordenar su gestión, entender mejor sus números y tomar decisiones con mayor respaldo.
                         </p>
                     </div>
@@ -125,8 +128,8 @@
                     ];
                 @endphp
                 @foreach ($steps as $i => $step)
-                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
-                        <div class="text-3xl font-bold text-primary/20 mb-3">{{ $step[0] }}</div>
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-secondary/40 hover:shadow-sm transition-all" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                        <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center mb-4">{{ $step[0] }}</div>
                         <h3 class="text-lg font-bold text-gray-900 mb-3">{{ $step[1] }}</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">{{ $step[2] }}</p>
                     </div>
@@ -165,12 +168,12 @@
                     ];
                 @endphp
                 @foreach ($services as $i => $service)
-                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 group" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col hover:border-secondary/40 hover:shadow-md hover:-translate-y-0.5 transition-all" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
                         <div class="text-4xl mb-4">{{ $service[0] }}</div>
                         <h3 class="text-lg font-bold text-gray-900 mb-3">{{ $service[1] }}</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ $service[2] }}</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-6">{{ $service[2] }}</p>
                         <a href="{{ route($service[3]) }}"
-                            class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all">
+                            class="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all">
                             {{ __('Ver servicio') }} <span>→</span>
                         </a>
                     </div>
@@ -223,7 +226,7 @@
     </section>
 
     <!-- Valores -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Valores') }}</p>
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
@@ -245,7 +248,8 @@
             @endphp
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($values as $i => $value)
-                    <div class="p-8 rounded-xl bg-gray-50 border border-gray-100" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                    <div class="p-8 rounded-xl bg-white border border-gray-100 hover:border-secondary/40 hover:shadow-sm transition-all" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                        <div class="w-8 h-1 bg-secondary rounded-full mb-5"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-3">{{ $value[0] }}</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">{{ $value[1] }}</p>
                     </div>
@@ -254,18 +258,43 @@
         </div>
     </section>
 
+    <!-- Registros profesionales -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-3 text-center" data-aos="fade-up">Registros profesionales</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12" data-aos="fade-up" data-aos-delay="100">Firma y profesionales habilitados</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 text-center hover:shadow-sm hover:border-secondary/30 transition-all" data-aos="fade-right">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <span class="text-secondary text-xl">🏛</span>
+                    </div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Firma registrada</p>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">CAUB</p>
+                    <p class="text-sm text-gray-500">Colegio de Auditores de Bolivia</p>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 text-center hover:shadow-sm hover:border-secondary/30 transition-all" data-aos="fade-left">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <span class="text-secondary text-xl">✦</span>
+                    </div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Profesionales registrados</p>
+                    <p class="text-xl font-bold text-gray-900 mb-2">CAULP · CAUCRUZ · CAUB</p>
+                    <p class="text-sm text-gray-500">Colegios departamentales de Auditores — La Paz, Santa Cruz y Bolivia</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Equipo -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4 text-center" data-aos="fade-up">{{ __('Equipo') }}</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
-                {{ __('Liderazgo con criterio profesional y mirada digital') }}
-            </h2>
-            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
-                En Otium, el liderazgo combina experiencia tributaria, contable y financiera con una forma de trabajo orientada al orden, la trazabilidad y la toma de decisiones. Desde Santa Cruz y La Paz, acompañamos a empresas que buscan gestionar sus obligaciones con mayor claridad.
-            </p>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
                 <!-- Zaulo -->
                 <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 flex flex-col gap-6" data-aos="fade-right">
                     <div class="flex items-center gap-6">
@@ -282,7 +311,7 @@
                         Santa Cruz, Bolivia
                     </p>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        Zaulo acompaña a empresas en temas contables y tributarios, combinando experiencia en distintos modelos de negocio con consultoría empresarial, análisis de datos y herramientas digitales. Su trabajo parte del cumplimiento y la revisión de riesgos, pero se extiende hacia control de gestión, automatización y toma de decisiones con mayor respaldo.
+                        Zaulo acompaña a empresas en temas contables y tributarios, combinando experiencia en distintos modelos de negocio con consultoría empresarial, análisis de datos y herramientas digitales. Su trabajo parte del cumplimiento y la revisión de riesgos, pero se extiende hacia control de gestión, automatización y toma de decisiones con mayor respaldo. Fuera de la oficina, estudia filosofía y dedica tiempo a la historia griega, la romana y la literatura filosófica crítica.
                     </p>
                     <a href="https://www.linkedin.com/in/zaulo-vasquez/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -306,13 +335,14 @@
                         La Paz, Bolivia
                     </p>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        Brian acompaña a empresas en gestión tributaria, auditoría y finanzas, con experiencia en contingencias tributarias, auditorías financieras y proyectos especiales bajo NIIF. Desde la oficina de Otium en La Paz, trabaja con clientes empresariales que necesitan cumplimiento, criterio técnico y una lectura clara de sus riesgos financieros y fiscales.
+                        Brian acompaña a empresas en gestión tributaria, auditoría y finanzas, con experiencia en contingencias tributarias, auditorías financieras y proyectos especiales bajo NIIF. Desde la oficina de Otium en La Paz, trabaja con clientes empresariales que necesitan cumplimiento, criterio técnico y una lectura clara de sus riesgos financieros y fiscales. Apasionado de las historietas — género que conoce en profundidad —, en su tiempo libre juega fútbol y se mantiene activo en videojuegos en línea.
                     </p>
                     <a href="https://www.linkedin.com/in/brian-jauregui-oc/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors font-medium">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
                 </div>
+
             </div>
         </div>
     </section>

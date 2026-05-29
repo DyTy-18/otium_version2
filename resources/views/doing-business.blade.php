@@ -157,7 +157,7 @@
                         <div class="text-sm text-gray-600">{{ __('IVA — Impuesto al Valor Agregado') }}</div>
                     </div>
                     <div class="bg-accent/10 rounded-xl p-6 text-center">
-                        <div class="text-4xl font-bold text-accent mb-1">~20</div>
+                        <div class="text-4xl font-bold text-accent mb-1">20</div>
                         <div class="text-sm text-gray-600">{{ __('Días hábiles para constituir') }}</div>
                     </div>
                     <div class="bg-accent/10 rounded-xl p-6 text-center">
