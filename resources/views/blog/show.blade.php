@@ -1,7 +1,7 @@
 @php
     $seoTitle    = $post->meta_title ?? $post->title;
     $seoDesc     = $post->meta_description ?? $post->excerpt ?? 'Artículo de OTIUM Consultores sobre finanzas, tributación y tecnología empresarial.';
-    $seoImage    = $post->image ? Storage::url($post->image) : '/images/hero-corporate.png';
+    $seoImage    = $post->image_url ?? '/images/hero-corporate.png';
 @endphp
 <x-layout :title="$seoTitle" :description="$seoDesc" :ogImage="$seoImage">
 
@@ -9,7 +9,7 @@
     <section class="relative pt-32 pb-12 md:pt-44 md:pb-16 overflow-hidden">
         @if($post->image)
             <div class="absolute inset-0">
-                <img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
+                <img src="{{ $post->image_url }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-linear-to-t from-gray-900/90 via-gray-900/60 to-gray-900/30"></div>
             </div>
             <div class="container mx-auto px-6 relative z-10 text-white">
@@ -43,7 +43,7 @@
                 <div class="flex items-center gap-4 text-sm text-white/80 flex-wrap">
                     <span class="flex items-center gap-2">
                         @if($post->author_avatar)
-                            <img src="{{ Storage::url($post->author_avatar) }}" alt="{{ $post->author_name }}"
+                            <img src="{{ $post->author_avatar_url }}" alt="{{ $post->author_name }}"
                                  class="w-7 h-7 rounded-full object-cover">
                         @else
                             <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">
@@ -82,12 +82,12 @@
                 @if($post->document_path)
                     <div class="mb-10">
                         <div id="pdf-viewer"
-                             data-src="{{ Storage::url($post->document_path) }}"
+                             data-src="{{ $post->document_url }}"
                              class="space-y-2">
                             <p class="text-sm text-gray-400 text-center py-8">{{ __('Cargando documento…') }}</p>
                         </div>
                         <div class="mt-3 text-right">
-                            <a href="{{ Storage::url($post->document_path) }}" target="_blank" rel="noopener"
+                            <a href="{{ $post->document_url }}" target="_blank" rel="noopener"
                                class="text-xs text-gray-400 hover:text-primary transition-colors">
                                 {{ __('Descargar documento ↓') }}
                             </a>
@@ -170,7 +170,7 @@
                     <div class="flex items-start gap-5">
                         {{-- Avatar --}}
                         @if($post->author_avatar)
-                            <img src="{{ Storage::url($post->author_avatar) }}" alt="{{ $post->author_name }}"
+                            <img src="{{ $post->author_avatar_url }}" alt="{{ $post->author_name }}"
                                  class="w-16 h-16 rounded-full object-cover shrink-0 shadow">
                         @else
                             <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-2xl font-bold text-primary shrink-0">
@@ -237,7 +237,7 @@
                     <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300">
                         @if($relPost->image)
                             <a href="{{ route('blog.show', $relPost->slug) }}" class="block h-40 overflow-hidden">
-                                <img src="{{ Storage::url($relPost->image) }}" alt="{{ $relPost->title }}"
+                                <img src="{{ $relPost->image_url }}" alt="{{ $relPost->title }}"
                                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                             </a>
                         @else

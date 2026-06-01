@@ -402,7 +402,7 @@
 
                 <div class="bg-white rounded-xl shadow-sm p-6">
                     <h3 class="text-sm font-semibold text-gray-900 mb-4">Imagen de portada</h3>
-                    <div x-data="imagePreview('{{ $post->image ? Storage::url($post->image) : '' }}')">
+                    <div x-data="imagePreview('{{ $post->image_url ?? '' }}')">
                         <div class="relative border-2 border-dashed border-gray-300 rounded-lg overflow-hidden hover:border-primary transition-colors cursor-pointer"
                              @click="$refs.imageFile.click()">
                             <template x-if="!preview">

@@ -12,7 +12,7 @@
 
             {{-- Avatar --}}
             <div class="lg:col-span-1">
-                <div class="bg-white rounded-xl shadow-sm p-6" x-data="avatarPreview('{{ $user->avatar ? Storage::url($user->avatar) : '' }}')">
+                <div class="bg-white rounded-xl shadow-sm p-6" x-data="avatarPreview('{{ $user->avatar_url ?? '' }}')">
                     <h3 class="text-sm font-semibold text-gray-900 mb-4">Foto de perfil</h3>
 
                     <div class="flex flex-col items-center gap-4">

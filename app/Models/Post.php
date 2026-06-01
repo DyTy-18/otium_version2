@@ -55,9 +55,26 @@ class Post extends Model
         return $this->author?->name ?? $this->guest_author ?? 'OTIUM';
     }
 
+    public function getImageUrlAttribute(): ?string
+    {
+        if (! $this->image) return null;
+        return \Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'))->url($this->image);
+    }
+
+    public function getDocumentUrlAttribute(): ?string
+    {
+        if (! $this->document_path) return null;
+        return \Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'))->url($this->document_path);
+    }
+
     public function getAuthorAvatarAttribute(): ?string
     {
         return $this->author?->avatar;
+    }
+
+    public function getAuthorAvatarUrlAttribute(): ?string
+    {
+        return $this->author?->avatar_url;
     }
 
     public function getAuthorJobTitleAttribute(): ?string

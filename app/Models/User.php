@@ -58,6 +58,12 @@ class User extends Authenticatable
         return in_array($this->role, ['super_admin', 'admin', 'editor']);
     }
 
+    public function getAvatarUrlAttribute(): ?string
+    {
+        if (! $this->avatar) return null;
+        return \Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'))->url($this->avatar);
+    }
+
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);

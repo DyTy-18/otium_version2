@@ -85,7 +85,7 @@
         <a href="{{ route('admin.profile.edit') }}"
            class="flex items-center gap-3 px-3 mb-3 rounded-lg py-2 transition-colors hover:bg-white/10 group">
             @if(auth()->user()->avatar)
-                <img src="{{ Storage::url(auth()->user()->avatar) }}" alt="{{ auth()->user()->name }}"
+                <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->name }}"
                      class="w-8 h-8 rounded-full object-cover shrink-0">
             @else
                 <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold shrink-0">

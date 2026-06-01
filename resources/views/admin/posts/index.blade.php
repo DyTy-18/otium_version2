@@ -43,7 +43,7 @@
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">
                                         @if($post->image)
-                                            <img src="{{ Storage::url($post->image) }}" alt=""
+                                            <img src="{{ $post->image_url }}" alt=""
                                                  class="w-12 h-10 object-cover rounded-lg shrink-0">
                                         @else
                                             <div class="w-12 h-10 bg-gray-100 rounded-lg shrink-0 flex items-center justify-center">
