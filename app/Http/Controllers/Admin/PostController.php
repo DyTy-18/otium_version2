@@ -44,7 +44,7 @@ class PostController extends Controller
             'content'          => [$hasDocument ? 'nullable' : 'required', 'string'],
             'category_id'      => ['nullable', 'exists:categories,id'],
             'status'           => ['required', 'in:draft,published'],
-            'popup_enabled'    => ['nullable', 'boolean'],
+            'popup_enabled'    => ['required', 'boolean'],
             'image'            => ['nullable', 'image', 'max:10240'],
             'document'         => ['nullable', 'file', 'mimes:pdf,txt', 'max:51200'],
             'meta_title'       => ['nullable', 'string', 'max:70'],
@@ -123,7 +123,7 @@ class PostController extends Controller
             'content'          => [($hasDocument || $post->document_path) ? 'nullable' : 'required', 'string'],
             'category_id'      => ['nullable', 'exists:categories,id'],
             'status'           => ['required', 'in:draft,published'],
-            'popup_enabled'    => ['nullable', 'boolean'],
+            'popup_enabled'    => ['required', 'boolean'],
             'image'            => ['nullable', 'image', 'max:10240'],
             'document'         => ['nullable', 'file', 'mimes:pdf,txt', 'max:51200'],
             'meta_title'       => ['nullable', 'string', 'max:70'],
@@ -143,7 +143,7 @@ class PostController extends Controller
             $validated['guest_author'] = $request->guest_author;
         }
 
-        if ($validated['status'] === 'published' && ! $post->published_at) {
+        if ($validated['status'] === 'published') {
             $validated['published_at'] = now();
         }
 
@@ -193,7 +193,7 @@ class PostController extends Controller
         } else {
             $post->update([
                 'status'       => 'published',
-                'published_at' => $post->published_at ?? now(),
+                'published_at' => now(),
             ]);
             $message = 'Artículo publicado.';
         }

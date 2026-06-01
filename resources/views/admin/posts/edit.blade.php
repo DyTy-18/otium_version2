@@ -41,43 +41,93 @@
 
                 {{-- Documento adjunto (si el post tiene documento) --}}
                 @if($post->document_path)
-                <div class="bg-white rounded-xl shadow-sm p-6" x-data="docReplace()">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-sm font-semibold text-gray-900">Documento adjunto</h3>
+                @php
+                    /** @var \Illuminate\Filesystem\FilesystemAdapter $docDisk */
+                    $docDisk = Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'));
+                    $docUrl  = $docDisk->url($post->document_path);
+                    $docExt  = strtoupper(pathinfo($post->document_path, PATHINFO_EXTENSION));
+                @endphp
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden"
+                     x-data="docReplace('{{ $docUrl }}')">
+
+                    {{-- Barra de título --}}
+                    <div class="flex items-center gap-3 px-6 py-4 border-b border-gray-100 bg-gray-50">
+                        <div class="flex items-center gap-2 min-w-0 flex-1">
+                            <svg class="w-5 h-5 text-red-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8ZM18,20H6V4h7V9h5Z"/>
+                            </svg>
+                            <span class="text-sm font-medium text-gray-700">Documento {{ $docExt }} adjunto</span>
+                        </div>
+                        <a href="{{ $docUrl }}" target="_blank" rel="noopener"
+                           class="text-xs text-primary hover:underline shrink-0 font-medium">
+                            Abrir en nueva pestaña ↗
+                        </a>
                         <button type="button" @click="replacing = !replacing"
-                                class="text-xs text-primary hover:underline" x-text="replacing ? 'Cancelar' : 'Reemplazar documento'"></button>
+                                class="text-xs shrink-0 font-medium transition-colors"
+                                :class="replacing ? 'text-gray-500 hover:text-gray-700' : 'text-amber-600 hover:text-amber-700'"
+                                x-text="replacing ? 'Cancelar reemplazo' : 'Reemplazar'">
+                        </button>
                     </div>
 
-                    {{-- Iframe con documento actual --}}
+                    {{-- Vista del documento actual (pdf.js) --}}
                     <div x-show="!replacing">
-                        <div class="rounded-xl overflow-hidden border border-gray-200">
-                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border-b border-gray-200">
-                                <svg class="w-4 h-4 text-red-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8ZM18,20H6V4h7V9h5Z"/>
-                                </svg>
-                                <span class="text-xs text-gray-600 font-medium truncate">{{ basename($post->document_path) }}</span>
-                                <a href="{{ Storage::url($post->document_path) }}" target="_blank" rel="noopener"
-                                   class="ml-auto text-xs text-primary hover:underline shrink-0">Abrir ↗</a>
-                            </div>
-                            <iframe src="{{ Storage::url($post->document_path) }}#toolbar=0&navpanes=0"
-                                    class="w-full border-0 block" style="height: 60vh;"
-                                    title="Documento adjunto"></iframe>
+                        <div id="edit-pdf-viewer"
+                             data-src="{{ $docUrl }}"
+                             style="max-height: 65vh; overflow-y: auto;"
+                             class="p-3 space-y-2 bg-gray-100">
+                            <p class="text-sm text-gray-400 text-center py-10">Cargando documento…</p>
                         </div>
                     </div>
 
                     {{-- Zona de reemplazo --}}
-                    <div x-show="replacing" x-cloak>
-                        <label class="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-primary transition-colors"
-                               :class="newFile ? 'border-primary bg-primary/5' : ''">
-                            <input type="file" name="document" accept=".pdf,.txt" class="hidden"
-                                   @change="newFile = $event.target.files[0]?.name">
-                            <svg class="w-8 h-8 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
-                            </svg>
-                            <p class="text-sm text-gray-600" x-text="newFile || 'Seleccionar PDF o TXT'"></p>
-                            <p class="text-xs text-gray-400 mt-1">Máx. 50 MB</p>
-                        </label>
-                        <p class="text-xs text-amber-600 mt-2">El documento actual será reemplazado al guardar.</p>
+                    <div x-show="replacing" x-cloak class="p-6">
+
+                        {{-- Sin nuevo archivo: zona de subida --}}
+                        <div x-show="!newFileUrl"
+                             class="border-2 border-dashed border-gray-300 rounded-xl transition-colors cursor-pointer hover:border-primary hover:bg-gray-50"
+                             @click="$refs.newDocFile.click()"
+                             @dragover.prevent="$el.classList.add('border-primary','bg-primary/5')"
+                             @dragleave="$el.classList.remove('border-primary','bg-primary/5')"
+                             @drop.prevent="$el.classList.remove('border-primary','bg-primary/5'); loadNewFile($event.dataTransfer.files[0])">
+                            <div class="flex flex-col items-center justify-center py-12 px-6 text-center">
+                                <svg class="w-10 h-10 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                                </svg>
+                                <p class="text-sm font-semibold text-gray-700 mb-1">Arrastra el nuevo documento aquí</p>
+                                <p class="text-xs text-gray-400 mb-4">o haz clic para seleccionar</p>
+                                <div class="inline-flex items-center gap-3 px-3 py-1.5 bg-white border border-gray-200 rounded-lg shadow-sm text-xs">
+                                    <span class="font-bold text-red-600">PDF</span>
+                                    <span class="w-px h-3 bg-gray-200"></span>
+                                    <span class="font-bold text-blue-600">TXT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Con nuevo archivo: preview --}}
+                        <div x-show="newFileUrl" x-cloak class="rounded-xl overflow-hidden border border-gray-200">
+                            <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50">
+                                <div class="flex items-center gap-2 min-w-0">
+                                    <svg class="w-4 h-4 text-red-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8ZM18,20H6V4h7V9h5Z"/>
+                                    </svg>
+                                    <span class="text-xs font-medium text-gray-700 truncate" x-text="newFileName"></span>
+                                    <span class="text-xs text-green-600 font-medium ml-1 shrink-0">✓ Nuevo</span>
+                                </div>
+                                <button type="button" @click="clearNewFile()"
+                                        class="text-xs text-gray-400 hover:text-primary transition-colors shrink-0 ml-4">
+                                    Cambiar
+                                </button>
+                            </div>
+                            <iframe :src="newFileUrl" class="w-full border-0 block" style="height: 55vh;"
+                                    title="Vista previa del nuevo documento"></iframe>
+                        </div>
+
+                        <input x-ref="newDocFile" type="file" name="document" accept=".pdf,.txt" class="hidden"
+                               @change="loadNewFile($event.target.files[0])">
+
+                        <p x-show="!newFileUrl" class="text-xs text-amber-600 mt-2">
+                            El documento actual será reemplazado al guardar.
+                        </p>
                     </div>
                 </div>
                 @endif
@@ -215,7 +265,7 @@
                             <option value="">— Sin autor —</option>
                             @foreach($users as $u)
                                 <option value="{{ $u->id }}" {{ old('user_id', $post->user_id) == $u->id ? 'selected' : '' }}>
-                                    {{ $u->name }}{{ $u->job_title ? ' · ' . $u->job_title : '' }}
+                                    {{ $u->name }}{{ $u->job_title ? " · {$u->job_title}" : '' }}
                                 </option>
                             @endforeach
                         </select>
@@ -296,42 +346,52 @@
                      @post-title-changed.window="title = $event.detail"
                      @post-excerpt-changed.window="excerpt = $event.detail">
 
+                    {{-- Input oculto que siempre se envía con el valor real del toggle --}}
+                    <input type="hidden" name="popup_enabled" :value="enabled ? '1' : '0'">
+
                     <div class="flex items-center justify-between mb-4">
                         <div>
                             <h3 class="text-sm font-semibold text-gray-900">Popup de entrada</h3>
                             <p class="text-xs text-gray-400 mt-0.5">Aparece al visitar el artículo</p>
                         </div>
-                        <label class="relative inline-flex items-center cursor-pointer">
-                            <input type="checkbox" name="popup_enabled" value="1" class="sr-only peer" x-model="enabled">
-                            <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-primary relative
-                                        after:content-[''] after:absolute after:top-0.5 after:left-0.5
-                                        after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all
-                                        peer-checked:after:translate-x-full"></div>
-                        </label>
+                        <button type="button" @click="enabled = !enabled"
+                                class="relative inline-flex items-center w-11 h-6 rounded-full transition-colors duration-200 focus:outline-none"
+                                :class="enabled ? 'bg-primary' : 'bg-gray-200'"
+                                :aria-pressed="enabled ? 'true' : 'false'">
+                            <span class="inline-block w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200"
+                                  :class="enabled ? 'translate-x-5' : 'translate-x-0.5'"></span>
+                        </button>
                     </div>
 
-                    <div x-show="enabled" x-cloak class="border border-gray-200 rounded-xl overflow-hidden text-left">
-                        {{-- Header del popup --}}
-                        <div class="flex items-center justify-between px-4 py-3 bg-[#f9f6f4] border-b border-[#ede5e0]">
-                            <span class="text-sm font-bold tracking-wide text-[#1a0d09]">OTIUM</span>
-                            <button type="button" class="text-[#5a4a43] w-6 h-6 rounded-full bg-black/5 text-xs flex items-center justify-center leading-none">✕</button>
+                    <div x-show="enabled" x-cloak class="border border-gray-200 rounded-xl overflow-hidden">
+                        {{-- Header: logo centrado, X a la derecha --}}
+                        <div class="flex items-center px-3 py-2.5 bg-gray-50 border-b border-gray-200">
+                            <div class="flex-1"></div>
+                            <span class="text-sm font-bold text-gray-900 tracking-wide">OTIUM</span>
+                            <div class="flex-1 flex justify-end">
+                                <button type="button" class="text-gray-500 w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center leading-none">✕</button>
+                            </div>
                         </div>
-                        {{-- Cuerpo del popup --}}
-                        <div class="p-4 border-l-4 border-[#c8927a]">
-                            <span class="inline-block bg-[#fde8df] text-[#8c3a1e] text-xs font-medium px-2.5 py-0.5 rounded-full mb-2"
-                                  x-text="hasDocument ? 'Documento' : 'Nuevo artículo'"></span>
-                            <p class="text-sm font-semibold text-[#1a0d09] mb-1.5 line-clamp-2"
+                        {{-- Cuerpo centrado --}}
+                        <div class="p-4 border-l-4 border-primary text-center">
+                            <p class="text-sm font-bold text-gray-900 mb-1.5 line-clamp-2"
                                x-text="title || 'Título del artículo'"></p>
-                            <p class="text-xs text-[#5a4a43] leading-relaxed mb-3 line-clamp-2"
-                               x-text="excerpt || 'Resumen del artículo que aparecerá en el popup...'"></p>
-                            <div class="flex gap-2">
+                            <p class="text-xs text-gray-600 leading-relaxed mb-3 line-clamp-2"
+                               x-text="excerpt || 'Resumen del artículo...'"></p>
+                            <div class="flex gap-1 justify-center mb-3">
+                                <span class="h-0.5 w-6 bg-primary rounded-full"></span>
+                                <span class="h-0.5 w-6 bg-accent rounded-full"></span>
+                                <span class="h-0.5 w-6 bg-secondary rounded-full"></span>
+                                <span class="h-0.5 w-4 bg-gray-900 rounded-full"></span>
+                            </div>
+                            <div class="flex gap-2 justify-center">
                                 <button x-show="hasDocument" type="button"
-                                        class="flex-1 bg-[#c8927a] text-white text-xs py-2 rounded-lg font-medium">
-                                    Descargar guía
+                                        class="bg-primary text-white text-xs py-1.5 px-3 rounded-lg font-semibold">
+                                    Descargar
                                 </button>
                                 <button type="button"
-                                        class="flex-1 border-2 border-[#7dc8c0] text-[#7dc8c0] text-xs py-2 rounded-lg font-medium">
-                                    Ver blog →
+                                        class="border-2 border-accent text-accent text-xs py-1.5 px-3 rounded-lg font-semibold">
+                                    Ver artículo →
                                 </button>
                             </div>
                         </div>
@@ -373,6 +433,53 @@
 
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+
+    @if($post->document_path)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        (function () {
+            const container = document.getElementById('edit-pdf-viewer');
+            if (!container) return;
+            const url = container.dataset.src;
+            pdfjsLib.GlobalWorkerOptions.workerSrc =
+                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            pdfjsLib.getDocument(url).promise.then(function (pdf) {
+                container.innerHTML = '';
+                const renderPage = function (num) {
+                    return pdf.getPage(num).then(function (page) {
+                        const baseVp = page.getViewport({ scale: 1 });
+                        const scale  = (container.clientWidth - 24) / baseVp.width;
+                        const vp     = page.getViewport({ scale });
+
+                        const canvas       = document.createElement('canvas');
+                        canvas.width       = vp.width;
+                        canvas.height      = vp.height;
+                        canvas.style.width       = '100%';
+                        canvas.style.display     = 'block';
+                        canvas.style.borderRadius = '6px';
+                        canvas.style.boxShadow   = '0 1px 4px rgba(0,0,0,.15)';
+                        container.appendChild(canvas);
+
+                        return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+                    });
+                };
+
+                let chain = Promise.resolve();
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    (function (n) { chain = chain.then(function () { return renderPage(n); }); })(i);
+                }
+            }).catch(function () {
+                container.innerHTML =
+                    '<div class="flex flex-col items-center justify-center py-10 gap-3">' +
+                    '<p class="text-sm text-gray-500">No se pudo renderizar el documento en línea.</p>' +
+                    '<a href="' + url + '" target="_blank" rel="noopener" ' +
+                    '   class="text-xs text-primary hover:underline font-medium">Abrir en nueva pestaña ↗</a>' +
+                    '</div>';
+            });
+        })();
+    </script>
+    @endif
     <script>
         const quill = new Quill('#quill-editor', {
             theme: 'snow',
@@ -426,8 +533,33 @@
             };
         }
 
-        function docReplace() {
-            return { replacing: false, newFile: null };
+        function docReplace(existingUrl) {
+            return {
+                replacing:   false,
+                newFileUrl:  null,
+                newFileName: '',
+
+                loadNewFile(file) {
+                    if (!file) return;
+                    // Asignar al input para que el formulario lo incluya (necesario con drag-and-drop)
+                    try {
+                        const dt = new DataTransfer();
+                        dt.items.add(file);
+                        if (this.$refs.newDocFile) this.$refs.newDocFile.files = dt.files;
+                    } catch (_) {}
+
+                    if (this.newFileUrl) URL.revokeObjectURL(this.newFileUrl);
+                    this.newFileUrl  = URL.createObjectURL(file);
+                    this.newFileName = file.name;
+                },
+
+                clearNewFile() {
+                    if (this.newFileUrl) URL.revokeObjectURL(this.newFileUrl);
+                    this.newFileUrl  = null;
+                    this.newFileName = '';
+                    if (this.$refs.newDocFile) this.$refs.newDocFile.value = '';
+                }
+            };
         }
 
         function seoPanel(opts = {}) {

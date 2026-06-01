@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Oculta elementos Alpine.js hasta que el framework inicializa */
+[x-cloak] { display: none !important; }
+
 @theme {
     --color-primary: #B3271A;
     --color-secondary: #C48273;
