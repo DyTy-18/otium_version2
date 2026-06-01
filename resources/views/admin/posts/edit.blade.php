@@ -69,14 +69,13 @@
                         </button>
                     </div>
 
-                    {{-- Vista del documento actual (pdf.js) --}}
+                    {{-- Vista del documento actual --}}
                     <div x-show="!replacing">
-                        <div id="edit-pdf-viewer"
-                             data-src="{{ $docUrl }}"
-                             style="max-height: 65vh; overflow-y: auto;"
-                             class="p-3 space-y-2 bg-gray-100">
-                            <p class="text-sm text-gray-400 text-center py-10">Cargando documento…</p>
-                        </div>
+                        <iframe src="{{ $docUrl }}"
+                                class="w-full border-0 block"
+                                style="height: 65vh;"
+                                title="Documento adjunto">
+                        </iframe>
                     </div>
 
                     {{-- Zona de reemplazo --}}
@@ -434,52 +433,6 @@
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
 
-    @if($post->document_path)
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-        (function () {
-            const container = document.getElementById('edit-pdf-viewer');
-            if (!container) return;
-            const url = container.dataset.src;
-            pdfjsLib.GlobalWorkerOptions.workerSrc =
-                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-            pdfjsLib.getDocument(url).promise.then(function (pdf) {
-                container.innerHTML = '';
-                const renderPage = function (num) {
-                    return pdf.getPage(num).then(function (page) {
-                        const baseVp = page.getViewport({ scale: 1 });
-                        const scale  = (container.clientWidth - 24) / baseVp.width;
-                        const vp     = page.getViewport({ scale });
-
-                        const canvas       = document.createElement('canvas');
-                        canvas.width       = vp.width;
-                        canvas.height      = vp.height;
-                        canvas.style.width       = '100%';
-                        canvas.style.display     = 'block';
-                        canvas.style.borderRadius = '6px';
-                        canvas.style.boxShadow   = '0 1px 4px rgba(0,0,0,.15)';
-                        container.appendChild(canvas);
-
-                        return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-                    });
-                };
-
-                let chain = Promise.resolve();
-                for (let i = 1; i <= pdf.numPages; i++) {
-                    (function (n) { chain = chain.then(function () { return renderPage(n); }); })(i);
-                }
-            }).catch(function () {
-                container.innerHTML =
-                    '<div class="flex flex-col items-center justify-center py-10 gap-3">' +
-                    '<p class="text-sm text-gray-500">No se pudo renderizar el documento en línea.</p>' +
-                    '<a href="' + url + '" target="_blank" rel="noopener" ' +
-                    '   class="text-xs text-primary hover:underline font-medium">Abrir en nueva pestaña ↗</a>' +
-                    '</div>';
-            });
-        })();
-    </script>
-    @endif
     <script>
         const quill = new Quill('#quill-editor', {
             theme: 'snow',

@@ -78,62 +78,27 @@
                     </p>
                 @endif
 
-                {{-- Documento embebido (si el post se creó desde un archivo) --}}
+                {{-- Documento embebido --}}
                 @if($post->document_path)
-                    <div class="mb-10">
-                        <div id="pdf-viewer"
-                             data-src="{{ $post->document_url }}"
-                             class="space-y-2">
-                            <p class="text-sm text-gray-400 text-center py-8">{{ __('Cargando documento…') }}</p>
-                        </div>
-                        <div class="mt-3 text-right">
-                            <a href="{{ $post->document_url }}" target="_blank" rel="noopener"
-                               class="text-xs text-gray-400 hover:text-primary transition-colors">
-                                {{ __('Descargar documento ↓') }}
+                    <div class="mb-10 rounded-xl overflow-hidden border border-gray-200">
+                        <div class="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-200">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-red-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8ZM18,20H6V4h7V9h5Z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-gray-700">Documento adjunto</span>
+                            </div>
+                            <a href="{{ $post->document_url }}" target="_blank" rel="noopener" download
+                               class="text-xs text-primary hover:underline font-medium">
+                                Descargar ↓
                             </a>
                         </div>
+                        <iframe src="{{ $post->document_url }}"
+                                class="w-full border-0 block"
+                                style="height: 70vh;"
+                                title="Documento adjunto">
+                        </iframe>
                     </div>
-
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-                    <script>
-                        (function () {
-                            const container = document.getElementById('pdf-viewer');
-                            const url = container.dataset.src;
-                            pdfjsLib.GlobalWorkerOptions.workerSrc =
-                                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-                            pdfjsLib.getDocument(url).promise.then(function (pdf) {
-                                container.innerHTML = '';
-                                const renderPage = function (num) {
-                                    return pdf.getPage(num).then(function (page) {
-                                        const baseVp  = page.getViewport({ scale: 1 });
-                                        const scale   = container.clientWidth / baseVp.width;
-                                        const vp      = page.getViewport({ scale });
-
-                                        const canvas  = document.createElement('canvas');
-                                        canvas.width  = vp.width;
-                                        canvas.height = vp.height;
-                                        canvas.style.width  = '100%';
-                                        canvas.style.display = 'block';
-                                        canvas.style.borderRadius = '8px';
-                                        canvas.style.boxShadow = '0 1px 6px rgba(0,0,0,.12)';
-                                        container.appendChild(canvas);
-
-                                        return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-                                    });
-                                };
-
-                                let chain = Promise.resolve();
-                                for (let i = 1; i <= pdf.numPages; i++) {
-                                    (function (n) {
-                                        chain = chain.then(function () { return renderPage(n); });
-                                    })(i);
-                                }
-                            }).catch(function () {
-                                container.innerHTML = '<p class="text-sm text-red-500 text-center py-6">No se pudo cargar el documento.</p>';
-                            });
-                        })();
-                    </script>
                 @endif
 
                 {{-- Contenido del artículo (HTML de Quill) --}}
