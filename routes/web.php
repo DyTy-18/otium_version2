@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
@@ -50,6 +51,7 @@ Route::post('/diagnostico-gratuito', [ContactController::class, 'store'])->name(
 // Blog público
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{post:slug}/documento', [DocumentController::class, 'show'])->name('documents.show');
 
 // ─────────────────────────────────────────
 // Autenticación

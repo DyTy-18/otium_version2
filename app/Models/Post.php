@@ -64,7 +64,7 @@ class Post extends Model
     public function getDocumentUrlAttribute(): ?string
     {
         if (! $this->document_path) return null;
-        return self::publicStorageUrl($this->document_path);
+        return route('documents.show', $this->slug);
     }
 
     /**
