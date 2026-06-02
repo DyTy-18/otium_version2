@@ -171,11 +171,7 @@
 
                 <div class="flex gap-3 justify-center flex-wrap">
                     @if($popupPost->document_path)
-                        @php
-                            /** @var \Illuminate\Filesystem\FilesystemAdapter $pd */
-                            $pd = \Illuminate\Support\Facades\Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'));
-                        @endphp
-                        <a href="{{ $pd->url($popupPost->document_path) }}"
+                        <a href="{{ $popupPost->document_url }}"
                            target="_blank" rel="noopener" download
                            class="inline-flex items-center gap-2 bg-primary hover:bg-red-700 text-white text-sm font-semibold py-3 px-6 rounded-lg transition-colors">
                             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

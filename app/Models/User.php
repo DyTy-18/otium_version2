@@ -61,7 +61,7 @@ class User extends Authenticatable
     public function getAvatarUrlAttribute(): ?string
     {
         if (! $this->avatar) return null;
-        return \Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'))->url($this->avatar);
+        return Post::publicStorageUrl($this->avatar);
     }
 
     public function posts(): HasMany

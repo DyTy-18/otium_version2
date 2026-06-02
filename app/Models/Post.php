@@ -58,13 +58,24 @@ class Post extends Model
     public function getImageUrlAttribute(): ?string
     {
         if (! $this->image) return null;
-        return \Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'))->url($this->image);
+        return self::publicStorageUrl($this->image);
     }
 
     public function getDocumentUrlAttribute(): ?string
     {
         if (! $this->document_path) return null;
-        return \Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'))->url($this->document_path);
+        return self::publicStorageUrl($this->document_path);
+    }
+
+    /**
+     * Genera una URL relativa para archivos en el disco público.
+     * Relativa = funciona en cualquier dominio sin depender de APP_URL.
+     */
+    public static function publicStorageUrl(string $path): string
+    {
+        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $prefix = $disk === 'public_direct' ? '/uploads' : '/storage';
+        return $prefix . '/' . ltrim($path, '/');
     }
 
     public function getAuthorAvatarAttribute(): ?string

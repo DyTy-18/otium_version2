@@ -42,10 +42,8 @@
                 {{-- Documento adjunto (si el post tiene documento) --}}
                 @if($post->document_path)
                 @php
-                    /** @var \Illuminate\Filesystem\FilesystemAdapter $docDisk */
-                    $docDisk = Storage::disk(env('FILESYSTEM_PUBLIC_DISK', 'public'));
-                    $docUrl  = $docDisk->url($post->document_path);
-                    $docExt  = strtoupper(pathinfo($post->document_path, PATHINFO_EXTENSION));
+                    $docUrl = $post->document_url;
+                    $docExt = strtoupper(pathinfo($post->document_path, PATHINFO_EXTENSION));
                 @endphp
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden"
                      x-data="docReplace('{{ $docUrl }}')">
