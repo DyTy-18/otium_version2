@@ -1,6 +1,10 @@
 <x-layout title="Outsourcing Contable, Impuestos y Transformación Digital en Bolivia | Otium"
     description="OTIUM Consultores: expertos en outsourcing contable y financiero, auditoría integral, transformación digital y constitución de empresas en Bolivia. Más de 15 años de experiencia."
     ogImage="/images/otium/hero/hero.png">
+
+
+    
+
     <!-- 2. Hero Section -->
     <section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         <!-- Floating Backgroung Elements -->
@@ -48,7 +52,52 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
+    
+
+
+    <!-- HERO V2 — 2 columnas: imagen izq | texto der con fondo difuminado -->
+    {{-- <section id="home-v2" class="relative min-h-screen overflow-hidden flex flex-col md:flex-row items-stretch pt-24">
+
+        <!-- Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-light rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob pointer-events-none"></div>
+        <div class="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000 pointer-events-none"></div>
+
+        <!-- Columna izquierda (50%): 40% vacío + imagen pegada a la derecha (60%) -->
+        <div class="w-full md:w-1/2 relative self-stretch min-h-[50vh] md:min-h-0">
+            <div class="absolute inset-y-0 right-0 w-4/5">
+                <img src="/images/otium/hero/hero2.jpeg" alt="OTIUM Corporate"
+                    class="w-full h-full object-cover" style="filter: blur(3px);">
+            </div>
+        </div>
+
+        <!-- Columna derecha (50%): fondo de la sección + card frosted glass centrado -->
+        <div class="w-full md:w-1/2 relative z-10 flex items-center justify-start px-4 py-16 md:py-0">
+            <div class="bg-white/55 backdrop-blur-2xl rounded-2xl p-10 md:p-14 shadow-2xl border border-white/40 w-[105%] -translate-x-[20%]">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8">
+                    {{ __('Transformamos la gestión') }}
+                    <span class="text-primary">{{ __('Financiera y Digital') }}</span>
+                    {{ __('de tu empresa') }}
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10">
+                    {{ __('Gestionamos tu contabilidad, impuestos y nómina. Y te entregamos un dashboard mensual que tu gerencia entiende — con Microsoft 365, SharePoint y Power BI.') }}
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="{{ route('contact') }}"
+                        class="px-9 py-4 bg-primary text-white rounded-lg text-lg font-semibold shadow-lg hover:bg-red-700 hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
+                        {{ __('Agenda tu diagnóstico gratuito') }}
+                    </a>
+                    <a href="{{ route('services.index') }}"
+                        class="px-9 py-4 border-2 border-primary text-primary rounded-lg text-lg font-semibold hover:bg-red-50 transition-colors text-center">
+                        {{ __('Ver cómo trabajamos') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section> --}}
+    <!-- FIN HERO V2 -->
+
+<!-- Stats Section -->
     <section class="bg-primary py-12 text-white">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-red-800">
@@ -234,7 +283,7 @@
 
                 <!-- Image Side -->
                 <div class="relative h-full min-h-[400px]" data-aos="fade-left">
-                    <img src="/images/otium/chouse/porque_elegirnos.png" alt="Why Choose Us"
+                    <img src="/images/otium/chouse/img_seccion_porqueelegrinos.jpeg" alt="Why Choose Us"
                         class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-xl">
                     <div class="absolute inset-0 bg-accent/20 rounded-2xl mix-blend-multiply"></div>
                 </div>
