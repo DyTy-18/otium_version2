@@ -57,12 +57,8 @@
                 </div>
 
                 <div class="flex flex-col gap-5" data-aos="fade-left">
-                    <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-video flex items-center justify-center">
-                        <div class="text-center text-gray-400 p-10">
-                            <div class="text-6xl mb-4">🏢</div>
-                            <p class="text-sm">Fotografía institucional</p>
-                            <p class="text-xs">Oficina o equipo Otium</p>
-                        </div>
+                    <div class="bg-gray-100 rounded-2xl overflow-hidden h-120">
+                        <img src="/images/otium/about-us/about_us.jpeg" alt="Fotografía corporativa Otium" class="w-full h-full object-cover">
                     </div>
                     <div class="border-l-4 border-secondary bg-gray-50 rounded-r-xl px-5 py-4">
                         <p class="text-sm text-gray-600 leading-relaxed">

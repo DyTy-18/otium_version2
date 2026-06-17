@@ -27,7 +27,7 @@
                             class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
                             {{ __('Solicitar información') }}
                         </a>
-                        <a href="/pdfs/OTIUM_Base_comercial_y_comunicacional_Outsourcing_Laboral.pdf" download
+                        <a href="/pdfs/brochures/Otium_Administracion_Laboral.pdf" download
                             class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
                             <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
                             {{ __('Descargar brochure') }}
