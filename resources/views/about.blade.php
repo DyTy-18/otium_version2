@@ -56,15 +56,15 @@
                     </p>
                 </div>
 
-                <div class="flex flex-col gap-5" data-aos="fade-left">
+                <div class="flex flex-col gap-5 align-center" data-aos="fade-left">
                     <div class="bg-gray-100 rounded-2xl overflow-hidden h-120">
                         <img src="/images/otium/about-us/about_us.jpeg" alt="Fotografía corporativa Otium" class="w-full h-full object-cover">
                     </div>
-                    <div class="border-l-4 border-secondary bg-gray-50 rounded-r-xl px-5 py-4">
+                    {{-- <div class="border-l-4 border-secondary bg-gray-50 rounded-r-xl px-5 py-4">
                         <p class="text-sm text-gray-600 leading-relaxed">
                             <strong class="text-secondary font-semibold">Participación institucional:</strong> IECnet — host de reunión LATAM 2016.
                         </p>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>
