@@ -69,7 +69,8 @@ class PostController extends Controller
             $validated['published_at'] = now();
         }
 
-        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $disk      = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $imageDisk = env('FILESYSTEM_IMAGE_DISK', $disk);
 
         \Log::info('POST store — archivos recibidos', [
             'has_image'    => $request->hasFile('image'),
@@ -77,14 +78,15 @@ class PostController extends Controller
             'image_error'  => $request->file('image')?->getError(),
             'doc_error'    => $request->file('document')?->getError(),
             'disk'         => $disk,
+            'image_disk'   => $imageDisk,
             'post_max'     => ini_get('post_max_size'),
             'upload_max'   => ini_get('upload_max_filesize'),
         ]);
 
         try {
             if ($request->hasFile('image')) {
-                $validated['image'] = $request->file('image')->store('posts', $disk);
-                \Log::info('Imagen guardada', ['path' => $validated['image']]);
+                $validated['image'] = $request->file('image')->store('posts', $imageDisk);
+                \Log::info('Imagen guardada', ['path' => $validated['image'], 'disk' => $imageDisk]);
             }
 
             if ($hasDocument) {
@@ -147,7 +149,8 @@ class PostController extends Controller
             $validated['published_at'] = now();
         }
 
-        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $disk      = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $imageDisk = env('FILESYSTEM_IMAGE_DISK', $disk);
 
         \Log::info('POST update — archivos recibidos', [
             'post_id'      => $post->id,
@@ -156,15 +159,16 @@ class PostController extends Controller
             'image_error'  => $request->file('image')?->getError(),
             'doc_error'    => $request->file('document')?->getError(),
             'disk'         => $disk,
+            'image_disk'   => $imageDisk,
             'post_max'     => ini_get('post_max_size'),
             'upload_max'   => ini_get('upload_max_filesize'),
         ]);
 
         try {
             if ($request->hasFile('image')) {
-                if ($post->image) Storage::disk($disk)->delete($post->image);
-                $validated['image'] = $request->file('image')->store('posts', $disk);
-                \Log::info('Imagen guardada', ['path' => $validated['image']]);
+                if ($post->image) Storage::disk($imageDisk)->delete($post->image);
+                $validated['image'] = $request->file('image')->store('posts', $imageDisk);
+                \Log::info('Imagen guardada', ['path' => $validated['image'], 'disk' => $imageDisk]);
             }
 
             if ($hasDocument) {
@@ -228,10 +232,11 @@ class PostController extends Controller
 
     public function destroy(Post $post): RedirectResponse
     {
-        $disk = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $disk      = env('FILESYSTEM_PUBLIC_DISK', 'public');
+        $imageDisk = env('FILESYSTEM_IMAGE_DISK', $disk);
 
         if ($post->image) {
-            Storage::disk($disk)->delete($post->image);
+            Storage::disk($imageDisk)->delete($post->image);
         }
 
         if ($post->document_path) {
