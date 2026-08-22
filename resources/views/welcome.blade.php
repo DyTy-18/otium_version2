@@ -829,6 +829,38 @@
         </div>
     </section>
 
+    <!-- International Reach — GGI -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="relative overflow-hidden rounded-3xl border border-gray-100 bg-linear-to-br from-primary/5 via-white to-accent/5 px-8 py-12 md:px-16 md:py-16">
+                <!-- Decorative blobs -->
+                <div class="absolute -top-16 -right-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-16 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative grid grid-cols-1 md:grid-cols-[55%_45%] items-center gap-10 md:gap-12">
+                    <div class="text-center md:text-left" data-aos="fade-right">
+                        <span class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            {{ __('Alianza Internacional') }}
+                        </span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">{{ __('Bolivia expertise. Global reach.') }}</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">
+                            {{ __('Como Independent Member of GGI, Otium conecta la experiencia local que ya conocés con una red de firmas profesionales presente en más de 120 países. Mismo equipo de siempre, alcance internacional cuando lo necesitás.') }}
+                        </p>
+                        <a href="{{ route('international') }}"
+                            class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                            {{ __('Explorar alcance internacional') }}
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="w-full flex items-center justify-center" data-aos="fade-left" data-aos-delay="100">
+                        <x-ggi-slot size="xl" class="w-full max-w-sm" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Doing Business in Bolivia -->
     <section class="py-20 bg-accent/10 border-y border-accent/20">
         <div class="container mx-auto px-6">

@@ -99,8 +99,11 @@
             </div>
         </div>
 
-        <div class="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/50 text-xs">
+        <div class="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row flex-wrap items-center justify-between gap-6 text-white/50 text-xs">
             <p>&copy; {{ date('Y') }} OTIUM Consultores. {{ __('Todos los derechos reservados.') }}</p>
+            <a href="{{ route('international') }}" class="shrink-0" aria-label="Otium is an Independent Member of GGI">
+                <x-ggi-slot size="sm"/>
+            </a>
             <div class="flex items-center gap-4">
                 <a href="https://www.linkedin.com/company/otiumbo/" target="_blank" rel="noopener" aria-label="LinkedIn"
                     class="hover:text-white transition-colors">

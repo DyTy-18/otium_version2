@@ -43,6 +43,8 @@ Route::redirect('/servicios/auditoria-integral', '/servicios/auditoria', 301);
 Route::redirect('/servicios/transformacion-digital', '/servicios/reportes-power-bi', 301);
 Route::get('/nosotros', fn () => view('about'))->name('about');
 Route::get('/doing-business', fn () => view('doing-business'))->name('doing-business');
+Route::get('/international', fn () => view('international'))->name('international');
+Route::get('/international-support', fn () => view('international-support'))->name('international-support');
 
 // Contacto
 Route::get('/diagnostico-gratuito', fn () => view('contact'))->name('contact');

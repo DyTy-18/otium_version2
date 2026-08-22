@@ -10,6 +10,11 @@
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl">
+                <nav class="flex items-center gap-2 text-sm text-white/60 mb-5" data-aos="fade-up">
+                    <a href="{{ route('international') }}" class="hover:text-white transition-colors">{{ __('International') }}</a>
+                    <span>/</span>
+                    <span class="text-white/90">{{ __('Doing Business in Bolivia') }}</span>
+                </nav>
                 <div class="flex items-center gap-2 mb-4" data-aos="fade-up">
                     <span class="text-sm font-semibold uppercase tracking-wider text-white/70">Bolivia · Santa Cruz · La Paz</span>
                 </div>
@@ -244,6 +249,20 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
+
+            <div class="mt-10 max-w-3xl mx-auto flex items-start gap-4 bg-accent/5 border border-accent/20 rounded-xl p-6" data-aos="fade-up">
+                <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z"/></svg>
+                </div>
+                <div>
+                    <p class="text-gray-700"><strong class="text-gray-900">{{ __('¿Tu operación también necesita soporte fuera de Bolivia?') }}</strong> {{ __('Coordinamos especialistas en más de 120 países a través de GGI.') }}</p>
+                    <a href="{{ route('international-support') }}"
+                        class="inline-flex items-center gap-1 text-accent font-semibold text-sm mt-2 hover:gap-2 transition-all">
+                        {{ __('Ver International Support') }}
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
