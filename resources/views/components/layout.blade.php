@@ -128,7 +128,7 @@
          style="background: rgba(20,12,8,0.6);"
          role="dialog" aria-modal="true" aria-labelledby="global-popup-title">
 
-        <div class="bg-white rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl"
+        <div class="bg-white rounded-2xl w-full max-w-sm min-w-0 max-h-[90vh] overflow-x-hidden overflow-y-auto shadow-2xl"
              x-transition:enter="transition ease-out duration-300"
              x-transition:enter-start="opacity-0 scale-95 translate-y-2"
              x-transition:enter-end="opacity-100 scale-100 translate-y-0"
@@ -151,14 +151,14 @@
             </div>
 
             {{-- Cuerpo centrado --}}
-            <div class="px-8 py-7 border-l-4 border-primary text-center">
+            <div class="px-6 sm:px-8 py-7 border-l-4 border-primary text-center">
 
-                <h2 id="global-popup-title" class="text-xl font-bold text-gray-900 mb-3 leading-snug">
+                <h2 id="global-popup-title" class="text-xl font-bold text-gray-900 mb-3 leading-snug break-words">
                     {{ $popupPost->title }}
                 </h2>
 
                 @if($popupPost->excerpt)
-                    <p class="text-sm text-gray-600 leading-relaxed mb-5">{{ $popupPost->excerpt }}</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-5 break-words">{{ $popupPost->excerpt }}</p>
                 @endif
 
                 {{-- Líneas con colores de la marca --}}
@@ -199,8 +199,8 @@
 
         {{-- Blog: último artículo --}}
         @if($latestPost)
-        <div class="flex items-center gap-3 group">
-            <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap pointer-events-none">
+        <div class="relative flex items-center gap-3 group">
+            <span class="absolute right-full mr-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap pointer-events-none">
                 {{ Str::limit($latestPost->title, 40) }}
             </span>
             <a href="{{ route('blog.show', $latestPost->slug) }}"
@@ -216,8 +216,8 @@
         @endif
 
         {{-- WhatsApp --}}
-        <div class="flex items-center gap-3 group">
-            <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap pointer-events-none">
+        <div class="relative flex items-center gap-3 group">
+            <span class="absolute right-full mr-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap pointer-events-none">
                 Escríbenos por WhatsApp
             </span>
             <a href="https://wa.me/{{ $wa }}?text=Hola%2C%20me%20comunico%20desde%20el%20sitio%20web%20de%20OTIUM%20Consultores.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
