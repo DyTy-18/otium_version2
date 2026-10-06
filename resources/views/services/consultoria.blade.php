@@ -2,387 +2,416 @@
     title="Consultoría Empresarial Bolivia | Diagnóstico Financiero | Otium"
     description="Diagnóstico financiero, modelos de decisión y acompañamiento gerencial para empresas en Bolivia. Análisis sobre números reales, no recomendaciones genéricas."
 >
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <div class="absolute top-0 right-0 w-150 h-150 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+    @php
+        $wa = env('WHATSAPP_NUMBER', '59170654104');
+        $waService = 'https://wa.me/' . $wa . '?text=' . rawurlencode(__('Hola, quiero información sobre Consultoría Empresarial.'));
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+        // Estilos repetidos del diseño "Consultoría Empresarial 2026"
+        $card    = 'bg-white/94 border border-[#1F1617]/8 rounded-3xl shadow-[0_18px_40px_rgba(31,22,23,.08)]';
+        $soft    = 'shadow-[0_10px_24px_rgba(31,22,23,.055)]';
+        $tag     = 'text-[11px] uppercase tracking-[.14em] text-primary font-extrabold mb-2';
+        $h2      = 'text-[clamp(29px,3.4vw,43px)] font-bold leading-[1.55] tracking-[-0.025em] mb-1.25';
+        $h3      = 'text-[1.17em] font-bold leading-[1.55] tracking-[-0.025em] mb-2.25';
+        $desc    = 'max-w-[800px] text-[#4E4849] text-[17px] mb-4';
+        $btn     = 'inline-flex items-center justify-center gap-2.25 px-4.5 py-3.5 rounded-[14px] font-bold text-[15px] transition-all hover:-translate-y-px';
+        $dots    = ['bg-primary', 'bg-secondary', 'bg-brand-light', 'bg-accent'];
+        $chips   = ['bg-primary/10 text-primary', 'bg-secondary/17 text-[#8A5146]', 'bg-brand-light/45 text-[#76564E]', 'bg-accent/15 text-[#17616E]'];
+    @endphp
 
-                <!-- Texto -->
-                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
-                    <span class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Consultoría empresarial</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        {{ __('Consultoría Empresarial') }}
-                    </h1>
-                    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light">
-                        {{ __('Diagnóstico financiero, modelos de decisión y acompañamiento gerencial para empresas en Bolivia.') }}
-                    </p>
-                    <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg">
-                        "De la información dispersa a decisiones empresariales claras — con modelos reales, no con recomendaciones genéricas."
-                    </blockquote>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="{{ route('contact') }}"
-                            class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
-                            {{ __('Solicitar información') }}
-                        </a>
-                        <a href="/pdfs/brochures/Otium_Consultoria_Empresarial.pdf" download
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
-                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
-                            {{ __('Descargar brochure') }}
-                        </a>
-                    </div>
+    <div class="text-[#1F1617] leading-[1.55]" style="background: radial-gradient(circle at top right, rgba(84,186,199,.11), transparent 24%), radial-gradient(circle at 8% 8%, rgba(180,46,37,.055), transparent 20%), linear-gradient(180deg, #fbf9f8 0%, #f7f4f2 100%);">
+
+    <!-- Hero -->
+    <section class="pt-32 pb-7.5 md:pt-36">
+        <div class="container-2026 grid grid-cols-1 lg:grid-cols-[1.24fr_.76fr] gap-6 items-stretch">
+            <article class="{{ $card }} relative overflow-hidden p-5.5 md:p-9.5" data-aos="fade-up">
+                <span class="absolute -right-30 -bottom-35 w-65 h-65 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.14),rgba(84,186,199,0))] pointer-events-none"></span>
+                <div class="inline-flex items-center gap-2 mb-4.5 px-3 py-2 rounded-full bg-primary/8 text-primary text-[11px] uppercase tracking-[.13em] font-extrabold">OTIUM | {{ __('Consultoría Empresarial') }}</div>
+                <h1 class="text-[clamp(38px,5vw,62px)] font-bold leading-[1.02] tracking-[-0.025em] max-w-[860px] mb-4.5">{{ __('Decidir mejor empieza por entender mejor su empresa.') }}</h1>
+                <p class="text-lg md:text-xl leading-[1.48] text-[#443D3E] max-w-[790px] mb-4">{{ __('Revisamos información financiera, administrativa, documental y operativa para identificar problemas, ordenar prioridades y convertir datos dispersos en criterios claros de gestión.') }}</p>
+                <div class="mt-5.25 px-4.25 py-3.75 border-l-4 border-accent rounded-r-[14px] bg-accent/9 text-[#28545D] font-bold max-w-[760px]">{{ __('De la información dispersa a decisiones empresariales claras.') }}</div>
+                <div class="relative z-10 flex flex-wrap gap-3 mt-6.5">
+                    <a href="#proceso" class="{{ $btn }} bg-[#1F1617] text-white hover:bg-[#0e0a0b]">{{ __('Ver cómo trabajamos') }}</a>
+                    <a href="#entregables" class="{{ $btn }} bg-accent/13 text-[#175D69] hover:bg-accent/19">{{ __('Ver entregables') }}</a>
                 </div>
-
-                <!-- Imagen flotante -->
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="900">
-                    <div class="relative w-full max-w-sm md:max-w-md">
-                        <div class="absolute inset-0 bg-primary/40 rounded-2xl translate-x-4 translate-y-4"></div>
-                        <div class="absolute -top-3 -left-3 w-16 h-16 border-4 border-white/30 rounded-xl"></div>
-                        <img src="/images/otium/carousel/constitucion_de_empresas.png"
-                            alt="Consultoría Empresarial Otium"
-                            class="relative z-10 rounded-2xl shadow-2xl w-full h-72 md:h-80 object-cover object-center animate-float">
-                    </div>
+                <div class="grid grid-cols-4 w-[min(370px,100%)] h-3 mt-6 rounded-full overflow-hidden" aria-hidden="true">
+                    <span class="bg-primary"></span><span class="bg-secondary"></span><span class="bg-brand-light"></span><span class="bg-accent"></span>
                 </div>
+            </article>
 
+            <aside class="{{ $card }} flex flex-col justify-between gap-5.5 p-5.5 md:p-7" aria-label="{{ __('Qué conectamos en la consultoría') }}" data-aos="fade-left" data-aos-delay="100">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Una mirada conectada') }}</div>
+                    <h2 class="text-[23px] font-bold leading-[1.55] tracking-[-0.025em] mb-2.25">{{ __('No analizamos una empresa desde una sola hoja.') }}</h2>
+                    <p class="text-[#5F5A5B] text-sm mb-4">{{ __('La consultoría conecta la información disponible con las preguntas que la gerencia necesita responder.') }}</p>
+                </div>
+                <div class="grid gap-2.75">
+                    @foreach ([
+                        [__('Números'),     __('Costos, márgenes, rentabilidad, caja y capacidad financiera.')],
+                        [__('Procesos'),    __('Responsables, controles, flujos y puntos de dependencia.')],
+                        [__('Información'), __('Reportes, documentos, bases y estructuras de seguimiento.')],
+                        [__('Decisiones'),  __('Prioridades, inversiones, escenarios y próximos pasos.')],
+                    ] as $i => [$t, $d])
+                    <div class="grid grid-cols-[44px_1fr] gap-3.25 items-start p-3.5 rounded-[17px] bg-[#F7F4F2] border border-[#E6E1DE]">
+                        <div class="w-11 h-11 grid place-items-center rounded-[14px] font-extrabold {{ ['bg-primary/10 text-primary', 'bg-secondary/16 text-[#8D5145]', 'bg-brand-light/45 text-[#7A5D53]', 'bg-accent/14 text-[#16616E]'][$i] }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                        <div><strong class="block text-sm mb-0.5">{{ $t }}</strong><span class="block text-[#5F5A5B] text-[13px]">{{ $d }}</span></div>
+                    </div>
+                    @endforeach
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Qué problema resolvemos -->
+    <section id="problemas" class="py-7.75 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué problema resolvemos') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Cuando la empresa crece, la información también debe ordenarse.') }}</h2>
+                <p class="{{ $desc }}">{{ __('El problema no suele ser la falta absoluta de datos. Es tener información que existe, pero que llega tarde, está dispersa o no permite responder con claridad qué está pasando y qué conviene hacer.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ([
+                    [__('Poca lectura gerencial'),                __('Hay datos y estados, pero cuesta traducirlos en una lectura útil para decidir.')],
+                    [__('Números sin contexto'),                  __('Existen dudas sobre costos, márgenes, flujo de caja, rentabilidad o capacidad de inversión.')],
+                    [__('Procesos poco claros'),                  __('La operación depende de personas específicas, controles manuales o información difícil de reconstruir.')],
+                    [__('Decisiones con información incompleta'), __('Comprar, invertir, expandirse o ajustar precios requiere comparar escenarios y consecuencias.')],
+                ] as $i => [$t, $d])
+                <article class="p-5.5 bg-white/93 border border-[#1F1617]/8 rounded-[20px] {{ $soft }}" data-aos="fade-up" data-aos-delay="{{ $i * 75 }}">
+                    <div class="w-11 h-11 grid place-items-center mb-3.5 rounded-[14px] text-lg font-extrabold {{ $chips[$i] }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <h3 class="text-[19px] font-bold tracking-[-0.025em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Intro / Description -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-green-50 rounded-2xl transform translate-x-4 translate-y-4"></div>
-                        <img src="/images/otium/carousel/constitucion_de_empresas.png" alt="Consultoría Empresarial Otium"
-                            class="relative rounded-2xl shadow-xl w-full h-100 object-cover">
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Consultoría Empresarial</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Análisis real, herramientas concretas, decisiones más claras') }}</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        En Otium acompañamos a empresas que necesitan entender mejor su situación financiera, ordenar su gestión y tomar decisiones con información real. No ofrecemos recomendaciones genéricas — trabajamos sobre los números, procesos y documentación concreta de tu negocio.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Analizamos costos, márgenes, flujo de caja, rentabilidad, CAPEX, OPEX y procesos internos. El resultado no es un informe para archivar: es una base clara para decidir con más criterio y menos improvisación.
-                    </p>
-                </div>
+    <!-- Qué hacemos -->
+    <section id="servicio" class="py-7.75 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué hacemos por usted') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Seis frentes para entender, ordenar y mejorar la gestión.') }}</h2>
+                <p class="{{ $desc }}">{{ __('El alcance se define según el problema real de la empresa. No todos los proyectos requieren todos los componentes.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.25">
+                @foreach ([
+                    [__('Diagnóstico'),  __('Diagnóstico empresarial y plan de mejora'),      __('Revisamos la situación financiera, administrativa, documental y operativa para identificar problemas, riesgos, oportunidades y prioridades.')],
+                    [__('Rentabilidad'), __('Análisis financiero, costos y márgenes'),        __('Analizamos ingresos, gastos, costos, rentabilidad, cuentas por cobrar o pagar y otras variables relevantes según el objetivo.')],
+                    [__('Proyección'),   __('Flujo de caja y modelos financieros'),           __('Construimos modelos y escenarios para anticipar necesidades de caja, capacidad de pago y posibles impactos financieros.')],
+                    [__('Inversión'),    __('CAPEX, OPEX y decisiones de inversión'),         __('Evaluamos inversiones y gastos relevantes para entender su impacto en caja, presupuesto, rentabilidad y capacidad financiera.')],
+                    [__('Control'),      __('Procesos, control interno y riesgos'),           __('Revisamos flujos, responsabilidades, controles y puntos críticos para proponer mejoras concretas de gestión y trazabilidad.')],
+                    [__('Información'),  __('Reportes gerenciales, datos y acompañamiento'),  __('Estructuramos indicadores, matrices y reportes para que la gerencia pueda revisar mejor el desempeño y los pendientes.')],
+                ] as $i => [$step, $t, $d])
+                @php $featured = $i === 3; @endphp
+                <article class="relative overflow-hidden p-5.75 rounded-[20px] border {{ $featured ? 'bg-linear-to-b from-white to-accent/6 border-accent/35' : 'bg-white border-[#E6E1DE]' }} {{ $soft }}" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                    <span class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary via-secondary to-accent opacity-72"></span>
+                    <div class="mb-2.5 text-[11px] font-extrabold tracking-[.14em] uppercase {{ $featured ? 'text-[#17616E]' : 'text-primary' }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }} · {{ $step }}</div>
+                    <h3 class="text-xl font-bold tracking-[-0.025em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Para quién es -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    Empresas que operan en Bolivia — con capital local o extranjero — que necesitan una mirada externa, técnica y práctica sobre su gestión.
-                </p>
+    <!-- Proceso de trabajo -->
+    <section id="proceso" class="py-7.75 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Proceso de trabajo') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Primero entendemos el problema. Después construimos la respuesta.') }}</h2>
+                <p class="{{ $desc }}">{{ __('La consultoría no parte de una solución prefabricada. Parte de una pregunta empresarial concreta y de la información disponible para responderla con método.') }}</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Inversionistas evaluando viabilidad') }}</h3>
-                    <p class="text-gray-600">Que necesitan evaluar la viabilidad financiera de una operación en Bolivia con modelos reales y criterio local.</p>
+            <div class="{{ $card }} p-5.5 md:p-7.25" data-aos="fade-up">
+                <div class="flex flex-wrap gap-2.5 mb-5.25">
+                    @foreach ([__('Diagnóstico'), __('Información real'), __('Análisis'), __('Entregables concretos'), __('Validación')] as $pill)
+                    <span class="px-3.25 py-2 border border-[#E6E1DE] rounded-full bg-[#F7F4F2] text-[#50494A] text-xs font-bold">{{ $pill }}</span>
+                    @endforeach
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas con socios internacionales') }}</h3>
-                    <p class="text-gray-600">Que reportan costos y rentabilidad a socios o directorio fuera de Bolivia y necesitan información clara y estructurada.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.25">
+                    @foreach ([
+                        [__('Entendemos la decisión'),  __('Definimos con la gerencia qué problema necesita resolver, qué decisión está pendiente y qué alcance tiene sentido revisar.')],
+                        [__('Reunimos la información'), __('Revisamos estados, reportes, bases, documentos, controles y procesos que permitan reconstruir la situación actual.')],
+                        [__('Diagnosticamos'),          __('Identificamos hallazgos, brechas, riesgos, oportunidades y puntos donde falta información o control.')],
+                        [__('Analizamos y modelamos'),  __('Aplicamos análisis financiero, costos, márgenes, flujo de caja, CAPEX/OPEX, procesos o indicadores según el objetivo.')],
+                        [__('Construimos entregables'), __('Preparamos matrices, modelos, reportes, mapas de procesos, recomendaciones o planes de acción que hagan visible la conclusión.')],
+                        [__('Validamos y priorizamos'), __('Revisamos los resultados con la empresa, ajustamos criterios y ordenamos los siguientes pasos según importancia y alcance.')],
+                    ] as $i => [$t, $d])
+                    <article class="p-5.5 rounded-[20px] bg-white border border-[#E6E1DE] md:min-h-52.5" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                        <div class="w-10.5 h-10.5 grid place-items-center mb-4 rounded-[14px] font-extrabold {{ $i % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-accent/14 text-[#17616E]' }}">{{ $i + 1 }}</div>
+                        <h3 class="text-lg font-bold tracking-[-0.025em] mb-2">{{ $t }}</h3>
+                        <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                    </article>
+                    @endforeach
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Negocios creciendo sin información gerencial') }}</h3>
-                    <p class="text-gray-600">Que están creciendo más rápido que su sistema de información — sin márgenes claros ni herramientas para decidir.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas familiares que profesionalizan') }}</h3>
-                    <p class="text-gray-600">Que quieren profesionalizar sus decisiones y pasar de gestión intuitiva a gestión basada en información.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Gerentes tomando decisiones de inversión') }}</h3>
-                    <p class="text-gray-600">Que necesitan modelos de respaldo para evaluar compra de activos, expansión, sucursales o nuevas unidades de negocio.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas en expansión o reorganización') }}</h3>
-                    <p class="text-gray-600">Evaluando expansión, apertura de sucursal, compra de activos o entrada de nuevos socios que requieren análisis previo.</p>
-                </div>
-            </div>
-            <div class="bg-primary/10 border-l-4 border-primary rounded-xl p-6 max-w-4xl mx-auto" data-aos="fade-up">
-                <p class="text-gray-700 text-lg">
-                    <strong class="text-primary">El problema que comparten:</strong> La empresa opera, vende y crece — pero los números están dispersos, los márgenes no están claros y gerencia toma decisiones con información incompleta o desactualizada.
-                </p>
+                <div class="mt-4.5 px-4.5 py-4 rounded-2xl bg-secondary/10 border-l-4 border-secondary text-[#6D4C45] text-sm"><strong>{{ __('Importante:') }}</strong> {{ __('el proceso puede terminar en un diagnóstico puntual, un proyecto específico o continuar con seguimiento si ese acompañamiento forma parte del alcance acordado.') }}</div>
             </div>
         </div>
     </section>
 
-    <!-- Qué incluye -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Qué incluye el servicio?') }}</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Alcance definido en propuesta. Trabajamos sobre los números, procesos y documentación real de tu empresa.</p>
+    <!-- Decisiones de inversión -->
+    <section class="py-7.75">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Decisiones de inversión') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('CAPEX y OPEX: no basta con saber cuánto cuesta.') }}</h2>
+                <p class="{{ $desc }}">{{ __('Una decisión relevante también debe entenderse por su efecto en caja, presupuesto, rentabilidad y capacidad de operación.') }}</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-primary" data-aos="fade-right">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 text-sm">1</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">Diagnóstico empresarial</h4>
-                            <p class="text-gray-600">Situación administrativa, financiera y operativa con plan de mejora priorizado.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-4.5 items-stretch">
+                <article class="{{ $card }} p-5.5 md:p-6.75" data-aos="fade-right">
+                    <h3 class="text-[27px] font-bold leading-[1.55] tracking-[-0.025em] mb-2.25">{{ __('Preguntas que ponemos sobre la mesa') }}</h3>
+                    <div class="grid gap-2.75 mt-3.5">
+                        @foreach ([
+                            [__('¿Es inversión o gasto operativo?'), __('Ordenamos la naturaleza económica de la decisión para analizarla correctamente.')],
+                            [__('¿Qué pasa con la caja?'),           __('Proyectamos el impacto financiero y las necesidades de liquidez.')],
+                            [__('¿Qué alternativas existen?'),       __('Podemos comparar compra, alquiler, tercerización u otros escenarios cuando corresponde.')],
+                            [__('¿Qué debería priorizarse?'),        __('Organizamos inversiones y gastos relevantes según urgencia, liquidez y capacidad financiera.')],
+                        ] as $i => [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full {{ $dots[$i] }}"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-[13px]">{{ $d }}</span></div>
                         </div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-primary" data-aos="fade-left">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 text-sm">2</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">Análisis financiero, costos y rentabilidad</h4>
-                            <p class="text-gray-600">Márgenes, precios e indicadores por producto, servicio o unidad de negocio.</p>
+                </article>
+                <article class="{{ $card }} p-5.5 md:p-6.75" data-aos="fade-left" data-aos-delay="100">
+                    <table class="w-full border-collapse text-[13px] md:text-sm" aria-label="{{ __('Mapa de análisis CAPEX OPEX') }}">
+                        <thead>
+                            <tr>
+                                <th class="text-left px-2.25 py-3 md:px-3 md:py-3.5 text-[11px] uppercase tracking-[.12em] text-primary border-b border-[#E6E1DE]">{{ __('Decisión') }}</th>
+                                <th class="text-left px-2.25 py-3 md:px-3 md:py-3.5 text-[11px] uppercase tracking-[.12em] text-primary border-b border-[#E6E1DE]">{{ __('Qué revisamos') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ([
+                                [__('Comprar un activo'),     __('Inversión, caja, presupuesto, alternativas y capacidad financiera.')],
+                                [__('Alquilar o tercerizar'), __('Impacto operativo, costo recurrente y comparación con otras opciones.')],
+                                [__('Abrir o ampliar'),       __('Inversión inicial, gastos operativos, capital de trabajo y escenarios.')],
+                                [__('Priorizar CAPEX'),       __('Necesidad, urgencia, disponibilidad de caja y efecto esperado.')],
+                            ] as [$dec, $rev])
+                            <tr>
+                                <td class="align-top px-2.25 py-3 md:px-3 md:py-3.5 font-bold w-1/3 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">{{ $dec }}</td>
+                                <td class="align-top px-2.25 py-3 md:px-3 md:py-3.5 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">{{ $rev }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class="mt-4.25 px-4.25 py-3.75 rounded-[15px] bg-accent/10 border-l-4 border-accent text-[#28555D]">{{ __('El resultado puede tomar forma de matriz CAPEX/OPEX, presupuesto, flujo de caja, análisis de escenarios o recomendación ejecutiva, según el alcance.') }}</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soporte digital -->
+    <section id="digital" class="py-7.75 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Soporte digital') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('La herramienta acompaña al análisis; no lo reemplaza.') }}</h2>
+                <p class="{{ $desc }}">{{ __('Cuando el proyecto lo requiere, estructuramos la información para que pueda revisarse, actualizarse y reconstruirse con mayor facilidad.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-4.5">
+                <article class="{{ $card }} p-5.5 md:p-6.25" data-aos="fade-right">
+                    <h3 class="{{ $h3 }}">{{ __('Herramientas que pueden formar parte del trabajo') }}</h3>
+                    <div class="grid gap-2.75 mt-3.75">
+                        @foreach ([
+                            [__('Excel estructurado'), __('Modelos financieros, flujos de caja, matrices de costos, presupuestos y controles.')],
+                            ['Microsoft 365',          __('Colaboración, organización y gestión de información del proyecto.')],
+                            ['SharePoint',             __('Repositorios, listas o estructuras documentales cuando la trazabilidad lo justifica.')],
+                            ['Power BI',               __('Indicadores y visualización gerencial cuando existen datos y alcance para ello.')],
+                            [__('IA como apoyo'),      __('Organización, clasificación, revisión o síntesis de información bajo revisión profesional.')],
+                        ] as [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-2.75 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full bg-accent"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-[13px]">{{ $d }}</span></div>
                         </div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-primary" data-aos="fade-right">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 text-sm">3</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">Flujo de caja, proyecciones y modelos financieros</h4>
-                            <p class="text-gray-600">Escenarios conservador, medio y optimista modelados en Excel.</p>
+                </article>
+                <article class="{{ $card }} p-5.5 md:p-6.25" data-aos="fade-left" data-aos-delay="100">
+                    <h3 class="{{ $h3 }}">{{ __('De la fuente a la decisión') }}</h3>
+                    <div class="grid gap-2.75 mt-2.5" aria-label="{{ __('Arquitectura de información') }}">
+                        @foreach ([__('Información del cliente'), __('Revisión y estructuración'), __('Análisis / modelo / matriz'), __('Reporte o entregable'), __('Lectura gerencial y próximos pasos')] as $node)
+                        <div class="relative px-4 py-3.5 rounded-[15px] border border-[#E6E1DE] bg-[#F7F4F2] font-bold {{ $loop->last ? '' : 'mb-2' }}">
+                            {{ $node }}
+                            @unless ($loop->last)
+                            <span class="absolute left-1/2 -translate-x-1/2 -bottom-4.75 z-10 text-primary font-extrabold" aria-hidden="true">↓</span>
+                            @endunless
                         </div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-primary" data-aos="fade-left">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 text-sm">4</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">CAPEX, OPEX y decisiones de inversión</h4>
-                            <p class="text-gray-600">Evaluación de compras, activos, tecnología, infraestructura o expansión con impacto financiero modelado.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-primary" data-aos="fade-right">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 text-sm">5</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">Procesos, control interno y gestión de riesgos</h4>
-                            <p class="text-gray-600">Cuellos de botella, responsables y mejoras de control con matriz de riesgos priorizada.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-primary" data-aos="fade-left">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 text-sm">6</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">Reportes gerenciales y acompañamiento</h4>
-                            <p class="text-gray-600">Indicadores en Excel, SharePoint o Power BI según alcance — con seguimiento continuo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-primary/5 rounded-xl p-6 border-l-4 border-secondary md:col-span-2" data-aos="fade-up">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white shrink-0">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">
-                                Encargos especiales
-                                <span class="ml-2 inline-block bg-secondary/10 text-secondary text-xs font-semibold px-2 py-0.5 rounded">A medida</span>
-                            </h4>
-                            <p class="text-gray-600">Evaluación de franquicias, due diligence, expansión y apertura de nuevas unidades de negocio — con alcance y metodología definidos en propuesta.</p>
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Qué recibe el cliente -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <section id="entregables" class="py-7.75 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué recibe el cliente') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('La consultoría debe terminar en algo que pueda usarse.') }}</h2>
+                <p class="{{ $desc }}">{{ __('Los entregables finales dependen del objetivo, la información disponible y el alcance contratado. Estos son formatos posibles ya definidos para el servicio.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-4.5">
+                @foreach ([
+                    [__('Entregables de análisis y decisión'), [
+                        [__('Informe de diagnóstico empresarial'),   __('Hallazgos, brechas, riesgos, oportunidades y prioridades.')],
+                        [__('Matriz de hallazgos y recomendaciones'), __('Una lectura estructurada de qué se detectó y qué debería revisarse.')],
+                        [__('Modelo financiero o flujo proyectado'),  __('Escenarios, capacidad de pago, caja o capital de trabajo según el caso.')],
+                        [__('Matriz CAPEX/OPEX'),                     __('Presupuesto de inversión, operación y análisis de alternativas.')],
+                    ]],
+                    [__('Entregables de gestión y seguimiento'), [
+                        [__('Mapa de procesos y responsabilidades'), __('Flujos, responsables, controles y puntos de mejora.')],
+                        [__('Matriz de riesgos y controles'),        __('Puntos críticos y recomendaciones de control interno.')],
+                        [__('Reporte gerencial e indicadores'),      __('Información resumida para revisar desempeño y pendientes.')],
+                        [__('Plan de acción priorizado'),            __('Próximos pasos ordenados para facilitar la ejecución y el seguimiento.')],
+                    ]],
+                ] as $k => [$title, $items])
+                <article class="{{ $card }} p-5.5 md:p-6.25" data-aos="fade-up" data-aos-delay="{{ $k * 100 }}">
+                    <h3 class="{{ $h3 }}">{{ $title }}</h3>
+                    <div class="grid gap-2.75 mt-3.5">
+                        @foreach ($items as $i => [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full {{ $dots[$i] }}"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-[13px]">{{ $d }}</span></div>
+                        </div>
+                        @endforeach
                     </div>
-                    <p class="text-gray-700 font-medium">Informe de diagnóstico con plan de acción</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsabilidades -->
+    <section class="py-7.75">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Responsabilidades') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('La consultoría funciona mejor cuando cada parte sabe qué debe aportar.') }}</h2>
+                <p class="{{ $desc }}">{{ __('OTIUM analiza y estructura; la empresa aporta la información, valida los hechos y conserva la decisión final sobre su gestión.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+                @foreach ([
+                    ['OTIUM', '✓', 'text-accent', [
+                        __('Releva el problema y define el marco de análisis del proyecto.'),
+                        __('Revisa, ordena y analiza la información incluida en el alcance.'),
+                        __('Prepara modelos, matrices, reportes y recomendaciones acordados.'),
+                        __('Expone hallazgos, criterios y próximos pasos de forma ejecutiva.'),
+                    ]],
+                    [__('Su empresa'), '•', 'text-primary', [
+                        __('Facilita la información y documentación necesaria para el análisis.'),
+                        __('Designa responsables internos para aclarar información y procesos.'),
+                        __('Valida hechos, supuestos y criterios que dependen de su operación.'),
+                        __('Toma las decisiones y aprueba las acciones que corresponden a su gestión.'),
+                    ]],
+                ] as $k => [$who, $mark, $color, $items])
+                <article class="{{ $card }} p-5.5 md:p-6.25" data-aos="fade-up" data-aos-delay="{{ $k * 100 }}">
+                    <h3 class="{{ $h3 }}">{{ $who }}</h3>
+                    <div class="grid gap-2.5 mt-3.5">
+                        @foreach ($items as $item)
+                        <div class="grid grid-cols-[22px_1fr] gap-2.5 text-sm text-[#474142]"><i class="not-italic font-extrabold {{ $color }}">{{ $mark }}</i><span>{{ $item }}</span></div>
+                        @endforeach
                     </div>
-                    <p class="text-gray-700 font-medium">Análisis financiero con márgenes y rentabilidad</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Modelo financiero en Excel con escenarios</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Matriz CAPEX/OPEX con impacto financiero</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Mapa de procesos y matriz de riesgos</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Reporte gerencial con indicadores clave</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Presentación ejecutiva para socios o directorio</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Estructura de seguimiento en Excel / SharePoint / Power BI</p>
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuando el caso requiere algo más -->
+    <section class="py-7.75">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Cuando el caso requiere algo más') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Algunas necesidades se articulan con otros servicios.') }}</h2>
+                <p class="{{ $desc }}">{{ __('La consultoría identifica y analiza problemas, pero no convierte automáticamente otros trabajos especializados en parte del alcance.') }}</p>
+            </div>
+            <div class="{{ $card }} p-5.5 md:p-6.25 bg-linear-to-b! from-white/96 to-[#F7F4F2]/98" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4.5 gap-y-3 mt-4">
+                    @foreach ([
+                        [__('Contabilidad mensual'),                    __('Corresponde a Outsourcing Contable Digital cuando se requiere registro y mantenimiento continuo.')],
+                        [__('Gestión tributaria'),                      __('Declaraciones, cumplimiento fiscal y obligaciones tributarias se cotizan en su línea específica.')],
+                        [__('Auditoría'),                               __('Una opinión independiente o trabajo de auditoría requiere un alcance separado.')],
+                        [__('Implementaciones tecnológicas completas'), __('SharePoint, Power BI o automatizaciones pueden requerir un proyecto adicional.')],
+                        [__('Asesoría legal especializada'),            __('Cuando el caso lo exige, se coordina o cotiza con el soporte profesional correspondiente.')],
+                        [__('Ejecución operativa permanente'),          __('No forma parte automática de un diagnóstico o proyecto puntual de consultoría.')],
+                    ] as [$t, $d])
+                    <div class="px-3.75 py-3.5 rounded-[15px] border border-[#E6E1DE] bg-white text-sm text-[#4E4849]"><strong>{{ $t }}</strong><br>{{ $d }}</div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Por qué Otium vs. consultoría genérica -->
-    <section class="py-20 bg-secondary text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. la consultoría genérica') }}</h2>
-            <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
-                <table class="w-full border-collapse">
+    <!-- Qué cambia para el cliente -->
+    <section class="py-7.75">
+        <div class="container-2026">
+            <div class="mb-4.75" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué cambia para el cliente') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Más que un informe: una estructura para ver y decidir.') }}</h2>
+            </div>
+            <div class="{{ $card }} overflow-hidden p-2" data-aos="fade-up">
+                <table class="w-full border-collapse text-[13px] md:text-sm" aria-label="{{ __('Antes y con OTIUM') }}">
                     <thead>
                         <tr>
-                            <th class="text-left p-4 bg-white/10 rounded-tl-xl font-bold text-white/70 text-sm uppercase tracking-wider w-1/2">Consultoría genérica</th>
-                            <th class="text-left p-4 bg-primary rounded-tr-xl font-bold text-white text-sm uppercase tracking-wider w-1/2">Otium</th>
+                            <th class="text-left px-2.25 py-3 md:px-3.5 md:py-3.75 text-[11px] uppercase tracking-[.12em] border-b border-[#E6E1DE] text-[#81584F]">{{ __('Sin un proceso estructurado') }}</th>
+                            <th class="text-left px-2.25 py-3 md:px-3.5 md:py-3.75 text-[11px] uppercase tracking-[.12em] border-b border-[#E6E1DE] text-[#17616E]">{{ __('Con OTIUM') }}</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-white/10">
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Recomendaciones de manual</td>
-                            <td class="p-4 text-white font-medium">Análisis sobre los números reales de tu empresa</td>
+                    <tbody>
+                        @foreach ([
+                            [__('Información dispersa entre archivos, reportes y personas.'),           __('Información relevante organizada alrededor de una pregunta de gestión.')],
+                            [__('Números disponibles, pero con poca lectura gerencial.'),               __('Análisis que conecta costos, caja, rentabilidad, procesos o riesgos con decisiones.')],
+                            [__('Inversiones o gastos importantes sin comparación suficiente.'),        __('Escenarios, CAPEX/OPEX y consecuencias financieras visibles antes de decidir.')],
+                            [__('Hallazgos que quedan en conversaciones o archivos aislados.'),         __('Matrices, modelos, reportes y planes de acción que pueden revisarse y dar seguimiento.')],
+                        ] as [$before, $after])
+                        <tr>
+                            <td class="align-top px-2.25 py-3 md:px-3.5 md:py-3.75 bg-secondary/5.5 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">{{ $before }}</td>
+                            <td class="align-top px-2.25 py-3 md:px-3.5 md:py-3.75 bg-accent/5.5 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">{{ $after }}</td>
                         </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Entrega un informe y desaparece</td>
-                            <td class="p-4 text-white font-medium">Acompañamiento y seguimiento según alcance</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Solo diagnostica</td>
-                            <td class="p-4 text-white font-medium">Diagnostica, modela, proyecta y entrega herramientas</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin conexión con contabilidad</td>
-                            <td class="p-4 text-white font-medium">Integración natural con outsourcing contable y tributario</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Reportes estáticos en Word</td>
-                            <td class="p-4 text-white font-medium">Modelos en Excel, SharePoint y Power BI según necesidad</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 rounded-bl-xl text-white/70 border-r border-white/10">No conoce el mercado boliviano</td>
-                            <td class="p-4 rounded-br-xl text-white font-medium">Criterio local con visibilidad para socios internacionales</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
-            <div class="space-y-4" x-data="{ active: null }">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿En qué se diferencia la consultoría del outsourcing contable?</span>
-                        <span x-text="active === 1 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 1" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        El outsourcing contable gestiona las operaciones del día a día. La consultoría va más allá: analiza márgenes, costos, rentabilidad y procesos para entregar modelos y herramientas que sirvan para tomar decisiones — no solo para cumplir.
+    <!-- Cómo empezamos -->
+    <section id="inicio" class="pt-10.5 pb-14 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $card }} relative overflow-hidden p-5.5 md:p-8.75" data-aos="fade-up">
+                <span class="absolute -right-22.5 -bottom-32.5 w-60 h-60 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.17),rgba(84,186,199,0))] pointer-events-none"></span>
+                <div class="relative grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-6.25 items-center">
+                    <div>
+                        <div class="{{ $tag }}">{{ __('Cómo empezamos') }}</div>
+                        <h2 class="text-[clamp(29px,3.5vw,45px)] font-bold leading-[1.55] tracking-[-0.025em] mb-2.25">{{ __('Conversemos sobre la decisión que necesita tomar su empresa.') }}</h2>
+                        <p class="text-[#4B4445] text-[17px] max-w-[720px] mb-4">{{ __('Primero entendemos la situación actual y la pregunta que necesita respuesta. Después definimos qué información debemos revisar, qué alcance tiene sentido y qué entregables pueden ayudar realmente a la gerencia.') }}</p>
+                        <div class="flex flex-wrap gap-3 mt-6.5">
+                            <a href="{{ $waService }}" target="_blank" rel="noopener" class="{{ $btn }} bg-[#1F1617] text-white hover:bg-[#0e0a0b]">{{ __('Solicitar una evaluación inicial') }}</a>
+                            <a href="#proceso" class="{{ $btn }} bg-accent/13 text-[#175D69] hover:bg-accent/19">{{ __('Revisar el proceso') }}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Trabajan con empresas en distintos rubros?</span>
-                        <span x-text="active === 2 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 2" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. Trabajamos con empresas comerciales, de servicios, gastronómicas, constructoras, importadoras y subsidiarias internacionales. El análisis siempre se hace sobre los números reales de cada empresa.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Trabajan con empresas que ya están en crisis financiera?</span>
-                        <span x-text="active === 3 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 3" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. Diagnosticamos la situación, priorizamos acciones urgentes y diseñamos un plan de recuperación realista basado en los números actuales de la empresa.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cuánto tiempo dura un proyecto de consultoría?</span>
-                        <span x-text="active === 4 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 4" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Depende del alcance definido en propuesta. Un diagnóstico puede tomar 2 a 3 semanas. Un acompañamiento con modelos y seguimiento puede ser mensual por 3 a 12 meses. Lo definimos juntos en la primera reunión.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 5 ? null : 5)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cómo empiezo con Otium?</span>
-                        <span x-text="active === 5 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 5" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Solo una reunión inicial. Escuchamos tu situación, identificamos las áreas de mayor oportunidad y presentamos una propuesta con alcance y entregables claros.
-                    </div>
+                    <aside class="p-5.25 rounded-[19px] border border-[#E6E1DE] bg-[#F7F4F2]">
+                        <h3 class="text-lg font-bold tracking-[-0.025em] mb-2.25">{{ __('Para definir el alcance revisamos:') }}</h3>
+                        <div class="grid gap-2 text-sm text-[#4E4849]">
+                            @foreach ([
+                                __('Problema o decisión principal.'),
+                                __('Información disponible y nivel de orden actual.'),
+                                __('Sistemas, archivos y responsables internos.'),
+                                __('Horizonte del análisis o de la decisión.'),
+                                __('Entregables que necesita la gerencia.'),
+                            ] as $item)
+                            <span><span class="text-primary font-black mr-2" aria-hidden="true">•</span>{{ $item }}</span>
+                            @endforeach
+                        </div>
+                    </aside>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contact" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Tu empresa opera con información clara o con intuición?') }}</h2>
-            <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctanos y revisamos juntos tu situación — con modelos reales, no con recomendaciones de manual.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
-            </div>
-        </div>
-    </section>
-
+    </div>
 </x-layout>

@@ -5,55 +5,61 @@
 
     
 
-    <!-- 2. Hero Section -->
-    <section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <!-- Floating Backgroung Elements -->
-        <div
-            class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-light rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
-        </div>
-        <div
-            class="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
-        </div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <!-- Text Column (60%) -->
-                <div class="w-full md:w-3/5 mb-12 md:mb-0 pr-0 md:pr-12" data-aos="fade-up" data-aos-duration="800">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                        {{ __('Transformamos la gestión') }} <span class="text-primary">{{ __('Financiera y Digital') }}</span> {{ __('de tu empresa') }}
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 max-w-xl">
-                        {{ __('Gestionamos tu contabilidad, impuestos y nómina. Y te entregamos un dashboard mensual que tu gerencia entiende — con Microsoft 365, SharePoint y Power BI.') }}
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="{{ route('contact') }}"
-                            class="px-8 py-3 bg-primary text-white rounded-lg font-semibold shadow-lg hover:bg-red-700 hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
-                            {{ __('Agenda tu diagnóstico gratuito') }}
-                        </a>
-                        <a href="{{ route('services.index') }}"
-                            class="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-red-50 transition-colors text-center">
-                            {{ __('Ver cómo trabajamos') }}
-                        </a>
-                    </div>
+    <!-- 2. Hero Section — Brand Guidelines 2026: fondo plano + reporte mensual de ejemplo -->
+    <section id="home" class="pt-32 pb-20 md:pt-36 bg-white">
+        <div class="container-2026 grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-14 items-center">
+            <div data-aos="fade-up">
+                <p class="mb-3 text-xs font-bold tracking-[.14em] uppercase text-primary">{{ __('Outsourcing contable · Impuestos · Transformación digital') }}</p>
+                <h1 class="text-[clamp(38px,5.4vw,62px)] font-bold leading-[1.06] tracking-[-0.02em] text-black">
+                    {{ __('Transformamos la gestión') }} <span class="text-primary">{{ __('Financiera y Digital') }}</span> {{ __('de tu empresa') }}
+                </h1>
+                <p class="mt-5.5 text-lg text-muted max-w-[52ch]">
+                    {{ __('Gestionamos tu contabilidad, impuestos y nómina. Y te entregamos un dashboard mensual que tu gerencia entiende — con Microsoft 365, SharePoint y Power BI.') }}
+                </p>
+                <div class="flex flex-wrap gap-3 mt-7.5">
+                    <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-5.5 py-3.25 rounded-md bg-primary text-white font-semibold hover:bg-[#962219] transition-colors">{{ __('Agenda tu diagnóstico gratuito') }}</a>
+                    <a href="#como-trabajamos" class="inline-flex items-center justify-center px-5.5 py-3.25 rounded-md border-[1.5px] border-primary text-primary font-semibold hover:bg-brand-light transition-colors">{{ __('Ver cómo trabajamos') }}</a>
                 </div>
-
-                <!-- Image Column (40%) -->
-                <div class="w-full md:w-2/5" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                    <div
-                        class="relative transform rotate-2 hover:rotate-0 transition-transform duration-500 hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-primary opacity-20 blur-lg rounded-2xl transform translate-x-4 translate-y-4">
-                        </div>
-                        <img src="/images/otium/hero/hero.png" alt="OTIUM Corporate"
-                            class="relative rounded-2xl shadow-2xl w-full object-cover h-auto animate-float">
-                    </div>
+                <div class="flex flex-wrap gap-2 mt-7">
+                    @foreach (['La Paz · Santa Cruz', 'Independent Member of GGI', __('+15 años')] as $chip)
+                    <span class="px-3 py-1.5 rounded-full border border-line bg-white text-[12.5px] text-muted">{{ $chip }}</span>
+                    @endforeach
                 </div>
+            </div>
+
+            {{-- Ejemplo del reporte mensual que recibe el cliente (datos ilustrativos) --}}
+            <div class="p-6.5 bg-white border border-line border-t-4 border-t-primary" aria-label="{{ __('Ejemplo de reporte mensual') }}" data-aos="fade-left" data-aos-delay="150">
+                <div class="flex justify-between items-baseline gap-3 mb-4.5">
+                    <span class="font-bold">{{ __('Reporte mensual a gerencia') }}</span>
+                    <span class="text-[11px] tracking-widest uppercase text-muted">{{ __('Ejemplo') }}</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                    @foreach ([
+                        [__('Ingresos'),    'Bs 1,40 MM', '▲ 16,1 %',            'text-[#2F8D99]'],
+                        [__('Carga IUE'),   '25,0 %',     '— ' . __('estable'),  'text-muted'],
+                        [__('Margen neto'), '64,4 %',     '▲ 2,1 pp',            'text-[#2F8D99]'],
+                    ] as [$label, $value, $delta, $color])
+                    <div class="p-3 border border-line">
+                        <div class="text-[10.5px] uppercase tracking-[.06em] text-muted">{{ $label }}</div>
+                        <div class="mt-1 text-[22px] font-bold tabular-nums">{{ $value }}</div>
+                        <div class="mt-0.5 text-[11.5px] font-bold {{ $color }}">{{ $delta }}</div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="flex items-end gap-3.5 h-30 mt-5 px-1.5 border-b-2 border-black" aria-hidden="true">
+                    @foreach ([[62, 'bg-mid'], [78, 'bg-accent'], [54, 'bg-mid'], [91, 'bg-primary']] as [$h, $c])
+                    <div class="relative flex-1 {{ $c }}" style="height: {{ $h }}%"><span class="absolute -top-5 inset-x-0 text-center text-[11.5px] font-bold tabular-nums">{{ $h }}%</span></div>
+                    @endforeach
+                </div>
+                <div class="flex gap-3.5 px-1.5 pt-1.5" aria-hidden="true">
+                    @foreach (['T1', 'T2', 'T3', 'T4'] as $q)
+                    <div class="flex-1 text-center text-[11px] text-muted">{{ $q }}</div>
+                    @endforeach
+                </div>
+                <p class="mt-3.5 text-[11px] text-mid">{{ __('Datos de ejemplo · Power BI sobre información conciliada') }}</p>
             </div>
         </div>
     </section>
-
-    
-
 
     <!-- HERO V2 — 2 columnas: imagen izq | texto der con fondo difuminado -->
     {{-- <section id="home-v2" class="relative min-h-screen overflow-hidden flex flex-col md:flex-row items-stretch pt-24">
@@ -97,32 +103,25 @@
     </section> --}}
     <!-- FIN HERO V2 -->
 
-<!-- Stats Section -->
-    <section class="bg-primary py-12 text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-red-800">
-                <div class="flex flex-col items-center justify-center" data-aos="fade-up">
-                    <span class="flex items-center min-h-12 text-4xl font-bold mb-2">8+</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Sectores Atendidos') }}</span>
-                </div>
-                <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="100">
-                    <span class="flex items-center min-h-12 text-4xl font-bold mb-2">15+</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Años de Experiencia') }}</span>
-                </div>
-                <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="200">
-                    <span class="flex items-center min-h-12 text-2xl font-bold mb-2 leading-tight">Santa Cruz<br>La Paz</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Bolivia') }}</span>
-                </div>
-                <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="300">
-                    <span class="flex items-center min-h-12 text-base font-bold mb-2 leading-snug">Microsoft 365<br>SharePoint · Power BI</span>
-                    <span class="text-red-100 text-sm uppercase tracking-wide">{{ __('Tecnología Partner') }}</span>
-                </div>
+<!-- Stats Section — barra de cifras en carbón (el rojo nunca cubre fondos grandes) -->
+    <section class="bg-[#1E1C1B] text-white">
+        <div class="container-2026 grid grid-cols-2 md:grid-cols-4">
+            @foreach ([
+                ['8<span class="text-accent">+</span>', 'text-[34px]', __('Sectores Atendidos')],
+                ['15<span class="text-accent">+</span>', 'text-[34px]', __('Años de Experiencia')],
+                ['Santa Cruz · La Paz', 'text-xl', __('Bolivia')],
+                ['Microsoft 365', 'text-xl', 'SharePoint · Power BI · Partner'],
+            ] as $i => [$value, $size, $label])
+            <div class="px-5 py-8.5 text-center border-[#3A3735] {{ $i % 2 ? 'border-l' : 'md:border-l md:first:border-l-0' }} {{ $i >= 2 ? 'border-t md:border-t-0' : '' }}" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                <div class="{{ $size }} font-bold leading-[1.1]">{!! $value !!}</div>
+                <div class="mt-2 text-[11.5px] tracking-[.12em] uppercase text-mid">{{ $label }}</div>
             </div>
+            @endforeach
         </div>
     </section>
 
     <!-- 3. Nuestro Enfoque -->
-    <section class="py-20 bg-white">
+    <section id="como-trabajamos" class="py-20 bg-white scroll-mt-24">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                 <span class="text-sm font-semibold uppercase tracking-wider text-primary">{{ __('Cómo trabajamos') }}</span>
@@ -182,7 +181,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Integración de Sistemas') }}</h3>
-                    <p class="text-gray-600 leading-relaxed">{{ __('Conectamos SAP/Odoo con Microsoft 365, SharePoint y Power BI.') }}</p>
+                    <p class="text-gray-600 leading-relaxed">{{ __('Conectamos QuickBooks y Odoo con Microsoft 365, SharePoint y Power BI.') }}</p>
                 </div>
 
                 <!-- Item 5 -->
@@ -250,7 +249,7 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 mb-2">{{ __('Integraciones Avanzadas') }}</h3>
-                            <p class="text-gray-600">{{ __('Conectamos tu sistema actual (SAP, Odoo, Excel) con Microsoft 365 y Power BI para que toda tu información financiera esté en un solo lugar.') }}</p>
+                            <p class="text-gray-600">{{ __('Conectamos tu sistema actual (QuickBooks, Odoo, Excel) con Microsoft 365 y Power BI para que toda tu información financiera esté en un solo lugar.') }}</p>
                         </div>
                     </div>
 
@@ -341,16 +340,11 @@
                     <span class="text-sm font-semibold text-gray-500 group-hover:text-gray-800 transition-colors text-center">Power BI</span>
                 </div>
 
-                <!-- SAP -->
-                <div class="flex flex-col items-center gap-3 group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100">
-                        <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="48" height="48" rx="6" fill="#003878"/>
-                            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"
-                                  font-family="Arial, sans-serif" font-weight="700" font-size="16" fill="white">SAP</text>
-                        </svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-500 group-hover:text-gray-800 transition-colors text-center">SAP</span>
+                <!-- QuickBooks — nuevo. Sin archivo oficial de Intuit en el paquete: marca de texto neutra hasta tener el logo -->
+                <div class="flex flex-col items-center gap-3 group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 ring-1 ring-primary">
+                    <div class="w-14 h-14 rounded-lg bg-gray-100 grid place-items-center text-sm font-bold text-gray-500">QB</div>
+                    <span class="text-sm font-semibold text-gray-800 text-center">QuickBooks</span>
+                    <span class="-mt-2 text-[11px] font-bold text-primary">{{ __('Nuevo') }}</span>
                 </div>
 
                 <!-- Odoo -->
@@ -369,131 +363,29 @@
 
             <!-- Descripción -->
             <p class="text-center text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                {{ __('Integramos tus sistemas actuales con el ecosistema Microsoft para que tengas tus datos financieros') }}
+                {{ __('Integramos tu contabilidad en') }} <strong class="text-gray-900">QuickBooks</strong> {{ __('u') }} <strong class="text-gray-900">Odoo</strong> {{ __('con el ecosistema Microsoft para que tengas tus datos financieros') }}
                 <strong class="text-gray-900">{{ __('organizados, trazables y disponibles en tiempo real.') }}</strong>
             </p>
         </div>
     </section>
 
-    <!-- 5. SERVICES CAROUSEL (3 per page) -->
-    <section id="services" class="py-24 text-white overflow-hidden relative"
-        style="background: linear-gradient(135deg, #C48273 0%, #a05d4e 100%);"
-        x-data="{
-            page: 0,
-            pages: {{ ceil(8 / 3) }},
-            timer: null,
-            init() {
-                this.timer = setInterval(() => {
-                    this.page = (this.page + 1) % this.pages;
-                }, 6000);
-            },
-            go(p) {
-                this.page = p;
-                clearInterval(this.timer);
-                this.timer = setInterval(() => { this.page = (this.page + 1) % this.pages; }, 6000);
-            }
-        }">
-
-        <!-- Glows -->
-        <div class="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20" style="background:#FFE5DA;"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none opacity-20" style="background:#B3271A;"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-
-            <!-- Header -->
-            <div class="text-center mb-20" data-aos="fade-down">
-                <span class="text-sm font-semibold uppercase tracking-wider text-white/60">{{ __('Nuestra Oferta') }}</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">{{ __('Nuestros Servicios') }}</h2>
-                <p class="text-lg text-white/75 mt-3 max-w-2xl mx-auto" style="margin-bottom: 35px;">{{ __('Soluciones integrales diseñadas para cada etapa de tu negocio.') }}</p>
-            </div>
-
-            <!-- Carousel track -->
-            <div class="relative overflow-hidden">
-                <div class="flex transition-transform duration-700 ease-in-out"
-                     :style="'transform: translateX(-' + (page * 100) + '%)'">
-
-                    @php
-                    $services = [
-                        ['route' => 'services.outsourcing',          'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => __('Outsourcing Contable'),      'desc' => __('Cierres mensuales, libros y obligaciones fiscales a tiempo.')],
-                        ['route' => 'services.gestion-tributaria',   'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => __('Gestión Tributaria'),         'desc' => __('IVA, IT, IUE y declaraciones ante el SIN sin sorpresas.')],
-                        ['route' => 'services.audit',                'img' => '/images/otium/carousel/auditoria.png',              'title' => __('Auditoría Financiera'),       'desc' => __('Validación independiente, riesgos y control interno.')],
-                        ['route' => 'services.outsourcing-laboral',  'img' => '/images/otium/carousel/outsourcung_contable.png',   'title' => __('Outsourcing Laboral'),        'desc' => __('Planillas, AFP y relaciones con el Ministerio de Trabajo.')],
-                        ['route' => 'services.reportes-power-bi',    'img' => '/images/otium/carousel/transformacion_digital.png', 'title' => __('Reportes Power BI'),          'desc' => __('Dashboards gerenciales con datos financieros en tiempo real.')],
-                        ['route' => 'services.sharepoint-documental','img' => '/images/otium/carousel/transformacion_digital.png', 'title' => __('SharePoint Documental'),      'desc' => __('Documentos organizados y accesibles con Microsoft 365.')],
-                        ['route' => 'services.consultoria',          'img' => '/images/otium/carousel/auditoria.png',              'title' => __('Consultoría Empresarial'),    'desc' => __('Diagnóstico financiero y acompañamiento estratégico.')],
-                        ['route' => 'services.constitucion-empresas','img' => '/images/otium/carousel/constitucion_de_empresas.png','title'=> __('Constitución de Empresas'),  'desc' => __('Registro legal y estructura óptima para tu empresa.')],
-                    ];
-                    $pages = array_chunk($services, 3);
-                    @endphp
-
-                    @foreach ($pages as $pageServices)
-                    <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                        @foreach ($pageServices as $svc)
-                        <a href="{{ route($svc['route']) }}"
-                            class="group rounded-2xl overflow-hidden shadow-xl flex flex-col bg-white/10 hover:bg-white/18 border border-white/10 hover:border-white/25 transition-all duration-300 hover:-translate-y-1">
-                            <!-- Foto -->
-                            <div class="relative h-52 overflow-hidden shrink-0">
-                                <img src="{{ $svc['img'] }}" alt="{{ $svc['title'] }}"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <!-- Texto -->
-                            <div class="flex flex-col flex-1 p-5 gap-3">
-                                <h3 class="font-bold text-white text-lg leading-snug">{{ $svc['title'] }}</h3>
-                                <p class="text-white/70 text-sm leading-relaxed flex-1">{{ $svc['desc'] }}</p>
-                                <span class="inline-flex items-center gap-1 text-white/60 text-sm font-semibold group-hover:text-white group-hover:gap-2 transition-all duration-200">
-                                    {{ __('Ver servicio') }}
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                                </span>
-                            </div>
-                        </a>
-                        @endforeach
-
-                        {{-- Tarjeta CTA en la última página si quedan menos de 3 servicios --}}
-                        @if (count($pageServices) < 3 && $loop->last)
-                        <a href="{{ route('services.index') }}"
-                            class="group rounded-2xl border-2 border-dashed border-white/25 hover:border-white/50 bg-white/5 hover:bg-white/10 flex flex-col items-center justify-center text-center p-8 transition-all duration-300 hover:-translate-y-1">
-                            <div class="w-14 h-14 rounded-full bg-white/15 group-hover:bg-white/25 flex items-center justify-center mb-4 transition-colors">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">{{ __('Ver todos') }}</h3>
-                            <p class="text-white/60 text-sm mb-5">{{ __('Explora el catálogo completo de servicios.') }}</p>
-                            <span class="px-5 py-2 border border-white/40 rounded-full text-white text-sm font-medium group-hover:bg-white group-hover:text-secondary transition-all duration-300">
-                                {{ __('Ver catálogo →') }}
-                            </span>
-                        </a>
-                        @endif
-
-                    </div>
-                    @endforeach
-
+    <!-- 5. Nuestros servicios — 9 cards planas, mismos nombres e íconos que el catálogo (config/services_catalog.php) -->
+    <section id="services" class="py-22 bg-soft">
+        <div class="container-2026">
+            <div class="flex flex-wrap justify-between items-end gap-5 mb-10" data-aos="fade-up">
+                <div class="max-w-[720px]">
+                    <p class="mb-3 text-xs font-bold tracking-[.14em] uppercase text-primary">{{ __('Nuestra Oferta') }}</p>
+                    <h2 class="text-[clamp(28px,3.4vw,40px)] font-bold leading-[1.15] text-black">{{ __('Nuestros Servicios') }}</h2>
+                    <div class="w-16 h-0.75 my-4.5 bg-accent"></div>
+                    <p class="text-[17px] text-muted">{{ __('Soluciones integrales diseñadas para cada etapa de tu negocio.') }}</p>
                 </div>
+                <a href="{{ route('services.index') }}" class="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline">{{ __('Ver catálogo completo') }} →</a>
             </div>
-
-            <!-- Controls -->
-            <div class="flex items-center justify-center mt-10 gap-6">
-                <!-- Prev -->
-                <button @click="go((page - 1 + pages) % pages)"
-                    class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/70 hover:text-white hover:border-white hover:bg-white/10 transition-all">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                </button>
-                <!-- Dots -->
-                <div class="flex gap-3">
-                    <template x-for="i in pages" :key="i">
-                        <button @click="go(i - 1)"
-                            :class="page === i - 1 ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/60'"
-                            class="w-2.5 h-2.5 rounded-full transition-all duration-300"></button>
-                    </template>
-                </div>
-                <!-- Next -->
-                <button @click="go((page + 1) % pages)"
-                    class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/70 hover:text-white hover:border-white hover:bg-white/10 transition-all">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach (config('services_catalog') as $i => $service)
+                    <x-service-card :service="$service" :delay="($i % 3) * 75" />
+                @endforeach
             </div>
-
         </div>
     </section>
 
@@ -522,8 +414,8 @@
                         {{ __('Ayudamos a organizaciones bolivianas y extranjeras a ordenar sus finanzas, mejorar la eficiencia operativa y escalar mediante tecnología.') }}
                     </p>
                     <div class="flex gap-4">
-                        <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700">{{ __('📍 Oficina La Paz') }}</span>
-                        <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-gray-700">{{ __('📍 Oficina Santa Cruz') }}</span>
+                        <span class="inline-flex items-center gap-2 px-3.5 py-2.5 border border-line text-sm font-semibold text-gray-700"><x-service-icon name="ubicacion" class="w-4.5 h-4.5 text-primary" />{{ __('Oficina La Paz') }}</span>
+                        <span class="inline-flex items-center gap-2 px-3.5 py-2.5 border border-line text-sm font-semibold text-gray-700"><x-service-icon name="ubicacion" class="w-4.5 h-4.5 text-primary" />{{ __('Oficina Santa Cruz') }}</span>
                     </div>
                 </div>
             </div>
@@ -830,31 +722,24 @@
     </section>
 
     <!-- International Reach — GGI -->
-    <section class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="relative overflow-hidden rounded-3xl border border-gray-100 bg-linear-to-br from-primary/5 via-white to-accent/5 px-8 py-12 md:px-16 md:py-16">
-                <!-- Decorative blobs -->
-                <div class="absolute -top-16 -right-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-20 -left-16 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div class="relative grid grid-cols-1 md:grid-cols-[55%_45%] items-center gap-10 md:gap-12">
-                    <div class="text-center md:text-left" data-aos="fade-right">
-                        <span class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                            {{ __('Alianza Internacional') }}
-                        </span>
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">{{ __('Bolivia expertise. Global reach.') }}</h2>
-                        <p class="text-gray-600 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">
-                            {{ __('Como Independent Member of GGI, Otium conecta la experiencia local que ya conocés con una red de firmas profesionales presente en más de 120 países. Mismo equipo de siempre, alcance internacional cuando lo necesitás.') }}
-                        </p>
-                        <a href="{{ route('international') }}"
-                            class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-                            {{ __('Explorar alcance internacional') }}
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                    <div class="w-full flex items-center justify-center" data-aos="fade-left" data-aos-delay="100">
-                        <x-ggi-slot size="xl" class="w-full max-w-sm" />
+    {{-- Bloque del .docx de GGI (punto 4a): colores exactos de marca --}}
+    <section class="py-16 bg-white">
+        <div class="max-w-[1120px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-9 items-center">
+                <div data-aos="fade-right">
+                    <span class="block mb-2.5 text-xs font-bold leading-none tracking-widest uppercase text-[#B42E25]">{{ __('International Reach') }}</span>
+                    <h2 class="text-[28px] font-extrabold leading-[1.15] text-[#0F172A]">{{ __('Bolivia expertise. Global reach.') }}</h2>
+                    <p class="mt-3 text-[15px] text-[#334155] max-w-[48ch]">
+                        {{ __('Como Independent Member of GGI, Otium conecta la experiencia local que ya conocés con una red de firmas profesionales presente en más de 120 países. Mismo equipo de siempre, alcance internacional cuando lo necesitás.') }}
+                    </p>
+                    <a href="{{ route('international') }}"
+                        class="inline-flex items-center gap-2 mt-5 text-sm font-semibold leading-none text-[#B42E25] hover:underline">
+                        {{ __('Explorar alcance internacional') }} →
+                    </a>
+                </div>
+                <div class="p-5 bg-[#FFF6F1] border border-[#E2E8F0] rounded-[14px]" data-aos="fade-left" data-aos-delay="100">
+                    <div class="inline-flex items-center px-3.5 py-2.5 bg-white border border-[#E2E8F0] rounded-[10px]">
+                        <img src="{{ asset('images/ggi-independent-member.png') }}" alt="GGI Independent Member" class="h-8.5 w-auto">
                     </div>
                 </div>
             </div>
@@ -922,25 +807,6 @@
         </div>
     </section>
 
-    <!-- 10. CTA Final -->
-    <section id="contact" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2">
-        </div>
-        <div
-            class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3">
-        </div>
-
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Listo para asegurar su futuro financiero?') }}</h2>
-            <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                {{ __('Contáctenos hoy para una consulta inicial gratuita con uno de nuestros expertos.') }}
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}"
-                    class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">
-                    {{ __('Contáctenos Ahora') }}
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- CTA final (compartido) -->
+    <x-cta-final />
 </x-layout>

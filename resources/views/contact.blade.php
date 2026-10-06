@@ -6,13 +6,13 @@
     <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden text-white">
         <!-- Background Image -->
         <div class="absolute inset-0">
-            <img src="/images/meeting.png" alt="Contáctenos" class="w-full h-full object-cover">
+            <img src="/images/meeting.png" alt="Contactanos" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                {{ __('Contáctenos') }}
+                {{ __('Contactanos') }}
             </h1>
             <p class="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-3xl mx-auto" data-aos="fade-up"
                 data-aos-delay="100">

@@ -66,7 +66,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -83,112 +83,8 @@
 
     <x-footer />
 
-    {{-- ═══════════════════════════════════
-         Popup de entrada global
-         · Se muestra en toda la web excepto en el blog
-         · Una sola vez por usuario (localStorage)
-    ═══════════════════════════════════ --}}
-    @php
-        $currentRoute = Route::currentRouteName() ?? '';
-        $showPopup    = !str_starts_with($currentRoute, 'blog.');
-        $popupPost    = null;
-        if ($showPopup) {
-            $popupPost = \App\Models\Post::published()
-                ->where('popup_enabled', true)
-                ->latest('published_at')
-                ->first();
-        }
-    @endphp
-
-    @if($popupPost)
-    <div x-data="{
-            open: false,
-            init() {
-                const key = 'popup_seen_{{ $popupPost->id }}_{{ $popupPost->published_at->timestamp }}';
-                if (!localStorage.getItem(key)) {
-                    setTimeout(() => { this.open = true; }, 900);
-                }
-            },
-            close() {
-                this.open = false;
-                localStorage.setItem('popup_seen_{{ $popupPost->id }}_{{ $popupPost->published_at->timestamp }}', '1');
-            }
-         }"
-         x-show="open"
-         x-cloak
-         x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-100"
-         x-transition:leave="transition ease-in duration-200"
-         x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0"
-         @keydown.escape.window="close()"
-         @click.self="close()"
-         class="fixed inset-0 z-50 flex items-center justify-center p-4"
-         style="background: rgba(20,12,8,0.6);"
-         role="dialog" aria-modal="true" aria-labelledby="global-popup-title">
-
-        <div class="bg-white rounded-2xl w-full max-w-sm min-w-0 max-h-[90vh] overflow-x-hidden overflow-y-auto shadow-2xl"
-             x-transition:enter="transition ease-out duration-300"
-             x-transition:enter-start="opacity-0 scale-95 translate-y-2"
-             x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-             x-transition:leave="transition ease-in duration-200"
-             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-             x-transition:leave-end="opacity-0 scale-95 translate-y-2"
-             @click.stop>
-
-            {{-- Header: logo centrado, X a la derecha --}}
-            <div class="flex items-center px-5 py-4 bg-gray-50 border-b border-gray-200">
-                <div class="flex-1"></div>
-                <img src="{{ asset('images/logo-otium.webp') }}" alt="Otium" class="h-9 w-auto">
-                <div class="flex-1 flex justify-end">
-                    <button type="button" @click="close()"
-                            class="text-gray-500 hover:text-gray-700 w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-xs flex items-center justify-center transition-colors leading-none"
-                            aria-label="Cerrar">
-                        ✕
-                    </button>
-                </div>
-            </div>
-
-            {{-- Cuerpo centrado --}}
-            <div class="px-6 sm:px-8 py-7 border-l-4 border-primary text-center">
-
-                <h2 id="global-popup-title" class="text-xl font-bold text-gray-900 mb-3 leading-snug break-words">
-                    {{ $popupPost->title }}
-                </h2>
-
-                @if($popupPost->excerpt)
-                    <p class="text-sm text-gray-600 leading-relaxed mb-5 break-words">{{ $popupPost->excerpt }}</p>
-                @endif
-
-                {{-- Líneas con colores de la marca --}}
-                <div class="flex gap-1.5 justify-center mb-6">
-                    <span class="h-1 w-8 bg-primary rounded-full"></span>
-                    <span class="h-1 w-8 bg-accent rounded-full"></span>
-                    <span class="h-1 w-8 bg-secondary rounded-full"></span>
-                    <span class="h-1 w-5 bg-gray-900 rounded-full"></span>
-                </div>
-
-                <div class="flex gap-3 justify-center flex-wrap">
-                    @if($popupPost->document_path)
-                        <a href="{{ $popupPost->document_url }}"
-                           target="_blank" rel="noopener" download
-                           class="inline-flex items-center gap-2 bg-primary hover:bg-red-700 text-white text-sm font-semibold py-3 px-6 rounded-lg transition-colors">
-                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                            </svg>
-                            Descargar
-                        </a>
-                    @endif
-                    <a href="{{ route('blog.show', $popupPost->slug) }}" @click="close()"
-                       class="inline-flex items-center border-2 border-accent text-accent hover:bg-accent/10 text-sm font-semibold py-3 px-6 rounded-lg transition-colors">
-                        Ver artículo →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endif
+    {{-- Popup de entrada eliminado (Brief Web Otium 2026, cambio 8): tapaba la página al abrir.
+         Se mantiene el botón flotante rojo con el último artículo. --}}
 
     {{-- Botones flotantes (columna derecha) --}}
     @php

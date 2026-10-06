@@ -250,7 +250,7 @@
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Quieres ver tus datos en tiempo real?') }}</h2>
             <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                {{ __('Contáctenos hoy para una demo gratuita con tus propios datos.') }}
+                {{ __('Contactanos hoy para una demo gratuita con tus propios datos.') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Solicitar Demo') }}</a>

@@ -251,16 +251,13 @@
                 @endforeach
             </div>
 
-            <div class="mt-10 max-w-3xl mx-auto flex items-start gap-4 bg-accent/5 border border-accent/20 rounded-xl p-6" data-aos="fade-up">
-                <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0 text-accent">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z"/></svg>
-                </div>
+            {{-- Cruce del .docx de GGI (punto 4d): colores exactos de marca --}}
+            <div class="mt-6 max-w-3xl mx-auto flex gap-2.5 p-4 bg-[#FFF6F1] border border-[#E2E8F0] rounded-xl" data-aos="fade-up">
                 <div>
-                    <p class="text-gray-700"><strong class="text-gray-900">{{ __('¿Tu operación también necesita soporte fuera de Bolivia?') }}</strong> {{ __('Coordinamos especialistas en más de 120 países a través de GGI.') }}</p>
+                    <p class="text-[13px] text-[#334155]"><strong>{{ __('¿Tu operación también necesita soporte fuera de Bolivia?') }}</strong> {{ __('Coordinamos especialistas en más de 120 países a través de GGI.') }}</p>
                     <a href="{{ route('international-support') }}"
-                        class="inline-flex items-center gap-1 text-accent font-semibold text-sm mt-2 hover:gap-2 transition-all">
-                        {{ __('Ver International Support') }}
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        class="inline-flex gap-1.5 mt-1.5 text-[13px] font-semibold leading-none text-[#B42E25] hover:underline">
+                        {{ __('Ver International Support') }} →
                     </a>
                 </div>
             </div>

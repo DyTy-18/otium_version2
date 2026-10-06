@@ -74,22 +74,18 @@
     <!-- International Presence — GGI -->
     <section class="pb-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 bg-gray-50 border border-gray-100 rounded-2xl px-8 py-6" data-aos="fade-up">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z"/>
-                    </svg>
+            {{-- Bloque del .docx de GGI (punto 4c): colores exactos de marca --}}
+            <div class="max-w-[720px] mx-auto flex gap-4.5 items-start p-5.5 bg-white border border-[#E2E8F0] rounded-[14px]" data-aos="fade-up">
+                <div class="flex-none w-10.5 h-10.5 rounded-[10px] bg-[#FFF6F1] flex items-center justify-center text-[#B42E25]" aria-hidden="true">🌐</div>
+                <div>
+                    <span class="block mb-1 text-[11px] font-bold leading-none tracking-widest uppercase text-[#B42E25]">{{ __('International Presence') }}</span>
+                    <h4 class="text-[15px] font-bold leading-[1.3] text-[#0F172A]">{{ __('Otium is an Independent Member of GGI.') }}</h4>
+                    <p class="mt-1.5 text-[13.5px] text-[#64748B]">{{ __('Formamos parte de una alianza global de firmas profesionales independientes, sin dejar de ser el mismo equipo boliviano de siempre.') }}</p>
+                    <a href="{{ route('international') }}"
+                        class="inline-flex gap-1.5 mt-2.5 text-[13px] font-semibold leading-none text-[#B42E25] hover:underline">
+                        {{ __('Conocer nuestro alcance internacional') }} →
+                    </a>
                 </div>
-                <div class="flex-1 text-center md:text-left">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-primary">{{ __('International Presence') }}</span>
-                    <h4 class="text-lg font-bold text-gray-900 mt-1">{{ __('Otium is an Independent Member of GGI.') }}</h4>
-                    <p class="text-sm text-gray-600 mt-1">{{ __('Formamos parte de una alianza global de firmas profesionales independientes, sin dejar de ser el mismo equipo boliviano de siempre.') }}</p>
-                </div>
-                <a href="{{ route('international') }}"
-                    class="inline-flex items-center gap-1 text-primary font-semibold text-sm shrink-0 hover:gap-2 transition-all">
-                    {{ __('Conocer nuestro alcance internacional') }}
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
             </div>
         </div>
     </section>

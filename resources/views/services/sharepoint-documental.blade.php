@@ -2,391 +2,396 @@
     title="Gestión Documental en SharePoint Bolivia | Microsoft 365 | Otium"
     description="Implementamos SharePoint como el centro documental de tu empresa: bibliotecas, permisos, listas de control y acceso remoto dentro de Microsoft 365. Bolivia."
 >
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <div class="absolute top-0 right-0 w-150 h-150 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+    @php
+        $wa = env('WHATSAPP_NUMBER', '59170654104');
+        $waService = 'https://wa.me/' . $wa . '?text=' . rawurlencode(__('Hola, quiero información sobre Gestión Documental en SharePoint.'));
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+        // Estilos repetidos del diseño "SharePoint 2026"
+        $card = 'bg-white/94 border border-[#1F1617]/8 rounded-3xl shadow-[0_18px_40px_rgba(31,22,23,.08)]';
+        $tag  = 'text-primary uppercase tracking-[.14em] text-[11px] font-extrabold';
+        $h2   = 'text-[clamp(28px,3.5vw,42px)] font-bold leading-[1.05] tracking-[-0.02em] mt-1.5';
+        $head = 'grid grid-cols-1 lg:grid-cols-[.72fr_1.28fr] gap-4 lg:gap-7 items-end mb-5';
+        $desc = 'text-[#4d4748] max-w-[760px]';
+        $btn  = 'inline-flex items-center justify-center gap-2.25 px-4.25 py-3.25 rounded-[13px] font-extrabold text-sm transition-all hover:-translate-y-px';
+        $eco  = 'p-3.25 rounded-[14px] border border-[#E6E1DE] bg-[#F7F4F2]';
+        $note = 'mt-4 px-3.75 py-3.25 rounded-[14px] bg-primary/7 text-[#713229] text-[13px]';
+    @endphp
 
-                <!-- Texto -->
-                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
-                    <span class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Gestión documental</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        {{ __('Gestión Documental en SharePoint') }}
-                    </h1>
-                    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light">
-                        {{ __('Orden documental, control y trazabilidad dentro de Microsoft 365 para empresas en Bolivia.') }}
-                    </p>
-                    <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg">
-                        "No es solo una carpeta en la nube — es un sistema documental diseñado con criterio empresarial para que tu información esté donde la necesitás, cuando la necesitás."
-                    </blockquote>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="{{ route('contact') }}"
-                            class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
-                            {{ __('Solicitar información') }}
-                        </a>
-                        <a href="/pdfs/brochures/Otium_SharePoint_Documental.pdf" download
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
-                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
-                            {{ __('Descargar brochure') }}
-                        </a>
-                    </div>
+    <div class="text-[#1F1617] leading-[1.55]" style="background: radial-gradient(circle at top right, rgba(84,186,199,.12), transparent 22%), radial-gradient(circle at top left, rgba(180,46,37,.06), transparent 24%), linear-gradient(180deg, #fbf9f8 0%, #f7f4f2 100%);">
+
+    <!-- Hero -->
+    <section class="pt-32 pb-7 md:pt-36">
+        <div class="container-2026 grid grid-cols-1 lg:grid-cols-[1.18fr_.82fr] gap-6 items-stretch">
+            <article class="{{ $card }} relative overflow-hidden p-5.25 md:p-9" data-aos="fade-up">
+                <span class="absolute -right-30 -bottom-36 w-65 h-65 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.20),transparent_68%)] pointer-events-none"></span>
+                <div class="inline-flex mb-4.5 px-3 py-2 rounded-full bg-primary/8 {{ $tag }}">OTIUM | {{ __('Gestión Documental y Automatización en SharePoint') }}</div>
+                <h1 class="text-[clamp(36px,5vw,60px)] font-bold leading-[1.02] tracking-[-0.02em] max-w-[850px]">{{ __('La información de tu empresa no debería depender de saber quién tiene el archivo.') }}</h1>
+                <p class="mt-5 text-[#453f40] text-[17px] md:text-[19px] leading-normal max-w-[760px]">{{ __('OTIUM diseña e implementa una estructura documental en SharePoint para centralizar respaldos, responsables, vencimientos y evidencias dentro de Microsoft 365, con una lógica adaptada a los procesos reales de tu empresa.') }}</p>
+                <div class="relative z-10 flex flex-wrap gap-3 mt-6.5">
+                    <a href="#arquitectura" class="{{ $btn }} bg-[#1F1617] text-white">{{ __('Ver cómo lo organizamos') }}</a>
+                    <a href="#entregables" class="{{ $btn }} bg-accent/13 text-[#175864]">{{ __('Ver qué recibe tu empresa') }}</a>
                 </div>
-
-                <!-- Imagen flotante -->
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="900">
-                    <div class="relative w-full max-w-sm md:max-w-md">
-                        <div class="absolute inset-0 bg-primary/40 rounded-2xl translate-x-4 translate-y-4"></div>
-                        <div class="absolute -top-3 -left-3 w-16 h-16 border-4 border-white/30 rounded-xl"></div>
-                        <img src="/images/otium/carousel/transformacion_digital.png"
-                            alt="Gestión Documental SharePoint Otium"
-                            class="relative z-10 rounded-2xl shadow-2xl w-full h-72 md:h-80 object-cover object-center animate-float">
-                    </div>
+                <div class="grid grid-cols-4 max-w-[370px] h-3 mt-6.25 rounded-full overflow-hidden" aria-hidden="true">
+                    <span class="bg-primary"></span><span class="bg-secondary"></span><span class="bg-brand-light"></span><span class="bg-accent"></span>
                 </div>
+            </article>
 
+            <aside class="{{ $card }} flex flex-col gap-4 p-5.25 md:p-6.75" data-aos="fade-left" data-aos-delay="100">
+                <div class="{{ $tag }}">{{ __('La idea central') }}</div>
+                <h2 class="text-[23px] font-bold leading-[1.15] tracking-[-0.02em]">{{ __('SharePoint no es el fin. El objetivo es ordenar cómo se trabaja con la información.') }}</h2>
+                <div class="grid gap-2.75">
+                    @foreach ([
+                        [false, __('No es solo una carpeta en la nube'),          __('Guardar archivos no resuelve por sí solo responsables, permisos, vencimientos o trazabilidad.')],
+                        [true,  __('Es una estructura documental de trabajo'),    __('Bibliotecas, listas, vistas, permisos y reglas conectadas al proceso real de la empresa.')],
+                        [true,  __('Puede crecer por módulos'),                   __('Automatizaciones y reportes se incorporan cuando el alcance y la operación lo justifican.')],
+                    ] as [$yes, $t, $d])
+                    <div class="grid grid-cols-[35px_1fr] gap-3 p-3.5 rounded-2xl border border-[#E6E1DE] bg-[#F7F4F2]">
+                        <div class="w-8.75 h-8.75 grid place-items-center rounded-[11px] font-black {{ $yes ? 'text-[#176473] bg-accent/16' : 'text-primary bg-primary/9' }}">{{ $yes ? '✓' : '×' }}</div>
+                        <div><strong class="block text-sm mb-0.75">{{ $t }}</strong><span class="text-[#5F5A5B] text-[13px]">{{ $d }}</span></div>
+                    </div>
+                    @endforeach
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Qué resolvemos -->
+    <section id="problema" class="py-8.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Qué resolvemos') }}</div><h2 class="{{ $h2 }}">{{ __('El problema no es que falten archivos. Es que la información está dispersa.') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('Cuando documentos, respaldos y pendientes viven en correos, WhatsApp, computadoras personales, carpetas sueltas o distintas nubes, reconstruir un proceso se vuelve lento y dependiente de personas específicas.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                @foreach ([
+                    [__('Documentos dispersos'),     __('Información repartida entre personas, equipos, correos, carpetas y archivos físicos sin una estructura común.')],
+                    [__('Poca trazabilidad'),        __('No siempre está claro quién debe cargar, revisar, actualizar o mantener un documento o pendiente.')],
+                    [__('Vencimientos manuales'),    __('Contratos, obligaciones, tareas o documentos dependen de recordatorios informales y seguimiento personal.')],
+                    [__('Dependencia de personas'),  __('La salida, ausencia o cambio de un colaborador puede afectar el acceso o la reconstrucción de información crítica.')],
+                ] as $i => [$t, $d])
+                <article class="p-5 rounded-[19px] bg-white border border-[#E6E1DE] shadow-[0_18px_40px_rgba(31,22,23,.08)]" data-aos="fade-up" data-aos-delay="{{ $i * 75 }}">
+                    <div class="mb-2.5 text-[11px] font-black text-primary tracking-[.12em] uppercase">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <h3 class="text-lg font-bold tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Intro / Description -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-blue-50 rounded-2xl transform translate-x-4 translate-y-4"></div>
-                        <img src="/images/otium/carousel/transformacion_digital.png" alt="Gestión Documental SharePoint Otium"
-                            class="relative rounded-2xl shadow-xl w-full h-100 object-cover">
+    <!-- ¿Qué es SharePoint? -->
+    <section id="sharepoint" class="py-8.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Antes de implementar') }}</div><h2 class="{{ $h2 }}">{{ __('¿Qué es SharePoint dentro de Microsoft 365?') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('Es una plataforma de Microsoft 365 para organizar información compartida de una empresa mediante sitios, bibliotecas de documentos, listas, permisos, vistas y espacios de colaboración. OTIUM la utiliza como base para construir un sistema documental ordenado y utilizable.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+                <article class="{{ $card }} p-6.5" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold tracking-[-0.02em] mb-3">{{ __('SharePoint organiza la información compartida') }}</h3>
+                    <p class="text-[#4d4748]">{{ __('Permite que documentos y registros de trabajo dejen de depender de carpetas personales. La empresa puede estructurar archivos, datos de control y accesos según áreas, procesos, responsables o periodos.') }}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mt-4.5">
+                        @foreach ([
+                            [__('Bibliotecas'), __('Documentos y respaldos')],
+                            [__('Listas'),      __('Estados, responsables y vencimientos')],
+                            [__('Permisos'),    __('Accesos según necesidad')],
+                            [__('Vistas'),      __('Información filtrada por usuario o proceso')],
+                            [__('Históricos'),  __('Evidencia organizada en el tiempo')],
+                            [__('Seguimiento'), __('Pendientes y controles visibles')],
+                        ] as [$b, $s])
+                        <div class="{{ $eco }}"><b class="block text-[13px] mb-0.75">{{ $b }}</b><span class="text-[#5F5A5B] text-xs">{{ $s }}</span></div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Gestión Documental en SharePoint</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Un sistema documental diseñado para tu empresa, no al revés') }}</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        En Otium implementamos SharePoint como el centro documental de tu empresa: bibliotecas organizadas, permisos por usuario, listas de control, alertas automáticas y acceso desde cualquier lugar.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        No se trata de guardar archivos en la nube — se trata de que cada documento tenga un lugar, cada proceso tenga responsables y la información crítica esté disponible cuando realmente se necesita. Diseñamos la estructura según cómo trabaja tu empresa.
-                    </p>
-                </div>
+                </article>
+                <article class="{{ $card }} p-6.5" data-aos="fade-left" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold tracking-[-0.02em] mb-3">{{ __('Funciona dentro de un ecosistema conectado') }}</h3>
+                    <p class="text-[#4d4748]">{{ __('Dependiendo del alcance y las licencias disponibles, la estructura puede convivir con herramientas que el equipo ya utiliza dentro de Microsoft 365.') }}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mt-4.5">
+                        @foreach ([
+                            ['Teams',          __('Acceso del equipo a espacios compartidos')],
+                            ['OneDrive',       __('Sincronización y trabajo con archivos')],
+                            ['Excel',          __('Matrices y cargas estructuradas de apoyo')],
+                            ['Power Automate', __('Alertas y flujos como módulo adicional')],
+                            ['Power BI',       __('Visualización de controles cuando aplica')],
+                            ['Microsoft 365',  __('Identidad y entorno empresarial')],
+                        ] as [$b, $s])
+                        <div class="{{ $eco }}"><b class="block text-[13px] mb-0.75">{{ $b }}</b><span class="text-[#5F5A5B] text-xs">{{ $s }}</span></div>
+                        @endforeach
+                    </div>
+                    <div class="{{ $note }}">{{ __('Si la empresa todavía no cuenta con una estructura adecuada de Microsoft 365, OTIUM puede orientar sobre las condiciones necesarias. En determinados servicios también puede trabajarse desde un entorno documental de OTIUM.') }}</div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Para quién es -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    Empresas que ya tienen cierto nivel de organización pero necesitan escalar, profesionalizar sus controles y reducir la dependencia de procesos manuales o información dispersa.
-                </p>
+    <!-- Qué hacemos -->
+    <section id="hacemos" class="py-8.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Qué hacemos por tu empresa') }}</div><h2 class="{{ $h2 }}">{{ __('No empezamos creando carpetas. Primero entendemos cómo funciona el proceso.') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('La estructura se diseña después de revisar áreas, documentos, usuarios, responsables y puntos de control. Así SharePoint responde a la operación y no al revés.') }}</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Socios o directivos fuera de Bolivia') }}</h3>
-                    <p class="text-gray-600">Que necesitan acceso remoto ordenado a la documentación de la operación boliviana sin depender de que alguien les envíe archivos.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Subsidiarias con casa matriz internacional') }}</h3>
-                    <p class="text-gray-600">Que deben mantener documentación accesible, ordenada y trazable para reportar o responder ante la sede central.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas que pagan Microsoft 365 sin usar SharePoint') }}</h3>
-                    <p class="text-gray-600">Que tienen la herramienta disponible en su licencia pero no la están aprovechando para organizar su documentación.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Negocios que comparten documentos por correo') }}</h3>
-                    <p class="text-gray-600">Con varios responsables enviando versiones por correo — sin saber cuál es la final ni quién hizo qué cambio.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas preparándose para auditorías') }}</h3>
-                    <p class="text-gray-600">O fiscalizaciones que necesitan tener su documentación accesible, ordenada y con trazabilidad real.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Organizaciones con dependencia de una sola persona') }}</h3>
-                    <p class="text-gray-600">Que quieren reducir el riesgo de que todo el conocimiento documental esté concentrado en una persona o computadora.</p>
-                </div>
-            </div>
-            <div class="bg-primary/10 border-l-4 border-primary rounded-xl p-6 max-w-4xl mx-auto" data-aos="fade-up">
-                <p class="text-gray-700 text-lg">
-                    <strong class="text-primary">El problema que comparten:</strong> La información importante está en cinco lugares distintos — y cuando alguien la necesita urgente, nadie sabe exactamente dónde está ni quién tiene la versión correcta.
-                </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.75">
+                @foreach ([
+                    [__('Diagnóstico documental'),       __('Revisamos cómo se organiza hoy la información, qué fuentes existen y dónde están los principales problemas.')],
+                    [__('Diseño de estructura'),         __('Definimos bibliotecas, carpetas, listas, vistas, reglas y criterios de organización según el proceso real.')],
+                    [__('Permisos y responsables'),      __('Configuramos accesos básicos y vistas según usuarios, áreas, procesos o tipos de documento.')],
+                    [__('Listas de control'),            __('Estructuramos controles para clientes, personal, obligaciones, contratos, activos, pendientes, tareas o vencimientos.')],
+                    [__('Documentación y capacitación'), __('Dejamos guía, procedimientos de uso y capacitación para que el sistema pueda sostenerse en el trabajo diario.')],
+                    [__('Acompañamiento inicial'),       __('Validamos la implementación con el cliente, ajustamos detalles y acompañamos la adopción inicial.')],
+                ] as $i => [$t, $d])
+                <article class="p-5.5 bg-white border border-[#E6E1DE] rounded-[19px]" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                    <div class="mb-2.5 text-primary font-black text-xs tracking-[.12em]">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <h3 class="text-[19px] font-bold tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Qué incluye -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué incluye el servicio?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Diagnóstico documental inicial</h4>
-                        <p class="text-gray-600">Relevamiento de cómo trabaja la empresa y qué necesita ordenar — antes de diseñar cualquier estructura.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Diseño de estructura SharePoint</h4>
-                        <p class="text-gray-600">Bibliotecas, carpetas, listas, permisos, vistas y responsables — diseñados según la realidad de cada empresa.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Implementación técnica en Microsoft 365</h4>
-                        <p class="text-gray-600">Configuración completa del entorno dentro de la licencia de Microsoft 365 del cliente.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Listas de control operativas</h4>
-                        <p class="text-gray-600">Obligaciones, vencimientos, contratos, personal, tareas y pendientes integrados como listas dentro de SharePoint.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Organización por proceso</h4>
-                        <p class="text-gray-600">Contable, tributario, laboral, contractual, societario y reportes — cada área con su repositorio definido.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Manuales y procedimientos documentales</h4>
-                        <p class="text-gray-600">Guía de uso interna para que el equipo sepa dónde guardar, cómo nombrar y quién es responsable de qué.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Capacitación a usuarios responsables</h4>
-                        <p class="text-gray-600">Entrenamiento al equipo para adoptar la estructura sin depender de soporte externo en el día a día.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Automatizaciones con Power Automate
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-0.5 rounded">Complemento</span>
-                        </h4>
-                        <p class="text-gray-600">Alertas, flujos de aprobación y recordatorios automáticos — disponible como módulo adicional.</p>
-                    </div>
-                </div>
+    <!-- Arquitectura documental -->
+    <section id="arquitectura" class="py-8.5 scroll-mt-24">
+        <div class="container-2026 {{ $card }} p-5.25 md:p-7" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row justify-between gap-4.5 md:items-end mb-5">
+                <div><div class="{{ $tag }}">{{ __('La arquitectura documental') }}</div><h2 class="text-[clamp(28px,3.5vw,42px)] font-bold leading-[1.55] tracking-[-0.02em]">{{ __('De fuentes dispersas a un sistema documental que se puede seguir.') }}</h2></div>
+                <p class="max-w-[640px] text-[#5F5A5B]">{{ __('Esta es la pieza central del servicio: entender de dónde viene la información, cómo debe organizarse y qué controles necesita para poder encontrarse, seguirse y reconstruirse.') }}</p>
             </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_.12fr_1.15fr_.12fr_1.15fr_.12fr_1fr] gap-2.5 items-stretch" role="img" aria-label="{{ __('Arquitectura documental del servicio SharePoint OTIUM') }}">
+                @foreach ([
+                    ['bg-white',                                                                       __('Fuentes actuales'),         __('La información que ya existe'),            [__('Carpetas locales'), 'OneDrive / Drive / Dropbox', __('Correos y documentos físicos'), __('Archivos por persona o área')]],
+                    ['bg-linear-to-b from-accent/12 to-white/96 border-accent/35!',                    __('Diseño OTIUM'),             __('La estructura que ordena el proceso'),     [__('Bibliotecas y carpetas'), __('Listas y metadatos'), __('Vistas y responsables'), __('Permisos y reglas de uso')]],
+                    ['bg-linear-to-b from-secondary/12 to-white/96',                                   __('SharePoint en operación'),  __('Documentos + controles + evidencia'),      [__('Archivos centralizados'), __('Pendientes visibles'), __('Vencimientos y estados'), __('Históricos y respaldo')]],
+                    ['bg-white',                                                                       __('Uso empresarial'),          __('Información lista para trabajar'),         [__('Contabilidad e impuestos'), __('Laboral y administración'), __('Auditoría y revisiones'), __('Gerencia y seguimiento')]],
+                ] as $i => [$bg, $label, $title, $items])
+                    @unless ($loop->first)
+                    <div class="grid place-items-center min-h-6 text-primary text-[26px] font-black rotate-90 lg:rotate-0" aria-hidden="true">→</div>
+                    @endunless
+                    <div class="min-w-0 p-4.5 rounded-[19px] border border-[#E6E1DE] {{ $bg }}">
+                        <div class="mb-2 text-primary text-[10px] font-black tracking-[.13em] uppercase">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }} · {{ $label }}</div>
+                        <h3 class="text-lg font-bold tracking-[-0.02em] mb-3">{{ $title }}</h3>
+                        <div class="grid gap-2">
+                            @foreach ($items as $item)
+                            <div class="px-2.75 py-2.5 rounded-xl bg-[#F7F4F2] border border-[#E6E1DE] text-xs font-semibold text-[#494344]">{{ $item }}</div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="mt-4.5 px-4.25 py-3.75 border-l-4 border-accent bg-accent/9 rounded-[14px] text-[#295a63] text-sm"><strong>{{ __('Automatización como módulo complementario:') }}</strong> {{ __('alertas de vencimiento, avisos por documentos pendientes, flujos de aprobación, recordatorios, actualización de estados y otras automatizaciones pueden incorporarse según alcance y complejidad.') }}</div>
+        </div>
+    </section>
+
+    <!-- Ejemplos de aplicación -->
+    <section class="py-8.5">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Ejemplos de aplicación') }}</div><h2 class="{{ $h2 }}">{{ __('La estructura se adapta al tipo de documentación que necesita controlar tu empresa.') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('No son paquetes automáticos. Son ejemplos reales de soluciones documentales que pueden formar parte de un proyecto según el alcance definido.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                @foreach ([
+                    [__('Contable'),     __('Archivo contable mensual'),          __('Documentos organizados por gestión, mes, proceso o criterio definido para facilitar revisión y respaldo.')],
+                    [__('Tributario'),   __('Archivo tributario y vencimientos'), __('Declaraciones, formularios, pagos, requerimientos, obligaciones, fechas clave y evidencia documental.')],
+                    [__('Laboral'),      __('File digital del trabajador'),       __('Contratos, documentos personales, planillas, vacaciones, permisos, finiquitos y respaldos relacionados.')],
+                    [__('Legal / Adm.'), __('Contratos y societario'),            __('Contratos, actas, poderes, registros, documentos corporativos y fechas que requieren seguimiento.')],
+                    [__('Control'),      __('Respaldos para auditoría'),          __('Estructura para facilitar solicitudes de evidencia, revisiones internas y procesos de auditoría externa.')],
+                    [__('Gestión'),      __('Reportes y listas maestras'),        __('Bibliotecas de reportes y listas de control para responsables, pendientes, activos, clientes o tareas recurrentes.')],
+                ] as $i => [$chip, $t, $d])
+                <article class="p-5.25 rounded-[18px] bg-white border border-[#E6E1DE]" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                    <div class="inline-block mb-2.75 px-2.25 py-1.5 rounded-full text-[10px] font-extrabold tracking-[.08em] uppercase text-[#176473] bg-accent/12">{{ $chip }}</div>
+                    <h3 class="text-lg font-bold tracking-[-0.02em] mb-1.75">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B] text-[13px]">{{ $d }}</p>
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulos complementarios -->
+    <section class="py-8.5">
+        <div class="container-2026 grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-4.5">
+            <article class="{{ $card }} p-5.25 md:p-6.25" data-aos="fade-right">
+                <div class="{{ $tag }}">{{ __('Módulos complementarios') }}</div>
+                <h3 class="text-2xl font-bold tracking-[-0.02em] mb-2.5">{{ __('Automatización cuando el proceso la necesita') }}</h3>
+                <p class="text-[#5F5A5B]">{{ __('Una vez que la información está bien estructurada, pueden incorporarse flujos adicionales. OTIUM los evalúa y cotiza según el proceso, el volumen y la complejidad.') }}</p>
+                <div class="flex flex-wrap gap-2.25 mt-4.25">
+                    @foreach ([__('Alertas de vencimiento'), __('Documentos pendientes'), __('Flujos de aprobación'), __('Recordatorios'), __('Actualización de estados'), __('Alertas a responsables')] as $pill)
+                    <span class="px-2.75 py-2 border border-[#E6E1DE] bg-[#F7F4F2] rounded-full text-xs font-bold">{{ $pill }}</span>
+                    @endforeach
+                </div>
+            </article>
+            <article class="{{ $card }} p-5.25 md:p-6.25" data-aos="fade-left" data-aos-delay="100">
+                <div class="{{ $tag }}">{{ __('Reportabilidad') }}</div>
+                <h3 class="text-2xl font-bold tracking-[-0.02em] mb-2.5">{{ __('Power BI cuando existe información que vale la pena visualizar') }}</h3>
+                <p class="text-[#5F5A5B]">{{ __('Si el proyecto lo requiere, las listas y estados de SharePoint pueden servir de base para reportes o visualizaciones de seguimiento en Power BI.') }}</p>
+                <div class="{{ $note }}">{{ __('La integración con Power BI no forma parte automática del servicio base. Se incorpora como complemento cuando aporta valor al caso.') }}</div>
+            </article>
         </div>
     </section>
 
     <!-- Qué recibe el cliente -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <section id="entregables" class="py-8.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Qué recibe el cliente') }}</div><h2 class="{{ $h2 }}">{{ __('Una estructura implementada, documentada y entendible para el equipo.') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('Los entregables finales dependen del alcance, volumen de información y complejidad del proyecto. El servicio base se concentra en dejar un modelo utilizable, no solo una configuración técnica.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-4.5">
+                <article class="{{ $card }} p-5.25 md:p-6" data-aos="fade-right">
+                    <h3 class="text-[23px] font-bold tracking-[-0.02em] mb-3">{{ __('Entregables habituales') }}</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3.5 gap-y-2.25">
+                        @foreach ([
+                            __('Diagnóstico documental inicial'),
+                            __('Estructura de SharePoint implementada'),
+                            __('Bibliotecas y carpetas organizadas'),
+                            __('Listas de control y vistas filtradas'),
+                            __('Configuración básica de permisos'),
+                            __('Carga inicial limitada de documentos modelo'),
+                            __('Guía de uso y procedimientos documentales'),
+                            __('Capacitación y acompañamiento inicial'),
+                        ] as $item)
+                        <div class="grid grid-cols-[20px_1fr] gap-2 text-[#494344] text-[13px]"><i class="not-italic text-[#176473] font-black">✓</i><span>{{ $item }}</span></div>
+                        @endforeach
                     </div>
-                    <p class="text-gray-700 font-medium">Diagnóstico y mapa de necesidades documentales</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Estructura SharePoint diseñada e implementada</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Bibliotecas y listas de control operativas</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Permisos configurados por usuario y área</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Repositorios contables, tributarios y laborales</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Guía de uso y manual de procedimientos</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Equipo capacitado para mantener la estructura</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Automatizaciones activas <span class="text-gray-400 font-normal text-sm">(módulo adicional)</span></p>
+                </article>
+                <div class="grid gap-3" data-aos="fade-left" data-aos-delay="100">
+                    @foreach ([
+                        [__('Repositorios específicos'), __('Archivo contable, tributario, laboral, contratos, societario, auditoría o reportes, según alcance.')],
+                        [__('Listas maestras'),          __('Clientes, personal, obligaciones, vencimientos, contratos, pendientes, activos, tareas o vacaciones.')],
+                        [__('Seguimiento posterior'),    __('La administración mensual o trimestral puede contratarse de forma adicional.')],
+                    ] as [$b, $s])
+                    <div class="p-4 rounded-[15px] bg-[#F7F4F2] border border-[#E6E1DE]"><b class="block text-sm mb-1">{{ $b }}</b><span class="text-[#5F5A5B] text-xs">{{ $s }}</span></div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Por qué Otium vs. carpeta compartida genérica -->
-    <section class="py-20 bg-secondary text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. "simplemente usar Google Drive"') }}</h2>
-            <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr>
-                            <th class="text-left p-4 bg-white/10 rounded-tl-xl font-bold text-white/70 text-sm uppercase tracking-wider w-1/2">Carpeta compartida genérica</th>
-                            <th class="text-left p-4 bg-primary rounded-tr-xl font-bold text-white text-sm uppercase tracking-wider w-1/2">Otium con SharePoint</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10">
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Cualquiera puede ver todo</td>
-                            <td class="p-4 text-white font-medium">Permisos diferenciados por usuario, área o proceso</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin listas ni controles</td>
-                            <td class="p-4 text-white font-medium">Listas de vencimientos, obligaciones y pendientes integradas</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin flujos ni alertas</td>
-                            <td class="p-4 text-white font-medium">Automatizaciones con Power Automate disponibles</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Estructura que cada quien arma distinto</td>
-                            <td class="p-4 text-white font-medium">Diseñada con criterio contable, tributario y laboral</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin visibilidad para quien está afuera</td>
-                            <td class="p-4 text-white font-medium">Acceso ordenado para socios o casas matrices en el exterior</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 rounded-bl-xl text-white/70 border-r border-white/10">Desconectada de la operación</td>
-                            <td class="p-4 rounded-br-xl text-white font-medium">Integrada con contabilidad, tributación, laboral y auditoría</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Responsabilidades -->
+    <section id="responsabilidades" class="py-8.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Responsabilidades') }}</div><h2 class="{{ $h2 }}">{{ __('La implementación funciona mejor cuando cada parte sabe qué debe aportar.') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('OTIUM diseña e implementa la estructura. El cliente aporta el conocimiento de su operación, define autorizaciones y valida que el modelo represente su forma de trabajo.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4.5">
+                @foreach ([
+                    ['OTIUM', [
+                        __('Diagnostica la situación documental actual.'),
+                        __('Diseña bibliotecas, listas, vistas y criterios de organización.'),
+                        __('Configura la estructura y permisos básicos acordados.'),
+                        __('Documenta reglas de uso y capacita a los usuarios definidos.'),
+                        __('Acompaña la implementación inicial y ajustes acordados.'),
+                    ]],
+                    [__('Tu empresa'), [
+                        __('Designa un responsable interno del proyecto.'),
+                        __('Entrega información sobre áreas, usuarios, responsables y tipos de documentos.'),
+                        __('Facilita fuentes documentales y accesos administrativos cuando sean necesarios.'),
+                        __('Define y valida qué usuarios están autorizados para cada información.'),
+                        __('Valida que la estructura represente correctamente la operación de la empresa.'),
+                    ]],
+                ] as $k => [$who, $items])
+                <article class="{{ $card }} p-5.25 md:p-6" data-aos="fade-up" data-aos-delay="{{ $k * 100 }}">
+                    <h3 class="text-[22px] font-bold tracking-[-0.02em] mb-3.25">{{ $who }}</h3>
+                    <div class="grid gap-2.25">
+                        @foreach ($items as $item)
+                        <div class="grid grid-cols-[24px_1fr] gap-2.5 items-start text-[13px] text-[#4b4546]">
+                            <span class="w-6 h-6 grid place-items-center rounded-lg font-black text-[#176473] bg-accent/13">✓</span><span>{{ $item }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
-            <div class="space-y-4" x-data="{ active: null }">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Necesitamos una licencia especial de Microsoft?</span>
-                        <span x-text="active === 1 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 1" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        SharePoint está incluido en la mayoría de los planes de Microsoft 365 Business. Si ya pagás Microsoft 365, probablemente ya tenés acceso sin costo adicional. Si aún no tenés licencias, te ayudamos a seleccionar el plan adecuado.
-                    </div>
+    <!-- Qué cambia -->
+    <section class="py-8.5">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div><div class="{{ $tag }}">{{ __('Qué cambia') }}</div><h2 class="{{ $h2 }}">{{ __('La diferencia se nota cuando necesitas encontrar, seguir o reconstruir información.') }}</h2></div>
+                <p class="{{ $desc }}">{{ __('No prometemos que desaparezca todo trabajo manual. Buscamos que la información tenga una estructura clara y que los pendientes sean más visibles y reconstruibles.') }}</p>
+            </div>
+            <div class="{{ $card }} overflow-hidden" data-aos="fade-up">
+                <div class="grid grid-cols-2 text-[11px] font-black tracking-[.11em] uppercase">
+                    <div class="p-3 md:px-4.5 md:py-3.75 bg-primary/8 text-primary">{{ __('Sin un proceso estructurado') }}</div>
+                    <div class="p-3 md:px-4.5 md:py-3.75 bg-accent/12 text-[#176473]">{{ __('Con una estructura OTIUM en SharePoint') }}</div>
                 </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Pueden migrar documentos desde Google Drive u otras plataformas?</span>
-                        <span x-text="active === 2 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 2" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. Migramos desde Google Drive, Dropbox, servidores locales y otras plataformas, organizando los archivos dentro de la nueva estructura diseñada para la empresa.
-                    </div>
+                @foreach ([
+                    [__('Archivos repartidos entre personas y carpetas'),           __('Documentos centralizados según una lógica común')],
+                    [__('Seguimiento por correo, mensajes o memoria'),               __('Listas, estados, responsables y vencimientos visibles')],
+                    [__('Dependencia de quien conoce “dónde está todo”'),           __('Proceso documentado y consultable por usuarios autorizados')],
+                    [__('Reunir respaldos requiere reconstruir el proceso'),         __('Evidencias e históricos organizados para su consulta')],
+                    [__('Microsoft 365 usado principalmente para guardar archivos'), __('Microsoft 365 utilizado como soporte de un modelo documental')],
+                ] as [$before, $after])
+                <div class="grid grid-cols-2 text-[13px]">
+                    <div class="p-3 md:px-4.5 md:py-3.75 border-t border-[#E6E1DE] text-[#665f60]">{{ $before }}</div>
+                    <div class="p-3 md:px-4.5 md:py-3.75 border-t border-[#E6E1DE] font-bold">{{ $after }}</div>
                 </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Qué tan fácil es de usar para el equipo?</span>
-                        <span x-text="active === 3 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 3" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        SharePoint funciona como una carpeta web intuitiva. Con la capacitación que incluimos, cualquier miembro del equipo puede subir, buscar y gestionar documentos sin conocimientos técnicos.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Se puede acceder desde el celular o desde el exterior?</span>
-                        <span x-text="active === 4 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 4" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. SharePoint es accesible desde cualquier navegador o desde la app móvil de Microsoft (iOS y Android), desde cualquier lugar del mundo — sin VPN ni servidores locales.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 5 ? null : 5)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cuánto tiempo toma la implementación?</span>
-                        <span x-text="active === 5 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 5" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Una implementación estándar toma entre 3 y 6 semanas. El plazo depende del volumen de documentación existente y la complejidad de los procesos a organizar.
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contact" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Tu información importante tiene un lugar definido?') }}</h2>
-            <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctanos y diseñamos juntos la estructura documental que tu empresa necesita — dentro de las herramientas que ya tenés.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
-            </div>
+    <!-- Alcance especial -->
+    <section class="py-8.5">
+        <div class="container-2026 {{ $card }} p-5.25 md:p-6" data-aos="fade-up">
+            <div class="{{ $tag }}">{{ __('Cuando el caso requiere un alcance especial') }}</div>
+            <h3 class="text-[22px] font-bold tracking-[-0.02em] mb-2.5">{{ __('Algunos trabajos se evalúan y cotizan por separado.') }}</h3>
+            <p class="text-[#5F5A5B] text-sm">{{ __('La implementación base no incluye automáticamente actividades que requieren mayor volumen, especialidad técnica o servicios distintos de OTIUM.') }}</p>
+            <ul class="list-disc pl-5 mt-3.5 text-[#4a4445] text-[13px] md:columns-2 gap-7.5">
+                @foreach ([
+                    __('Migración histórica o masiva de documentos.'),
+                    __('Limpieza y depuración de archivos antiguos.'),
+                    __('Digitalización física masiva o escaneo histórico.'),
+                    __('Automatizaciones avanzadas.'),
+                    __('Integración con Power BI.'),
+                    __('Administración mensual o trimestral posterior.'),
+                    __('Compra de licencias Microsoft.'),
+                    __('Soporte de equipos, red o internet.'),
+                    __('Desarrollo de software a medida.'),
+                    __('Ciberseguridad avanzada.'),
+                    __('Validación jurídica de contratos.'),
+                    __('Certificación técnica de cada documento cargado fuera del servicio correspondiente.'),
+                ] as $item)
+                <li class="mb-2 break-inside-avoid">{{ $item }}</li>
+                @endforeach
+            </ul>
         </div>
     </section>
 
+    <!-- Cómo empezamos -->
+    <section id="contacto" class="pt-10.5 pb-14.5 scroll-mt-24">
+        <div class="container-2026 {{ $card }} relative overflow-hidden grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-6.25 items-center p-5.25 md:p-8.5" data-aos="fade-up">
+            <span class="absolute -right-27.5 -bottom-36 w-67.5 h-67.5 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.18),transparent_68%)] pointer-events-none"></span>
+            <div class="relative">
+                <div class="{{ $tag }}">{{ __('Cómo empezamos') }}</div>
+                <h2 class="text-[clamp(30px,4vw,46px)] font-bold leading-[1.04] tracking-[-0.02em] mt-1.25">{{ __('Primero entendamos cómo está organizada hoy la documentación de tu empresa.') }}</h2>
+                <p class="mt-3.25 text-[#4b4546] max-w-[720px]">{{ __('Realizamos un diagnóstico documental inicial para revisar fuentes, procesos, usuarios, responsables y necesidades de control. Con esa base definimos el alcance y la estructura adecuada para implementar SharePoint.') }}</p>
+                <div class="relative z-10 flex flex-wrap gap-3 mt-6.5">
+                    <a href="{{ $waService }}" target="_blank" rel="noopener" class="{{ $btn }} bg-[#1F1617] text-white">{{ __('Solicitar diagnóstico documental gratuito') }}</a>
+                    <a href="#arquitectura" class="{{ $btn }} bg-accent/13 text-[#175864]">{{ __('Revisar la arquitectura') }}</a>
+                </div>
+            </div>
+            <aside class="relative z-10 p-5.25 border border-[#E6E1DE] bg-[#F7F4F2] rounded-[18px]">
+                <h3 class="text-[17px] font-bold tracking-[-0.02em] mb-2.5">{{ __('Variables que revisamos para definir el proyecto') }}</h3>
+                <ul class="list-disc pl-5 text-[#4b4546] text-[13px] space-y-1.5">
+                    @foreach ([
+                        __('Volumen y fuentes de documentación.'),
+                        __('Áreas, usuarios y responsables involucrados.'),
+                        __('Procesos y tipos de documentos.'),
+                        __('Permisos y confidencialidad.'),
+                        __('Microsoft 365 y licencias disponibles.'),
+                        __('Necesidad de migración, automatización o reportes.'),
+                    ] as $item)
+                    <li>{{ $item }}</li>
+                    @endforeach
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    </div>
 </x-layout>

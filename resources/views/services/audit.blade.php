@@ -2,407 +2,426 @@
     title="Auditoría y Revisión Financiera Bolivia | CAUB | Otium"
     description="Auditoría y revisión financiera con dictamen formal registrado ante el CAUB. Revisión independiente con criterio técnico para empresas en Bolivia."
 >
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <div class="absolute top-0 right-0 w-150 h-150 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+    @php
+        $wa = env('WHATSAPP_NUMBER', '59170654104');
+        $waService = 'https://wa.me/' . $wa . '?text=' . rawurlencode(__('Hola, quiero información sobre Auditoría.'));
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+        // Estilos repetidos del diseño "Auditoría 2026" (tarjetas redondeadas sobre fondo cálido)
+        $card = 'bg-white/93 border border-[#1F1617]/8 rounded-3xl shadow-[0_18px_40px_rgba(31,22,23,.08)]';
+        $tag  = 'text-xs uppercase tracking-[.14em] text-primary font-bold mb-2';
+        $h2   = 'text-[clamp(30px,3.5vw,44px)] font-bold leading-normal tracking-[-0.02em] mb-1';
+        $desc = 'max-w-[720px] text-[#4E4849] text-[17px] mb-4';
+        $head = 'flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-5 mb-5';
+        $btn  = 'inline-flex items-center gap-2.5 px-4.5 py-3.5 rounded-[14px] font-bold text-[15px] transition-all hover:-translate-y-px';
+    @endphp
 
-                <!-- Texto -->
-                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
-                    <span class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Auditoría financiera</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        {{ __('Auditoría y Revisión Financiera') }}
-                    </h1>
-                    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light">
-                        Dictamen formal registrado ante el <span class="font-bold text-white">CAUB</span> · Revisión independiente con criterio técnico.
-                    </p>
-                    <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg">
-                        "Dictamen formal registrado ante el CAUB — para cuando el banco, el socio o el inversionista necesita una opinión profesional independiente."
-                    </blockquote>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="{{ route('contact') }}"
-                            class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
-                            {{ __('Solicitar información') }}
-                        </a>
-                        <a href="/pdfs/brochures/Otiu_Auditoria_y_Revision_Financiera.pdf" download
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
-                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
-                            {{ __('Descargar brochure') }}
-                        </a>
-                    </div>
+    <div class="text-[#1F1617] leading-normal" style="background: radial-gradient(circle at top right, rgba(84,186,199,.11), transparent 24%), radial-gradient(circle at top left, rgba(180,46,37,.055), transparent 25%), linear-gradient(180deg, #fbf9f8 0%, #f7f4f2 100%);">
+
+    <!-- Hero -->
+    <section class="pt-32 pb-7.5 md:pt-36">
+        <div class="container-2026 grid grid-cols-1 lg:grid-cols-[1.12fr_.88fr] gap-7 items-stretch">
+            <article class="{{ $card }} relative overflow-hidden p-5.5 md:p-9.5" data-aos="fade-up">
+                <span class="absolute -right-22 -bottom-29 w-60 h-60 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.18),rgba(84,186,199,0))] pointer-events-none"></span>
+                <div class="inline-flex items-center gap-2 mb-4.5 px-3 py-2 rounded-full bg-primary/8 text-primary text-xs uppercase tracking-[.12em] font-bold">OTIUM | {{ __('Auditoría') }}</div>
+                <h1 class="text-[clamp(38px,5vw,62px)] font-bold leading-[1.02] tracking-[-0.02em] mb-4.5 max-w-[830px]">
+                    {{ __('Información revisada.') }} <span class="text-primary">{{ __('Riesgos visibles.') }}</span> {{ __('Decisiones mejor respaldadas.') }}
+                </h1>
+                <p class="text-lg md:text-xl leading-[1.45] text-[#443D3E] max-w-[790px] mb-4">{{ __('Revisamos información financiera, contable, documental y de control con un alcance definido. Aplicamos pruebas, contrastamos evidencia, identificamos hallazgos y presentamos resultados claros para gerencia, socios o directorio.') }}</p>
+                <div class="relative z-10 flex flex-wrap gap-3.5 mt-6.5">
+                    <a href="#proceso" class="{{ $btn }} bg-[#1F1617] text-white hover:bg-[#0d090a]">{{ __('Ver cómo trabajamos') }}</a>
+                    <a href="#entregables" class="{{ $btn }} bg-accent/12 text-[#175864] hover:bg-accent/19">{{ __('Ver entregables') }}</a>
                 </div>
-
-                <!-- Imagen flotante -->
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="900">
-                    <div class="relative w-full max-w-sm md:max-w-md">
-                        <div class="absolute inset-0 bg-primary/40 rounded-2xl translate-x-4 translate-y-4"></div>
-                        <div class="absolute -top-3 -left-3 w-16 h-16 border-4 border-white/30 rounded-xl"></div>
-                        <img src="/images/otium/carousel/auditoria.png"
-                            alt="Auditoría y Revisión Financiera Otium"
-                            class="relative z-10 rounded-2xl shadow-2xl w-full h-72 md:h-80 object-cover object-center animate-float">
-                    </div>
+                <div class="grid grid-cols-4 w-[min(390px,100%)] h-3.5 mt-6.5 rounded-full overflow-hidden" aria-hidden="true">
+                    <span class="bg-primary"></span><span class="bg-secondary"></span><span class="bg-brand-light"></span><span class="bg-accent"></span>
                 </div>
+            </article>
 
+            <aside class="{{ $card }} flex flex-col gap-4.5 p-5.5 md:p-6.5" data-aos="fade-left" data-aos-delay="100">
+                <div>
+                    <div class="text-[11px] uppercase tracking-[.12em] font-extrabold text-primary">{{ __('La lógica del trabajo') }}</div>
+                    <h2 class="text-2xl font-bold leading-normal tracking-[-0.02em]">{{ __('De una preocupación a una conclusión sustentada') }}</h2>
+                </div>
+                <div class="grid gap-2.5">
+                    @foreach ([
+                        [__('Riesgo'),        __('Definimos qué necesita ser revisado y por qué.')],
+                        [__('Procedimiento'), __('Seleccionamos las pruebas y revisiones aplicables al alcance.')],
+                        [__('Evidencia'),     __('Contrastamos registros, reportes y documentación de respaldo.')],
+                        [__('Hallazgo'),      __('Documentamos inconsistencias, riesgos o debilidades relevantes.')],
+                        [__('Conclusión'),    __('Presentamos resultados y recomendaciones cuando corresponda.')],
+                    ] as $i => [$t, $d])
+                    <div class="grid grid-cols-[38px_1fr] gap-3 items-start py-3 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">
+                        <div class="w-9 h-9 grid place-items-center rounded-xl font-extrabold {{ in_array($i, [1, 4]) ? 'bg-accent/14 text-[#176675]' : 'bg-primary/9 text-primary' }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                        <div><strong class="block text-sm mb-0.5">{{ $t }}</strong><span class="text-[#5F5A5B] text-[13px]">{{ $d }}</span></div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    @foreach ([__('Estados financieros'), __('Fondos'), __('Inventarios'), __('Control interno')] as $pill)
+                    <span class="px-2.75 py-2 rounded-full border border-[#E6E1DE] bg-[#F7F4F2] text-[#5F5A5B] text-xs font-bold">{{ $pill }}</span>
+                    @endforeach
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Qué resolvemos -->
+    <section id="problema" class="py-9.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Qué resolvemos') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('Cuando la información existe, pero todavía no da suficiente certeza.') }}</h2>
+                </div>
+                <p class="{{ $desc }}">{{ __('La necesidad de auditoría suele aparecer cuando hay información que debe ser validada, explicada o presentada con mayor respaldo frente a gerencia, socios, directorio o terceros.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ([
+                    ['bg-primary/10 text-primary',       __('Información que no concilia'),            __('Diferencias entre reportes, saldos contables, extractos, inventarios o respaldos dificultan entender qué está ocurriendo.')],
+                    ['bg-secondary/18 text-[#8d5547]',    __('Respaldo disperso'),                      __('Documentos, evidencias y explicaciones están repartidos entre sistemas, carpetas, correos o personas.')],
+                    ['bg-accent/16 text-[#176675]',       __('Controles poco visibles'),                __('La empresa no siempre tiene claro qué controles existen, dónde fallan o qué riesgos requieren mayor atención.')],
+                    ['bg-brand-light/65 text-[#765b51]',  __('Decisiones sin revisión independiente'),  __('Gerencia o socios necesitan una lectura técnica antes de tomar decisiones relevantes o rendir cuentas.')],
+                ] as $i => [$chip, $t, $d])
+                <article class="p-5.5 bg-white/90 border border-[#1F1617]/8 rounded-[20px] shadow-[0_18px_40px_rgba(31,22,23,.08)]" data-aos="fade-up" data-aos-delay="{{ $i * 75 }}">
+                    <div class="w-11 h-11 grid place-items-center mb-3.5 rounded-[14px] font-extrabold text-[13px] {{ $chip }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <h3 class="text-xl font-bold leading-normal tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B]">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Intro / Description -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-teal-50 rounded-2xl transform translate-x-4 translate-y-4"></div>
-                        <img src="/images/otium/carousel/auditoria.png" alt="Auditoría y Revisión Financiera Otium"
-                            class="relative rounded-2xl shadow-xl w-full h-[400px] object-cover">
-                    </div>
+    <!-- Qué hacemos -->
+    <section id="hacemos" class="py-9.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Qué hacemos por usted') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('Una revisión con alcance definido, evidencia y trazabilidad.') }}</h2>
                 </div>
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Auditoría y Revisión Financiera</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Opinión independiente, dictamen registrado') }}</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        En Otium realizamos auditorías y revisiones financieras con emisión de dictamen formal registrado ante el <strong class="text-secondary">CAUB</strong> — Colegio de Auditores de Bolivia. Revisamos estados financieros, fondos, inventarios, documentación y control interno con criterio independiente y alcance definido.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Útil para socios que necesitan transparencia, casas matrices que deben validar su operación boliviana, empresas que buscan financiamiento y directorios que quieren información confiable antes de tomar decisiones relevantes.
-                    </p>
-                    <div class="mt-6 inline-flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-xl px-5 py-3">
-                        <svg class="w-6 h-6 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                        <span class="text-primary font-semibold">Dictamen formal registrado ante el CAUB</span>
-                    </div>
-                </div>
+                <p class="{{ $desc }}">{{ __('El trabajo no comienza revisando todo. Primero definimos qué necesita ser evaluado, qué información existe y qué resultado espera el cliente.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
+                @foreach ([
+                    [__('Alcance'),     __('Definimos el encargo'),                          __('Acordamos objetivo, período, áreas, cuentas, procesos o información a revisar.')],
+                    [__('Información'), __('Solicitamos y ordenamos documentación'),         __('Estructuramos el requerimiento y detectamos faltantes o inconsistencias que condicionan la revisión.')],
+                    [__('Pruebas'),     __('Ejecutamos revisión técnica'),                   __('Aplicamos pruebas selectivas, cruces de información y revisión de respaldos según el alcance.')],
+                    [__('Evidencia'),   __('Contrastamos lo registrado con lo respaldado'),  __('Relacionamos saldos, movimientos, reportes y documentos para evaluar consistencia y trazabilidad.')],
+                    [__('Hallazgos'),   __('Organizamos observaciones y riesgos'),           __('Documentamos los puntos relevantes y, cuando corresponde, los validamos con responsables del cliente.')],
+                    [__('Resultado'),   __('Presentamos conclusiones claras'),               __('Entregamos informe, matriz o reporte según el tipo de trabajo contratado.')],
+                ] as $i => [$step, $t, $d])
+                <article class="p-5.5 rounded-[20px] border border-[#1F1617]/8 bg-white/95 shadow-[0_18px_40px_rgba(31,22,23,.08)]" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                    <div class="mb-2.5 text-[11px] font-extrabold tracking-[.12em] uppercase text-primary">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }} · {{ $step }}</div>
+                    <h3 class="text-[19px] font-bold leading-normal tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B]">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Para quién es -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    Empresas, organizaciones y socios que necesitan revisar su información financiera con independencia técnica — sea para tomar decisiones internas, responder ante terceros o identificar riesgos a tiempo.
-                </p>
+    <!-- Proceso principal -->
+    <section id="proceso" class="py-9.5 scroll-mt-24">
+        <div class="container-2026">
+            <article class="{{ $card }} p-5.5 md:p-7.5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Proceso principal') }}</div>
+                <div class="{{ $head }} mb-5.5!">
+                    <div><h2 class="{{ $h2 }}">{{ __('Riesgo → Procedimiento → Evidencia → Hallazgo → Conclusión') }}</h2></div>
+                    <p class="{{ $desc }}">{{ __('Este flujo concentra la lógica de la auditoría: cada observación debe conectarse con una necesidad de revisión, un procedimiento ejecutado y evidencia que permita sustentar el resultado.') }}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-2.5 mb-5.5">
+                    @foreach ([__('Alcance antes de ejecutar'), __('Pruebas selectivas'), __('Evidencia documentada'), __('Hallazgos trazables')] as $pill)
+                    <span class="px-3.5 py-2 rounded-full text-[13px] font-bold bg-[#F7F4F2] text-[#4F4849] border border-[#E6E1DE]">{{ $pill }}</span>
+                    @endforeach
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3.5">
+                    @foreach ([
+                        ['bg-primary/10 text-primary',     __('Riesgo'),        __('Identificamos qué aspecto requiere revisión y qué podría afectar la confiabilidad, el control o la rendición de cuentas.')],
+                        ['bg-accent/14 text-[#186272]',    __('Procedimiento'), __('Definimos qué prueba, cruce, revisión documental o análisis se realizará para responder al objetivo.')],
+                        ['bg-secondary/17 text-[#8d5547]', __('Evidencia'),     __('Revisamos la información disponible y documentamos los elementos que respaldan el trabajo realizado.')],
+                        ['bg-primary/10 text-primary',     __('Hallazgo'),      __('Señalamos diferencias, debilidades, inconsistencias o situaciones relevantes encontradas durante la revisión.')],
+                        ['bg-accent/14 text-[#186272]',    __('Conclusión'),    __('Ordenamos los resultados y comunicamos qué se observó, por qué importa y qué próximos pasos pueden evaluarse.')],
+                    ] as $i => [$num, $t, $d])
+                    <article class="relative p-5.5 rounded-[22px] bg-white border border-[#E6E1DE] lg:min-h-52" data-aos="fade-up" data-aos-delay="{{ $i * 75 }}">
+                        @unless ($loop->last)
+                        <span class="hidden lg:block absolute top-9 -right-3.5 w-3.5 h-0.5 bg-linear-to-r from-primary/45 to-accent/45"></span>
+                        @endunless
+                        <div class="w-10.5 h-10.5 grid place-items-center mb-4 rounded-[14px] font-extrabold {{ $num }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                        <h3 class="text-lg font-bold leading-normal tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                        <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                    </article>
+                    @endforeach
+                </div>
+                <div class="mt-4.5 px-4.5 py-4 rounded-2xl bg-accent/10 border-l-4 border-accent text-[#28525A]">
+                    <strong>{{ __('La auditoría no sustituye la operación contable.') }}</strong> {{ __('Si el trabajo detecta registros incompletos, necesidad de correcciones, regularización tributaria o implementación de controles, esos trabajos se separan del encargo de auditoría.') }}
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Ámbitos de revisión -->
+    <section class="py-9.5">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Ámbitos de revisión') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('El alcance se adapta al objetivo del encargo.') }}</h2>
+                </div>
+                <p class="{{ $desc }}">{{ __('No todas las auditorías buscan responder la misma pregunta. OTIUM puede estructurar trabajos específicos según la información y necesidad del cliente.') }}</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Socios que requieren transparencia') }}</h3>
-                    <p class="text-gray-600">Empresas con socios locales e internacionales que necesitan una revisión independiente para tomar decisiones con información confiable.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Casas matrices validando Bolivia') }}</h3>
-                    <p class="text-gray-600">Que necesitan validar su operación boliviana ante la sede central con un dictamen formal e independiente.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Directorios con decisiones relevantes') }}</h3>
-                    <p class="text-gray-600">Que quieren una revisión previa independiente antes de tomar decisiones de alto impacto.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas buscando financiamiento') }}</h3>
-                    <p class="text-gray-600">Que necesitan estados financieros auditados para presentar ante bancos o inversionistas.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Asociaciones con fondos comunes') }}</h3>
-                    <p class="text-gray-600">Entidades que administran fondos y necesitan revisión independiente para dar transparencia a sus miembros o financiadores.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas en venta, reorganización o con nuevos socios') }}</h3>
-                    <p class="text-gray-600">En proceso de venta, fusión o incorporación de socios que necesitan validación financiera previa.</p>
-                </div>
-            </div>
-            <div class="bg-primary/10 border-l-4 border-primary rounded-xl p-6 max-w-4xl mx-auto" data-aos="fade-up">
-                <p class="text-gray-700 text-lg">
-                    <strong class="text-primary">El problema que comparten:</strong> Tienen información financiera que alguien externo necesita validar — o que ellos mismos necesitan entender mejor antes de actuar.
-                </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
+                @foreach ([
+                    [__('Estados financieros'),             __('Revisión de información financiera preparada por la empresa. La emisión de dictamen formal debe definirse expresamente en la propuesta.')],
+                    [__('Revisión limitada'),               __('Evaluación técnica de información financiera específica con menor alcance que una auditoría completa.')],
+                    [__('Auditorías especiales'),           __('Trabajos enfocados en cuentas, operaciones, movimientos, documentación o situaciones concretas.')],
+                    [__('Fondos'),                          __('Revisión del origen, uso, administración y documentación de recursos específicos o proyectos.')],
+                    [__('Inventarios'),                     __('Análisis de registros, movimientos, saldos, valorización, diferencias y controles asociados, según alcance.')],
+                    [__('Revisión tributaria preventiva'),  __('Revisión de declaraciones, libros, respaldos y criterios para identificar contingencias antes de una fiscalización.')],
+                    [__('Procesos y control interno'),      __('Evaluación de procesos administrativos, contables, financieros o documentales para identificar debilidades y riesgos.')],
+                    [__('Procedimientos acordados'),        __('Ejecución de pruebas específicas previamente definidas con el cliente y reporte objetivo de resultados.')],
+                    [__('Seguimiento posterior'),           __('Puede contratarse por separado para revisar avances o conectar hallazgos con servicios complementarios.')],
+                ] as $i => [$t, $d])
+                <article class="p-5.5 bg-white border border-[#E6E1DE] rounded-[18px]" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                    <strong class="block text-lg mb-1.5">{{ $t }}</strong>
+                    <span class="text-[#5F5A5B] text-sm">{{ $d }}</span>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Qué incluye -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('Alcance del servicio') }}</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">El alcance se define en propuesta según las necesidades de cada empresa.</p>
+    <!-- Modelo digital -->
+    <section id="digital" class="py-9.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Modelo digital') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('La tecnología organiza la evidencia; el criterio profesional dirige la revisión.') }}</h2>
+                </div>
+                <p class="{{ $desc }}">{{ __('Las herramientas se utilizan para ordenar, comparar, documentar y presentar mejor la información. No son el servicio por sí mismas.') }}</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <div class="grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-4.5">
+                <article class="{{ $card }} p-5.5 md:p-6" data-aos="fade-right">
+                    <h3 class="text-xl font-bold tracking-[-0.02em] mb-2">{{ __('Herramientas que pueden apoyar el trabajo') }}</h3>
+                    <div class="grid gap-2.5 mt-4">
+                        @foreach ([
+                            ['Microsoft 365',          __('Coordinación y gestión de documentos durante el encargo.')],
+                            ['SharePoint',             __('Repositorio estructurado para documentación y evidencia cuando el alcance lo requiere.')],
+                            [__('Excel estructurado'), __('Matrices, cruces, conciliaciones, pruebas y seguimiento de observaciones.')],
+                            ['Power Query / Power BI', __('Transformación, comparación o visualización de información cuando aporta claridad al análisis.')],
+                            [__('IA como apoyo'),      __('Organización, clasificación o análisis preliminar bajo revisión profesional.')],
+                        ] as [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full bg-accent"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-sm">{{ $d }}</span></div>
+                        </div>
+                        @endforeach
                     </div>
+                </article>
+                <article class="{{ $card }} p-5.5 md:p-6" data-aos="fade-left" data-aos-delay="100">
+                    <table class="w-full border-collapse text-sm" aria-label="{{ __('Modelo digital de auditoría') }}">
+                        <thead>
+                            <tr>
+                                <th class="text-left px-2.75 py-3.25 text-[11px] uppercase tracking-[.12em] text-primary border-b border-[#E6E1DE]">{{ __('Elemento') }}</th>
+                                <th class="text-left px-2.75 py-3.25 text-[11px] uppercase tracking-[.12em] text-primary border-b border-[#E6E1DE]">{{ __('Qué organiza') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ([
+                                [__('Requerimiento'),      __('Qué información se solicitó, qué se recibió y qué sigue pendiente.')],
+                                [__('Evidencia'),          __('Documentos, reportes y respaldos asociados a cada procedimiento.')],
+                                [__('Matriz de hallazgos'),__('Observación, riesgo, sustento y estado de cada punto relevante.')],
+                                [__('Anexos'),             __('Cuadros, conciliaciones o análisis utilizados para explicar resultados.')],
+                                [__('Reporte'),            __('Conclusiones y recomendaciones según la naturaleza del encargo.')],
+                            ] as [$el, $org])
+                            <tr>
+                                <td class="align-top px-2.75 py-3.25 font-bold w-1/3 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">{{ $el }}</td>
+                                <td class="align-top px-2.75 py-3.25 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">{{ $org }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class="mt-4.5 px-4.5 py-4 rounded-2xl bg-accent/10 border-l-4 border-accent text-[#28525A]">{{ __('El modelo digital busca que la revisión sea reconstruible: saber qué se pidió, qué se revisó, qué evidencia existe y cómo se llegó a cada hallazgo.') }}</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entregables -->
+    <section id="entregables" class="py-9.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Entregables') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('El resultado debe poder leerse, discutirse y utilizarse.') }}</h2>
+                </div>
+                <p class="{{ $desc }}">{{ __('Los entregables exactos dependen del tipo de auditoría o revisión contratada y de la información disponible.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-4.5">
+                <article class="{{ $card }} p-5.5 md:p-6.5 bg-linear-to-b! from-white/96 to-[#F7F4F2]/98" data-aos="fade-right">
+                    <div class="text-[11px] uppercase tracking-[.12em] font-extrabold text-primary">{{ __('Entregable principal') }}</div>
+                    <h3 class="text-[25px] font-bold leading-normal tracking-[-0.02em] mb-2">{{ __('Informe o reporte de resultados') }}</h3>
+                    <p class="text-[#5F5A5B]">{{ __('Documento que organiza el alcance realizado, los principales hallazgos, las conclusiones y las recomendaciones cuando corresponda.') }}</p>
+                    <div class="flex flex-wrap gap-2.25 mt-4.5">
+                        @foreach ([__('Informe de auditoría / revisión'), __('Informe especial'), __('Revisión tributaria preventiva'), __('Fondos / inventarios')] as $t)
+                        <span class="px-3 py-2.25 rounded-full border border-[#E6E1DE] bg-white text-[13px] font-bold text-[#514A4B]">{{ $t }}</span>
+                        @endforeach
+                    </div>
+                </article>
+                <article class="{{ $card }} p-5.5 md:p-6" data-aos="fade-left" data-aos-delay="100">
+                    <h3 class="text-xl font-bold tracking-[-0.02em] mb-2">{{ __('Otros entregables posibles') }}</h3>
+                    <div class="grid gap-2.5 mt-4">
+                        @foreach ([
+                            [__('Matriz de hallazgos u observaciones'), __('Para ordenar puntos, evidencia y seguimiento.')],
+                            [__('Matriz de riesgos'),                   __('Cuando el alcance requiere una lectura estructurada de exposición o control.')],
+                            [__('Anexos y cuadros de soporte'),         __('Conciliaciones, cruces, análisis o respaldos preparados para el cliente.')],
+                            [__('Presentación ejecutiva'),              __('Cuando se acuerda una devolución para gerencia, socios o directorio.')],
+                            [__('Reunión de cierre'),                   __('Para explicar hallazgos, conclusiones y próximos pasos.')],
+                        ] as [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full bg-accent"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-sm">{{ $d }}</span></div>
+                        </div>
+                        @endforeach
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsabilidades -->
+    <section class="py-9.5">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Responsabilidades') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('Una auditoría funciona mejor cuando el alcance y la información están claros.') }}</h2>
+                </div>
+                <p class="{{ $desc }}">{{ __('La revisión requiere coordinación. OTIUM ejecuta el trabajo técnico; la empresa facilita información, acceso y contexto para que la evidencia pueda ser evaluada.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+                @foreach ([
+                    ['OTIUM', 'border-t-primary', 'bg-primary/10 text-primary', [
+                        __('Define y documenta el alcance acordado.'),
+                        __('Prepara el requerimiento documental.'),
+                        __('Ejecuta pruebas y revisiones según el encargo.'),
+                        __('Documenta evidencia, hallazgos y conclusiones.'),
+                        __('Comunica resultados de forma clara y ordenada.'),
+                    ]],
+                    [__('Su empresa'), 'border-t-accent', 'bg-accent/14 text-[#176675]', [
+                        __('Entrega información y respaldos dentro del alcance.'),
+                        __('Facilita acceso a responsables, sistemas o documentación necesaria.'),
+                        __('Aclara operaciones, criterios o situaciones que requieren contexto.'),
+                        __('Revisa observaciones preliminares cuando corresponda.'),
+                        __('Decide e implementa acciones posteriores fuera del alcance de auditoría.'),
+                    ]],
+                ] as $i => [$who, $border, $check, $items])
+                <article class="{{ $card }} p-5.5 md:p-6 border-t-[5px] {{ $border }}" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                    <h3 class="text-xl font-bold tracking-[-0.02em] mb-2">{{ $who }}</h3>
+                    <div class="grid gap-2.5 mt-3.5">
+                        @foreach ($items as $item)
+                        <div class="grid grid-cols-[24px_1fr] gap-2.5 text-[#474142] text-sm">
+                            <i class="w-5.5 h-5.5 grid place-items-center rounded-lg not-italic font-extrabold {{ $check }}">✓</i>
+                            <span>{{ $item }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Alcance adicional -->
+    <section id="alcance" class="py-9.5 scroll-mt-24">
+        <div class="container-2026">
+            <article class="{{ $card }} p-5.5 md:p-6.5 bg-linear-to-b! from-white/95 to-[#F7F4F2]/98" data-aos="fade-up">
+                <div class="inline-flex mb-4 px-3 py-2 rounded-full bg-primary/10 text-primary text-[11px] font-extrabold tracking-[.12em] uppercase">{{ __('Cuando el caso requiere un trabajo adicional') }}</div>
+                <h2 class="text-2xl font-bold leading-normal tracking-[-0.02em] mb-2">{{ __('Auditoría no es contabilidad, implementación ni defensa tributaria.') }}</h2>
+                <p>{{ __('Si durante la revisión aparecen necesidades operativas o trabajos especializados, se evalúan y cotizan separadamente según el caso.') }}</p>
+                <ul class="list-disc pl-5 mt-3 text-[#4C4647] md:columns-2 gap-8.5">
+                    @foreach ([
+                        __('Registro o corrección de asientos contables.'),
+                        __('Reconstrucción completa de contabilidad.'),
+                        __('Elaboración de estados financieros desde cero.'),
+                        __('Presentación o rectificación de declaraciones tributarias.'),
+                        __('Descargos y defensa ante fiscalizaciones.'),
+                        __('Implementación operativa de controles internos.'),
+                        __('Diseño completo de procesos administrativos.'),
+                        __('Valuación de empresas o due diligence integral.'),
+                        __('Administración documental permanente.'),
+                        __('Toma física completa de inventarios salvo contratación expresa.'),
+                    ] as $item)
+                    <li class="break-inside-avoid mb-2">{{ $item }}</li>
+                    @endforeach
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Qué cambia para el cliente -->
+    <section class="py-9.5">
+        <div class="container-2026">
+            <div class="{{ $head }}" data-aos="fade-up">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Qué cambia para el cliente') }}</div>
+                    <h2 class="{{ $h2 }}">{{ __('De información difícil de validar a una revisión que deja trazabilidad.') }}</h2>
+                </div>
+                <p class="{{ $desc }}">{{ __('El objetivo no es prometer ausencia de riesgos, sino mejorar la visibilidad sobre la información revisada y dejar claro qué requiere atención.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4.5">
+                @foreach ([
+                    [
+                        [__('Información dispersa'), __('Requerimiento y evidencia organizada')],
+                        [__('Diferencias sin explicación clara'), __('Hallazgos documentados')],
+                        [__('Dependencia de una persona'), __('Proceso de revisión trazable')],
+                    ],
+                    [
+                        [__('Riesgos poco visibles'), __('Puntos relevantes identificados')],
+                        [__('Reportes difíciles de discutir'), __('Conclusiones ordenadas para gerencia o socios')],
+                        [__('Problemas mezclados con la operación'), __('Separación entre auditoría y trabajos complementarios')],
+                    ],
+                ] as $i => $rows)
+                <article class="{{ $card }} overflow-hidden" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+                    @foreach ($rows as [$before, $after])
+                    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-1.25 md:gap-3.5 md:items-center px-5.5 py-4.5 {{ $loop->first ? '' : 'border-t border-[#E6E1DE]' }}">
+                        <div class="text-[#5F5A5B]">{{ $before }}</div>
+                        <div class="text-accent font-black w-max rotate-90 md:rotate-0" aria-hidden="true">→</div>
+                        <div class="font-bold">{{ $after }}</div>
+                    </div>
+                    @endforeach
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo empezamos -->
+    <section id="empezamos" class="pt-10.5 pb-14.5 scroll-mt-24">
+        <div class="container-2026">
+            <article class="{{ $card }} relative overflow-hidden p-5.5 md:p-9" data-aos="fade-up">
+                <span class="absolute -right-10 -bottom-10 w-57.5 h-57.5 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.17),rgba(84,186,199,0))] pointer-events-none"></span>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-6 items-center">
                     <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Auditoría
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Estados financieros</span>
-                        </h4>
-                        <p class="text-gray-600">Revisión de estados financieros — razonabilidad, consistencia y respaldo documental.</p>
+                        <div class="{{ $tag }}">{{ __('Cómo empezamos') }}</div>
+                        <h2 class="{{ $h2 }} text-[clamp(30px,3.5vw,46px)]! mb-2.5!">{{ __('Definamos qué necesita revisar su empresa y qué resultado espera obtener.') }}</h2>
+                        <p class="text-[#494344] text-[17px] max-w-[720px] mb-4">{{ __('Primero entendemos la situación actual, la razón de la revisión y la información disponible. Luego definimos alcance, responsabilidades, pruebas y entregables antes de iniciar el trabajo.') }}</p>
+                        <div class="flex flex-wrap gap-3.5 mt-6.5">
+                            <a href="{{ $waService }}" target="_blank" rel="noopener" class="{{ $btn }} bg-[#1F1617] text-white hover:bg-[#0d090a]">{{ __('Conversemos sobre su caso') }}</a>
+                        </div>
                     </div>
+                    <aside class="p-5.5 rounded-[20px] bg-[#F7F4F2] border border-[#E6E1DE]">
+                        <h3 class="text-lg font-bold tracking-[-0.02em] mb-2.5">{{ __('Variables que revisamos al inicio') }}</h3>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            @foreach ([__('Objetivo del encargo'), __('Período'), __('Información disponible'), __('Sistemas'), __('Áreas / cuentas'), __('Responsables internos'), __('Plazos'), __('Entregables requeridos')] as $var)
+                            <span class="px-2.5 py-2 rounded-full bg-white border border-[#E6E1DE] text-[#5F5A5B] text-xs font-bold">{{ $var }}</span>
+                            @endforeach
+                        </div>
+                    </aside>
                 </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Revisión limitada
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Focalizada</span>
-                        </h4>
-                        <p class="text-gray-600">Evaluación técnica focalizada sin alcance de auditoría completa — cuando se necesita una opinión rápida y documentada.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Especial
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Fondos y cuentas</span>
-                        </h4>
-                        <p class="text-gray-600">Fondos, cuentas específicas, gastos, ingresos o áreas definidas según el encargo del cliente.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Inventarios
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Registros físicos</span>
-                        </h4>
-                        <p class="text-gray-600">Registros, movimientos, valorización y diferencias documentales en inventarios físicos y contables.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Preventiva
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Tributaria</span>
-                        </h4>
-                        <p class="text-gray-600">Revisión tributaria preventiva — identificación de contingencias antes de que escalen ante el SIN.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Control interno
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Procesos</span>
-                        </h4>
-                        <p class="text-gray-600">Revisión de procesos y control interno — identificación de debilidades y recomendaciones de mejora.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 md:col-span-2" data-aos="fade-up">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Acordados
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">A medida</span>
-                        </h4>
-                        <p class="text-gray-600">Procedimientos específicos definidos por el cliente cuando se necesita una revisión con criterio propio y alcance personalizado.</p>
-                    </div>
-                </div>
-            </div>
+            </article>
         </div>
     </section>
 
-    <!-- Qué recibe el cliente -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Dictamen formal registrado ante el <strong class="text-primary">CAUB</strong></p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Informe de auditoría o revisión</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Matriz de hallazgos y observaciones</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Recomendaciones técnicas vinculadas</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Carta de control interno cuando corresponde</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Informe de revisión tributaria preventiva</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Presentación ejecutiva para directorio</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Reunión de cierre con hallazgos y conclusiones</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Por qué Otium vs. revisión informal -->
-    <section class="py-20 bg-secondary text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. la revisión informal') }}</h2>
-            <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr>
-                            <th class="text-left p-4 bg-white/10 rounded-tl-xl font-bold text-white/70 text-sm uppercase tracking-wider w-1/2">Revisión informal</th>
-                            <th class="text-left p-4 bg-primary rounded-tr-xl font-bold text-white text-sm uppercase tracking-wider w-1/2">Otium</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10">
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin respaldo profesional registrado</td>
-                            <td class="p-4 text-white font-medium">Dictamen formal registrado ante el <strong>CAUB</strong> — Colegio de Auditores de Bolivia</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">"Le pedimos al contador que revise"</td>
-                            <td class="p-4 text-white font-medium">Revisión independiente del contador habitual</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin alcance definido ni metodología</td>
-                            <td class="p-4 text-white font-medium">Alcance acordado, pruebas selectivas y papeles de trabajo</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Resultados verbales o informales</td>
-                            <td class="p-4 text-white font-medium">Informe escrito con hallazgos, riesgos y recomendaciones</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">No identifica riesgos tributarios</td>
-                            <td class="p-4 text-white font-medium">Revisión tributaria preventiva disponible</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 rounded-bl-xl text-white/70 border-r border-white/10">Sin herramientas digitales</td>
-                            <td class="p-4 rounded-br-xl text-white font-medium">Excel, Power Query, SharePoint y Power BI para trazabilidad</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
-            <div class="space-y-4" x-data="{ active: null }">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Qué significa que el dictamen esté registrado ante el CAUB?</span>
-                        <span x-text="active === 1 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 1" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        El CAUB es el Colegio de Auditores de Bolivia. Un dictamen registrado ante este organismo tiene validez oficial y respaldo profesional reconocido — es lo que bancos, socios e inversionistas necesitan ver cuando requieren una opinión independiente verificable.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Por qué realizar una auditoría si no estoy obligado?</span>
-                        <span x-text="active === 2 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 2" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Una auditoría voluntaria puede revelar riesgos, contingencias tributarias y oportunidades de mejora antes de que escalen. También aporta transparencia para socios, financiadores o casas matrices que necesitan información confiable.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cuánto tiempo toma y cuánto involucramiento requiere?</span>
-                        <span x-text="active === 3 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 3" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Depende del alcance definido en propuesta. Una auditoría financiera típica toma algunas semanas; una revisión limitada puede ser más rápida. En todos los casos, el equipo de Otium trabaja con un cronograma claro para no entorpecer la operación diaria.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cómo manejan la confidencialidad?</span>
-                        <span x-text="active === 4 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 4" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Firmamos acuerdos de confidencialidad y aplicamos protocolos estrictos de seguridad. Toda la documentación se resguarda y se usa exclusivamente para el encargo acordado.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 5 ? null : 5)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Si detectan un problema serio o riesgo tributario?</span>
-                        <span x-text="active === 5 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 5" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Lo comunicamos de inmediato con criterio técnico. Asesoramos sobre las implicaciones y los pasos a seguir. Nuestro rol es informar objetivamente — la decisión final recae en la empresa.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="contact" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Necesitas una opinión profesional independiente?') }}</h2>
-            <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctanos y definimos juntos el alcance y el tipo de revisión que tu empresa necesita.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
-            </div>
-        </div>
-    </section>
-
+    </div>
 </x-layout>

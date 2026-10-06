@@ -2,394 +2,223 @@
     title="Outsourcing Contable Digital Bolivia | Otium"
     description="Equipo contable externo con gestión tributaria incluida, SharePoint y reportes en la nube para empresas en Bolivia."
 >
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <div class="absolute top-0 right-0 w-150 h-150 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+    @php
+        $wa = env('WHATSAPP_NUMBER', '59170654104');
+        $waService = 'https://wa.me/' . $wa . '?text=' . rawurlencode(__('Hola, quiero información sobre Outsourcing Contable Digital.'));
+    @endphp
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+    <!-- Hero -->
+    <section class="relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-20 bg-white">
+        <div class="absolute -right-14 top-0 w-72 h-3 bg-secondary -skew-x-[28deg] pointer-events-none"></div>
 
-                <!-- Texto -->
-                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
-                    <span class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Outsourcing contable</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        {{ __('Outsourcing Contable Digital') }}
+        <div class="container-2026 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.08fr_.92fr] gap-9 lg:gap-18 items-center">
+                <div>
+                    <span class="inline-block mb-3 text-xs font-bold uppercase tracking-[.105em] text-primary" data-aos="fade-up">OTIUM | {{ __('Outsourcing Contable Digital') }}</span>
+                    <h1 class="text-[clamp(46px,6vw,78px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-black max-w-[800px]" data-aos="fade-up" data-aos-delay="50">
+                        {{ __('Su contabilidad debería cerrar el mes con información') }} <span class="text-primary">{{ __('ordenada, conciliada y disponible.') }}</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light">
-                        {{ __('Equipo contable externo con gestión tributaria incluida, SharePoint y reportes en la nube.') }}
+                    <p class="mt-6 text-muted text-[clamp(17px,1.45vw,20px)] max-w-[720px]" data-aos="fade-up" data-aos-delay="100">
+                        {{ __('Asumimos el registro, revisión y seguimiento contable mensual de su empresa, integrando gestión tributaria y una estructura documental en SharePoint para que la información tenga respaldo, trazabilidad y continuidad.') }}
                     </p>
-                    <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg">
-                        "Contabilidad mensual, gestión tributaria integrada y documentación en la nube para que tu empresa tenga información clara, útil y accesible desde donde estés."
-                    </blockquote>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="{{ route('contact') }}"
-                            class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
-                            {{ __('Solicitar información') }}
-                        </a>
-                        <a href="/pdfs/brochures/Otium_Outsourcing_Contable_Digital.pdf" download
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
-                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
-                            {{ __('Descargar brochure') }}
-                        </a>
+                    <div class="flex flex-wrap gap-3 mt-8" data-aos="fade-up" data-aos-delay="150">
+                        <x-svc.btn href="#proceso">{{ __('Ver cómo trabajamos') }} ↓</x-svc.btn>
+                        <x-svc.btn href="#entregables" variant="secondary">{{ __('Ver entregables') }}</x-svc.btn>
+                    </div>
+                    <div class="flex gap-2.5 items-start mt-6.5 max-w-[720px] text-sm text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <span class="text-accent text-base leading-tight">●</span>
+                        <span><b class="text-black">{{ __('No se trata solo de registrar.') }}</b> {{ __('El servicio organiza el flujo mensual: qué información entra, dónde se documenta, qué se concilia, qué se observa y qué recibe la administración.') }}</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mt-7" aria-label="{{ __('Diferenciales principales') }}" data-aos="fade-up" data-aos-delay="250">
+                        @foreach ([
+                            [__('Gestión tributaria incluida'), __('Contabilidad e impuestos dentro del mismo proceso mensual.')],
+                            [__('SharePoint documental'), __('Respaldos y reportes centralizados en la nube.')],
+                            [__('Equipo contable externo'), __('Registro, revisión, cierre y seguimiento coordinados.')],
+                        ] as [$t, $d])
+                        <div class="px-3.5 py-3 bg-soft border border-line">
+                            <strong class="block mb-0.5 text-xs text-black">{{ $t }}</strong>
+                            <span class="text-[11.5px] text-muted">{{ $d }}</span>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <!-- Imagen flotante -->
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="900">
-                    <div class="relative w-full max-w-sm md:max-w-md">
-                        <div class="absolute inset-0 bg-primary/40 rounded-2xl translate-x-4 translate-y-4"></div>
-                        <div class="absolute -top-3 -left-3 w-16 h-16 border-4 border-white/30 rounded-xl"></div>
-                        <img src="/images/otium/carousel/outsourcung_contable.png"
-                            alt="Outsourcing Contable Digital Otium"
-                            class="relative z-10 rounded-2xl shadow-2xl w-full h-72 md:h-80 object-cover object-center animate-float">
-                    </div>
-                </div>
-
+                <x-svc.hero-panel :title="__('El ciclo contable mensual')" :status="__('Proceso recurrente')" :label="__('Resumen del ciclo contable mensual')" :steps="[
+                    ['title' => __('Información'),             'desc' => __('Facturas, bancos, comprobantes, planillas, contratos y reportes.')],
+                    ['title' => __('Organización'),            'desc' => __('Documentación centralizada y estructurada en SharePoint.')],
+                    ['title' => __('Registro'),                'desc' => __('Compras, ventas, gastos, ingresos, bancos, sueldos e impuestos.')],
+                    ['title' => __('Conciliación + revisión'), 'desc' => __('Bancos, respaldos, cuentas y pendientes que requieren aclaración.')],
+                    ['title' => __('Cierre + tributos'),       'desc' => __('Cierre contable y gestión tributaria vinculada al período.')],
+                    ['title' => __('Reportes + seguimiento'),  'desc' => __('Estados financieros, observaciones y próximos pendientes.')],
+                ]" />
             </div>
         </div>
     </section>
 
-    <!-- Intro / Description -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-teal-50 rounded-2xl transform translate-x-4 translate-y-4"></div>
-                        <img src="/images/otium/carousel/outsourcung_contable.png" alt="Outsourcing Contable Otium"
-                            class="relative rounded-2xl shadow-xl w-full h-100 object-cover">
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Outsourcing Contable</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Tu equipo contable externo, con todo incluido') }}</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        En Otium funcionamos como el equipo contable externo de tu empresa: registramos, revisamos y organizamos tu información financiera mensual con procesos digitales, documentación centralizada en SharePoint y gestión tributaria incluida.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        No solo cumplimos obligaciones — conciliamos bancos, identificamos pendientes, revisamos respaldos y preparamos reportes claros para que la contabilidad sea una herramienta real de gestión. Ideal para empresas que operan en Bolivia y necesitan información confiable, accesible desde cualquier lugar y respaldada correctamente.
-                    </p>
-                </div>
+    <!-- Qué problema resolvemos -->
+    <section id="problema" class="py-16 md:py-22 bg-soft scroll-mt-24">
+        <div class="container-2026">
+            <x-svc.section-head :eyebrow="__('Qué problema resolvemos')" :title="__('Tener contabilidad no siempre significa tener información contable bajo control.')">
+                {{ __('El problema aparece cuando la información existe, pero está dispersa, llega tarde, no concilia o resulta difícil reconstruir cuando gerencia, un auditor, un banco o un socio la necesita.') }}
+            </x-svc.section-head>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4.5">
+                <x-svc.card :n="1" :title="__('Información dispersa')">{{ __('Facturas, comprobantes, extractos y contratos distribuidos entre correo, WhatsApp, carpetas y sistemas.') }}</x-svc.card>
+                <x-svc.card :n="2" :title="__('Cierres tardíos')">{{ __('La información se acumula y el cierre mensual se convierte en un ejercicio de reconstrucción e improvisación.') }}</x-svc.card>
+                <x-svc.card :n="3" :title="__('Poca conciliación')">{{ __('Diferencias entre bancos, comprobantes, facturas y registros quedan sin aclararse durante el período.') }}</x-svc.card>
+                <x-svc.card :n="4" :title="__('Poca lectura gerencial')">{{ __('La empresa cumple, pero no siempre cuenta con información oportuna para revisar resultados, pendientes y decisiones.') }}</x-svc.card>
             </div>
         </div>
     </section>
 
-    <!-- Para quién es -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    Empresas que operan en Bolivia — con capital local o extranjero — que necesitan una contabilidad mensual ordenada, revisada y acompañada por un equipo externo especializado.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas con capital extranjero') }}</h3>
-                    <p class="text-gray-600">O socios fuera de Bolivia que necesitan visibilidad real sobre los números sin depender de presencia local constante.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Subsidiarias con casa matriz internacional') }}</h3>
-                    <p class="text-gray-600">Que reportan al exterior y necesitan información contable ordenada, trazable y accesible desde cualquier lugar.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Negocios que superaron la informalidad contable') }}</h3>
-                    <p class="text-gray-600">Que crecieron y ahora necesitan una gestión contable profesional, ordenada y sustentada.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas familiares que profesionalizan') }}</h3>
-                    <p class="text-gray-600">Que quieren profesionalizar su gestión contable y tributaria sin incorporar personal fijo.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas comerciales, gastronómicas y de servicios') }}</h3>
-                    <p class="text-gray-600">Con operaciones regulares que necesitan contabilidad mensual confiable y gestión tributaria integrada.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas sin contador interno') }}</h3>
-                    <p class="text-gray-600">O con administración parcial que necesitan un equipo externo que cubra todo el ciclo contable y tributario.</p>
-                </div>
-            </div>
-            <div class="bg-primary/10 border-l-4 border-primary rounded-xl p-6 max-w-4xl mx-auto" data-aos="fade-up">
-                <p class="text-gray-700 text-lg">
-                    <strong class="text-primary">El problema que comparten:</strong> Su contabilidad existe, pero está atrasada, dispersa o sirve solo para cumplir — no para decidir. Gerencia o los socios (muchas veces desde otro país) no tienen visibilidad real de los números.
-                </p>
+    <!-- Qué hacemos -->
+    <section id="que-hacemos" class="py-16 md:py-22 bg-white scroll-mt-24">
+        <div class="container-2026">
+            <x-svc.section-head :eyebrow="__('Qué hacemos por su empresa')" :title="__('Un equipo externo que registra, revisa, concilia y documenta cada período.')">
+                {{ __('El alcance se adapta al movimiento y complejidad de la empresa, pero el objetivo es mantener un proceso mensual visible y ordenado.') }}
+            </x-svc.section-head>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4.5">
+                <x-svc.card :n="1" :title="__('Registro contable')">{{ __('Compras, ventas, ingresos, gastos, bancos, sueldos, cargas sociales, impuestos y asientos contables.') }}</x-svc.card>
+                <x-svc.card :n="2" :title="__('Conciliaciones')">{{ __('Contrastamos movimientos bancarios con registros y respaldos disponibles del período.') }}</x-svc.card>
+                <x-svc.card :n="3" :title="__('Revisión documental')">{{ __('Identificamos respaldos faltantes, inconsistencias y operaciones que requieren aclaración.') }}</x-svc.card>
+                <x-svc.card :n="4" :title="__('Gestión tributaria')">{{ __('Integramos las obligaciones tributarias mensuales con la información contable de la empresa.') }}</x-svc.card>
+                <x-svc.card :n="5" :title="__('Cierre contable')">{{ __('Preparamos cierres mensuales y anuales según la información entregada y el alcance definido.') }}</x-svc.card>
+                <x-svc.card :n="6" :title="__('Reportes base')">{{ __('Balance General, Estado de Resultados, mayores, sumas y saldos y otros reportes acordados.') }}</x-svc.card>
+                <x-svc.card :n="7" :title="__('Preparación para auditoría')">{{ __('Organizamos información contable y respaldos para facilitar revisiones externas cuando corresponda.') }}</x-svc.card>
+                <x-svc.card :n="8" :title="__('Seguimiento')">{{ __('Mantenemos visibles observaciones, documentos pendientes y temas que deben resolverse con el cliente.') }}</x-svc.card>
             </div>
         </div>
     </section>
 
-    <!-- Qué incluye -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué incluye el servicio?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Registro contable mensual completo</h4>
-                        <p class="text-gray-600">Compras, ventas, ingresos, gastos, bancos, impuestos, sueldos y cargas sociales.</p>
-                    </div>
+    <!-- Proceso principal -->
+    <section id="proceso" class="py-16 md:py-22 bg-soft scroll-mt-24">
+        <div class="container-2026">
+            <x-svc.process
+                :eyebrow="__('Proceso principal')"
+                :title="__('Un ciclo mensual que convierte documentos en información contable utilizable.')"
+                :intro="__('La periodicidad puede variar según el movimiento del cliente, pero el cierre mensual funciona mejor cuando la información se entrega durante el período y existe una contraparte administrativa definida.')"
+                :steps="[
+                    ['title' => __('Recibimos'),            'desc' => __('Facturas, extractos, comprobantes, planillas, contratos, inventarios y reportes del período.')],
+                    ['title' => __('Organizamos'),          'desc' => __('Centralizamos la documentación en SharePoint y mantenemos una estructura trazable.')],
+                    ['title' => __('Registramos'),          'desc' => __('Procesamos operaciones contables y actualizamos la información del período.')],
+                    ['title' => __('Conciliamos'),          'desc' => __('Contrastamos bancos, comprobantes y registros; identificamos diferencias y pendientes.')],
+                    ['title' => __('Revisamos + cerramos'), 'desc' => __('Analizamos cuentas, respaldos y obligaciones tributarias antes del cierre mensual.')],
+                    ['title' => __('Reportamos'),           'desc' => __('Entregamos información contable, observaciones y seguimiento para el siguiente período.')],
+                ]"
+            >
+                <div class="flex flex-wrap gap-2 mt-5.5 pt-5.5 border-t border-line" aria-label="{{ __('Información habitual del proceso') }}">
+                    @foreach ([__('Compras'), __('Ventas'), __('Bancos'), __('Comprobantes'), __('Sueldos'), __('Impuestos'), __('Contratos'), __('Inventarios cuando aplica')] as $pill)
+                    <span class="px-3 py-2 bg-white border border-mid text-muted text-xs">{{ $pill }}</span>
+                    @endforeach
                 </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Conciliaciones bancarias y revisión de respaldos</h4>
-                        <p class="text-gray-600">Verificación mensual de movimientos y revisión del sustento documental de cada operación.</p>
-                    </div>
+                <div class="mt-5 px-4 py-3.5 border-l-4 border-accent bg-accent/8 text-muted text-[13px]">
+                    <strong class="text-black">{{ __('Objetivo de cierre:') }}</strong> {{ __('cuando la empresa entrega extractos y documentación regularmente y existe una contraparte administrativa activa, OTIUM puede trabajar con el día 10 del mes siguiente como fecha objetivo de cierre. La fecha concreta depende de la operación y de la entrega oportuna de la información.') }}
                 </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Cierre contable mensual y anual</h4>
-                        <p class="text-gray-600">Proceso de cierre ordenado con trazabilidad completa del período.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Gestión tributaria mensual
-                            <span class="ml-2 inline-block bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded">Incluido</span>
-                        </h4>
-                        <p class="text-gray-600">IVA, IT, IUE y otras según actividad — integrada al proceso contable, no como servicio separado.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Estructura documental en SharePoint</h4>
-                        <p class="text-gray-600">Organización de documentos en la nube con acceso remoto para el cliente desde cualquier lugar.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Estados financieros y mayores contables</h4>
-                        <p class="text-gray-600">Balance General, Estado de Resultados, mayores contables, sumas y saldos.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Seguimiento de pendientes y observaciones</h4>
-                        <p class="text-gray-600">Control de documentación faltante y pendientes de regularización con reporte mensual proactivo.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Dashboards en Power BI
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-0.5 rounded">Evolución</span>
-                        </h4>
-                        <p class="text-gray-600">Según alcance y madurez de la información de cada empresa.</p>
-                    </div>
-                </div>
-            </div>
+            </x-svc.process>
+        </div>
+    </section>
+
+    <!-- Modelo digital / SharePoint -->
+    <section id="digital" class="py-16 md:py-22 bg-white scroll-mt-24">
+        <div class="container-2026">
+            <x-svc.section-head :eyebrow="__('Modelo digital / SharePoint')" :title="__('La nube organiza la evidencia del proceso contable.')">
+                {{ __('SharePoint forma parte del servicio para centralizar documentos, respaldos, reportes y archivos relevantes. La tecnología sirve para ordenar y reconstruir la información; no reemplaza el criterio contable.') }}
+            </x-svc.section-head>
+            <x-svc.digital
+                :title="__('Un repositorio que acompaña el trabajo')"
+                :copy="__('Microsoft 365, SharePoint, Excel estructurado, Power Query, software contable y herramientas del SIN forman parte del ecosistema de trabajo. Según el caso también podemos utilizar Power BI, Power Automate e IA aplicada a revisión, clasificación, análisis o redacción de observaciones.')"
+                :label="__('Arquitectura digital del outsourcing contable')"
+                :nodes="[
+                    ['label' => __('Entrada'),       'title' => __('Documentos + sistemas'),                'desc' => __('Facturas, bancos, comprobantes, planillas, reportes y accesos.')],
+                    ['label' => __('Trabajo OTIUM'), 'title' => __('SharePoint + contabilidad + revisión'), 'desc' => __('Organización, registro, conciliación, control y seguimiento.')],
+                    ['label' => __('Salida'),        'title' => __('Cierre + reportes + respaldo'),         'desc' => __('Estados financieros, observaciones, pendientes y archivo trazable.')],
+                ]" />
         </div>
     </section>
 
     <!-- Qué recibe el cliente -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Contabilidad mensual actualizada</p>
+    <section id="entregables" class="py-16 md:py-22 bg-soft scroll-mt-24">
+        <div class="container-2026">
+            <x-svc.section-head :eyebrow="__('Qué recibe el cliente')" :title="__('Información que permite ver qué está registrado, qué está conciliado y qué sigue pendiente.')">
+                {{ __('La combinación exacta depende del alcance acordado, la operación del cliente y la información disponible durante cada período.') }}
+            </x-svc.section-head>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4.5">
+                <x-svc.card :n="1" :title="__('Estados financieros')">{{ __('Balance General y Estado de Resultados cuando la información y el alcance permiten su preparación mensual.') }}</x-svc.card>
+                <x-svc.card :n="2" :title="__('Mayores y saldos')">{{ __('Mayores contables, sumas y saldos y análisis de cuentas según necesidad.') }}</x-svc.card>
+                <x-svc.card :n="3" :title="__('Conciliaciones')">{{ __('Conciliaciones bancarias y seguimiento de diferencias o partidas que requieren aclaración.') }}</x-svc.card>
+                <x-svc.card :n="4" :title="__('Observaciones + pendientes')">{{ __('Documentación faltante, temas contables relevantes y asuntos que requieren respuesta del cliente.') }}</x-svc.card>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4.5 mt-5">
+                <div class="p-6 bg-white border border-line border-t-[5px] border-t-primary" data-aos="fade-up">
+                    <small class="block mb-2 text-primary text-xs font-extrabold uppercase tracking-[.08em]">{{ __('Base documental') }}</small>
+                    <h3 class="text-[23px] font-bold leading-[1.08] tracking-[-0.02em] mb-2">{{ __('SharePoint contable actualizado') }}</h3>
+                    <p class="text-muted text-sm">{{ __('Un espacio organizado para respaldos, reportes y documentación relevante del servicio.') }}</p>
                 </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Balance General y Estado de Resultados</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Mayores contables y sumas y saldos</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Conciliaciones bancarias</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Declaraciones tributarias del período</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Reporte de observaciones y pendientes</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Estructura documental en SharePoint</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Información preparada para auditoría externa</p>
+                <div class="p-6 bg-white border border-line border-t-[5px] border-t-accent" data-aos="fade-up" data-aos-delay="100">
+                    <small class="block mb-2 text-[#2e8792] text-xs font-extrabold uppercase tracking-[.08em]">{{ __('Según alcance') }}</small>
+                    <h3 class="text-[23px] font-bold leading-[1.08] tracking-[-0.02em] mb-2">{{ __('Reportes para gestión') }}</h3>
+                    <p class="text-muted text-sm">{{ __('Cuentas por cobrar, cuentas por pagar, ingresos, gastos, indicadores o Power BI pueden incorporarse según la necesidad y madurez de la información.') }}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Por qué Otium vs. contador tradicional -->
-    <section class="py-20 bg-secondary text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. el contador tradicional') }}</h2>
-            <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr>
-                            <th class="text-left p-4 bg-white/10 rounded-tl-xl font-bold text-white/70 text-sm uppercase tracking-wider w-1/2">Contador tradicional</th>
-                            <th class="text-left p-4 bg-primary rounded-tr-xl font-bold text-white text-sm uppercase tracking-wider w-1/2">Otium</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10">
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Archivos en su computadora</td>
-                            <td class="p-4 text-white font-medium">Documentación en SharePoint, accesible para el cliente</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Reporta cuando le preguntan</td>
-                            <td class="p-4 text-white font-medium">Observaciones y pendientes proactivos cada mes</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Contabilidad y tributación separadas</td>
-                            <td class="p-4 text-white font-medium">Gestión tributaria mensual incluida en un solo proceso</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Información solo disponible localmente</td>
-                            <td class="p-4 text-white font-medium">Acceso desde cualquier lugar — clave para socios internacionales</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Dependencia de una sola persona</td>
-                            <td class="p-4 text-white font-medium">Equipo con criterio contable, tributario y tecnológico</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 rounded-bl-xl text-white/70 border-r border-white/10">Registra para cumplir</td>
-                            <td class="p-4 rounded-br-xl text-white font-medium">Registra, revisa, concilia y prepara para decidir</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Responsabilidades -->
+    <section id="responsabilidades" class="py-16 md:py-22 bg-white scroll-mt-24">
+        <div class="container-2026">
+            <x-svc.section-head :eyebrow="__('Responsabilidades')" :title="__('Una contabilidad mensual ordenada necesita coordinación entre OTIUM y su empresa.')">
+                {{ __('El mejor resultado se logra cuando existe una contraparte administrativa que entrega información regularmente y ayuda a resolver las aclaraciones del día a día.') }}
+            </x-svc.section-head>
+            <x-svc.responsibilities
+                :otium="[
+                    __('Registra y clasifica la información contable recibida.'),
+                    __('Conciliamos movimientos bancarios y revisamos respaldos disponibles.'),
+                    __('Gestionamos las obligaciones tributarias mensuales vinculadas a la contabilidad.'),
+                    __('Preparamos cierres, reportes y observaciones según alcance.'),
+                    __('Organizamos y documentamos el trabajo en SharePoint.'),
+                ]"
+                :client="[
+                    __('Entrega facturas, extractos, comprobantes y demás respaldos requeridos.'),
+                    __('Facilita accesos a sistemas contables, administrativos o tributarios cuando corresponda.'),
+                    __('Responde aclaraciones sobre operaciones que requieren contexto del negocio.'),
+                    __('Mantiene una contraparte administrativa para coordinar el flujo de información.'),
+                    __('Aprueba o ejecuta decisiones y correcciones que correspondan a su operación interna.'),
+                ]" />
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
-            <div class="space-y-4" x-data="{ active: null }">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿La gestión tributaria está realmente incluida?</span>
-                        <span x-text="active === 1 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 1" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. La gestión tributaria mensual (IVA, IT, IUE y otras según actividad) está integrada al proceso contable, no es un servicio adicional. Es parte del flujo de trabajo mensual de Otium.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cómo funciona el acceso al SharePoint?</span>
-                        <span x-text="active === 2 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 2" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Configuramos una estructura de carpetas en SharePoint donde se centraliza toda la documentación contable y tributaria. El cliente tiene acceso directo y puede consultar cualquier documento en cualquier momento, desde cualquier lugar.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Qué pasa si ya tengo un contador interno?</span>
-                        <span x-text="active === 3 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 3" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Podemos complementarlo. Nos encargamos de tareas operativas o especializadas, liberándolo para roles más analíticos y de revisión. También podemos funcionar como respaldo o equipo de soporte técnico.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Qué tamaño de empresa atienden?</span>
-                        <span x-text="active === 4 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 4" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Atendemos desde empresas en crecimiento hasta subsidiarias con reporte internacional. Adaptamos el alcance y la periodicidad de los reportes al volumen y necesidades de cada cliente.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 5 ? null : 5)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cómo empiezo con Otium?</span>
-                        <span x-text="active === 5 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 5" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Solo una reunión inicial. Revisamos tu situación contable actual, definimos el alcance del servicio y presentamos una propuesta adaptada a tu empresa.
-                    </div>
-                </div>
-            </div>
+    <!-- Alcance especial -->
+    <section id="alcance-especial" class="py-12 md:py-15.5 bg-soft">
+        <div class="container-2026">
+            <x-svc.scope
+                :eyebrow="__('Cuando la necesidad va más allá del mes')"
+                :title="__('También desarrollamos trabajos contables y financieros específicos.')"
+                :items="[__('Balances de apertura.'), __('Liquidación de empresas.'), __('Valuación de empresas.'), __('Análisis de CAPEX y OPEX.'), __('Evaluación de rentabilidad de negocios.')]"
+                :note="__('Estos trabajos se evalúan y cotizan separadamente según el caso. Auditoría financiera, fiscalizaciones complejas, implementación completa de sistemas, administración de pagos y dashboards avanzados también requieren un alcance específico.')" />
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contact" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Tu contabilidad trabaja para tu empresa o solo para cumplir?') }}</h2>
-            <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctanos y revisamos juntos cómo podemos ordenar, digitalizar y potenciar tu gestión contable y tributaria.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
-            </div>
+    <!-- Qué cambia para el cliente -->
+    <section id="cambio" class="py-16 md:py-22 bg-white">
+        <div class="container-2026">
+            <x-svc.section-head :eyebrow="__('Qué cambia para el cliente')" :title="__('El valor se ve en la forma de cerrar y reconstruir la información.')">
+                {{ __('OTIUM no promete eliminar todo riesgo contable o tributario. El objetivo es que el proceso mensual sea más ordenado, trazable y visible para la administración.') }}
+            </x-svc.section-head>
+            <x-svc.change :pairs="[
+                [__('Documentos repartidos entre personas, correos, chats y carpetas.'), __('Documentación contable centralizada y organizada en SharePoint.')],
+                [__('El cierre empieza cuando el mes ya terminó y faltan datos por reconstruir.'), __('Información recibida y trabajada durante el período para facilitar el cierre.')],
+                [__('Diferencias bancarias o respaldos incompletos quedan ocultos hasta una revisión.'), __('Conciliaciones, observaciones y pendientes visibles para seguimiento.')],
+                [__('La contabilidad sirve principalmente para cumplir.'), __('La base contable puede evolucionar hacia reportes e información para gerencia.')],
+            ]" />
         </div>
     </section>
 
+    <!-- Cómo empezamos -->
+    <x-svc.start
+        :title="__('Revisemos primero cómo está cerrando hoy su contabilidad.')"
+        :text="__('Entendemos el volumen de operaciones, la calidad de la información, los sistemas utilizados, los responsables internos y los reportes que necesita la empresa. A partir de eso definimos alcance, frecuencia, responsabilidades y forma de trabajo.')"
+        :variables="[__('Volumen de documentos'), __('Número de bancos y cuentas'), __('Sistemas utilizados'), __('Contraparte administrativa'), __('Estado de la contabilidad actual'), __('Reportes requeridos'), __('Información histórica pendiente'), __('Necesidades tributarias')]"
+        :card-title="__('El alcance correcto empieza entendiendo cómo funciona realmente la empresa.')"
+        :card-text="__('El Outsourcing Contable Digital está pensado para empresas que buscan algo más que registrar y declarar: quieren un proceso mensual ordenado, documentado y acompañado por un equipo externo.')"
+        :cta-href="$waService"
+        :cta-label="__('Conversemos sobre su contabilidad')" />
 </x-layout>

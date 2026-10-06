@@ -2,400 +2,377 @@
     title="Constitución y Formalización de Empresas en Bolivia | Otium"
     description="Constitución de empresas en Bolivia: SEPREC, NIT, facturación electrónica y documentación organizada desde el primer día. Acompañamiento legal, contable y tributario."
 >
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden text-white bg-secondary">
-        <div class="absolute top-0 right-0 w-150 h-150 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-multiply blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+    @php
+        $wa = env('WHATSAPP_NUMBER', '59170654104');
+        $waService = 'https://wa.me/' . $wa . '?text=' . rawurlencode(__('Hola, quiero información sobre Constitución de Empresas.'));
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+        // Estilos repetidos del diseño "Constitución y Formalización 2026"
+        $card   = 'bg-white/94 border border-[#1F1617]/8 rounded-3xl shadow-[0_18px_40px_rgba(31,22,23,.08)]';
+        $tag    = 'text-xs uppercase tracking-[.14em] text-primary font-bold mb-2';
+        $h2     = 'text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.55] tracking-[-0.02em] mb-1.5';
+        $desc   = 'max-w-[760px] text-[#4E4849] text-[17px] mb-4';
+        $kicker = 'inline-flex items-center gap-2 mb-4.5 px-3 py-2 rounded-full text-xs uppercase tracking-[.12em] font-bold';
+        $btn    = 'inline-flex items-center gap-2.5 px-4.5 py-3.5 rounded-[14px] font-bold text-[15px] transition-all hover:-translate-y-px';
+        $note   = 'mt-4 px-4.5 py-4 rounded-2xl border-l-4';
+    @endphp
 
-                <!-- Texto -->
-                <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
-                    <span class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Constitución de empresas</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        {{ __('Constitución y Formalización de Empresas en Bolivia') }}
-                    </h1>
-                    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-light">
-                        {{ __('SEPREC · NIT · Facturación electrónica · Documentación organizada desde el primer día.') }}
-                    </p>
-                    <blockquote class="border-l-4 border-primary pl-5 mb-10 text-white/80 italic text-lg">
-                        "Tu empresa nace una sola vez — conviene hacerlo bien: estructura formal, obligaciones claras, facturación lista y documentación organizada desde el día uno."
-                    </blockquote>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="{{ route('contact') }}"
-                            class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-primary transition-all transform hover:-translate-y-1">
-                            {{ __('Solicitar información') }}
-                        </a>
-                        <a href="/pdfs/brochures/Otium_Constitucion_Empresas.pdf" download
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
-                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
-                            {{ __('Descargar brochure') }}
-                        </a>
-                    </div>
+    <div class="text-[#1F1617] leading-[1.55]" style="background: radial-gradient(circle at top right, rgba(84,186,199,.12), transparent 22%), radial-gradient(circle at top left, rgba(180,46,37,.06), transparent 24%), linear-gradient(180deg, #fbf9f8 0%, #f7f4f2 100%);">
+
+    <!-- Hero -->
+    <section class="pt-32 pb-7 md:pt-36">
+        <div class="container-2026 grid grid-cols-1 lg:grid-cols-[1.18fr_.82fr] gap-7 items-stretch">
+            <article class="{{ $card }} relative overflow-hidden p-5.5 md:p-9" data-aos="fade-up">
+                <div class="{{ $kicker }} bg-primary/8 text-primary">OTIUM | {{ __('Constitución y Formalización') }}</div>
+                <h1 class="text-[clamp(36px,5vw,60px)] font-bold leading-[1.02] tracking-[-0.02em] max-w-[940px] mb-4.5">{{ __('Constituir una empresa no debería ser solo abrir un NIT.') }}</h1>
+                <p class="text-lg md:text-xl leading-[1.48] text-[#443D3E] max-w-[800px] mb-4">{{ __('Acompañamos el nacimiento formal de su empresa en Bolivia: coordinamos la parte legal con un estudio jurídico asociado y gestionamos registro comercial, NIT, configuración tributaria inicial, facturación y organización documental para empezar con una base clara.') }}</p>
+                <div class="flex flex-wrap gap-3.5 mt-6.5">
+                    <a href="#proceso" class="{{ $btn }} bg-[#1F1617] text-white hover:bg-[#0d090a]">{{ __('Ver cómo trabajamos') }}</a>
+                    <a href="#entregables" class="{{ $btn }} bg-accent/12 text-[#175864] hover:bg-accent/18">{{ __('Ver qué recibe') }}</a>
                 </div>
-
-                <!-- Imagen flotante -->
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="900">
-                    <div class="relative w-full max-w-sm md:max-w-md">
-                        <div class="absolute inset-0 bg-primary/40 rounded-2xl translate-x-4 translate-y-4"></div>
-                        <div class="absolute -top-3 -left-3 w-16 h-16 border-4 border-white/30 rounded-xl"></div>
-                        <img src="/images/otium/carousel/consultoria.png"
-                            alt="Constitución de Empresas Bolivia Otium"
-                            class="relative z-10 rounded-2xl shadow-2xl w-full h-72 md:h-80 object-cover object-center animate-float">
-                    </div>
+                <div class="grid grid-cols-4 w-[min(380px,100%)] h-3.5 mt-6 rounded-full overflow-hidden" aria-hidden="true">
+                    <span class="bg-primary"></span><span class="bg-secondary"></span><span class="bg-brand-light"></span><span class="bg-accent"></span>
                 </div>
+            </article>
 
+            <aside class="{{ $card }} flex flex-col gap-4.5 p-5.5 md:p-7" data-aos="fade-left" data-aos-delay="100">
+                <div>
+                    <div class="{{ $tag }}">{{ __('Punto de partida') }}</div>
+                    <h2 class="text-[25px] font-bold leading-[1.55] tracking-[-0.02em] mb-2">{{ __('De proyecto a empresa lista para iniciar operaciones.') }}</h2>
+                </div>
+                @foreach ([
+                    [true,  __('Base del servicio'),  __('Coordinación societaria + SEPREC + NIT + configuración tributaria + facturación inicial + repositorio documental.')],
+                    [false, __('Plazo referencial'),  __('Alrededor de 20 días, sujeto al tipo de empresa, documentación, firmas, entidades y trámites aplicables.')],
+                    [false, __('Casos especiales'),   __('Empresas extranjeras, permisos, banca, laboral, Aduana, RUEX y otras gestiones se evalúan y cotizan según el caso.')],
+                ] as [$accent, $t, $d])
+                <div class="px-4.5 py-4 rounded-[18px] border {{ $accent ? 'bg-accent/10 border-accent/26' : 'bg-[#F7F4F2] border-[#E6E1DE]' }}">
+                    <strong class="block text-[15px] mb-1.25">{{ $t }}</strong>
+                    <span class="block text-[#5F5A5B] text-sm">{{ $d }}</span>
+                </div>
+                @endforeach
+                <p class="text-[#5F5A5B] text-[13px]">{{ __('El objetivo no es entregar una carpeta de trámites: es dejar una base formal, tributaria y documental para comenzar a operar.') }}</p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Qué problema resolvemos -->
+    <section id="problema" class="py-7.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué problema resolvemos') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('El desorden de origen se arrastra después.') }}</h2>
+                <p class="{{ $desc }}">{{ __('Cuando cada trámite se gestiona por separado, la empresa puede quedar formalmente creada pero sin una lectura clara de sus obligaciones, documentos, permisos y próximos pasos.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ([
+                    [__('Trámites aislados'),          __('Legal, registro, NIT y facturación avanzan sin una ruta única ni coordinación del conjunto.')],
+                    [__('Obligaciones poco claras'),   __('Se abre el NIT, pero el cliente no siempre comprende qué obligaciones nacen a partir de ese momento.')],
+                    [__('Documentos dispersos'),       __('Minutas, poderes, registros, certificados y accesos terminan repartidos entre correos, chats y carpetas personales.')],
+                    [__('Permisos descubiertos tarde'),__('Licencias, registros laborales, Aduana, RUEX u otros requisitos aparecen cuando ya existe urgencia por operar.')],
+                ] as $i => [$t, $d])
+                <article class="p-5.5 bg-white border border-[#E6E1DE] rounded-[18px]" data-aos="fade-up" data-aos-delay="{{ $i * 75 }}">
+                    <div class="w-11 h-11 grid place-items-center mb-3.5 rounded-[14px] font-extrabold {{ $i % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-accent/14 text-[#17606d]' }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <h3 class="text-xl font-bold tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B]">{{ $d }}</p>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Intro / Description -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-amber-50 rounded-2xl transform translate-x-4 translate-y-4"></div>
-                        <img src="/images/otium/carousel/consultoria.png" alt="Constitución de Empresas Bolivia Otium"
-                            class="relative rounded-2xl shadow-xl w-full h-100 object-cover">
+    <!-- Qué hacemos -->
+    <section id="hacemos" class="py-7.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué hacemos por usted') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Un solo proceso para ordenar el inicio de la empresa.') }}</h2>
+                <p class="{{ $desc }}">{{ __('Integramos los componentes principales de la constitución y formalización, delimitando desde el inicio qué forma parte del servicio base y qué requiere tratamiento adicional.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
+                @foreach ([
+                    [__('Relevamos el caso'),          __('Actividad económica, socios, estructura esperada, urgencias, documentación disponible y necesidades iniciales.')],
+                    [__('Coordinamos lo societario'),  __('Trabajamos con un estudio jurídico asociado para minuta, escritura, poderes y demás documentos societarios aplicables.')],
+                    [__('Gestionamos SEPREC'),         __('Realizamos la inscripción comercial correspondiente al tipo de estructura definida para el caso.')],
+                    [__('Abrimos el NIT'),             __('Gestionamos el alta ante Impuestos Nacionales y la configuración tributaria inicial de la empresa.')],
+                    [__('Preparamos facturación'),     __('Realizamos el set up inicial según el tipo de facturación asignado y los requerimientos aplicables.')],
+                    [__('Organizamos documentos'),     __('Centralizamos la documentación principal en un repositorio digital básico para que pueda encontrarse y reconstruirse.')],
+                ] as $i => [$t, $d])
+                <article class="p-5.5 bg-white/94 border border-[#1F1617]/8 rounded-[20px] shadow-[0_18px_40px_rgba(31,22,23,.08)]" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 75 }}">
+                    <div class="{{ $kicker }} bg-primary/8 text-primary">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <h3 class="text-xl font-bold tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                    <p class="text-[#5F5A5B]">{{ $d }}</p>
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- El proceso de trabajo -->
+    <section id="proceso" class="py-7.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $card }} p-5.5 md:p-7.5" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row justify-between gap-5.5 items-start mb-5.5">
+                    <div>
+                        <div class="{{ $tag }}">{{ __('El proceso de trabajo') }}</div>
+                        <h2 class="text-2xl font-bold leading-[1.55] tracking-[-0.02em] mb-2">{{ __('De la definición del caso a una base lista para operar.') }}</h2>
                     </div>
+                    <p class="max-w-[760px] text-[#5F5A5B]">{{ __('Este flujo es el centro del servicio: muestra cómo conectamos la decisión societaria con registro, tributación, facturación y documentación, sin presentar cada paso como una gestión aislada.') }}</p>
                 </div>
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Constitución y Formalización Empresarial</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ __('Acompañamiento integral desde el origen de tu empresa') }}</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        En Otium acompañamos la creación de empresas de principio a fin: estructura legal con estudio jurídico, inscripción en SEPREC, obtención del NIT, habilitación de facturación electrónica y organización documental en SharePoint desde el día uno.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        No solo tramitamos — identificamos las obligaciones tributarias, laborales y contables que aplican desde el inicio para que la empresa arranque con criterio. Plazo referencial: aproximadamente 20 días hábiles desde el inicio del proceso.
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+                    @foreach ([
+                        [__('Entender el proyecto'), __('Revisamos actividad, socios, ubicación, estructura prevista y fecha de inicio.')],
+                        [__('Definir la ruta'),      __('Identificamos estructura, documentos principales y gestiones complementarias posibles.')],
+                        [__('Constitución legal'),   __('Coordinamos con el estudio jurídico asociado la documentación societaria aplicable.')],
+                        [__('Registro y NIT'),       __('Gestionamos SEPREC, apertura tributaria y configuración inicial.')],
+                        [__('Facturación inicial'),  __('Configuramos el punto de partida según la modalidad de facturación asignada.')],
+                        [__('Entrega organizada'),   __('Centralizamos documentos y dejamos visibles obligaciones y próximos pasos.')],
+                    ] as $i => [$t, $d])
+                    <article class="relative p-5 rounded-[20px] bg-white border border-[#E6E1DE] md:min-h-51.25" data-aos="fade-up" data-aos-delay="{{ $i * 60 }}">
+                        @unless ($loop->last)
+                        {{-- Conector: en tablet (3 por fila) se oculta en el 3.º de cada fila --}}
+                        <span class="hidden {{ $i % 3 === 2 ? '' : 'md:block' }} lg:block absolute top-8.5 -right-3.5 w-3.5 h-0.5 bg-linear-to-r from-primary/50 to-accent/50"></span>
+                        @endunless
+                        <div class="w-10 h-10 grid place-items-center mb-3.75 rounded-[13px] font-extrabold {{ $i % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-accent/14 text-[#17606d]' }}">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                        <h3 class="text-[17px] font-bold tracking-[-0.02em] mb-2">{{ $t }}</h3>
+                        <p class="text-[#5F5A5B] text-sm">{{ $d }}</p>
+                    </article>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Para quién es -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('¿Para quién es este servicio?') }}</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    Personas y organizaciones que necesitan constituir o formalizar una empresa en Bolivia con respaldo legal, contable y tributario desde el inicio.
-                </p>
+    <!-- Estructuras -->
+    <section class="py-7.5">
+        <div class="container-2026">
+            <div class="mb-5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Estructuras que podemos acompañar') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('El tipo de empresa se evalúa antes de iniciar el trámite.') }}</h2>
+                <p class="{{ $desc }}">{{ __('El alcance puede aplicarse a distintas formas de organización empresarial. Cada caso se revisa según actividad, socios, documentación, requisitos y normativa aplicable.') }}</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <details class="group px-5 bg-white border border-[#E6E1DE] rounded-[18px]" data-aos="fade-up">
+                <summary class="flex justify-between gap-3.5 py-4.5 font-bold cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    {{ __('Ver estructuras y tipos de empresa') }}
+                    <span class="text-primary text-[22px] leading-none group-open:hidden" aria-hidden="true">+</span>
+                    <span class="text-primary text-[22px] leading-none hidden group-open:inline" aria-hidden="true">–</span>
+                </summary>
+                <div class="pt-4 pb-5 border-t border-[#E6E1DE] text-[#5F5A5B]">
+                    <div class="flex flex-wrap gap-2.25">
+                        @foreach ([
+                            __('Comerciante individual / Empresa unipersonal'),
+                            __('Sociedad de Responsabilidad Limitada — S.R.L.'),
+                            __('Sociedad Anónima — S.A.'),
+                            __('Sociedad Colectiva'),
+                            __('Sociedad en Comandita Simple'),
+                            __('Sociedad en Comandita por Acciones'),
+                            __('Sociedad de Economía Mixta — S.A.M.'),
+                            __('Entidad Financiera de Vivienda, cuando corresponda'),
+                            __('Empresa Estatal'),
+                            __('Empresa Estatal Mixta'),
+                            __('Empresa Mixta'),
+                            __('Empresa Estatal Intergubernamental'),
+                            __('Sociedad constituida en el extranjero'),
+                        ] as $type)
+                        <span class="px-2.75 py-2 rounded-full bg-[#F7F4F2] border border-[#E6E1DE] text-[13px] font-semibold text-[#514b4c]">{{ $type }}</span>
+                        @endforeach
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Inversionistas extranjeros') }}</h3>
-                    <p class="text-gray-600">Que desean constituir una empresa en Bolivia y necesitan orientación legal, tributaria y operativa desde el primer paso.</p>
+                    <p class="mt-4">{{ __('En estructuras reguladas, estatales o extranjeras, el alcance se define luego de revisar requisitos específicos y documentación disponible.') }}</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Empresas internacionales que abren sucursal o filial') }}</h3>
-                    <p class="text-gray-600">Que necesitan establecer presencia legal en Bolivia con documentación apostillada, poderes y estructura adecuada.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Socios bolivianos e internacionales') }}</h3>
-                    <p class="text-gray-600">Que están formando una empresa conjunta y necesitan definir la estructura societaria correcta desde el inicio.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Emprendedores bolivianos que se formalizan') }}</h3>
-                    <p class="text-gray-600">Que quieren constituir su empresa correctamente con orientación sobre qué tipo de estructura les conviene según su actividad.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Negocios informales que se regulariza') }}</h3>
-                    <p class="text-gray-600">Que operan sin estructura formal y necesitan regularizar su situación legal, tributaria y documental de forma ordenada.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-primary">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ __('Proyectos que necesitan NIT desde el día uno') }}</h3>
-                    <p class="text-gray-600">Que deben emitir facturas desde el inicio de sus operaciones y no pueden esperar semanas para tener todo habilitado.</p>
-                </div>
-            </div>
-            <div class="bg-primary/10 border-l-4 border-primary rounded-xl p-6 max-w-4xl mx-auto" data-aos="fade-up">
-                <p class="text-gray-700 text-lg">
-                    <strong class="text-primary">El problema que comparten:</strong> Constituyen la empresa sin orientación tributaria ni contable — y arrancan con obligaciones que no conocen, documentación dispersa y sin facturación habilitada. El costo de ese desorden se paga después con multas, atrasos y correcciones.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Qué incluye -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué incluye el servicio?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Revisión inicial y definición de estructura</h4>
-                        <p class="text-gray-600">Análisis del tipo de actividad, socios, capital y objetivos para definir la estructura societaria más adecuada (SRL, SA, unipersonal u otra).</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Elaboración de documentos societarios con estudio jurídico</h4>
-                        <p class="text-gray-600">Minuta de constitución, escritura pública, estatutos y poderes notariales — redactados y gestionados con estudio jurídico aliado.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Inscripción en SEPREC
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">SEPREC</span>
-                        </h4>
-                        <p class="text-gray-600">Registro de comercio ante el Servicio Plurinacional de Registro de Comercio — tramitado de principio a fin.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Obtención del NIT ante el SIN
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">SIN</span>
-                        </h4>
-                        <p class="text-gray-600">Registro tributario ante el Servicio de Impuestos Nacionales con configuración del régimen impositivo correspondiente.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Habilitación de facturación electrónica
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Facturación</span>
-                        </h4>
-                        <p class="text-gray-600">Configuración del sistema de facturación electrónica (modalidad en línea u offline) para que la empresa pueda emitir desde el primer día de operaciones.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Repositorio documental digital en SharePoint</h4>
-                        <p class="text-gray-600">Organización de todos los documentos societarios, legales y tributarios en un repositorio digital estructurado desde el inicio.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">Identificación de obligaciones iniciales</h4>
-                        <p class="text-gray-600">Mapa de obligaciones tributarias, laborales y contables que aplican desde el inicio — para que la empresa arranque sabiendo qué debe cumplir.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-1">
-                            Gestión de documentación internacional
-                            <span class="ml-2 inline-block bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded">Internacional</span>
-                        </h4>
-                        <p class="text-gray-600">Coordinación de apostillas, traducción y legalización de documentos extranjeros cuando hay socios o inversión de origen internacional.</p>
-                    </div>
-                </div>
-            </div>
+            </details>
         </div>
     </section>
 
     <!-- Qué recibe el cliente -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16" data-aos="fade-up">{{ __('¿Qué recibe tu empresa al final?') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <section id="entregables" class="py-7.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué recibe el cliente') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Documentos y registros que sirven para operar, no solo para archivar.') }}</h2>
+                <p class="{{ $desc }}">{{ __('Los entregables dependen del tipo de empresa y del alcance contratado, pero la lógica es siempre la misma: registro, base tributaria, facturación y evidencia organizada.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+                @foreach ([
+                    [__('Entregables principales'), 'bg-primary/8 text-primary', [
+                        [__('Documentación societaria'),              __('Preparada o revisada mediante el estudio jurídico asociado, según corresponda.')],
+                        [__('Inscripción en SEPREC'),                 __('Registro comercial de la empresa conforme a la estructura definida.')],
+                        [__('NIT y configuración tributaria inicial'),__('Alta ante Impuestos Nacionales y base de cumplimiento inicial.')],
+                        [__('Set up de facturación'),                 __('Configuración inicial sujeta al tipo de facturación asignado.')],
+                    ]],
+                    [__('Base para continuar'), 'bg-accent/12 text-[#17606d]', [
+                        [__('Repositorio documental básico'),         __('Documentos principales centralizados desde el inicio.')],
+                        [__('Obligaciones iniciales identificadas'),  __('Lectura práctica de lo que la empresa debe considerar al comenzar actividades.')],
+                        [__('Próximos pasos visibles'),               __('Permisos, registros o gestiones adicionales que podrían aplicar.')],
+                        [__('Continuidad posible con OTIUM'),         __('Contabilidad, gestión tributaria, laboral o gestión documental se contratan por separado.')],
+                    ]],
+                ] as $k => [$label, $kc, $items])
+                <article class="{{ $card }} p-5.5 md:p-6" data-aos="fade-up" data-aos-delay="{{ $k * 100 }}">
+                    <div class="{{ $kicker }} {{ $kc }}">{{ $label }}</div>
+                    <div class="grid gap-3 mt-4">
+                        @foreach ($items as $i => [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full {{ ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-[#1F1617]'][$i] }}"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-sm">{{ $d }}</span></div>
+                        </div>
+                        @endforeach
                     </div>
-                    <p class="text-gray-700 font-medium">Empresa legalmente constituida</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Documentos societarios organizados</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Inscripción SEPREC completada</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">NIT activo y configuración tributaria</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Facturación electrónica lista para emitir</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Repositorio digital con todos los documentos</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Mapa de obligaciones iniciales identificadas</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <p class="text-gray-700 font-medium">Plazo referencial: 20 días hábiles</p>
-                </div>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Por qué Otium vs. gestoría tradicional -->
-    <section class="py-20 bg-secondary text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">{{ __('Por qué Otium vs. la gestoría tradicional') }}</h2>
-            <div class="max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr>
-                            <th class="text-left p-4 bg-white/10 rounded-tl-xl font-bold text-white/70 text-sm uppercase tracking-wider w-1/2">Gestoría tradicional</th>
-                            <th class="text-left p-4 bg-primary rounded-tr-xl font-bold text-white text-sm uppercase tracking-wider w-1/2">Otium</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10">
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Solo tramita el registro</td>
-                            <td class="p-4 text-white font-medium">Acompaña el proceso completo: legal, tributario y documental</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">No identifica obligaciones futuras</td>
-                            <td class="p-4 text-white font-medium">Identifica las obligaciones tributarias, laborales y contables desde el inicio</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Documentos en papel sin organización</td>
-                            <td class="p-4 text-white font-medium">Repositorio digital estructurado en SharePoint desde el día uno</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">Sin criterio tributario ni contable</td>
-                            <td class="p-4 text-white font-medium">Equipo contable-tributario integrado en el proceso</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 text-white/70 border-r border-white/10">No maneja contexto internacional</td>
-                            <td class="p-4 text-white font-medium">Experiencia con inversionistas extranjeros, apostillas y documentación internacional</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition-colors">
-                            <td class="p-4 rounded-bl-xl text-white/70 border-r border-white/10">Termina con la constitución</td>
-                            <td class="p-4 rounded-br-xl text-white font-medium">Puede continuar con contabilidad, impuestos, laboral y gestión documental</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">{{ __('Preguntas Frecuentes') }}</h2>
-            <div class="space-y-4" x-data="{ active: null }">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 1 ? null : 1)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cuánto tiempo toma constituir la empresa?</span>
-                        <span x-text="active === 1 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 1" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        El plazo referencial es de aproximadamente 20 días hábiles desde el inicio del proceso, sujeto a la disponibilidad notarial y los tiempos de SEPREC y el SIN. Lo confirmamos en propuesta según el tipo de empresa y la documentación disponible.
+    <!-- Modelo documental básico -->
+    <section class="py-7.5">
+        <div class="container-2026">
+            <div class="{{ $card }} p-5.5 md:p-7" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-[.86fr_1.14fr] gap-6 items-start">
+                    <div>
+                        <div class="{{ $tag }}">{{ __('Modelo documental básico') }}</div>
+                        <h2 class="text-2xl font-bold leading-[1.55] tracking-[-0.02em] mb-2">{{ __('La empresa empieza con sus documentos en un solo lugar.') }}</h2>
+                        <p class="text-[#5F5A5B] mb-4">{{ __('El repositorio no reemplaza una implementación documental avanzada. Su función es evitar que la empresa nazca con documentos societarios, tributarios y accesos repartidos en múltiples lugares.') }}</p>
+                        <div class="{{ $note }} bg-accent/10 border-accent text-[#28525A]"><strong>{{ __('Enfoque digital:') }}</strong> {{ __('cuando el entorno del cliente lo permite, podemos utilizar Microsoft 365 / SharePoint como soporte del repositorio básico.') }}</div>
                     </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 2 ? null : 2)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Qué tipo de empresa me conviene constituir?</span>
-                        <span x-text="active === 2 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 2" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Depende de la actividad, el número de socios, el capital y los objetivos. Las estructuras más comunes en Bolivia son la SRL (Sociedad de Responsabilidad Limitada), la SA (Sociedad Anónima) y la empresa unipersonal. Analizamos tu caso y recomendamos la que más conviene antes de iniciar cualquier trámite.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 3 ? null : 3)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Pueden ayudar si tengo socios en el exterior?</span>
-                        <span x-text="active === 3 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 3" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Sí. Tenemos experiencia trabajando con inversionistas extranjeros y empresas internacionales. Coordinamos la apostilla de documentos extranjeros, traducción certificada cuando corresponde, y la gestión de poderes notariales para actuar en Bolivia. También asesoramos sobre la estructura más conveniente para inversión extranjera.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 4 ? null : 4)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Qué pasa después de que queda constituida la empresa?</span>
-                        <span x-text="active === 4 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 4" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Otium puede continuar acompañando la empresa con servicios de outsourcing contable, gestión tributaria, administración laboral y gestión documental. La constitución puede ser el inicio de una relación de largo plazo, no el final de un trámite.
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button @click="active = (active === 5 ? null : 5)" class="w-full px-6 py-4 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-gray-900">¿Cómo empiezo con Otium?</span>
-                        <span x-text="active === 5 ? '-' : '+'" class="text-2xl text-primary font-bold"></span>
-                    </button>
-                    <div x-show="active === 5" class="px-6 py-4 text-gray-600 border-t border-gray-100" x-transition>
-                        Con una reunión inicial donde revisamos la actividad, los socios, el capital y los objetivos. Con esa información definimos la estructura, el alcance y el plazo estimado. Preparamos una propuesta y, una vez aprobada, iniciamos el proceso.
+                    <div class="grid gap-2.5" aria-label="{{ __('Contenido del repositorio básico') }}">
+                        @foreach ([
+                            ['bg-accent',                                 __('Documentos legales y societarios')],
+                            ['bg-primary',                                __('NIT y documentos tributarios')],
+                            ['bg-secondary',                              __('SEPREC y registros principales')],
+                            ['bg-brand-light border border-[#cfae9c]',    __('Poderes, certificados y documentación de facturación')],
+                            ['bg-[#1F1617]',                              __('Credenciales y comunicaciones relevantes')],
+                        ] as [$color, $folder])
+                        <div class="grid grid-cols-[14px_1fr] gap-3 items-center px-3.5 py-3.25 rounded-[14px] bg-[#F7F4F2] border border-[#E6E1DE] text-sm font-semibold">
+                            <i class="block w-3 h-3 rounded {{ $color }}"></i><span>{{ $folder }}</span>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contact" class="py-24 bg-secondary relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-20 rounded-full translate-x-1/3 translate-y-1/3"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8" data-aos="fade-up">{{ __('¿Listo para constituir tu empresa en Bolivia?') }}</h2>
-            <p class="text-xl text-white opacity-90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Contáctanos y te acompañamos en todo el proceso — legal, tributario, documental y con facturación lista desde el primer día.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="{{ route('contact') }}" class="px-10 py-4 bg-primary text-white rounded-lg font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300">{{ __('Contáctenos Ahora') }}</a>
+    <!-- Responsabilidades -->
+    <section id="responsabilidades" class="py-7.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="mb-5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Responsabilidades claras') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('Coordinamos el proceso; el cliente aporta decisiones, documentos y firmas.') }}</h2>
+                <p class="{{ $desc }}">{{ __('La claridad sobre los roles evita retrabajos y permite que cada etapa avance con la información que realmente necesita.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+                @foreach ([
+                    ['OTIUM', 'bg-primary/8 text-primary', [
+                        [__('Coordina'), __('Articula el proceso societario con el estudio jurídico asociado y los registros principales.')],
+                        [__('Gestiona'), __('SEPREC, NIT, configuración tributaria y set up inicial de facturación dentro del alcance.')],
+                        [__('Organiza'), __('Centraliza los documentos principales y deja visibles los próximos pasos.')],
+                    ]],
+                    [__('Su empresa'), 'bg-accent/12 text-[#17606d]', [
+                        [__('Entrega información y documentos'), __('Datos de socios, actividad, domicilio, representantes y demás antecedentes necesarios.')],
+                        [__('Define y valida decisiones'),       __('Estructura, socios, representantes, actividad y otros aspectos que corresponden al cliente.')],
+                        [__('Firma y atiende requerimientos'),   __('Proporciona firmas, poderes o información adicional cuando la entidad o el caso lo requieran.')],
+                    ]],
+                ] as $k => [$who, $kc, $items])
+                <article class="{{ $card }} p-5.5 md:p-6" data-aos="fade-up" data-aos-delay="{{ $k * 100 }}">
+                    <div class="{{ $kicker }} {{ $kc }}">{{ $who }}</div>
+                    <div class="grid gap-3 mt-4">
+                        @foreach ($items as $i => [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full {{ ['bg-primary', 'bg-secondary', 'bg-accent'][$i] }}"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-sm">{{ $d }}</span></div>
+                        </div>
+                        @endforeach
+                    </div>
+                </article>
+                @endforeach
             </div>
         </div>
     </section>
 
+    <!-- Tratamiento especial -->
+    <section id="alcance" class="py-7.5 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $card }} p-5.5 md:p-6.5 bg-linear-to-b! from-white/96 to-[#F7F4F2]/99" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 mb-4 px-3 py-2 rounded-full bg-primary/10 text-primary text-xs font-extrabold tracking-[.12em] uppercase">{{ __('Cuando el caso requiere un tratamiento especial') }}</div>
+                <h3 class="text-2xl font-bold tracking-[-0.02em] mb-2">{{ __('Algunas gestiones se evalúan y cotizan separadamente.') }}</h3>
+                <p class="text-[#5F5A5B] max-w-[930px] mb-4">{{ __('Licencia de funcionamiento, apertura de cuenta bancaria empresarial, inscripción laboral, Caja de Salud, Gestora, Ministerio de Trabajo, permisos de Alcaldía o Gobernación, trámites ante Aduana, RUEX, permisos sectoriales, importación o exportación y otros registros no forman parte automática del servicio base.') }}</p>
+                <div class="{{ $note }} bg-primary/6 border-primary text-[#6B2E2A]"><strong>{{ __('Empresas extranjeras:') }}</strong> {{ __('se evalúan caso por caso, especialmente cuando requieren apoderados, apostillas, legalizaciones, documentos emitidos en el exterior, apertura bancaria u otras condiciones particulares.') }}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué cambia -->
+    <section class="py-7.5">
+        <div class="container-2026">
+            <div class="mb-5" data-aos="fade-up">
+                <div class="{{ $tag }}">{{ __('Qué cambia') }}</div>
+                <h2 class="{{ $h2 }}">{{ __('De trámites dispersos a un inicio estructurado.') }}</h2>
+                <p class="{{ $desc }}">{{ __('El resultado esperado no es “cero problemas”; es una empresa que comienza con mayor orden, trazabilidad documental y claridad sobre lo que debe hacer después.') }}</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+                @foreach ([
+                    [__('Sin un proceso estructurado'), 'bg-[#5F5A5B]/10 text-[#5F5A5B]', ['bg-[#b6b6b7]', 'bg-[#b6b6b7]', 'bg-[#b6b6b7]', 'bg-[#b6b6b7]'], [
+                        [__('Gestiones por separado'),          __('Cada trámite se resuelve sin una visión común del arranque.')],
+                        [__('Documentación dispersa'),          __('Encontrar poderes, registros o accesos depende de personas y carpetas sueltas.')],
+                        [__('Obligaciones descubiertas tarde'), __('Permisos o registros aparecen cuando la operación ya los necesita.')],
+                        [__('Inicio reactivo'),                 __('La empresa responde a urgencias en lugar de seguir una ruta definida.')],
+                    ]],
+                    [__('Con OTIUM'), 'bg-accent/12 text-[#17606d]', ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-[#1F1617]'], [
+                        [__('Ruta coordinada'),         __('Societario, registro, tributación, facturación y documentos se conectan dentro del mismo proceso.')],
+                        [__('Base documental'),         __('Los documentos principales quedan centralizados desde el inicio.')],
+                        [__('Próximos pasos visibles'), __('Se identifican gestiones complementarias antes de convertirlas en una urgencia.')],
+                        [__('Mejor continuidad'),       __('La empresa queda preparada para avanzar hacia contabilidad, impuestos, laboral, banca o permisos adicionales.')],
+                    ]],
+                ] as $k => [$label, $kc, $colors, $items])
+                <article class="{{ $card }} p-5.5 md:p-6" data-aos="fade-up" data-aos-delay="{{ $k * 100 }}">
+                    <div class="{{ $kicker }} {{ $kc }}">{{ $label }}</div>
+                    <div class="grid gap-3 mt-4">
+                        @foreach ($items as $i => [$b, $d])
+                        <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                            <span class="w-2.5 h-2.5 mt-1.75 rounded-full {{ $colors[$i] }}"></span>
+                            <div><b class="block mb-0.5 text-sm">{{ $b }}</b><span class="text-[#5F5A5B] text-sm">{{ $d }}</span></div>
+                        </div>
+                        @endforeach
+                    </div>
+                </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo empezamos -->
+    <section id="inicio" class="pt-10 pb-14 scroll-mt-24">
+        <div class="container-2026">
+            <div class="{{ $card }} relative overflow-hidden p-5.5 md:p-8.5" data-aos="fade-up">
+                <span class="absolute -right-10 -bottom-10 w-55 h-55 rounded-full bg-[radial-gradient(circle,rgba(84,186,199,.16),rgba(84,186,199,0))] pointer-events-none"></span>
+                <div class="relative grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-6 items-center">
+                    <div>
+                        <div class="{{ $tag }}">{{ __('Cómo empezamos') }}</div>
+                        <h2 class="text-[clamp(28px,3.5vw,44px)] font-bold leading-[1.55] tracking-[-0.02em] mb-2.5">{{ __('Definamos la ruta correcta antes de iniciar los trámites.') }}</h2>
+                        <p class="text-[#494344] text-[17px] max-w-[700px] mb-4">{{ __('Primero entendemos qué quiere hacer la empresa, quiénes participan, dónde operará y qué necesita para comenzar. Con esa información definimos el alcance base, los documentos requeridos y las gestiones complementarias que podrían aplicar.') }}</p>
+                        <div class="flex flex-wrap gap-3.5 mt-5">
+                            <a href="{{ $waService }}" target="_blank" rel="noopener" class="{{ $btn }} bg-[#1F1617] text-white hover:bg-[#0d090a]">{{ __('Conversemos sobre su empresa') }}</a>
+                        </div>
+                    </div>
+                    <aside class="p-5.5 rounded-[20px] bg-[#F7F4F2] border border-[#E6E1DE]">
+                        <h3 class="text-lg font-bold tracking-[-0.02em] mb-2.5">{{ __('Para definir el alcance revisamos') }}</h3>
+                        <div class="grid gap-3 mt-4">
+                            @foreach ([
+                                ['bg-primary',                              __('Actividad económica y forma en que operará el negocio.')],
+                                ['bg-secondary',                            __('Socios, representantes y estructura prevista.')],
+                                ['bg-brand-light border border-[#cfae9c]',  __('Documentación disponible y firmas necesarias.')],
+                                ['bg-accent',                               __('Necesidad de facturación, banca, personal, importación o exportación.')],
+                                ['bg-[#1F1617]',                            __('Fecha esperada de inicio y posibles permisos especiales.')],
+                            ] as [$color, $item])
+                            <div class="grid grid-cols-[10px_1fr] gap-3 items-start">
+                                <span class="w-2.5 h-2.5 mt-1.75 rounded-full {{ $color }}"></span>
+                                <div>{{ $item }}</div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <p class="mt-4.5 text-[#5F5A5B] text-sm"><strong>{{ __('A partir de esta revisión') }}</strong> {{ __('definimos un alcance claro y una ruta de trabajo acorde con el caso.') }}</p>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
 </x-layout>
